@@ -78,7 +78,7 @@ function w3_open() {
     x[slideIndex-1].style.display = "block";  
   }
   
-  showDivs(1);
+  //showDivs(1);
   
   // Progress Bars
   function move() {
