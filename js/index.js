@@ -6,6 +6,8 @@ function w3_open() {
     x.style.fontSize = "20px";
     x.style.paddingTop = "0%";
     x.style.display = "block";
+    x.style.border = "1%";
+    x.style.border_color = "aqua";
   }
 
   function doc_open() {
