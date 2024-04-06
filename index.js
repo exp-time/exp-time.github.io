@@ -7,8 +7,13 @@ function w3_open() {
     x.style.paddingTop = "0%";
     x.style.display = "block";
   }
+
   function w3_close() {
     document.getElementById("mySidebar").style.display = "none";
+  }
+
+  function openInNewTab(url) {
+    window.open(url, '_blank').focus();
   }
   
   // Tabs
