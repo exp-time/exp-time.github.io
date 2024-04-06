@@ -8,8 +8,18 @@ function w3_open() {
     x.style.display = "block";
   }
 
+  function doc_open() {
+    var x = document.getElementById("mySidebar");
+    x.style.width = "30%";
+    x.style.height = "43%";
+    x.style.fontSize = "20px";
+    x.style.paddingTop = "0%";
+    x.style.display = "block";
+  }
+
   function w3_close() {
     document.getElementById("mySidebar").style.display = "none";
+    document.getElementById("myDocs").style.display = "none";
   }
 
   function openInNewTab(url) {
