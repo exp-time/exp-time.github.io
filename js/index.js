@@ -10,8 +10,8 @@ function w3_open() {
     x.style.border_color = "aqua";
   }
 
-  function doc_open() {
-    var x = document.getElementById("mySidebar");
+  function docs_open() {
+    var x = document.getElementById("myDocs");
     x.style.width = "30%";
     x.style.height = "43%";
     x.style.fontSize = "20px";
