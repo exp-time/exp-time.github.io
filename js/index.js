@@ -30,6 +30,18 @@ function w3_open() {
     window.open(url, '_blank').focus();
   }
   
+
+
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const content = document.querySelector('.content'); 
+    const itemsPerPage = 1;
+    let currentPage = 0;
+    const items = Array.from(content.getElementsByTagName('section')).slice(0);
+  })
+
+
+
   // Tabs
   function openCity(evt, cityName) {
     var i;
