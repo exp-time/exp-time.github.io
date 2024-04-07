@@ -51,7 +51,6 @@ function createPageButtons() {
   const paginationContainer = document.createElement('div');
   const paginationDiv = document.body.appendChild(paginationContainer);
   paginationContainer.classList.add('pagination');
-
   // Add page buttons
   for (let i = 0; i < totalPages; i++) {
     const pageButton = document.createElement('button');
