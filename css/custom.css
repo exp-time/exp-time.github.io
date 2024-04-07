@@ -43,9 +43,9 @@ body {
 
   .bottom-corner {
     position: relative !important;
-    right: 5px !important;
+    right: 0px !important;
     bottom: 5px !important;
-    float: right !important;
+
   }
   
   .pagination button.active {
