@@ -40,6 +40,12 @@ body {
     white-space: nowrap;
     width: 1px;
   }
+
+  .bottom-corner {
+    position:relative;
+    bottom:5px;
+    float:right!important
+  }
   
   .pagination button.active {
     color:#fff !important; 
