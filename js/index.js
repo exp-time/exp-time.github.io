@@ -28,7 +28,6 @@ function w3_open() {
 
   function info_close(id) {
     document.getElementById(id).style.display = "none";
-
   }
 
   function w3_close() {
