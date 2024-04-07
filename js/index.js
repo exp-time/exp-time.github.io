@@ -63,6 +63,7 @@ function createPageButtons() {
     });
     content.appendChild(paginationContainer);
     paginationDiv.appendChild(pageButton);
+    pageButton.classList.add('.w3-hover-theme:hover')
   }
 }
 
