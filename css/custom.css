@@ -51,7 +51,7 @@ body {
     background-color:#d3c6c6 !important
   }
   
-  a:hover {
+  .pagination button:hover {
     color:#fff !important; 
     background-color:#af1111 !important
   }
