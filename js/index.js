@@ -55,16 +55,16 @@ function createPageButtons() {
   // Add page buttons
   for (let i = 0; i < totalPages; i++) {
     const pageButton = document.createElement('button');
+    button.classList.add('w3-hover-theme')
     pageButton.textContent = i + 1;
     pageButton.addEventListener('click', () => {
       currentPage = i;
       showPage(currentPage);
       updateActiveButtonStates();
     });
-
-      content.appendChild(paginationContainer);
-      paginationDiv.appendChild(pageButton);
-    }
+    content.appendChild(paginationContainer);
+    paginationDiv.appendChild(pageButton);
+  }
 }
 
 function updateActiveButtonStates() {
