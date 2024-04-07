@@ -55,6 +55,7 @@ function createPageButtons() {
   // Add page buttons
   for (let i = 0; i < totalPages; i++) {
     const pageButton = document.createElement('button');
+    pageButton.classList.add('.w3-hover-theme:hover')
     pageButton.textContent = i + 1;
     pageButton.addEventListener('click', () => {
       currentPage = i;
@@ -63,7 +64,6 @@ function createPageButtons() {
     });
     content.appendChild(paginationContainer);
     paginationDiv.appendChild(pageButton);
-    pageButton.classList.add('.w3-hover-theme:hover')
   }
 }
 
