@@ -42,7 +42,6 @@ body {
   }
 
   .top-corner {
-    top:0px !important;
     position: relative !important;
     float:right!important;
   }
