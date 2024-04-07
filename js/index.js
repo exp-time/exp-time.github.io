@@ -17,13 +17,18 @@ function w3_open() {
     x.style.display = "block";
   }
 
-  function info_open() {
-    var x = document.getElementById("1Docs");
+  function info_open(id) {
+    var x = document.getElementById(id);
     x.style.width = "30%";
     x.style.height = "43%";
     x.style.fontSize = "20px";
     x.style.paddingTop = "0%";
     x.style.display = "block";
+  }
+
+  function info_close(id) {
+    document.getElementById(id).style.display = "none";
+
   }
 
   function w3_close() {
