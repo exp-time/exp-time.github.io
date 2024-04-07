@@ -43,7 +43,7 @@ body {
 
   .top-corner {
     top:0px !important;
-    position: relative !important;
+    position: absolute !important;
     float:right!important;
   }
   
