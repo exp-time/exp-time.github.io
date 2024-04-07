@@ -1,4 +1,38 @@
-.hidden {
+/* pagination */
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  section {
+    background: #f7f7f7;
+    padding: 20px;
+    display: grid;
+    gap: 1em;
+  }
+  
+  .content {
+    margin: 20px;
+    display: grid;
+    gap: 20px;
+  }
+  
+  p, h2 {margin: 0;}
+  
+  .pagination {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .pagination button {
+    padding: 5px 10px;
+    margin: 0 5px;
+    cursor: pointer;
+    outline: 1px solid #494a4f;
+    border-radius: 1px;
+    border: none;
+  }
+  
+  .hidden {
     clip: rect(0 0 0 0);
     clip-path: inset(50%);
     height: 1px;
@@ -6,7 +40,21 @@
     position: absolute;
     white-space: nowrap;
     width: 1px;
-}
+  }
+  
+  .pagination button.active {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  a {
+    color: #2196F3;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
 
 /* width */
 ::-webkit-scrollbar {
