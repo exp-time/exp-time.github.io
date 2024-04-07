@@ -27,7 +27,6 @@ body {
     padding: 5px 10px;
     margin: 0 5px;
     cursor: pointer;
-    outline: 1px solid #494a4f;
     border-radius: 1px;
     border: none;
   }
@@ -43,17 +42,18 @@ body {
   }
   
   .pagination button.active {
-    background-color: #007bff;
-    color: white;
+    color:#fff !important; 
+    background-color:#000000 !important
   }
   
   a {
-    color: #2196F3;
-    text-decoration: none;
+    color:#fff !important; 
+    background-color:#414040 !important
   }
   
   a:hover {
-    text-decoration: underline;
+    color:#fff !important; 
+    background-color:#414040 !important
   }
 
 /* width */
