@@ -42,7 +42,7 @@ body {
   }
 
   .bottom-corner {
-    position: absolute !important;
+    position: relative !important;
     right: 5px !important;
     bottom: 5px !important;
     float: right !important;
