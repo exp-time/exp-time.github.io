@@ -30,8 +30,14 @@ function w3_open() {
     window.open(url, '_blank').focus();
   }
   
-
-
+// pagination
+  function showPage(page) {
+    const startIndex = page * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    items.forEach((item, index) => {
+      item.classList.toggle('hidden', index < startIndex || index >= endIndex);
+    });
+  }
 
   document.addEventListener('DOMContentLoaded', function () {
     const content = document.querySelector('.content'); 
