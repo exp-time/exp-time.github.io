@@ -132,6 +132,14 @@ h1,h2,h3,h4,h5,h6{
 
 .w3-wide{letter-spacing:4px}
 
+
+.w3-animate-top{
+  position:relative;
+  animation:animatetop 0.4s}
+@keyframes animatetop{
+    from{top:-300px;opacity:0} to{top:0;opacity:1}
+}
+
 /* width */
 ::-webkit-scrollbar {
     width: 10px;
