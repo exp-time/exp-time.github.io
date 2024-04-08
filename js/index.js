@@ -1,12 +1,13 @@
 // Side navigation
 function w3_open(id) {
   var x = document.getElementById("mySidebar");
+  var primaryColor = getComputedStyle(document.documentElement).getPropertyValue('.w3-theme-l4');
   x.style.width = "30%";
   x.style.height = "43%";
   x.style.fontSize = "20px";
   x.style.paddingTop = "0%";
   x.style.display = "block";
-  x.style.backgroundColor = "var(w3-theme-l4)";
+  x.style.backgroundColor = primaryColor;
 }
 
 function info_open(id) {
