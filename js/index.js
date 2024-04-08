@@ -6,8 +6,8 @@ function w3_open(id) {
   x.style.fontSize = "20px";
   x.style.paddingTop = "0%";
   x.style.display = "block";
+  x.style.backgroundColor = x.style.backgroundColor = "var(.w3-theme-l4)";
 }
-
 
 function info_open(id) {
   var x = document.getElementById(id);

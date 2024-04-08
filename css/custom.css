@@ -3,62 +3,60 @@ body {
     font-family: Arial, sans-serif;
   }
   
-  section {
-    background: #f7f7f7;
-    padding: 20px;
-    display: grid;
-    gap: 1em;
-  }
+section {
+  background: #f7f7f7;
+  padding: 20px;
+  display: grid;
+  gap: 1em;
+}
   
-  .content {
-    margin: 20px;
-    display: grid;
-    gap: 20px;
-  }
-  
-  p, h2 {margin: 0;}
-  
-  .pagination {
-    text-align: center;
-    margin-top: 20px;
-  }
-  
-  .pagination button {
-    padding: 5px 10px;
-    margin: 0 5px;
-    cursor: pointer;
-    border-radius: 1px;
-    border: none;
-  }
-  
-  .hidden {
-    clip: rect(0 0 0 0);
-    clip-path: inset(50%);
-    height: 1px;
-    overflow: hidden;
-    position: absolute;
-    white-space: nowrap;
-    width: 1px;
-  }
+.content {
+  margin: 20px;
+  display: grid;
+  gap: 20px;
+}
 
-  .top-corner {
-    float:right!important;
-  }
-  
-  .pagination button.active {
-    color:#fff !important; 
-    background-color:#000000 !important
-  }
+p, h2 {margin: 0;}
 
-  .pagination a {
-    color:#fff !important; 
-    background-color:#d3c6c6 !important
-  }
-  
-  .pagination button:hover {
-    color:#fff !important; 
-    background-color:#414040 !important
-  }
+.pagination {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  padding: 5px 10px;
+  margin: 0 5px;
+  cursor: pointer;
+  border-radius: 1px;
+  border: none;
+}
+
+.hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+.top-corner {
+  float:right!important;
+}
+
+.pagination button.active {
+  color:#fff !important; 
+  background-color:#000000 !important
+}
+.pagination a {
+  color:#fff !important; 
+  background-color:#d3c6c6 !important
+}
+
+.pagination button:hover {
+  color:#fff !important; 
+  background-color:#414040 !important
+}
   
 
 /* width */
