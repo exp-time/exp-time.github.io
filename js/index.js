@@ -2,8 +2,6 @@
 function w3_open(id) {
   var x = document.getElementById("mySidebar");
   /*var primaryColor = getComputedStyle(document.documentElement).getPropertyValue('.w3-theme-l4');*/
-  x.style.width = "30%";
-  x.style.height = "43%";
   x.style.fontSize = "20px";
   x.style.paddingTop = "0%";
   x.style.display = "block";
@@ -12,8 +10,6 @@ function w3_open(id) {
 
 function info_open(id) {
   var x = document.getElementById(id);
-  x.style.width = "100";
-  x.style.height = "100%";
   x.style.fontSize = "20px";
   x.style.paddingTop = "0%";
   x.style.display = "block";

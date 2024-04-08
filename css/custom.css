@@ -88,9 +88,9 @@ p, h2 {margin: 0;}
 
 
 .w3-sidebar{
-  height:100%;
-  width:200px;
-  min-width:240px;
+  height:45%;
+  width:30%;
+  min-width:300px;
   background-color:#fff;
   position:fixed!important;
   z-index:1;
