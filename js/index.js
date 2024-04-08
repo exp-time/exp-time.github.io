@@ -1,47 +1,30 @@
 // Side navigation
-function w3_open() {
-    var x = document.getElementById("mySidebar");
-    x.style.width = "30%";
-    x.style.height = "43%";
-    x.style.fontSize = "20px";
-    x.style.paddingTop = "0%";
-    x.style.display = "block";
-  }
+function w3_open(id) {
+  var x = document.getElementById("mySidebar");
+  x.style.width = "30%";
+  x.style.height = "43%";
+  x.style.fontSize = "20px";
+  x.style.paddingTop = "0%";
+  x.style.display = "block";
+}
 
-  function docs_open() {
-    var x = document.getElementById("myDocs");
-    x.style.width = "30%";
-    x.style.height = "43%";
-    x.style.fontSize = "20px";
-    x.style.paddingTop = "0%";
-    x.style.display = "block";
-  }
 
-  function info_open(id) {
-    var x = document.getElementById(id);
-    x.style.width = "100";
-    x.style.height = "100%";
-    x.style.fontSize = "20px";
-    x.style.paddingTop = "0%";
-    x.style.display = "block";
-  }
+function info_open(id) {
+  var x = document.getElementById(id);
+  x.style.width = "100";
+  x.style.height = "100%";
+  x.style.fontSize = "20px";
+  x.style.paddingTop = "0%";
+  x.style.display = "block";
+}
 
-  function info_close(id) {
-    document.getElementById(id).style.display = "none";
-  }
+function info_close(id) {
+  document.getElementById(id).style.display = "none";
+}
 
-  function w3_close() {
-    document.getElementById("mySidebar").style.display = "none";
-
-  }
-
-  function docs_close() {
-    document.getElementById("myDocs").style.display = "none";
-  }
-
-  function openInNewTab(url) {
-    window.open(url, '_blank').focus();
-  }
+function openInNewTab(url) {
+  window.open(url, '_blank').focus();
+}
   
 // pagination
 document.addEventListener('DOMContentLoaded', function () {
