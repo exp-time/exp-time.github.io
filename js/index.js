@@ -4,7 +4,6 @@ function w3_open(id) {
   /*var primaryColor = getComputedStyle(document.documentElement).getPropertyValue('.w3-theme-l4');*/
   x.style.fontSize = "20px";
   x.style.paddingTop = "0%";
-  x.style.display = "block";
   /*x.style.backgroundColor = primaryColor;*/
 }
 
@@ -12,7 +11,6 @@ function info_open(id) {
   var x = document.getElementById(id);
   x.style.fontSize = "20px";
   x.style.paddingTop = "0%";
-  x.style.display = "block";
 }
 
 function info_close(id) {
