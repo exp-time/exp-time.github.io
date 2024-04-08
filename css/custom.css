@@ -90,6 +90,7 @@ p, h2 {margin: 0;}
 .w3-sidebar{
   height:100%;
   width:200px;
+  min-width:160px;
   background-color:#fff;
   position:fixed!important;
   z-index:1;
@@ -154,6 +155,27 @@ h1,h2,h3,h4,h5,h6{
   font-weight:400;
   margin:10px 0;
 }
+
+.w3-padding-small{padding:4px 8px!important}
+.w3-padding{padding:8px 16px!important}
+.w3-padding-large{padding:12px 24px!important}
+.w3-padding-16{padding-top:16px!important;padding-bottom:16px!important}
+.w3-padding-24{padding-top:24px!important;padding-bottom:24px!important}
+.w3-padding-32{padding-top:32px!important;padding-bottom:32px!important}
+.w3-padding-48{padding-top:48px!important;padding-bottom:48px!important}
+.w3-padding-64{padding-top:64px!important;padding-bottom:64px!important}
+.w3-padding-top-64{padding-top:64px!important}
+.w3-padding-top-48{padding-top:48px!important}
+.w3-padding-top-32{padding-top:32px!important}
+.w3-padding-top-24{padding-top:24px!important}
+.w3-left{float:left!important}
+.w3-right{float:right!important}
+
+.w3-large{font-size:18px!important}
+.w3-xlarge{font-size:24px!important}
+.w3-xxlarge{font-size:36px!important}
+.w3-xxxlarge{font-size:48px!important}
+.w3-jumbo{font-size:64px!important}
 
 .w3-wide{letter-spacing:4px}
 .w3-container,.w3-panel{padding:0.01em 16px}
