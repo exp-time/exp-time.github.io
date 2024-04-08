@@ -6,7 +6,6 @@ function w3_open(id) {
   x.style.fontSize = "20px";
   x.style.paddingTop = "0%";
   x.style.display = "block";
-  x.style.paddingleft = "5%";
 }
 
 
@@ -76,95 +75,28 @@ document.addEventListener('DOMContentLoaded', function () {
   showPage(currentPage);
 });
 
-
-
-  // Tabs
-  function openCity(evt, cityName) {
-    var i;
-    var x = document.getElementsByClassName("city");
-    for (i = 0; i < x.length; i++) {
-      x[i].style.display = "none";
-    }
-    var activebtn = document.getElementsByClassName("testbtn");
-    for (i = 0; i < x.length; i++) {
-      activebtn[i].className = activebtn[i].className.replace(" w3-dark-grey", "");
-    }
-    document.getElementById(cityName).style.display = "block";
-    evt.currentTarget.className += " w3-dark-grey";
-  }
-  
-  //var mybtn = document.getElementsByClassName("testbtn")[0];
-  //mybtn.click();
-  
-  // Accordions
-  function myAccFunc(id) {
-    var x = document.getElementById(id);
-    if (x.className.indexOf("w3-show") == -1) {
-      x.className += " w3-show";
-    } else { 
-      x.className = x.className.replace(" w3-show", "");
-    }
-  }
-  
-  // Slideshows
-  var slideIndex = 1;
-  
-  function plusDivs(n) {
-    slideIndex = slideIndex + n;
-    showDivs(slideIndex);
-  }
-  
-  function showDivs(n) {
-    var x = document.getElementsByClassName("mySlides");
-    if (n > x.length) {slideIndex = 1}    
-    if (n < 1) {slideIndex = x.length} ;
-    for (i = 0; i < x.length; i++) {
-      x[i].style.display = "none";  
-    }
-    x[slideIndex-1].style.display = "block";  
-  }
-  
-  //showDivs(1);
-  
-  // Progress Bars
-  function move() {
-    var elem = document.getElementById("myBar");   
-    var width = 5;
-    var id = setInterval(frame, 10);
-    function frame() {
-      if (width == 100) {
-        clearInterval(id);
-      } else {
-        width++; 
-        elem.style.width = width + '%'; 
-        elem.innerHTML = width * 1  + '%';
-      }
-    }
-  }
-  function includeHTML() {
-    var z, i, elmnt, file, xhttp;
-    /* Loop through a collection of all HTML elements: */
-    z = document.getElementsByTagName("*");
-    for (i = 0; i < z.length; i++) {
-      elmnt = z[i];
-      /*search for elements with a certain atrribute:*/
-      file = elmnt.getAttribute("w3-include-html");
-      if (file) {
-        /* Make an HTTP request using the attribute value as the file name: */
-        xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() {
-          if (this.readyState == 4) {
-            if (this.status == 200) {elmnt.innerHTML = this.responseText;}
-            if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
-            /* Remove the attribute, and call this function once more: */
-            elmnt.removeAttribute("w3-include-html");
-            includeHTML();
-          }
+// Get html elements from another file
+function includeHTML() {
+  var z, i, elmnt, file, xhttp;
+  z = document.getElementsByTagName("*");
+  for (i = 0; i < z.length; i++) {
+    elmnt = z[i];
+    file = elmnt.getAttribute("w3-include-html");
+    if (file) {
+      /* Make an HTTP request using the attribute value as the file name: */
+      xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4) {
+          if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+          if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+          /* Remove the attribute, and call this function once more: */
+          elmnt.removeAttribute("w3-include-html");
+          includeHTML();
         }
-        xhttp.open("GET", file, true);
-        xhttp.send();
-        /* Exit the function: */
-        return;
       }
+      xhttp.open("GET", file, true);
+      xhttp.send();
+      return;
     }
   }
+}
