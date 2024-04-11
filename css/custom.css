@@ -270,13 +270,12 @@ h1,h2,h3,h4,h5,h6{
 
 .container-title {
   padding-top: 0.75%;
-  font-size:24px;
+  font-size: 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-grow: 1;
   text-align: center;
-  padding: 0px 0px;
 } 
 
 .container-title div {
