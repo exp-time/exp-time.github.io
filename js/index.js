@@ -28,14 +28,6 @@ function closeModal(event) {
   }
 }
 
-// Optional: Enhance the close button functionality to stop event propagation
-var closeButton = document.querySelector('.w3-modal .w3-display-topright');
-closeButton.onclick = function(event) {
-  event.stopPropagation(); // Prevent click from bubbling to the modal background
-  document.getElementById('about_modal').style.display = 'none';
-}
-
-
 function openInNewTab(url) {
   window.open(url, '_blank').focus();
 }
