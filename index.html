@@ -55,7 +55,7 @@
 </header>
 
 <!-- Modal -->
-<div id="contact_modal" class="w3-modal">
+<div id="contact_modal" class="w3-modal" onclick="closeModal(event, 'contact_modal')">
     <div class="w3-modal-content w3-card-4 w3-animate-top">
       <header class="w3-container w3-theme-l1"> 
         <span onclick="info_close('contact_modal')" class="w3-button w3-display-topright w3-large">×</span>
@@ -72,7 +72,7 @@
     </div>
 </div>
 
-<div id="about_modal" class="w3-modal" onclick="closeModal(event)">
+<div id="about_modal" class="w3-modal" onclick="closeModal(event, 'about_modal')">
     <div class="w3-modal-content w3-card-4 w3-animate-top">
       <header class="w3-container w3-theme-l1"> 
         <span onclick="info_close('about_modal')" class="w3-button w3-display-topright w3-large">×</span>
@@ -94,7 +94,7 @@
     </div>
 </div>
 
-<div id="unfinished_modal" class="w3-modal top-correct">
+<div id="unfinished_modal" class="w3-modal top-correct" onclick="closeModal(event, 'unfinished_modal')">
     <div class="w3-modal-content w3-card-4 w3-animate-top">
       <header class="w3-container w3-theme-l1"> 
         <span onclick="info_close('unfinished_modal')" class="w3-button w3-display-topright w3-large">×</span>

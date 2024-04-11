@@ -21,10 +21,10 @@ function info_close(id) {
   document.getElementById(id).style.display = "none";
 }
 
-function closeModal(event) {
+function closeModal(event, id) {
   // Check if the click was directly on the modal background
   if (event.target.classList.contains('w3-modal')) {
-      document.getElementById('about_modal').style.display = 'none';
+      document.getElementById(id).style.display = 'none';
   }
 }
 
