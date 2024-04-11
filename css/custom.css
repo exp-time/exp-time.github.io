@@ -290,6 +290,17 @@ h1,h2,h3,h4,h5,h6{
   flex-grow: 0!important;
 }
 
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex-container .title {
+  flex-grow: 1;
+  text-align: center;
+}
+
 
 .padding-none{
   padding:0px 0px!important;
