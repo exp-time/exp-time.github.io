@@ -129,8 +129,9 @@ p, h2 {margin: 0;}
 }
 
 .modal-header{
-  padding: 10px 10px;
-  font-size:20px!important
+  padding: 8px 16px;
+  font-size:20px !important;
+  vertical-align: middle;
 }
 
 .top-correct {
