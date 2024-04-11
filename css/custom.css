@@ -276,7 +276,7 @@ h1,h2,h3,h4,h5,h6{
   align-items: center;
 } 
 
-.container-title span {
+.container-title p {
   flex-grow: 1;
   text-align: center;
 }
@@ -291,6 +291,10 @@ h1,h2,h3,h4,h5,h6{
 }
 
 .container-title a {
+  flex-grow: 0
+}
+
+.container-title span {
   flex-grow: 0
 }
 
