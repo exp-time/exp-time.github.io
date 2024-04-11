@@ -277,11 +277,6 @@ h1,h2,h3,h4,h5,h6{
   text-align: center;
 } 
 
-.container-title div {
-  flex-grow: 1;
-  text-align: center;
-}
-
 .w3-card.w3-container {
   min-height:460px;
 }
