@@ -18,7 +18,7 @@
 
 .w3-text-theme {
   color:#000000 !important;
-  font-size:120px;
+  font-size:120px !important;
 }
 .w3-border-theme {border-color:#000000 !important}
 
