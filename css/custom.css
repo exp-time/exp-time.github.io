@@ -129,7 +129,7 @@ p, h2 {margin: 0;}
 }
 
 .modal-header{
-  padding: 80px 162px;
+  padding: 8px 16px;
   font-size:20px !important;
   vertical-align: middle;
 }
@@ -283,7 +283,6 @@ h1,h2,h3,h4,h5,h6{
 
 .w3-card.w3-container {
   min-height:460px;
-
 }
 
 .container-title a {
