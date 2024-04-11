@@ -272,11 +272,17 @@ h1,h2,h3,h4,h5,h6{
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 
-.flex-container .title {
+.title {
   flex-grow: 1;
   text-align: center;
+}
+
+.dummy-button {
+  visibility: hidden; /* Make the dummy element invisible */
+  width: 48px; /* Match this width to the info button's width */
 }
 
 .container-title {
