@@ -66,6 +66,7 @@ p, h2 {margin: 0;}
 }
 .top-corner {
   float:right!important;
+  flex-grow: 0;
 }
 
 .pagination button.active {
@@ -271,8 +272,8 @@ h1,h2,h3,h4,h5,h6{
 }
 
 .w3-card.w3-container {
-  min-height:460px,
-  
+  min-height:460px;
+
 }
 
 .container-title a {
