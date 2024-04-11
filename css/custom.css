@@ -76,6 +76,19 @@ p, h2 {margin: 0;}
   flex-grow: 0;
 }
 
+.footer-container {
+  display: flex;
+  justify-content: space-between; /* Aligns children (left and right) */
+  align-items: center; /* Keeps items vertically aligned */
+  padding: 10px; /* Adds some padding around */
+}
+.footer-container p {
+  margin: 0; /* Removes default paragraph margin */
+}
+.w3-tooltip {
+  position: relative; /* Positioning adjustment if needed */
+}
+
 .pagination button.active {
   color:#fff !important; 
   background-color:#000000 !important
