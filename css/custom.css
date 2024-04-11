@@ -291,9 +291,6 @@ h1,h2,h3,h4,h5,h6{
   flex-grow: 0
 }
 
-.container-title span {
-  flex-grow: 0
-}
 
 .padding-none{
   padding:0px 0px!important;
