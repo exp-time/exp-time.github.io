@@ -128,6 +128,11 @@ p, h2 {margin: 0;}
   width:600px;
 }
 
+.modal-header{
+  padding: 10px 10px;
+  font-size:20px!important
+}
+
 .top-correct {
   padding-top:300px!important;
 }
