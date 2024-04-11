@@ -15,7 +15,11 @@
 .w3-theme-action {color:#fff !important; background-color:#000000 !important}
 
 .w3-theme {color:#fff !important; background-color:#000000 !important}
-.w3-text-theme {color:#000000 !important}
+
+.w3-text-theme {
+  color:#000000 !important;
+  font-size:120px;
+}
 .w3-border-theme {border-color:#000000 !important}
 
 .w3-hover-theme:hover {color:#fff !important; background-color:#414040 !important}
