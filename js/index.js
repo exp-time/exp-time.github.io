@@ -15,9 +15,26 @@ function info_open(id) {
   x.style.display = "block";
 }
 
+// Closing modals
+
 function info_close(id) {
   document.getElementById(id).style.display = "none";
 }
+
+function closeModal(event) {
+  // Check if the click was directly on the modal background
+  if (event.target.classList.contains('w3-modal')) {
+      document.getElementById('about_modal').style.display = 'none';
+  }
+}
+
+// Optional: Enhance the close button functionality to stop event propagation
+var closeButton = document.querySelector('.w3-modal .w3-display-topright');
+closeButton.onclick = function(event) {
+  event.stopPropagation(); // Prevent click from bubbling to the modal background
+  document.getElementById('about_modal').style.display = 'none';
+}
+
 
 function openInNewTab(url) {
   window.open(url, '_blank').focus();
