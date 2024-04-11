@@ -268,18 +268,15 @@ h1,h2,h3,h4,h5,h6{
   user-select:none
 } 
 
-.container-title{
+.container-title {
   padding-top: 0.75%;
   font-size:24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-} 
-
-.container-title p {
   flex-grow: 1;
   text-align: center;
-}
+} 
 
 .container-title div {
   flex-grow: 1;
