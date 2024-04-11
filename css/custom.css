@@ -271,7 +271,7 @@ h1,h2,h3,h4,h5,h6{
 .container-title{
   padding-top: 0.75%;
   font-size:24px;
-  
+  display: flex;
   justify-content: space-between;
   align-items: center;
 } 
@@ -286,8 +286,7 @@ h1,h2,h3,h4,h5,h6{
 }
 
 .container-title a {
-  flex-grow: 0;
-  display: flex;
+  flex-grow: 0
 }
 
 .padding-none{
