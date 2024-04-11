@@ -281,8 +281,8 @@ h1,h2,h3,h4,h5,h6{
 }
 
 .dummy-button {
-  visibility: hidden; /* Make the dummy element invisible */
-  width: 48px; /* Match this width to the info button's width */
+  visibility: hidden; 
+  width: 48px; 
 }
 
 .container-title {
