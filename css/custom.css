@@ -268,23 +268,6 @@ h1,h2,h3,h4,h5,h6{
   user-select:none
 } 
 
-.container-title {
-  padding-top: 0.75%;
-  font-size: 24px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  text-align: center;
-} 
-
-.w3-card.w3-container {
-  min-height:460px;
-}
-
-.container-title a {
-  flex-grow: 0!important;
-}
-
 .flex-container {
   display: flex;
   justify-content: space-between;
@@ -296,6 +279,18 @@ h1,h2,h3,h4,h5,h6{
   text-align: center;
 }
 
+.container-title {
+  padding-top: 0.75%;
+  font-size: 24px;
+} 
+
+.w3-card.w3-container {
+  min-height:460px;
+}
+
+.container-title a {
+  flex-grow: 0!important;
+}
 
 .padding-none{
   padding:0px 0px!important;
