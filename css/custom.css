@@ -279,7 +279,7 @@ h1,h2,h3,h4,h5,h6{
 
 .w3-btn:hover{box-shadow:0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19)}
 
-.w3-btn,.w3-button,.user-select-none,.pagination,.container-title{
+.w3-btn,.w3-button,.title,.user-select-none,.pagination,.container-title{
   -webkit-touch-callout:none;
   -webkit-user-select:none;
   -khtml-user-select:none;
