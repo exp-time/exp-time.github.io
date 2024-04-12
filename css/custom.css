@@ -73,7 +73,6 @@ html,body{font-family:Verdana,sans-serif;font-size:15px;line-height:1.5}html{ove
 .content {
   margin: 20px;
   display: grid;
-  gap: 20px;
 }
 
 p, h2 {margin: 0;}
