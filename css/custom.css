@@ -104,7 +104,7 @@ p, h2 {margin: 0;}
   float:right!important;
   flex-grow: 0;
 }
-
+.w3-dark-grey,.w3-hover-dark-grey:hover,.w3-dark-gray,.w3-hover-dark-gray:hover{color:#fff!important;background-color:#616161!important}
 .footer-container {
   display: flex;
   justify-content: space-between; /* Aligns children (left and right) */
@@ -319,7 +319,7 @@ h1,h2,h3,h4,h5,h6{
   cursor:pointer;
   white-space:nowrap
 }
-
+.w3-tooltip,.w3-display-container{position:relative}.w3-tooltip .w3-text{display:none}.w3-tooltip:hover .w3-text{display:inline-block}
 .w3-btn:hover{box-shadow:0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19)}
 
 .w3-btn,.w3-button,.title,.user-select-none,.pagination,.modal-header,.container-title{
