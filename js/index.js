@@ -151,7 +151,12 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function updateActiveButtonStates() {
-      const pageButtons = paginationContainer.querySelectorAll('button');
+      const pageButtons = paginationContainer.getElementsByTagName('button');
+      if (index === currentPage) {
+        button.classList.add('active');
+      } else {
+        button.classList.remove('active');
+      }
       pageButtons.forEach((button, index) => {
           button.className = (index === currentPage) ? 'active' : '';
       });
