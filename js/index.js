@@ -162,7 +162,7 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log(currentPage)
     pageButtons.forEach((button, index) => {
         console.log("index:", index)
-        button.className = (index === currentPage) ? 'active' : '';
+        button.className = (index + 1 === currentPage) ? 'active' : '';
     });
 }
 
