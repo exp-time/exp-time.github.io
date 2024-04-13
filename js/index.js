@@ -152,7 +152,7 @@ document.addEventListener('DOMContentLoaded', function() {
         pageButton.addEventListener('click', function() {
             currentPage = i;
             showPage(currentPage);
-            updateActiveButtonStates()
+            updateActiveButtonStates();
         });
         paginationContainer.appendChild(pageButton);
     }
