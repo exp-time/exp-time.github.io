@@ -14,6 +14,7 @@ function info_close(id) {
   document.getElementById(id).style.display = "none";
 }
 
+// Close if click outside of modal
 function closeModal(event, id) {
   // Check if the click was directly on the modal background
   if (event.target.classList.contains('w3-modal')) {
@@ -119,7 +120,6 @@ function createCard(id, title, iconClass, content) {
   titleDiv.textContent = title;
   infoIcon.onclick = function() { info_open('first_info'); }; 
   infoIcon.className = 'fa fa-info w3-button top-corner';
-
 
   paragraph.textContent = content;
   selectedIcon.className = iconClass + ' w3-margin-bottom w3-text-theme';

@@ -58,7 +58,7 @@
 </header>
 
 <!-- Modal -->
-<div id="contact_modal" class="w3-modal" onclick="closeModal(event, 'contact_modal')">
+<div id="contact_modal" class="w3-modal" onmousedown="closeModal(event, 'contact_modal')">
     <div class="w3-modal-content w3-card-4 w3-animate-top">
         <header class="w3-theme-l1 modal-header"> 
             <span onclick="info_close('contact_modal')" class="w3-button w3-display-topright">x</span>
@@ -74,7 +74,7 @@
     </div>
 </div>
 
-<div id="about_modal" class="w3-modal" onclick="closeModal(event, 'about_modal')">
+<div id="about_modal" class="w3-modal" onmousedown="closeModal(event, 'about_modal')">
     <div class="w3-modal-content w3-card-4 w3-animate-top">
       <header class="w3-theme-l1 modal-header"> 
         <span onclick="info_close('about_modal')" class="w3-button w3-display-topright">x</span>
@@ -95,7 +95,7 @@
     </div>
 </div>
 
-<div id="unfinished_modal" class="w3-modal top-correct" onclick="closeModal(event, 'unfinished_modal')">
+<div id="unfinished_modal" class="w3-modal top-correct" onmousedown="closeModal(event, 'unfinished_modal')">
     <div class="w3-modal-content w3-card-4 w3-animate-top">
       <header class="w3-theme-l1 modal-header"> 
         <span onclick="info_close('unfinished_modal')" class="w3-button w3-display-topright">x</span>
@@ -186,7 +186,6 @@
 </footer>
 <script>
     includeHTML();
-
     document.addEventListener('DOMContentLoaded', function() {
     cardData.forEach(function(card) {
         createCard(card.id, card.title, card.iconClass, card.content);
