@@ -171,7 +171,6 @@ function includeHTML() {
 
 // Create main content cards
 function createCard(id, info_id, title, iconClass, content, info_Title, info_Content) {
-
   var container = document.querySelector('section');
   if (!container) {
     console.error('Failed to create card: Element with ID "' + id + '" not found.');
