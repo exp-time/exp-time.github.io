@@ -112,7 +112,9 @@
 <article class="content">
     <section>  <!-- Page 1 -->
         <div class="w3-center">
-            <div id="content-area" class="w3-third"></div>
+            <div id="content-area" onload="createCard('content-area', 'API Endpoints',
+            'Custom built, with effortless use. Data-products for seamless integration. Advanced applications and tangible value generation.',
+            'fa-terminal'); " class="w3-third"></div>
             <div class="w3-third">
                 <div class="w3-card w3-container">
                     <div class="w3-row w3-xlarge container-title flex-container">
@@ -262,11 +264,6 @@
     document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('unfinished_modal').style.display='block';
     });
-    document.addEventListener('DOMContentLoaded', function() {
-    createCard('API Endpoints',
-     'Custom built, with effortless use. Data-products for seamless integration. Advanced applications and tangible value generation.',
-     'fa-terminal'); 
-    }); 
 </script>
 </body>
 </html>
