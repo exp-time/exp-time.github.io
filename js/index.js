@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
 // pagination
 document.addEventListener('DOMContentLoaded', function() {
   const container = document.querySelector('content w3-center');
-  const sections = Array.from(content.getElementsByTagName('section'));
+  const sections = Array.from(container.getElementsByTagName('section'));
   let currentPage = 0;
   const paginationContainer = document.createElement('div');
   paginationContainer.className = 'pagination';
