@@ -1,4 +1,4 @@
-function createCard(id, title, content, iconClass) {
+function createCard(id, title, iconClass, content) {
     // Card
     var card = document.createElement('div');
     card.className = 'w3-card w3-container';
