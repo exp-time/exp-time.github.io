@@ -115,7 +115,10 @@ p, h2 {margin: 0;}
   float:right!important;
   flex-grow: 0;
 }
-.w3-dark-grey,.w3-hover-dark-grey:hover,.w3-dark-gray,.w3-hover-dark-gray:hover{color:#fff!important;background-color:#616161!important}
+.w3-dark-grey,.w3-hover-dark-grey:hover,.w3-dark-gray,.w3-hover-dark-gray:hover{
+  color:#fff!important;
+  background-color:#616161!important
+}
 .footer-container {
   display: flex;
   justify-content: space-between; /* Aligns children (left and right) */
