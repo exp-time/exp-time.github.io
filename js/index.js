@@ -157,8 +157,10 @@ function createModal(info_id, info_Title, info_Content) {
 
   var headerP = document.createElement('p');
   headerP.textContent = info_Title;
-
   header.append(headerP, closeButton);
+  
+  var body = document.createElement('div');
+  body.className = 'w3-padding';
 
   var paragraph = document.createElement('p');
   paragraph.textContent = info_Content;
