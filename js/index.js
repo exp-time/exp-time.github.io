@@ -149,6 +149,7 @@ document.addEventListener('DOMContentLoaded', function() {
       console.log(startIndex)
       console.log(endIndex)
       sections.forEach((section, index) => {
+          console.log(index)
           sections.style.display = (index >= startIndex && index < endIndex) ? 'block' : 'none';
       });
   }
