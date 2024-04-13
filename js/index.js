@@ -89,7 +89,7 @@ function openInNewTab(url) {
 }
 // Create main content cards
 function createCard(id, info_id, title, iconClass, content, info_Title, info_Content) {
-  var container = document.querySelector('section');
+  const container = document.querySelector('section');
   if (!container) {
     console.error('Failed to create card: Element with ID "' + id + '" not found.');
     return; // Safety check to ensure the container exists
