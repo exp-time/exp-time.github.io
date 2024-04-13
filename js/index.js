@@ -134,9 +134,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function updateActiveButtonStates() {
     const pageButtons = paginationContainer.querySelectorAll('button');
-    console.log(currentPage)
     pageButtons.forEach((button, index) => {
-        console.log("index:", index)
         button.className = (index === currentPage) ? 'active' : '';
     });
   }
@@ -145,7 +143,11 @@ document.addEventListener('DOMContentLoaded', function() {
     while (paginationContainer.firstChild) {
         paginationContainer.removeChild(paginationContainer.firstChild);
     }
-    const totalPages = Math.ceil(Array.from(sections).length / getCurrentItemsPerPage());
+    const itemsPerPage = getCurrentItemsPerPage();
+    const totalPages = Math.ceil(sections.length / itemsPerPage);
+    if (currentPage >= totalPages) { // Check if the current page is out of range
+        currentPage = Math.max(0, totalPages - 1); // Reset to the last page if out of range
+    }
     for (let i = 0; i < totalPages; i++) {
         const pageButton = document.createElement('button');
         pageButton.textContent = i + 1;
@@ -156,12 +158,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         paginationContainer.appendChild(pageButton);
     }
-    showPage(currentPage); // Refresh view
+    showPage(currentPage); // Refresh view to reflect potentially new currentPage
     updateActiveButtonStates(); // Refresh button states
-}
+  }
 
   window.addEventListener('resize', function() {
-      updatePageButtons(); // Fully handle resizing by updating the buttons
+      updatePageButtons(); // Fully handle resizing by updating the buttons and possibly currentPage
   });
 
   updatePageButtons(); // Initial setup
