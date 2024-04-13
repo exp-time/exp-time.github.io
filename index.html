@@ -18,7 +18,7 @@
 <script defer src="https://pyscript.net/latest/pyscript.js"></script>
 -->
 </head>
-<body onload="initializeCards()">
+<body>
 
 <!-- Side Navigation -->
 <nav class="w3-sidebar w3-bar-block w3-card w3-animate-left w3-center" style="display:none;" id="mySidebar">
@@ -259,12 +259,11 @@
 <script>
     includeHTML();
     
-    function initializeCards() {
-    createCard('API Endpoints', 
+    document.addEventListener('DOMContentLoaded', function() {
+        createCard('API Endpoints', 
                'Custom built, with effortless use. Data-products for seamless integration. Advanced applications and tangible value generation.', 
                'fa fa-terminal'); 
-    }
-
+    }); 
     //  Construction Banner; REMOVE
     document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('unfinished_modal').style.display='block';
