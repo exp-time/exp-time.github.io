@@ -79,7 +79,7 @@ html,body{font-family:Verdana,sans-serif;font-size:15px;line-height:1.5}html{ove
 .w3-margin-left{margin-left:16px!important}.w3-margin-right{margin-right:16px!important}
   
 .content {
-  display: grid;
+  display: block;
 }
 
 p, h2 {margin: 0;}
