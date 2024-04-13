@@ -127,6 +127,8 @@ document.addEventListener('DOMContentLoaded', function() {
       while (paginationContainer.firstChild) {
           paginationContainer.removeChild(paginationContainer.firstChild);
       }
+      console.log(getCurrentItemsPerPage())
+      console.log(sections.length)
       const totalPages = Math.ceil(sections.length / getCurrentItemsPerPage());
       console.log(totalPages)
       for (let i = 0; i < totalPages; i++) {
