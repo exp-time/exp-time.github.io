@@ -165,11 +165,9 @@ p, h2 {margin: 0;}
   cursor:pointer;
 }
 .leftTool{
-  left: 5%;
+  right: 50%;
 }
-.rightTool{
-  right: 40%;
-}
+
 .centerTool{
   left: 50%;
 }
