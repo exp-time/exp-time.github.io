@@ -1,7 +1,7 @@
 
 // pagination
 document.addEventListener('DOMContentLoaded', function() {
-  const container = document.querySelector('section');
+  const container = document.querySelector('content w3-center');
   const sections = Array.from(container.getElementsByTagName('w3-third'));
   let currentPage = 0;
   const paginationContainer = document.createElement('div');
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
       while (paginationContainer.firstChild) {
           paginationContainer.removeChild(paginationContainer.firstChild);
       }
-      const totalPages = Math.ceil(section.length / getCurrentItemsPerPage());
+      const totalPages = Math.ceil(sections.length / getCurrentItemsPerPage());
       for (let i = 0; i < totalPages; i++) {
           const pageButton = document.createElement('button');
           pageButton.textContent = i + 1;
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const startIndex = page * itemsPerPage;
       const endIndex = startIndex + itemsPerPage;
       sections.forEach((section, index) => {
-          section.style.display = (index >= startIndex && index < endIndex) ? 'block' : 'none';
+          sections.style.display = (index >= startIndex && index < endIndex) ? 'block' : 'none';
       });
   }
 
@@ -89,7 +89,7 @@ function openInNewTab(url) {
 }
 // Create main content cards
 function createCard(id, info_id, title, iconClass, content, info_Title, info_Content) {
-  const container = document.querySelector('section');
+  const container = document.querySelector('content w3-center');
   if (!container) {
     console.error('Failed to create card: Element with ID "' + id + '" not found.');
     return; // Safety check to ensure the container exists
