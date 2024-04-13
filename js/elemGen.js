@@ -1,4 +1,4 @@
-function createCard(title, content, iconClass) {
+function createCard(id, title, content, iconClass) {
     // Card
     var card = document.createElement('div');
     card.className = 'w3-card w3-container';
@@ -23,5 +23,5 @@ function createCard(title, content, iconClass) {
 
     row.append(dummyButton, titleDiv, infoIcon);
     card.append(row, selectedIcon, paragraph);
-    document.getElementById("content-area").appendChild(card);
+    document.getElementById(id).appendChild(card);
 }
