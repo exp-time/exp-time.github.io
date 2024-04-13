@@ -67,8 +67,8 @@ const cardData = [
     },
     {
         id: "content-area12",
-        title: "TODO TEST",
+        title: "Tech",
         iconClass: "fa fa-check-square",
-        content: "TODO TEST"
+        content: "D-Wave ocean, WasmCloud, Docker, Xlwings, Anaconda, Cuda-Q"
     },
 ];
