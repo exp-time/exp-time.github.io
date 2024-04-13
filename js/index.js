@@ -102,16 +102,17 @@ function includeHTML() {
 
 // Create main content cards
 function createCard(id, title, iconClass, content) {
-  // Card
+  // Card Vars
   var card = document.createElement('div');
-  card.className = 'w3-card w3-container';
-
-  // Row for title
   var row = document.createElement('div');
   var dummyButton = document.createElement('div');
   var titleDiv = document.createElement('div');
   var infoIcon = document.createElement('a');
+  var paragraph = document.createElement('p');
+  var selectedIcon = document.createElement('i');
 
+  // Content
+  card.className = 'w3-card w3-container';
   row.className = 'w3-row w3-row-padding w3-xlarge container-title flex-container';
   dummyButton.className = 'dummy-button';
   titleDiv.className = "title";
@@ -119,8 +120,7 @@ function createCard(id, title, iconClass, content) {
   infoIcon.onclick = function() { info_open('first_info'); }; 
   infoIcon.className = 'fa fa-info w3-button top-corner';
 
-  var paragraph = document.createElement('p');
-  var selectedIcon = document.createElement('i');
+
   paragraph.textContent = content;
   selectedIcon.className = iconClass + ' w3-margin-bottom w3-text-theme';
 
