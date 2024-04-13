@@ -150,7 +150,6 @@ p, h2 {margin: 0;}
 .w3-tooltip {
   position: relative; 
   font-size:12px;
-  cursor: pointer;
 }
 
 .w3-tooltip .w3-text{
@@ -161,6 +160,9 @@ p, h2 {margin: 0;}
   white-space: nowrap;
   padding: 1px;
   z-index: 100;
+}
+.pointer-cursor{
+  cursor:pointer;
 }
 .leftTool{
   left: 25%;
