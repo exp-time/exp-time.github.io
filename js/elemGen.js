@@ -23,6 +23,5 @@ function createCard(title, content, iconClass) {
 
     row.append(dummyButton, titleDiv, infoIcon);
     card.append(row, selectedIcon, paragraph);
-
     document.getElementById('content-area').appendChild(card);
 }
