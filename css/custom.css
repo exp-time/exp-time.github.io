@@ -139,9 +139,9 @@ p, h2 {margin: 0;}
 }
 .footer-container {
   display: flex;
-  justify-content: space-between; /* Aligns children (left and right) */
-  align-items: center; /* Keeps items vertically aligned */
-  padding: 2em; /* Adds some padding around */
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 2em; 
 }
 .footer-container p {
   margin: 0; /* Removes default paragraph margin */
