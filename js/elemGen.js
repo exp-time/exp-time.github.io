@@ -19,7 +19,7 @@ function createCard(id, title, content, iconClass) {
     var paragraph = document.createElement('p');
     var selectedIcon = document.createElement('i');
     paragraph.textContent = content;
-    selectedIcon.className = iconClass + 'fa w3-margin-bottom w3-text-theme';
+    selectedIcon.className = iconClass + 'w3-margin-bottom w3-text-theme';
 
     row.append(dummyButton, titleDiv, infoIcon);
     card.append(row, selectedIcon, paragraph);
