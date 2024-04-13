@@ -1,30 +1,3 @@
-
-function info_open(id, top) {
-  var x = document.getElementById(id);
-  x.style.fontSize = "20px";
-  if (top) {
-    x.style.paddingTop = "0%";
-  }
-  x.style.display = "block";
-}
-
-// Closing modals
-function info_close(id) {
-  document.getElementById(id).style.display = "none";
-}
-
-// Close if click outside of modal
-function closeModal(event, id) {
-  // Check if the click was directly on the modal background
-  if (event.target.classList.contains('w3-modal')) {
-      document.getElementById(id).style.display = 'none';
-  }
-}
-
-function openInNewTab(url) {
-  window.open(url, '_blank').focus();
-}
-  
 // pagination
 document.addEventListener('DOMContentLoaded', function () {
   const content = document.querySelector('.content');
@@ -53,11 +26,16 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function createPageButtons() {
+    const paginationContainer = document.querySelector('.pagination');
+    if (paginationContainer) {
+      paginationContainer.remove(); // Remove existing paginationContainer to prevent duplicates
+    }
+    const newPaginationContainer = document.createElement('div');
+    newPaginationContainer.className = 'pagination';
+    document.body.appendChild(newPaginationContainer);
+
     const itemsPerPage = getCurrentItemsPerPage();
     const totalPages = Math.ceil(sections.length / itemsPerPage);
-    const paginationContainer = document.createElement('div');
-    paginationContainer.className = 'pagination';
-    document.body.appendChild(paginationContainer);
 
     for (let i = 0; i < totalPages; i++) {
       const pageButton = document.createElement('button');
@@ -66,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
         currentPage = i;
         showPage(currentPage);
       });
-      paginationContainer.appendChild(pageButton);
+      newPaginationContainer.appendChild(pageButton);
     }
     updateActiveButtonStates();
   }
@@ -78,15 +56,44 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  createPageButtons(); // Initial setup
-  showPage(currentPage); // Show initial page
-
-  // Update layout and pagination if window is resized
   window.addEventListener('resize', function() {
-    createPageButtons();
-    showPage(currentPage);
+    createPageButtons(); // Recreate page buttons which also recalculates total pages
+    showPage(currentPage); // Make sure to refresh the displayed page
   });
+
+  createPageButtons(); // Initial setup of page buttons
+  showPage(currentPage); // Show the initial page
 });
+
+
+
+function info_open(id, top) {
+  var x = document.getElementById(id);
+  x.style.fontSize = "20px";
+  if (top) {
+    x.style.paddingTop = "0%";
+  }
+  x.style.display = "block";
+}
+
+// Closing modals
+function info_close(id) {
+  document.getElementById(id).style.display = "none";
+}
+
+// Close if click outside of modal
+function closeModal(event, id) {
+  // Check if the click was directly on the modal background
+  if (event.target.classList.contains('w3-modal')) {
+      document.getElementById(id).style.display = 'none';
+  }
+}
+
+function openInNewTab(url) {
+  window.open(url, '_blank').focus();
+}
+  
+
 
 /*
 // Get html elements from another file
