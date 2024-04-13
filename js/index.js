@@ -91,7 +91,7 @@ function openInNewTab(url) {
 function createCard(id, info_id, title, iconClass, content, info_Title, info_Content) {
   const container = document.querySelector('content');
   if (!container) {
-    console.error('Failed to create card: Element with ID "' + id + '" not found.');
+    console.error('Failed to create card: container not found.');
     return; // Safety check to ensure the container exists
   } 
   // Card Vars
