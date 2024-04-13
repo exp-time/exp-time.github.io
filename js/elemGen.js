@@ -16,21 +16,17 @@ function createCard(title, content, iconClass) {
     infoIcon.onclick = function() { info_open('first_info'); }; 
     infoIcon.className = 'fa fa-info w3-button top-corner';
 
-    row.appendChild(dummyButton);
-    row.appendChild(titleDiv);
-    row.appendChild(infoIcon);
+    row.append(dummyButton, titleDiv, infoIcon);
 
     // Terminal icon
-    var terminalIcon = document.createElement('i');
-    terminalIcon.className = iconClass + 'fa w3-margin-bottom w3-text-theme';
+    var selectedIcon = document.createElement('i');
+    selectedIcon.className = iconClass + 'fa w3-margin-bottom w3-text-theme';
 
     // Paragraphs
     var paragraph = document.createElement('p');
     paragraph.textContent = content;
 
-    card.appendChild(row);
-    card.appendChild(terminalIcon);
-    card.appendChild(paragraph);
+    card.appendChild(row, selectedIcon, paragraph);
 
     // Append container to a predefined area in the HTML
     document.getElementById('w3-third content-area').appendChild(card);
