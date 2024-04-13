@@ -148,11 +148,14 @@ p, h2 {margin: 0;}
 }
 
 .w3-tooltip {
-  position: absolute; 
+  position: relative; 
   font-size:20px;
 
 }
-.w3-tooltip .w3-text{display:none}.w3-tooltip:hover .w3-text{display:inline-block}
+.w3-tooltip .w3-text{display:none}.w3-tooltip:hover .w3-text{
+  display:inline-block;
+  position: absolute;
+}
 
 .pagination {
   text-align: center;
