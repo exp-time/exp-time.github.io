@@ -70,5 +70,5 @@ const cardData = [
         title: "Tech",
         iconClass: "fa fa-check-square",
         content: "D-Wave ocean, WasmCloud, Docker, Xlwings, Anaconda, Cuda-Q"
-    },
+    }
 ];
