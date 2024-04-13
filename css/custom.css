@@ -150,17 +150,26 @@ p, h2 {margin: 0;}
 .w3-tooltip {
   position: relative; 
   font-size:12px;
-
+  cursor: pointer;
 }
+
 .w3-tooltip .w3-text{
   display:none;
   position: absolute;
   bottom: 100%;
-  left: 50%;
   transform: translateX(-50%);
   white-space: nowrap;
   padding: 5px;
   z-index: 100;
+}
+.w3-tooltip .w3-text .leftTool{
+  left: 25%;
+}
+.w3-tooltip .w3-text .rightTool{
+  right: 25%;
+}
+.w3-tooltip .w3-text .centerTool{
+  left: 50%;
 }
 
 .w3-tooltip:hover .w3-text{
