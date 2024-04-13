@@ -18,7 +18,7 @@
 <script defer src="https://pyscript.net/latest/pyscript.js"></script>
 -->
 </head>
-<body>
+<body onload="initializeCards()">
 
 <!-- Side Navigation -->
 <nav class="w3-sidebar w3-bar-block w3-card w3-animate-left w3-center" style="display:none;" id="mySidebar">
@@ -113,7 +113,7 @@
     <section>  <!-- Page 1 -->
         <div class="w3-center">
             <div class="w3-third"> 
-                <div id="content-area" onload="createCard('API Endpoints', 'Custom built, with effortless use. Data-products for seamless integration. Advanced applications and tangible value generation.', 'fa fa-terminal');"></div>
+                <div id="content-area"></div>
             </div>
             <div class="w3-third">
                 <div class="w3-card w3-container">
@@ -264,6 +264,11 @@
     document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('unfinished_modal').style.display='block';
     });
+    function initializeCards() {
+    createCard('API Endpoints', 
+               'Custom built, with effortless use. Data-products for seamless integration. Advanced applications and tangible value generation.', 
+               'fa fa-terminal ');  // Note space after 'terminal' to fix class issue
+    }
 </script>
 </body>
 </html>
