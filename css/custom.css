@@ -84,9 +84,31 @@ html,body{font-family:Verdana,sans-serif;font-size:15px;line-height:1.5}html{ove
 
 p, h2 {margin: 0;}
 
+/*
 .w3-third{
   width: 33.3333% !important;
   padding: 0.5em;
+}
+*/
+/* Assume the base case is the smallest, i.e., mobile-first approach */
+/* Base case: 1 item per row, suitable for narrow screens */
+.w3-third {
+  width: 100% !important; /* Adjust width to full width for small screens */
+  padding: 0.5em;
+}
+
+/* Medium screens: 2 items per row (min-width of 1100px for 550px each) */
+@media (min-width: 1100px) {
+  .w3-third {
+    width: 50% !important;
+  }
+}
+
+/* Large screens: 3 items per row (min-width of 1650px for 550px each) */
+@media (min-width: 1650px) {
+  .w3-third {
+    width: 33.3333% !important;
+  }
 }
 
 .pagination {

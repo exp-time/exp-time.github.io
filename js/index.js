@@ -27,53 +27,68 @@ function openInNewTab(url) {
   
 // pagination
 document.addEventListener('DOMContentLoaded', function () {
-  const content = document.querySelector('.content'); 
-  const itemsPerPage = 1; // set number of items per page
+  const content = document.querySelector('.content');
   let currentPage = 0;
-  const items = Array.from(content.getElementsByTagName('section')).slice(0); // tag name set to section and slice set to 0
+  const sections = Array.from(content.getElementsByTagName('section'));
+
+  function getCurrentItemsPerPage() {
+    const width = window.innerWidth;
+    if (width < 1100) {
+      return 6;  // 6 items when 1 per row
+    } else if (width >= 1100 && width < 1650) {
+      return 4;  // 4 items when 2 per row
+    } else {
+      return 6;  // 6 items when 3 per row
+    }
+  }
 
   function showPage(page) {
+    const itemsPerPage = getCurrentItemsPerPage();
     const startIndex = page * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
-    items.forEach((item, index) => {
-      item.classList.toggle('hidden', index < startIndex || index >= endIndex);
+    sections.forEach((section, index) => {
+      section.style.display = (index >= startIndex && index < endIndex) ? 'block' : 'none';
     });
     updateActiveButtonStates();
   }
 
   function createPageButtons() {
-    const totalPages = Math.ceil(items.length / itemsPerPage);
+    const itemsPerPage = getCurrentItemsPerPage();
+    const totalPages = Math.ceil(sections.length / itemsPerPage);
     const paginationContainer = document.createElement('div');
-    const paginationDiv = document.body.appendChild(paginationContainer);
-    paginationContainer.classList.add('pagination');
-    // Add page buttons
+    paginationContainer.className = 'pagination';
+    document.body.appendChild(paginationContainer);
+
     for (let i = 0; i < totalPages; i++) {
       const pageButton = document.createElement('button');
       pageButton.textContent = i + 1;
-      pageButton.addEventListener('click', () => {
+      pageButton.addEventListener('click', function() {
         currentPage = i;
         showPage(currentPage);
-        updateActiveButtonStates();
       });
-      content.appendChild(paginationContainer);
-      paginationDiv.appendChild(pageButton);
+      paginationContainer.appendChild(pageButton);
     }
+    updateActiveButtonStates();
   }
 
   function updateActiveButtonStates() {
     const pageButtons = document.querySelectorAll('.pagination button');
     pageButtons.forEach((button, index) => {
-      if (index === currentPage) {
-        button.classList.add('active');
-      } else {
-        button.classList.remove('active');
-      }
+      button.className = (index === currentPage) ? 'active' : '';
     });
   }
-  createPageButtons(); // Call this function to create the page buttons initially
-  showPage(currentPage);
+
+  createPageButtons(); // Initial setup
+  showPage(currentPage); // Show initial page
+
+  // Update layout and pagination if window is resized
+  window.addEventListener('resize', function() {
+    createPageButtons();
+    showPage(currentPage);
+  });
 });
 
+/*
 // Get html elements from another file
 function includeHTML() {
   var z, i, elmnt, file, xhttp;
@@ -82,13 +97,13 @@ function includeHTML() {
     elmnt = z[i];
     file = elmnt.getAttribute("w3-include-html");
     if (file) {
-      /* Make an HTTP request using the attribute value as the file name: */
+      // Make an HTTP request using the attribute value as the file name:
       xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function() {
         if (this.readyState == 4) {
           if (this.status == 200) {elmnt.innerHTML = this.responseText;}
           if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
-          /* Remove the attribute, and call this function once more: */
+          // Remove the attribute, and call this function once more: 
           elmnt.removeAttribute("w3-include-html");
           includeHTML();
         }
@@ -99,6 +114,7 @@ function includeHTML() {
     }
   }
 }
+*/
 
 // Create main content cards
 function createCard(id, info_id, title, iconClass, content, info_Title, info_Content) {
@@ -158,7 +174,7 @@ function createModal(info_id, info_Title, info_Content) {
   var headerP = document.createElement('p');
   headerP.textContent = info_Title;
   header.append(headerP, closeButton);
-  
+
   var body = document.createElement('div');
   body.className = 'w3-padding';
 
