@@ -145,6 +145,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const itemsPerPage = getCurrentItemsPerPage();
       const startIndex = page * itemsPerPage;
       const endIndex = startIndex + itemsPerPage;
+      console.log(sections)
       sections.forEach((section, index) => {
           sections.style.display = (index >= startIndex && index < endIndex) ? 'block' : 'none';
       });
