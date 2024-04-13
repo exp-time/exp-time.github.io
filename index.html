@@ -47,16 +47,6 @@
     <div class="w3-bar-item w3-button" onclick="openInNewTab('');info_close('myDocs')">Docs ex. (5) (TODO)</div>
 </nav>
 
-<!-- Header -->
-<header class="w3-container w3-theme w3-padding user-select-none" id="myHeader">
-  <i onclick="info_open('mySidebar')" class="fa fa-github w3-xxxlarge w3-button w3-theme"></i> 
-  <i onclick="info_open('myDocs')" class="fa fa-file-text w3-xxxlarge w3-button w3-theme"></i> 
-  <div class="w3-center">
-    <div class="main-title w3-animate-bottom ">eᵗᶦᵐᵉ Solutions</div>
-    <div class="sub-title w3-animate-bottom-slow">Tomorrow's advantage</div>
-  </div>
-</header>
-
 <!-- Modal -->
 <div id="contact_modal" class="w3-modal" onmousedown="closeModal(event, 'contact_modal')">
     <div class="w3-modal-content w3-card-4 w3-animate-top">
@@ -108,12 +98,21 @@
     </div>
 </div>
 
-<!-- Main containers -->
-<article class="content w3-center">
-    
-</article>
+<!-- Header -->
+<header class="w3-container w3-theme w3-padding user-select-none downShadow" id="myHeader">
+    <i onclick="info_open('mySidebar')" class="fa fa-github w3-xxxlarge w3-button w3-theme"></i> 
+    <i onclick="info_open('myDocs')" class="fa fa-file-text w3-xxxlarge w3-button w3-theme"></i> 
+    <div class="w3-center">
+      <div class="main-title w3-animate-bottom ">eᵗᶦᵐᵉ Solutions</div>
+      <div class="sub-title w3-animate-bottom-slow">Tomorrow's advantage</div>
+    </div>
+  </header>
 
-<footer class="w3-container w3-theme-dark user-select-none">
+<!-- Main containers -->
+<article class="content w3-center"></article>
+
+<!-- Footer -->
+<footer class="w3-container w3-theme-dark user-select-none upShadow">
     <div class="w3-center">
         <div class="w3-padding-32">
             <button class="w3-btn w3-xlarge w3-dark-grey w3-hover-light-grey font-900" onclick="info_open('contact_modal')">Contact</button>
@@ -137,6 +136,8 @@
         </div>
     </div>
 </footer>
+
+<!-- REMOVE -->
 <script>
     //  Construction Banner; REMOVE
     document.addEventListener('DOMContentLoaded', function() {
