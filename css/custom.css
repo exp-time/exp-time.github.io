@@ -129,6 +129,8 @@ p, h2 {margin: 0;}
   cursor: pointer;
   border-radius: 1px;
   border: none;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
 }
 
 .hidden {
