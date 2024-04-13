@@ -24,5 +24,5 @@ function createCard(title, content, iconClass) {
     row.append(dummyButton, titleDiv, infoIcon);
     card.append(row, selectedIcon, paragraph);
 
-    document.getElementById('w3-third content-area').appendChild(card);
+    document.getElementById('content-area').appendChild(card);
 }
