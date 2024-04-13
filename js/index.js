@@ -1,7 +1,7 @@
 
 // pagination
 document.addEventListener('DOMContentLoaded', function() {
-  const container = document.querySelector('content');
+  const container = document.querySelector('.content');
   const sections = Array.from(container.getElementsByTagName('w3-third'));
   let currentPage = 0;
   const paginationContainer = document.createElement('div');
@@ -89,7 +89,7 @@ function openInNewTab(url) {
 }
 // Create main content cards
 function createCard(id, info_id, title, iconClass, content, info_Title, info_Content) {
-  const container = document.querySelector('content');
+  const container = document.querySelector('.content');
   if (!container) {
     console.error('Failed to create card: container not found.');
     return; // Safety check to ensure the container exists
