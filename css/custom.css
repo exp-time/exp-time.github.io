@@ -159,7 +159,7 @@ p, h2 {margin: 0;}
   bottom: 100%;
   transform: translateX(-50%);
   white-space: nowrap;
-  padding: 5px;
+  padding: 1px;
   z-index: 100;
 }
 .w3-tooltip .w3-text .leftTool{
