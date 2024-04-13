@@ -1,68 +1,86 @@
+/*
+function createPageButtons() {
+  const totalPages = Math.ceil(items.length / itemsPerPage);
+  const paginationContainer = document.createElement('div');
+  const paginationDiv = document.body.appendChild(paginationContainer);
+  paginationContainer.classList.add('pagination');
+  // Add page buttons
+  for (let i = 0; i < totalPages; i++) {
+    const pageButton = document.createElement('button');
+    pageButton.textContent = i + 1;
+    pageButton.addEventListener('click', () => {
+      currentPage = i;
+      showPage(currentPage);
+      updateActiveButtonStates();
+    });
+    content.appendChild(paginationContainer);
+    paginationDiv.appendChild(pageButton);
+  }
+}
+*/
+
 // pagination
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function() {
   const content = document.querySelector('.content');
   let currentPage = 0;
   const sections = Array.from(content.getElementsByTagName('section'));
 
+  const paginationContainer = document.createElement('div');
+  paginationContainer.className = 'pagination';
+  document.body.appendChild(paginationContainer); // Append once to the body
+
   function getCurrentItemsPerPage() {
-    const width = window.innerWidth;
-    if (width < 1100) {
-      return 6;  // 6 items when 1 per row
-    } else if (width >= 1100 && width < 1650) {
-      return 4;  // 4 items when 2 per row
-    } else {
-      return 6;  // 6 items when 3 per row
-    }
+      const width = window.innerWidth;
+      if (width < 1100) {
+          return 6; // 6 items when 1 per row
+      } else if (width >= 1100 && width < 1650) {
+          return 4; // 4 items when 2 per row
+      } else {
+          return 6; // 6 items when 3 per row
+      }
+  }
+
+  function updatePageButtons() {
+      while (paginationContainer.firstChild) {
+          paginationContainer.removeChild(paginationContainer.firstChild);
+      }
+      const itemsPerPage = getCurrentItemsPerPage();
+      const totalPages = Math.ceil(sections.length / itemsPerPage);
+      
+      for (let i = 0; i < totalPages; i++) {
+          const pageButton = document.createElement('button');
+          pageButton.textContent = i + 1;
+          pageButton.addEventListener('click', function() {
+              currentPage = i;
+              showPage(currentPage);
+          });
+          paginationContainer.appendChild(pageButton);
+      }
+      showPage(currentPage); // Refresh view
+      updateActiveButtonStates(); // Refresh button states
   }
 
   function showPage(page) {
-    const itemsPerPage = getCurrentItemsPerPage();
-    const startIndex = page * itemsPerPage;
-    const endIndex = startIndex + itemsPerPage;
-    sections.forEach((section, index) => {
-      section.style.display = (index >= startIndex && index < endIndex) ? 'block' : 'none';
-    });
-    updateActiveButtonStates();
-  }
-
-  function createPageButtons() {
-    const paginationContainer = document.querySelector('.pagination');
-    if (paginationContainer) {
-      paginationContainer.remove(); // Remove existing paginationContainer to prevent duplicates
-    }
-    const newPaginationContainer = document.createElement('div');
-    newPaginationContainer.className = 'pagination';
-    document.body.appendChild(newPaginationContainer);
-
-    const itemsPerPage = getCurrentItemsPerPage();
-    const totalPages = Math.ceil(sections.length / itemsPerPage);
-
-    for (let i = 0; i < totalPages; i++) {
-      const pageButton = document.createElement('button');
-      pageButton.textContent = i + 1;
-      pageButton.addEventListener('click', function() {
-        currentPage = i;
-        showPage(currentPage);
+      const itemsPerPage = getCurrentItemsPerPage();
+      const startIndex = page * itemsPerPage;
+      const endIndex = startIndex + itemsPerPage;
+      sections.forEach((section, index) => {
+          section.style.display = (index >= startIndex && index < endIndex) ? 'block' : 'none';
       });
-      newPaginationContainer.appendChild(pageButton);
-    }
-    updateActiveButtonStates();
   }
 
   function updateActiveButtonStates() {
-    const pageButtons = document.querySelectorAll('.pagination button');
-    pageButtons.forEach((button, index) => {
-      button.className = (index === currentPage) ? 'active' : '';
-    });
+      const pageButtons = paginationContainer.querySelectorAll('button');
+      pageButtons.forEach((button, index) => {
+          button.className = (index === currentPage) ? 'active' : '';
+      });
   }
 
   window.addEventListener('resize', function() {
-    createPageButtons(); // Recreate page buttons which also recalculates total pages
-    showPage(currentPage); // Make sure to refresh the displayed page
+      updatePageButtons(); // Fully handle resizing by updating the buttons
   });
 
-  createPageButtons(); // Initial setup of page buttons
-  showPage(currentPage); // Show the initial page
+  updatePageButtons(); // Initial setup
 });
 
 
