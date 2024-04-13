@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // pagination
 document.addEventListener('DOMContentLoaded', function() {
   const container = document.querySelector('.content');
-  const sections = Array.from(container.querySelectorAll('.w3-third'));
+  const sections = container.querySelectorAll('.w3-third');
   let currentPage = 0;
   const paginationContainer = document.createElement('div');
   paginationContainer.className = 'pagination';
@@ -127,10 +127,7 @@ document.addEventListener('DOMContentLoaded', function() {
       while (paginationContainer.firstChild) {
           paginationContainer.removeChild(paginationContainer.firstChild);
       }
-      console.log(getCurrentItemsPerPage())
-      console.log(sections.length)
-      const totalPages = Math.ceil(sections.length / getCurrentItemsPerPage());
-      console.log(totalPages)
+      const totalPages = Math.ceil(Array.from(sections).length / getCurrentItemsPerPage());
       for (let i = 0; i < totalPages; i++) {
           const pageButton = document.createElement('button');
           pageButton.textContent = i + 1;
