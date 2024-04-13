@@ -1,30 +1,59 @@
 /*
-function createPageButtons() {
-  const totalPages = Math.ceil(items.length / itemsPerPage);
-  const paginationContainer = document.createElement('div');
-  const paginationDiv = document.body.appendChild(paginationContainer);
-  paginationContainer.classList.add('pagination');
-  // Add page buttons
-  for (let i = 0; i < totalPages; i++) {
-    const pageButton = document.createElement('button');
-    pageButton.textContent = i + 1;
-    pageButton.addEventListener('click', () => {
-      currentPage = i;
-      showPage(currentPage);
-      updateActiveButtonStates();
+document.addEventListener('DOMContentLoaded', function () {
+  const content = document.querySelector('.content'); 
+  const itemsPerPage = 1; 
+  let currentPage = 0;
+  const items = Array.from(content.getElementsByTagName('section')).slice(0); // tag name set to section and slice set to 0
+
+  function showPage(page) {
+    const startIndex = page * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    items.forEach((item, index) => {
+      item.classList.toggle('hidden', index < startIndex || index >= endIndex);
     });
-    content.appendChild(paginationContainer);
-    paginationDiv.appendChild(pageButton);
+    updateActiveButtonStates();
   }
-}
-*/
+
+  function createPageButtons() {
+    const totalPages = Math.ceil(items.length / itemsPerPage);
+    const paginationContainer = document.createElement('div');
+    const paginationDiv = document.body.appendChild(paginationContainer);
+    paginationContainer.classList.add('pagination');
+    // Add page buttons
+    for (let i = 0; i < totalPages; i++) {
+      const pageButton = document.createElement('button');
+      pageButton.textContent = i + 1;
+      pageButton.addEventListener('click', () => {
+        currentPage = i;
+        showPage(currentPage);
+        updateActiveButtonStates();
+      });
+      content.appendChild(paginationContainer);
+      paginationDiv.appendChild(pageButton);
+    }
+  }
+
+  function updateActiveButtonStates() {
+    const pageButtons = document.querySelectorAll('.pagination button');
+    pageButtons.forEach((button, index) => {
+      if (index === currentPage) {
+        button.classList.add('active');
+      } else {
+        button.classList.remove('active');
+      }
+    });
+  }
+  createPageButtons(); // Call this function to create the page buttons initially
+  showPage(currentPage);
+});
+
 
 // pagination
 document.addEventListener('DOMContentLoaded', function() {
   const content = document.querySelector('.content');
-  let currentPage = 0;
-  const sections = Array.from(content.getElementsByTagName('section'));
+  const section = Array.from(content.getElementsByTagName('section'));
 
+  let currentPage = 0;
   const paginationContainer = document.createElement('div');
   paginationContainer.className = 'pagination';
   document.body.appendChild(paginationContainer); // Append once to the body
@@ -32,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
   function getCurrentItemsPerPage() {
       const width = window.innerWidth;
       if (width < 1100) {
-          return 6; // 6 items when 1 per row
+          return 2; // 2 items when 1 per row
       } else if (width >= 1100 && width < 1650) {
           return 4; // 4 items when 2 per row
       } else {
@@ -44,8 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
       while (paginationContainer.firstChild) {
           paginationContainer.removeChild(paginationContainer.firstChild);
       }
-      const itemsPerPage = getCurrentItemsPerPage();
-      const totalPages = Math.ceil(sections.length / itemsPerPage);
+      const totalPages = cardData.length / getCurrentItemsPerPage();
       
       for (let i = 0; i < totalPages; i++) {
           const pageButton = document.createElement('button');
@@ -82,7 +110,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   updatePageButtons(); // Initial setup
 });
-
+*/
 
 
 function info_open(id, top) {
@@ -143,7 +171,9 @@ function includeHTML() {
 
 // Create main content cards
 function createCard(id, info_id, title, iconClass, content, info_Title, info_Content) {
-  var container = document.getElementById(id);
+  const content = document.querySelector('.content');
+  const section = Array.from(content.getElementsByTagName('section'));
+  var container = section.getElementById(id);
   if (!container) {
     console.error('Failed to create card: Element with ID "' + id + '" not found.');
     return; // Safety check to ensure the container exists
@@ -159,7 +189,7 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
   var selectedIcon = document.createElement('i');
 
   // Content
-  card.className = 'w3-card w3-container';
+  card.className = 'w3-third w3-card w3-container';
   row.className = 'w3-row w3-row-padding w3-xlarge container-title flex-container';
   dummyButton.className = 'dummy-button';
   titleDiv.className = "title";
@@ -175,7 +205,6 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
   row.append(dummyButton, titleDiv, infoIcon);
   card.append(row, selectedIcon, paragraph);
   container.appendChild(card);
-  
 }
 
 // Info Popup modals
