@@ -103,6 +103,7 @@ document.addEventListener('DOMContentLoaded', function() {
       createCard(contentId, infoId, card.title, card.iconClass, card.content, card.info_Title, card.info_Content);
   });
 });
+
 // pagination
 document.addEventListener('DOMContentLoaded', function() {
   const container = document.querySelector('.content');
@@ -115,11 +116,11 @@ document.addEventListener('DOMContentLoaded', function() {
   function getCurrentItemsPerPage() {
       const width = window.innerWidth;
       if (width < 1100) {
-          return 2; // 2 items when 1 per row
+          return 2;
       } else if (width >= 1100 && width < 1650) {
-          return 4; // 4 items when 2 per row
+          return 4;
       } else {
-          return 6; // 6 items when 3 per row
+          return 6;
       }
   }
 
@@ -145,8 +146,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     const itemsPerPage = getCurrentItemsPerPage();
     const totalPages = Math.ceil(sections.length / itemsPerPage);
-    if (currentPage >= totalPages) { // Check if the current page is out of range
-        currentPage = Math.max(0, totalPages - 1); // Reset to the last page if out of range
+    if (currentPage >= totalPages) {                // Check if the current page is out of range
+        currentPage = Math.max(0, totalPages - 1);  // Reset to the last page if out of range
     }
     for (let i = 0; i < totalPages; i++) {
         const pageButton = document.createElement('button');
@@ -158,13 +159,13 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         paginationContainer.appendChild(pageButton);
     }
-    showPage(currentPage); // Refresh view to reflect potentially new currentPage
-    updateActiveButtonStates(); // Refresh button states
+    showPage(currentPage);                          // Refresh view to reflect potentially new currentPage
+    updateActiveButtonStates();                     // Refresh button states
   }
 
   window.addEventListener('resize', function() {
-      updatePageButtons(); // Fully handle resizing by updating the buttons and possibly currentPage
+      updatePageButtons();                          // Fully handle resizing by updating the buttons and possibly currentPage
   });
 
-  updatePageButtons(); // Initial setup
+  updatePageButtons();
 });
