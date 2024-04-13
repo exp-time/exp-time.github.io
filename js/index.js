@@ -164,7 +164,7 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log("index:", index)
         button.className = (index + 1 === currentPage) ? 'active' : '';
     });
-}
+  }
 
   window.addEventListener('resize', function() {
       updatePageButtons(); // Fully handle resizing by updating the buttons
