@@ -133,15 +133,6 @@
 </div>
 </footer>
 <script>
-    //includeHTML();
-    document.addEventListener('DOMContentLoaded', function() {
-        cardData.forEach(function(card, index) {
-            const contentId = `content-area${index + 1}`;
-            const infoId = `info${index + 1}`;
-            createCard(contentId, infoId, card.title, card.iconClass, card.content, card.info_Title, card.info_Content);
-        });
-    });
-    
     //  Construction Banner; REMOVE
     document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('unfinished_modal').style.display='block';

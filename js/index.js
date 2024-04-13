@@ -47,16 +47,15 @@ document.addEventListener('DOMContentLoaded', function () {
   showPage(currentPage);
 });
 
-
+*/
 // pagination
 document.addEventListener('DOMContentLoaded', function() {
-  const content = document.querySelector('.content');
-  const section = Array.from(content.getElementsByTagName('section'));
-
+  const container = document.querySelector('content w3-center');
+  const sections = Array.from(content.getElementsByTagName('section'));
   let currentPage = 0;
   const paginationContainer = document.createElement('div');
   paginationContainer.className = 'pagination';
-  document.body.appendChild(paginationContainer); // Append once to the body
+  container.appendChild(paginationContainer); 
 
   function getCurrentItemsPerPage() {
       const width = window.innerWidth;
@@ -73,8 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
       while (paginationContainer.firstChild) {
           paginationContainer.removeChild(paginationContainer.firstChild);
       }
-      const totalPages = cardData.length / getCurrentItemsPerPage();
-      
+      const totalPages = Math.ceil(section.length / getCurrentItemsPerPage());
       for (let i = 0; i < totalPages; i++) {
           const pageButton = document.createElement('button');
           pageButton.textContent = i + 1;
@@ -110,7 +108,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   updatePageButtons(); // Initial setup
 });
-*/
+
 
 
 function info_open(id, top) {
@@ -138,37 +136,6 @@ function closeModal(event, id) {
 function openInNewTab(url) {
   window.open(url, '_blank').focus();
 }
-  
-
-
-/*
-// Get html elements from another file
-function includeHTML() {
-  var z, i, elmnt, file, xhttp;
-  z = document.getElementsByTagName("*");
-  for (i = 0; i < z.length; i++) {
-    elmnt = z[i];
-    file = elmnt.getAttribute("w3-include-html");
-    if (file) {
-      // Make an HTTP request using the attribute value as the file name:
-      xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function() {
-        if (this.readyState == 4) {
-          if (this.status == 200) {elmnt.innerHTML = this.responseText;}
-          if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
-          // Remove the attribute, and call this function once more: 
-          elmnt.removeAttribute("w3-include-html");
-          includeHTML();
-        }
-      }
-      xhttp.open("GET", file, true);
-      xhttp.send();
-      return;
-    }
-  }
-}
-*/
-
 // Create main content cards
 function createCard(id, info_id, title, iconClass, content, info_Title, info_Content) {
   var container = document.querySelector('section');
@@ -176,7 +143,6 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
     console.error('Failed to create card: Element with ID "' + id + '" not found.');
     return; // Safety check to ensure the container exists
   } 
-
   // Card Vars
   var third = document.createElement('div');
   var card = document.createElement('div');
@@ -241,3 +207,11 @@ function createModal(info_id, info_Title, info_Content) {
   modal.appendChild(modalContent);
   document.body.appendChild(modal);
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+  cardData.forEach(function(card, index) {
+      const contentId = `content-area${index + 1}`;
+      const infoId = `info${index + 1}`;
+      createCard(contentId, infoId, card.title, card.iconClass, card.content, card.info_Title, card.info_Content);
+  });
+});
