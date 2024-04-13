@@ -141,7 +141,7 @@ p, h2 {margin: 0;}
   display: flex;
   justify-content: space-between; /* Aligns children (left and right) */
   align-items: center; /* Keeps items vertically aligned */
-  padding: 10px; /* Adds some padding around */
+  padding: 2em; /* Adds some padding around */
 }
 .footer-container p {
   margin: 0; /* Removes default paragraph margin */
