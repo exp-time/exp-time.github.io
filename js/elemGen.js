@@ -26,7 +26,7 @@ function createCard(title, content, iconClass) {
     var paragraph = document.createElement('p');
     paragraph.textContent = content;
 
-    card.appendChild(row, selectedIcon, paragraph);
+    card.append(row, selectedIcon, paragraph);
 
     // Append container to a predefined area in the HTML
     document.getElementById('w3-third content-area').appendChild(card);
