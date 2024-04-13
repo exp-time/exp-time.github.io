@@ -27,7 +27,7 @@ function createCard(title, content, iconClass) {
     terminalIcon.className = iconClass + 'fa w3-margin-bottom w3-text-theme';
 
     // Paragraphs
-    var paragraph1 = document.createElement('p');
+    var paragraph = document.createElement('p');
     paragraph.textContent = content;
 
     card.appendChild(row);
