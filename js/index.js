@@ -149,17 +149,24 @@ document.addEventListener('DOMContentLoaded', function() {
           section.style.display = (index >= startIndex && index < endIndex) ? 'block' : 'none';
       });
   }
-
+  /*
   function updateActiveButtonStates() {
       const pageButtons = Array.from(paginationContainer.getElementsByTagName('button'));
       pageButtons.forEach((button, index) => {
           button.className = (index === currentPage) ? 'active' : '';
       });
   }
+  */
+  function updateActiveButtonStates() {
+    const pageButtons = paginationContainer.querySelectorAll('button');
+    pageButtons.forEach((button, index) => {
+        button.className = (index === currentPage) ? 'active' : '';
+    });
+}
 
   window.addEventListener('resize', function() {
       updatePageButtons(); // Fully handle resizing by updating the buttons
   });
-  
+
   updatePageButtons(); // Initial setup
 });
