@@ -178,6 +178,7 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
   } 
 
   // Card Vars
+  var third = document.createElement('div');
   var card = document.createElement('div');
   var row = document.createElement('div');
   var dummyButton = document.createElement('div');
@@ -187,7 +188,8 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
   var selectedIcon = document.createElement('i');
 
   // Content
-  card.className = 'w3-third w3-card w3-container';
+  third.className = 'w3-third';
+  card.className = 'w3-card w3-container';
   row.className = 'w3-row w3-row-padding w3-xlarge container-title flex-container';
   dummyButton.className = 'dummy-button';
   titleDiv.className = "title";
@@ -202,7 +204,8 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
   infoIcon.onclick = function() { info_open(info_id); }; 
   row.append(dummyButton, titleDiv, infoIcon);
   card.append(row, selectedIcon, paragraph);
-  container.appendChild(card);
+  third.appendChild(card)
+  container.appendChild(third);
 }
 
 // Info Popup modals
