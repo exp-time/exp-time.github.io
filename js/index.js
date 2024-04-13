@@ -9,7 +9,6 @@ function info_open(id, top) {
 }
 
 // Closing modals
-
 function info_close(id) {
   document.getElementById(id).style.display = "none";
 }
@@ -102,7 +101,13 @@ function includeHTML() {
 }
 
 // Create main content cards
-function createCard(id, title, iconClass, content) {
+function createCard(id, info_id, title, iconClass, content, info_Title, info_Content) {
+  var container = document.getElementById(id);
+  if (!container) {
+    console.error('Failed to create card: Element with ID "' + id + '" not found.');
+    return; // Safety check to ensure the container exists
+  } 
+
   // Card Vars
   var card = document.createElement('div');
   var row = document.createElement('div');
@@ -118,19 +123,48 @@ function createCard(id, title, iconClass, content) {
   dummyButton.className = 'dummy-button';
   titleDiv.className = "title";
   titleDiv.textContent = title;
-  infoIcon.onclick = function() { info_open('first_info'); }; 
   infoIcon.className = 'fa fa-info w3-button top-corner';
 
   paragraph.textContent = content;
   selectedIcon.className = iconClass + ' w3-margin-bottom w3-text-theme';
 
+  createModal(info_id, info_Title, info_Content)
+
+  infoIcon.onclick = function() { info_open(info_id); }; 
   row.append(dummyButton, titleDiv, infoIcon);
   card.append(row, selectedIcon, paragraph);
+  container.appendChild(card);
   
-  var container = document.getElementById(id);
-    if (container) {
-        container.appendChild(card);
-    } else {
-        console.error('Failed to create card: Element with ID "' + id + '" not found.');
-    }
+}
+
+// Info Popup modals
+function createModal(info_id, info_Title, info_Content) {
+  var modal = document.createElement('div');
+  modal.setAttribute('id', info_id);
+  modal.className = 'w3-modal';
+  modal.setAttribute('onmousedown', 'closeModal(event, "' + info_id + '")');
+
+  var modalContent = document.createElement('div');
+  modalContent.className = 'w3-modal-content w3-card-4 w3-animate-top';
+
+  var header = document.createElement('header');
+  header.className = 'w3-theme-l1 modal-header';
+  
+  var closeButton = document.createElement('span');
+  closeButton.className = 'w3-button w3-display-topright';
+  closeButton.setAttribute('onclick', 'info_close("' + info_id + '")');
+  closeButton.textContent = 'x';
+
+  var headerP = document.createElement('p');
+  headerP.textContent = info_Title;
+
+  header.append(headerP, closeButton);
+
+  var paragraph = document.createElement('p');
+  paragraph.textContent = info_Content;
+
+  body.appendChild(paragraph);
+  modalContent.append(header, body);
+  modal.appendChild(modalContent);
+  document.body.appendChild(modal);
 }

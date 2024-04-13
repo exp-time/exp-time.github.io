@@ -185,11 +185,11 @@
 </div>
 </footer>
 <script>
-    includeHTML();
-    
+    //includeHTML();
+
     document.addEventListener('DOMContentLoaded', function() {
         cardData.forEach(function(card) {
-            createCard(card.id, card.title, card.iconClass, card.content);
+            createCard(card.id, card.info_id, card.title, card.iconClass, card.content, card.info_Title, card.info_Content);
         });
     });
     
