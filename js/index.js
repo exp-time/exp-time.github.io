@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', function() {
   let currentPage = 0;
   const paginationContainer = document.createElement('div');
   paginationContainer.className = 'pagination';
-  container.appendChild(paginationContainer); 
+  container.appendChild(paginationContainer);
 
   function getCurrentItemsPerPage() {
       const width = window.innerWidth;
@@ -128,6 +128,7 @@ document.addEventListener('DOMContentLoaded', function() {
           paginationContainer.removeChild(paginationContainer.firstChild);
       }
       const totalPages = Math.ceil(sections.length / getCurrentItemsPerPage());
+      console.log(totalPages)
       for (let i = 0; i < totalPages; i++) {
           const pageButton = document.createElement('button');
           pageButton.textContent = i + 1;
@@ -160,6 +161,8 @@ document.addEventListener('DOMContentLoaded', function() {
   window.addEventListener('resize', function() {
       updatePageButtons(); // Fully handle resizing by updating the buttons
   });
-
+  
   updatePageButtons(); // Initial setup
+
+  
 });
