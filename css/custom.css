@@ -152,7 +152,7 @@ p, h2 {margin: 0;}
   font-size:12px;
 }
 .w3-tooltip .w3-text{display:none}.w3-tooltip:hover .w3-text{
-  display:flex;
+  display:relative;
   position: absolute;
 }
 
