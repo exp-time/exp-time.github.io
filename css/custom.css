@@ -162,13 +162,13 @@ p, h2 {margin: 0;}
   padding: 1px;
   z-index: 100;
 }
-.w3-tooltip .w3-text .leftTool{
+.leftTool{
   left: 25%;
 }
-.w3-tooltip .w3-text .rightTool{
+.rightTool{
   right: 25%;
 }
-.w3-tooltip .w3-text .centerTool{
+.centerTool{
   left: 50%;
 }
 
