@@ -164,8 +164,7 @@ p, h2 {margin: 0;}
 }
 
 .w3-tooltip:hover .w3-text{
-  display:inline-block;
-  position: relative;
+  display:block;
 }
 
 .pagination {
