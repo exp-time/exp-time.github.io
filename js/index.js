@@ -123,24 +123,6 @@ document.addEventListener('DOMContentLoaded', function() {
       }
   }
 
-  function updatePageButtons() {
-      while (paginationContainer.firstChild) {
-          paginationContainer.removeChild(paginationContainer.firstChild);
-      }
-      const totalPages = Math.ceil(Array.from(sections).length / getCurrentItemsPerPage());
-      for (let i = 0; i < totalPages; i++) {
-          const pageButton = document.createElement('button');
-          pageButton.textContent = i + 1;
-          pageButton.addEventListener('click', function() {
-              currentPage = i;
-              showPage(currentPage);
-          });
-          paginationContainer.appendChild(pageButton);
-      }
-      showPage(currentPage); // Refresh view
-      updateActiveButtonStates(); // Refresh button states
-  }
-
   function showPage(page) {
       const itemsPerPage = getCurrentItemsPerPage();
       const startIndex = page * itemsPerPage;
@@ -149,14 +131,7 @@ document.addEventListener('DOMContentLoaded', function() {
           section.style.display = (index >= startIndex && index < endIndex) ? 'block' : 'none';
       });
   }
-  /*
-  function updateActiveButtonStates() {
-      const pageButtons = Array.from(paginationContainer.getElementsByTagName('button'));
-      pageButtons.forEach((button, index) => {
-          button.className = (index === currentPage) ? 'active' : '';
-      });
-  }
-  */
+
   function updateActiveButtonStates() {
     const pageButtons = paginationContainer.querySelectorAll('button');
     console.log(currentPage)
@@ -165,6 +140,24 @@ document.addEventListener('DOMContentLoaded', function() {
         button.className = (index + 1 === currentPage) ? 'active' : '';
     });
   }
+
+  function updatePageButtons() {
+    while (paginationContainer.firstChild) {
+        paginationContainer.removeChild(paginationContainer.firstChild);
+    }
+    const totalPages = Math.ceil(Array.from(sections).length / getCurrentItemsPerPage());
+    for (let i = 0; i < totalPages; i++) {
+        const pageButton = document.createElement('button');
+        pageButton.textContent = i + 1;
+        pageButton.addEventListener('click', function() {
+            currentPage = i;
+            showPage(currentPage);
+        });
+        paginationContainer.appendChild(pageButton);
+    }
+    showPage(currentPage); // Refresh view
+    updateActiveButtonStates(); // Refresh button states
+}
 
   window.addEventListener('resize', function() {
       updatePageButtons(); // Fully handle resizing by updating the buttons
