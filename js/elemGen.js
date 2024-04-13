@@ -11,7 +11,7 @@ function createCard(title, content, iconClass) {
 
     row.className = 'w3-row w3-row-padding w3-xlarge container-title flex-container';
     dummyButton.className = 'dummy-button';
-    titleDiv.className = title;
+    titleDiv.className = "title";
     titleDiv.textContent = 'API Endpoints';
     infoIcon.onclick = function() { info_open('first_info'); }; 
     infoIcon.className = 'fa fa-info w3-button top-corner';
