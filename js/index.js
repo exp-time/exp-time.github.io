@@ -1,67 +1,4 @@
 
-// pagination
-document.addEventListener('DOMContentLoaded', function() {
-  const container = document.querySelector('.content');
-  const sections = Array.from(container.getElementsByTagName('w3-third'));
-  let currentPage = 0;
-  const paginationContainer = document.createElement('div');
-  paginationContainer.className = 'pagination';
-  container.appendChild(paginationContainer); 
-
-  function getCurrentItemsPerPage() {
-      const width = window.innerWidth;
-      if (width < 1100) {
-          return 2; // 2 items when 1 per row
-      } else if (width >= 1100 && width < 1650) {
-          return 4; // 4 items when 2 per row
-      } else {
-          return 6; // 6 items when 3 per row
-      }
-  }
-
-  function updatePageButtons() {
-      while (paginationContainer.firstChild) {
-          paginationContainer.removeChild(paginationContainer.firstChild);
-      }
-      const totalPages = Math.ceil(sections.length / getCurrentItemsPerPage());
-      for (let i = 0; i < totalPages; i++) {
-          const pageButton = document.createElement('button');
-          pageButton.textContent = i + 1;
-          pageButton.addEventListener('click', function() {
-              currentPage = i;
-              showPage(currentPage);
-          });
-          paginationContainer.appendChild(pageButton);
-      }
-      showPage(currentPage); // Refresh view
-      updateActiveButtonStates(); // Refresh button states
-  }
-
-  function showPage(page) {
-      const itemsPerPage = getCurrentItemsPerPage();
-      const startIndex = page * itemsPerPage;
-      const endIndex = startIndex + itemsPerPage;
-      sections.forEach((section, index) => {
-          sections.style.display = (index >= startIndex && index < endIndex) ? 'block' : 'none';
-      });
-  }
-
-  function updateActiveButtonStates() {
-      const pageButtons = paginationContainer.querySelectorAll('button');
-      pageButtons.forEach((button, index) => {
-          button.className = (index === currentPage) ? 'active' : '';
-      });
-  }
-
-  window.addEventListener('resize', function() {
-      updatePageButtons(); // Fully handle resizing by updating the buttons
-  });
-
-  updatePageButtons(); // Initial setup
-});
-
-
-
 function info_open(id, top) {
   var x = document.getElementById(id);
   x.style.fontSize = "20px";
@@ -165,4 +102,64 @@ document.addEventListener('DOMContentLoaded', function() {
       const infoId = `info${index + 1}`;
       createCard(contentId, infoId, card.title, card.iconClass, card.content, card.info_Title, card.info_Content);
   });
+});
+// pagination
+document.addEventListener('DOMContentLoaded', function() {
+  const container = document.querySelector('.content');
+  const sections = Array.from(container.getElementsByTagName('w3-third'));
+  let currentPage = 0;
+  const paginationContainer = document.createElement('div');
+  paginationContainer.className = 'pagination';
+  container.appendChild(paginationContainer); 
+
+  function getCurrentItemsPerPage() {
+      const width = window.innerWidth;
+      if (width < 1100) {
+          return 2; // 2 items when 1 per row
+      } else if (width >= 1100 && width < 1650) {
+          return 4; // 4 items when 2 per row
+      } else {
+          return 6; // 6 items when 3 per row
+      }
+  }
+
+  function updatePageButtons() {
+      while (paginationContainer.firstChild) {
+          paginationContainer.removeChild(paginationContainer.firstChild);
+      }
+      const totalPages = Math.ceil(sections.length / getCurrentItemsPerPage());
+      for (let i = 0; i < totalPages; i++) {
+          const pageButton = document.createElement('button');
+          pageButton.textContent = i + 1;
+          pageButton.addEventListener('click', function() {
+              currentPage = i;
+              showPage(currentPage);
+          });
+          paginationContainer.appendChild(pageButton);
+      }
+      showPage(currentPage); // Refresh view
+      updateActiveButtonStates(); // Refresh button states
+  }
+
+  function showPage(page) {
+      const itemsPerPage = getCurrentItemsPerPage();
+      const startIndex = page * itemsPerPage;
+      const endIndex = startIndex + itemsPerPage;
+      sections.forEach((section, index) => {
+          sections.style.display = (index >= startIndex && index < endIndex) ? 'block' : 'none';
+      });
+  }
+
+  function updateActiveButtonStates() {
+      const pageButtons = paginationContainer.querySelectorAll('button');
+      pageButtons.forEach((button, index) => {
+          button.className = (index === currentPage) ? 'active' : '';
+      });
+  }
+
+  window.addEventListener('resize', function() {
+      updatePageButtons(); // Fully handle resizing by updating the buttons
+  });
+
+  updatePageButtons(); // Initial setup
 });
