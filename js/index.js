@@ -48,7 +48,7 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
   dummyButton.className = 'dummy-button';
   titleDiv.className = "title";
   titleDiv.textContent = title;
-  infoIcon.className = 'fa fa-info w3-button top-corner';
+  infoIcon.className = 'fa fa-info w3-button top-corner info-button';
 
   paragraph.textContent = content;
   selectedIcon.className = iconClass + ' w3-margin-bottom w3-text-theme';
