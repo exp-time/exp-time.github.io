@@ -152,7 +152,18 @@ p, h2 {margin: 0;}
   font-size:12px;
 
 }
-.w3-tooltip .w3-text{display:none}.w3-tooltip:hover .w3-text{
+.w3-tooltip .w3-text{
+  display:none;
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  padding: 5px;
+  z-index: 100;
+}
+
+.w3-tooltip:hover .w3-text{
   display:inline-block;
   position: relative;
 }
