@@ -171,7 +171,6 @@ function includeHTML() {
 
 // Create main content cards
 function createCard(id, info_id, title, iconClass, content, info_Title, info_Content) {
-  const content = document.querySelector('.content');
   const section = Array.from(content.getElementsByTagName('section'));
   var container = section.getElementById(id);
   if (!container) {
