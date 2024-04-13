@@ -2,7 +2,7 @@
 // pagination
 document.addEventListener('DOMContentLoaded', function() {
   const container = document.querySelector('content w3-center');
-  const sections = Array.from(container.getElementsByTagName('section'));
+  const sections = Array.from(container.getElementsByTagName('w3-third'));
   let currentPage = 0;
   const paginationContainer = document.createElement('div');
   paginationContainer.className = 'pagination';
