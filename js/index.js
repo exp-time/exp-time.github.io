@@ -126,5 +126,11 @@ function createCard(id, title, iconClass, content) {
 
   row.append(dummyButton, titleDiv, infoIcon);
   card.append(row, selectedIcon, paragraph);
-  document.getElementById(id).appendChild(card);
+  
+  var container = document.getElementById(id);
+    if (container) {
+        container.appendChild(card);
+    } else {
+        console.error('Failed to create card: Element with ID "' + id + '" not found.');
+    }
 }
