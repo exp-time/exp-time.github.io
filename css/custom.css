@@ -149,10 +149,11 @@ p, h2 {margin: 0;}
 
 .w3-tooltip {
   position: relative; 
-  font-size:12px;
+  font-size:20px;
+
 }
 .w3-tooltip .w3-text{display:none}.w3-tooltip:hover .w3-text{
-  display:relative;
+  display:inline-block;
   position: absolute;
 }
 
