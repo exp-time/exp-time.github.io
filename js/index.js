@@ -33,42 +33,42 @@ function createModal(id, title, content, foooter_content) {
 function openInNewTab(url) {
   window.open(url, '_blank').focus();
 }
+
+function createElementWithClass(tag, className, textContent = '') {
+  const element = document.createElement(tag);
+  element.className = className;
+  if (textContent) element.textContent = textContent;
+  return element;
+}
+
+
 // Create main content cards
 function createCard(id, info_id, title, iconClass, content, info_Title, info_Content) {
   const container = document.querySelector('.content');
   if (!container) {
-    console.error('Failed to create card: container not found.');
-    return; // Safety check to ensure the container exists
-  } 
-  // Card Vars
-  var third = document.createElement('div');
-  var card = document.createElement('div');
-  var row = document.createElement('div');
-  var dummyButton = document.createElement('div');
-  var titleDiv = document.createElement('div');
-  var infoIcon = document.createElement('a');
-  var paragraph = document.createElement('p');
-  var selectedIcon = document.createElement('i');
+      console.error('Failed to create card: container not found.');
+      return;
+  }
 
-  // Content
-  third.className = 'w3-third';
-  card.className = 'w3-card w3-container';
-  row.className = 'w3-row w3-row-padding w3-xlarge container-title flex-container';
-  dummyButton.className = 'dummy-button';
-  titleDiv.className = "title";
-  titleDiv.textContent = title;
-  infoIcon.className = 'fa fa-info w3-button top-corner';
+  // Create elements with classes and other properties set directly
+  const third = createElementWithClass('div', 'w3-third');
+  const card = createElementWithClass('div', 'w3-card w3-container');
+  const row = createElementWithClass('div', 'w3-row w3-row-padding w3-xlarge container-title flex-container');
+  const dummyButton = createElementWithClass('div', 'dummy-button');
+  const titleDiv = createElementWithClass('div', 'title', title);
+  const infoIcon = createElementWithClass('a', 'fa fa-info w3-button top-corner');
+  const paragraph = createElementWithClass('p', '', content);
+  const selectedIcon = createElementWithClass('i', iconClass + ' w3-margin-bottom w3-text-theme');
 
-  paragraph.textContent = content;
-  selectedIcon.className = iconClass + ' w3-margin-bottom w3-text-theme';
-
-  createModal(info_id, info_Title, info_Content)
-
-  infoIcon.onclick = function() { info_open(info_id); }; 
+  // Append elements to construct the hierarchy
+  infoIcon.onclick = () => info_open(info_id);
   row.append(dummyButton, titleDiv, infoIcon);
   card.append(row, selectedIcon, paragraph);
-  third.appendChild(card)
+  third.appendChild(card);
   container.appendChild(third);
+
+  // Optionally, create and append a modal for the card
+  createModal(info_id, info_Title, info_Content);
 }
 
 // Info Popup modals
