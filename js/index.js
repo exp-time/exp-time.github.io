@@ -1,7 +1,6 @@
 
 function info_open(id, top) {
   var x = document.getElementById(id);
-  x.style.fontSize = "20px";
   if (top) {
     x.style.paddingTop = "0%";
   }
