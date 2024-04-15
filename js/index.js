@@ -33,6 +33,7 @@ function createModal(id, title, content, footerContent) {  // Open popup modal p
   const bodyText = createElementWithClass('p', 'font_15', content);
   body.appendChild(bodyText);
   modalContent.append(header, body);
+  console.log(footerContent)
   if (footerContent && footerContent != ""){
     console.log("here")
     const footer = createElementWithClass('footer', 'w3-container w3-theme-l1');
