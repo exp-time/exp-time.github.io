@@ -18,7 +18,7 @@ function closeModal(event, id) { // Close if click outside of modal
   }
 }
 
-function createAboutsModal(id, title, emailContent, footerContent) {  // Open popup modal page
+function createAboutsModal(id, title, content, footerContent) {  // Open popup modal page
   const modal = createElementWithClass('div', 'w3-modal');
   modal.setAttribute('id', id);
   modal.setAttribute('onmousedown', `closeModal(event, '${id}')`);
@@ -32,9 +32,8 @@ function createAboutsModal(id, title, emailContent, footerContent) {  // Open po
   header.append(closeButton, headerP);
 
   const body = createElementWithClass('div', 'w3-padding');
-  const emailLabel = createElementWithClass('p', '', 'Email:');
-  const emailText = createElementWithClass('p', '', emailContent);
-  body.append(emailLabel, emailText);
+  const bodyText = createElementWithClass('p', '', content);
+  body.appendChild(emailLabel, emailText);
 
   const footer = createElementWithClass('footer', 'w3-container w3-theme-l1');
   const footerP = createElementWithClass('p', '', footerContent);
