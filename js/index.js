@@ -22,9 +22,7 @@ function createModal(id, title, content, footerContent) {  // Open popup modal p
   const modal = createElementWithClass('div', 'w3-modal');
   modal.setAttribute('id', id);
   modal.setAttribute('onmousedown', `closeModal(event, '${id}')`);
-
   const modalContent = createElementWithClass('div', 'w3-modal-content w3-card-4 w3-animate-top');
-  
   const header = createElementWithClass('header', 'w3-theme-l1 modal-header');
   const closeButton = createElementWithClass('span', 'w3-button w3-display-topright', 'x');
   closeButton.setAttribute('onclick', `info_close('${id}')`);
@@ -36,6 +34,7 @@ function createModal(id, title, content, footerContent) {  // Open popup modal p
   body.appendChild(bodyText);
   modalContent.append(header, body);
   if (footerContent && footerContent != ""){
+    console.log("here")
     const footer = createElementWithClass('footer', 'w3-container w3-theme-l1');
     const footerP = createElementWithClass('p', '', footerContent);
     footer.appendChild(footerP);
