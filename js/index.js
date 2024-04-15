@@ -14,15 +14,24 @@ function closeModal(event, id) { // Close if click outside of modal
   }
 }
 
-function createSidebar(id, title, content) { // Sidebar popups
-  const sidebar = createElementWithClass('nav', 'w3-sidebar w3-bar-block w3-card w3-animate-left w3-center');
-  sidebar.setAttribute('id', id);
-  sidebar.style.display = 'none';
-  const closeButton = createElementWithClass('button', 'w3-bar-item w3-button', 'Close '); // Create the close button
-  closeButton.onclick = function() { info_close(id); };
+function headerWithClose(id, title) { // Create header and close button
+  const header = createElementWithClass('header', 'modal-header')
+  const headerP = createElementWithClass('p', '', title);
+  const closeButton = createElementWithClass('button', 'w3-bar-item w3-button');
   const closeIcon = createElementWithClass('i', 'fa fa-remove');
   closeButton.appendChild(closeIcon);
-  sidebar.appendChild(closeButton);
+  closeButton.onclick = () =>  info_close(id);
+  header.append(closeButton, headerP)
+  return header
+}
+
+function createSidebar(id, title, content) { // Sidebar popups
+  const sidebar = createElementWithClass('nav', 'w3-sidebar w3-bar-block w3-card w3-animate-left w3-center');
+  const header = headerWithClose(id, title)
+  sidebar.setAttribute('id', id);
+  sidebar.style.display = 'none';
+  sidebar.appendChild(header);
+
   for (const key in content) {
     const menuItem = createElementWithClass('div', 'w3-bar-item w3-button', key); // Add menu items
     menuItem.onclick = () => openInNewTab(content[key]);
