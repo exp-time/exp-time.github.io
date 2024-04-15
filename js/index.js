@@ -14,12 +14,6 @@ function closeModal(event, id) {                      // Close if click outside 
   }
 }
 
-function closeSideBar(event, id) {                      // Close if click outside of Sidebar
-  if (!event.target.classList.contains('w3-sidebar')) {  // Check if the click was not directly on the Sidebar
-      document.getElementById(id).style.display = 'none';
-  }
-}
-
 function headerWithClose(id, title, theme) { // Create header and close button
   const header = createElementWithClass('header', 'modal-header')
   const headerP = createElementWithClass('p', '', title);
@@ -45,7 +39,6 @@ function createSidebar(id, title, content) { // Sidebar popups
   }
   document.body.appendChild(sidebar);
 }
-
 
 function createModal(id, title, content, footerContent) {  // Open popup modal page
   const modal = createElementWithClass('div', 'w3-modal');
@@ -90,7 +83,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const infoId = `info${index + 1}`;
     createCard(contentId, infoId, card.title, card.iconClass, card.content, card.info_Title, card.info_Content);
   });
-  this.body.setAttribute('onmousedown', `closeSideBar(event, '${id}')`);
 });
 
 function openInNewTab(url) {
