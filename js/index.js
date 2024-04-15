@@ -9,13 +9,13 @@ function info_close(id) {                             // Closing modals
 }
 
 function closeModal(event, id) {                      // Close if click outside of modal
-  if (!event.target.classList.contains('w3-sidebar')) {  // Check if the click was directly on the modal background
+  if (event.target.classList.contains('w3-modal')) {  // Check if the click was directly on the modal background
       document.getElementById(id).style.display = 'none';
   }
 }
 
 function closeSideBar(event, id) {                      // Close if click outside of Sidebar
-  if (event.target.classList.contains('w3-modal')) {  // Check if the click was not directly on the Sidebar
+  if (!event.target.classList.contains('w3-sidebar')) {  // Check if the click was not directly on the Sidebar
       document.getElementById(id).style.display = 'none';
   }
 }
