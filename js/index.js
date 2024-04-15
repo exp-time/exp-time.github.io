@@ -28,10 +28,11 @@ function headerWithClose(id, title) { // Create header and close button
 function createSidebar(id, title, content) { // Sidebar popups
   const sidebar = createElementWithClass('nav', 'w3-sidebar w3-bar-block w3-card w3-animate-left w3-center');
   const header = headerWithClose(id, title)
+  header.classList.add("w3-theme");
+  sidebar.appendChild(header);
   sidebar.setAttribute('id', id);
   sidebar.style.display = 'none';
-  sidebar.appendChild(header);
-  header.classList.add("w3-theme");
+
   for (const key in content) {
     const menuItem = createElementWithClass('div', 'w3-bar-item w3-button', key); // Add menu items
     menuItem.onclick = () => openInNewTab(content[key]);
@@ -46,11 +47,8 @@ function createModal(id, title, content, footerContent) {  // Open popup modal p
   modal.setAttribute('id', id);
   modal.setAttribute('onmousedown', `closeModal(event, '${id}')`);
   const modalContent = createElementWithClass('div', 'w3-modal-content w3-card-4 w3-animate-top');
-  const header = createElementWithClass('header', 'w3-theme-l1 modal-header');
-  const closeButton = createElementWithClass('span', 'w3-button w3-display-topright', 'x');
-  closeButton.setAttribute('onclick', `info_close('${id}')`);
-  const headerP = createElementWithClass('p', '', title);
-  header.append(closeButton, headerP);
+  const header = headerWithClose(id, title)
+  header.classList.add("w3-theme-l1");
   const body = createElementWithClass('div', 'w3-padding');
   const bodyText = createElementWithClass('p', 'font_15', content);
   body.appendChild(bodyText);
