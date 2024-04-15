@@ -231,13 +231,13 @@ p, h2 {margin: 0;}
 .w3-light-grey,.w3-hover-light-grey:hover,.w3-light-gray,.w3-hover-light-gray:hover{color:#000!important;background-color:#f1f1f1!important}
 
 .w3-sidebar{
-  height:45%;
   width:30%;
-  min-width:300px;
+  max-height: 40%;
+  min-width: 350px;
   background-color:#fff;
   position:fixed!important;
   display:block;
-  z-index:1;
+  z-index:100;
   overflow:auto;
 }
 .w3-image{max-width:100%;height:auto}img{vertical-align:middle}a{color:inherit}
@@ -279,7 +279,8 @@ p, h2 {margin: 0;}
   position:relative;
   padding:0;
   outline:0;
-  width:600px;
+  width:50%;
+  min-width:350px;
 }
 @media (max-width:600px){.w3-modal-content{margin:0 10px;width:auto!important}.w3-modal{padding-top:30px}
 @media (max-width:768px){.w3-modal-content{width:500px}.w3-modal{padding-top:50px}}
@@ -475,8 +476,8 @@ h1,h2,h3,h4,h5,h6{
 .padding-top-bottom{
   padding-left:0px !important;
   padding-right:0px !important;
-  padding-top: 3px!important;
-  padding-bottom: 3px!important;
+  padding-top: 2%!important;
+  padding-bottom: 2px!important;
   
 }
 .w3-disabled,.w3-btn:disabled,.w3-button:disabled{
