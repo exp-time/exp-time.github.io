@@ -15,7 +15,7 @@ function closeModal(event, id) {                      // Close if click outside 
 }
 
 function closeSideBar(event, id) {                      // Close if click outside of Sidebar
-  if (!event.target.classList.contains('w3-sidebar')) {  // Check if the click was not directly on the Sidebar
+  if (event.target.classList.contains('w3-sidebar')) {  // Check if the click was not directly on the Sidebar
       document.getElementById(id).style.display = 'none';
   }
 }
