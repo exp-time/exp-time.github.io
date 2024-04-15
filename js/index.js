@@ -4,11 +4,11 @@ function info_open(id) {
   x.style.display = "block";
 }
 
-function info_close(id) { // Closing modals
+function info_close(id) {                             // Closing modals
   document.getElementById(id).style.display = "none";
 }
 
-function closeModal(event, id) { // Close if click outside of modal
+function closeModal(event, id) {                      // Close if click outside of modal
   if (event.target.classList.contains('w3-modal')) {  // Check if the click was directly on the modal background
       document.getElementById(id).style.display = 'none';
   }
