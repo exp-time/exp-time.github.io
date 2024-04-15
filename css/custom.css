@@ -254,6 +254,11 @@ p, h2 {margin: 0;}
   font-size:20px !important;
   vertical-align: middle;
 }
+.modal-footer{
+  padding: 4px 8px!important;
+  font-size:22px !important;
+  vertical-align: middle;
+}
 .w3-modal{
   z-index:3;
   display:none;
