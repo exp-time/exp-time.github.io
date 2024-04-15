@@ -87,6 +87,7 @@ body {
   
 .content {
   display: block;
+  padding-top: 0.5em;
 }
 
 p, h2 {margin: 0;}
