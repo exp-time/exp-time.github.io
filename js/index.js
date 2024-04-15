@@ -14,7 +14,7 @@ function closeModal(event, id) { // Close if click outside of modal
   }
 }
 
-function headerWithClose(id, title) { // Create header and close button
+function headerWithClose(id, title, theme) { // Create header and close button
   const header = createElementWithClass('header', 'modal-header')
   const headerP = createElementWithClass('p', '', title);
   const closeButton = createElementWithClass('span', 'w3-button w3-display-topright');
@@ -22,13 +22,13 @@ function headerWithClose(id, title) { // Create header and close button
   closeButton.appendChild(closeIcon);
   closeButton.onclick = () =>  info_close(id);
   header.append(headerP,closeButton)
+  header.classList.add(theme);
   return header
 }
 
 function createSidebar(id, title, content) { // Sidebar popups
   const sidebar = createElementWithClass('nav', 'w3-sidebar w3-bar-block w3-card w3-animate-left w3-center');
-  const header = headerWithClose(id, title)
-  header.classList.add("w3-theme");
+  const header = headerWithClose(id, title, "w3-theme")
   sidebar.appendChild(header);
   sidebar.setAttribute('id', id);
   sidebar.style.display = 'none';
@@ -47,8 +47,7 @@ function createModal(id, title, content, footerContent) {  // Open popup modal p
   modal.setAttribute('id', id);
   modal.setAttribute('onmousedown', `closeModal(event, '${id}')`);
   const modalContent = createElementWithClass('div', 'w3-modal-content w3-card-4 w3-animate-top');
-  const header = headerWithClose(id, title)
-  header.classList.add("w3-theme-l1");
+  const header = headerWithClose(id, title, "w3-theme-l1")
   const body = createElementWithClass('div', 'w3-padding');
   const bodyText = createElementWithClass('p', 'font_15', content);
   body.appendChild(bodyText);
