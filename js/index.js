@@ -31,7 +31,7 @@ function createSidebar(id, title, content) { // Sidebar popups
   sidebar.setAttribute('id', id);
   sidebar.style.display = 'none';
   sidebar.appendChild(header);
-
+  header.classList.add("w3-theme");
   for (const key in content) {
     const menuItem = createElementWithClass('div', 'w3-bar-item w3-button', key); // Add menu items
     menuItem.onclick = () => openInNewTab(content[key]);
