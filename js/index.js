@@ -33,11 +33,26 @@ function createModal(id, title, content, footerContent) {  // Open popup modal p
   const bodyText = createElementWithClass('p', 'font_15', content);
   body.appendChild(bodyText);
   modalContent.append(header, body);
+
   if (footerContent && footerContent != ""){
     const footer = createElementWithClass('footer', 'w3-theme-l1 modal-footer');
-    const footerP = createElementWithClass('p', '', footerContent);
-    footer.appendChild(footerP);
-    modalContent.appendChild(footer);
+        if (typeof footerContent === 'object' && !(footerContent instanceof Array)) {
+            // If footerContent is an object (not an array), handle as key-value pairs for links
+            for (const key in footerContent) {
+                const link = document.createElement('a');
+                link.href = footerContent[key];
+                link.textContent = key;
+                link.target = "_blank";  // Open in new tab
+                const item = createElementWithClass('p', '', '');
+                item.appendChild(link);
+                footer.appendChild(item);
+            }
+        } else {
+            // Handle as plain text
+            const footerP = createElementWithClass('p', '', footerContent);
+            footer.appendChild(footerP);
+        }
+        modalContent.appendChild(footer);
   }
 
   modal.appendChild(modalContent);
