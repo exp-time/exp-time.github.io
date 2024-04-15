@@ -20,6 +20,7 @@ function closeModal(event, id) { // Close if click outside of modal
 function createSidebar(id, title, content) { // Sidebar popups
   const sidebar = createElementWithClass('nav', 'w3-sidebar w3-bar-block w3-card w3-animate-left w3-center');
   sidebar.setAttribute('id', id);
+  sidebar.style.display = 'none';
   const closeButton = createElementWithClass('button', 'w3-bar-item w3-button', 'Close '); // Create the close button
   closeButton.onclick = function() { info_close(id); };
   const closeIcon = createElementWithClass('i', 'fa fa-remove');
