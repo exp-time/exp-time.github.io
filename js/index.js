@@ -8,28 +8,47 @@ function info_open(id, top) {
   x.style.display = "block";
 }
 
-// Closing modals
-function info_close(id) {
+function info_close(id) { // Closing modals
   document.getElementById(id).style.display = "none";
 }
 
-// Close if click outside of modal
-function closeModal(event, id) {
-  // Check if the click was directly on the modal background
-  if (event.target.classList.contains('w3-modal')) {
+function closeModal(event, id) { // Close if click outside of modal
+  if (event.target.classList.contains('w3-modal')) {  // Check if the click was directly on the modal background
       document.getElementById(id).style.display = 'none';
   }
 }
 
-// Open popup modal page
-function createModal(id, title, content, foooter_content) {
-  const modal = document.createElement('div');
-  if (event.target.classList.contains('w3-modal')) {
-      document.getElementById(id).style.display = 'none';
-  }
+function createAboutsModal(id, title, emailContent, footerContent) {  // Open popup modal page
+  const modal = createElementWithClass('div', 'w3-modal');
+  modal.setAttribute('id', id);
+  modal.setAttribute('onmousedown', `closeModal(event, '${id}')`);
+
+  const modalContent = createElementWithClass('div', 'w3-modal-content w3-card-4 w3-animate-top');
+  
+  const header = createElementWithClass('header', 'w3-theme-l1 modal-header');
+  const closeButton = createElementWithClass('span', 'w3-button w3-display-topright', 'x');
+  closeButton.setAttribute('onclick', `info_close('${id}')`);
+  const headerP = createElementWithClass('p', '', title);
+  header.append(closeButton, headerP);
+
+  const body = createElementWithClass('div', 'w3-padding');
+  const emailLabel = createElementWithClass('p', '', 'Email:');
+  const emailText = createElementWithClass('p', '', emailContent);
+  body.append(emailLabel, emailText);
+
+  const footer = createElementWithClass('footer', 'w3-container w3-theme-l1');
+  const footerP = createElementWithClass('p', '', footerContent);
+  footer.appendChild(footerP);
+
+  modalContent.append(header, body, footer);
+  modal.appendChild(modalContent);
+  document.body.appendChild(modal);
 }
-
-
+document.addEventListener('DOMContentLoaded', function() {
+  modalData.forEach(function(modal) {
+      createAboutsModal(modal.id, modal.title, modal.content, modal.footer_content);
+  });
+});
 function openInNewTab(url) {
   window.open(url, '_blank').focus();
 }
@@ -41,15 +60,13 @@ function createElementWithClass(tag, className, textContent = '') {
   return element;
 }
 
-// Create main content cards
-function createCard(id, info_id, title, iconClass, content, info_Title, info_Content) {
+function createCard(id, info_id, title, iconClass, content, info_Title, info_Content) { // Create main content cards
   const container = document.querySelector('.content');
   if (!container) {
       console.error('Failed to create card: container not found.');
       return;
   }
 
-  // Create elements with classes and other properties set directly
   const third = createElementWithClass('div', 'w3-third');
   const card = createElementWithClass('div', 'w3-card w3-container');
   const row = createElementWithClass('div', 'w3-row w3-row-padding w3-xlarge container-title flex-container');
@@ -59,19 +76,16 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
   const paragraph = createElementWithClass('p', '', content);
   const selectedIcon = createElementWithClass('i', iconClass + ' w3-margin-bottom w3-text-theme');
 
-  // Append elements to construct the hierarchy
   infoIcon.onclick = () => info_open(info_id);
   row.append(dummyButton, titleDiv, infoIcon);
   card.append(row, selectedIcon, paragraph);
   third.appendChild(card);
   container.appendChild(third);
 
-  // Optionally, create and append a modal for the card
-  createModal(info_id, info_Title, info_Content);
+  createInfoModal(info_id, info_Title, info_Content);
 }
 
-// Info Popup modals
-function createModal(info_id, info_Title, info_Content) {
+function createInfoModal(info_id, info_Title, info_Content) { // Info Popup modals
   const modal = createElementWithClass('div', 'w3-modal');
   modal.setAttribute('id', info_id);
   modal.setAttribute('onmousedown', 'closeModal(event, "' + info_id + '")');
@@ -93,8 +107,7 @@ function createModal(info_id, info_Title, info_Content) {
   document.body.appendChild(modal);
 }
 
-// Set main cards on the page
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() {  // Set main cards on the page
   cardData.forEach(function(card, index) {
       const contentId = `content-area${index + 1}`;
       const infoId = `info${index + 1}`;
@@ -102,8 +115,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-// pagination
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() { // pagination
   const container = document.querySelector('.content');
   const sections = container.querySelectorAll('.w3-third');
   let currentPage = 0;
@@ -157,13 +169,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         paginationContainer.appendChild(pageButton);
     }
-    showPage(currentPage);                          // Refresh view to reflect potentially new currentPage
-    updateActiveButtonStates();                     // Refresh button states
+    showPage(currentPage);            // Refresh view to reflect potentially new currentPage
+    updateActiveButtonStates();       // Refresh button states
   }
-
-  window.addEventListener('resize', function() {
-      updatePageButtons();                          // Fully handle resizing by updating the buttons and possibly currentPage
-  });
-
+  window.addEventListener('resize', function() { updatePageButtons() }); 
   updatePageButtons();
 });
