@@ -68,7 +68,7 @@ function createInfoModal(info_id, info_Title, info_Content) { // Info Popup moda
 
 document.addEventListener('DOMContentLoaded', function() {
   modalData.forEach(function(modal) {
-      createAboutsModal(modal.id, modal.title, modal.content, modal.footer_content);
+      createAboutsModal(modal.id, modal.title, modal.content, modal.footerContent);
   });
 });
 
