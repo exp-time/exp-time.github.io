@@ -95,7 +95,7 @@ const modalData = [
     {
         id: "about_modal",
         title: "About section",
-        content: "In computational complexity theory, the complexity class EXPTIME (sometimes called EXP or DEXPTIME) is the set of all decision problems that are solvable by a deterministic Turing machine in  exponential time, i.e., in O(2ᵖ⁽ⁿ⁾) time, where p(n) is a polynomial function of n [1]",
+        content: "In computational complexity theory, the complexity class EXPTIME (sometimes called EXP or DEXPTIME) is the set of all decision problems that are solvable by a deterministic Turing machine in  exponential time, i.e., in O(2ᵖ⁽ⁿ⁾) time, where p(n) is a polynomial function of n[1].",
         foooterContent: "<a class='w3-button padding-none'onclick='openInNewTab('https://en.wikipedia.org/wiki/EXPTIME')'> [1].</a>", 
     },
     {

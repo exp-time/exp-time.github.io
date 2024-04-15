@@ -32,7 +32,7 @@ function createAboutsModal(id, title, content, footerContent) {  // Open popup m
   header.append(closeButton, headerP);
 
   const body = createElementWithClass('div', 'w3-padding');
-  const bodyText = createElementWithClass('p', '', content);
+  const bodyText = createElementWithClass('p', 'font_15', content);
   body.appendChild(bodyText);
 
   const footer = createElementWithClass('footer', 'w3-container w3-theme-l1');
