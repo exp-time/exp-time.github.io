@@ -9,7 +9,13 @@ function info_close(id) {                             // Closing modals
 }
 
 function closeModal(event, id) {                      // Close if click outside of modal
-  if (event.target.classList.contains('w3-modal')) {  // Check if the click was directly on the modal background
+  if (!event.target.classList.contains('w3-sidebar')) {  // Check if the click was directly on the modal background
+      document.getElementById(id).style.display = 'none';
+  }
+}
+
+function closeSideBar(event, id) {                      // Close if click outside of Sidebar
+  if (event.target.classList.contains('w3-modal')) {  // Check if the click was not directly on the Sidebar
       document.getElementById(id).style.display = 'none';
   }
 }
@@ -32,7 +38,7 @@ function createSidebar(id, title, content) { // Sidebar popups
   sidebar.appendChild(header);
   sidebar.setAttribute('id', id);
   sidebar.style.display = 'none';
-
+  sidebar.setAttribute('onmousedown', `closeSideBar(event, '${id}')`);
   for (const key in content) {
     const menuItem = createElementWithClass('div', 'w3-bar-item w3-button', key); // Add menu items
     menuItem.onclick = () => openInNewTab(content[key]);
