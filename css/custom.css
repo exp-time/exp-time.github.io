@@ -472,7 +472,13 @@ h1,h2,h3,h4,h5,h6{
 .padding-none{
   padding:0px 0px!important;
 }
-
+.padding-top-bottom{
+  padding-left:0px !important;
+  padding-right:0px !important;
+  padding-top: 3px!important;
+  padding-bottom: 3px!important;
+  
+}
 .w3-disabled,.w3-btn:disabled,.w3-button:disabled{
   cursor:not-allowed;opacity:0.3
 }
