@@ -248,17 +248,18 @@ p, h2 {margin: 0;}
   font-size:15px !important;
 }
 
-
 .modal-header{
   padding: 8px 16px!important;
   font-size:20px !important;
   vertical-align: middle;
 }
+
 .modal-footer{
   padding: 8px 16px!important;
   font-size: 12px !important;
   vertical-align: middle;
 }
+
 .w3-modal{
   z-index:3;
   display:none;
