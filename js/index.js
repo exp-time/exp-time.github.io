@@ -44,11 +44,13 @@ function createAboutsModal(id, title, emailContent, footerContent) {  // Open po
   modal.appendChild(modalContent);
   document.body.appendChild(modal);
 }
+
 document.addEventListener('DOMContentLoaded', function() {
   modalData.forEach(function(modal) {
       createAboutsModal(modal.id, modal.title, modal.content, modal.footer_content);
   });
 });
+
 function openInNewTab(url) {
   window.open(url, '_blank').focus();
 }
