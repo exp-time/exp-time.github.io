@@ -41,7 +41,6 @@ function createElementWithClass(tag, className, textContent = '') {
   return element;
 }
 
-
 // Create main content cards
 function createCard(id, info_id, title, iconClass, content, info_Title, info_Content) {
   const container = document.querySelector('.content');
@@ -73,31 +72,20 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
 
 // Info Popup modals
 function createModal(info_id, info_Title, info_Content) {
-  var modal = document.createElement('div');
+  const modal = createElementWithClass('div', 'w3-modal');
   modal.setAttribute('id', info_id);
-  modal.className = 'w3-modal';
   modal.setAttribute('onmousedown', 'closeModal(event, "' + info_id + '")');
 
-  var modalContent = document.createElement('div');
-  modalContent.className = 'w3-modal-content w3-card-4 w3-animate-top';
-
-  var header = document.createElement('header');
-  header.className = 'w3-theme-l1 modal-header';
-  
-  var closeButton = document.createElement('span');
-  closeButton.className = 'w3-button w3-display-topright';
+  const modalContent = createElementWithClass('div', 'w3-modal-content w3-card-4 w3-animate-top');
+  const header = createElementWithClass('header', 'w3-theme-l1 modal-header');
+  const closeButton = createElementWithClass('span', 'w3-button w3-display-topright', 'x');
   closeButton.setAttribute('onclick', 'info_close("' + info_id + '")');
-  closeButton.textContent = 'x';
-
-  var headerP = document.createElement('p');
-  headerP.textContent = info_Title;
+  
+  const headerP = createElementWithClass('p', '', info_Title);
   header.append(headerP, closeButton);
 
-  var body = document.createElement('div');
-  body.className = 'w3-padding';
-
-  var paragraph = document.createElement('p');
-  paragraph.textContent = info_Content;
+  const body = createElementWithClass('div', 'w3-padding');
+  const paragraph = createElementWithClass('p', '', info_Content);
 
   body.appendChild(paragraph);
   modalContent.append(header, body);
