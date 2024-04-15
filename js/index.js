@@ -33,7 +33,7 @@ function createAboutsModal(id, title, content, footerContent) {  // Open popup m
 
   const body = createElementWithClass('div', 'w3-padding');
   const bodyText = createElementWithClass('p', '', content);
-  body.appendChild(emailLabel, emailText);
+  body.appendChild(bodyText);
 
   const footer = createElementWithClass('footer', 'w3-container w3-theme-l1');
   const footerP = createElementWithClass('p', '', footerContent);
