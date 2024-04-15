@@ -22,25 +22,16 @@ function createSidebar(id, title, content) { // Sidebar popups
   const sidebar = createElementWithClass('nav', 'w3-sidebar w3-bar-block w3-card w3-animate-left w3-center');
   sidebar.setAttribute('id', id);
   sidebar.style.display = 'none';
-
   const closeButton = createElementWithClass('button', 'w3-bar-item w3-button', 'Close '); // Create the close button
   closeButton.onclick = function() { info_close(id); };
   const closeIcon = createElementWithClass('i', 'fa fa-remove');
   closeButton.appendChild(closeIcon);
   sidebar.appendChild(closeButton);
-
-  content.forEach(item => {
-      const menuItem = createElementWithClass('div', 'w3-bar-item w3-button'); // Add menu items
-      menuItem.textContent = item.text;
-      menuItem.onclick = function() {
-          if (item.link) {
-              openInNewTab(item.link);
-          }
-          info_close(id);
-      };
-      sidebar.appendChild(menuItem);
-  });
-
+  for (const key in content) {
+    const menuItem = createElementWithClass('div', 'w3-bar-item w3-button', key); // Add menu items
+    menuItem.onclick = () => openInNewTab(content[key]);
+    sidebar.appendChild(menuItem)
+  }
   document.body.appendChild(sidebar);
 }
 
@@ -54,7 +45,6 @@ function createModal(id, title, content, footerContent) {  // Open popup modal p
   closeButton.setAttribute('onclick', `info_close('${id}')`);
   const headerP = createElementWithClass('p', '', title);
   header.append(closeButton, headerP);
-
   const body = createElementWithClass('div', 'w3-padding');
   const bodyText = createElementWithClass('p', 'font_15', content);
   body.appendChild(bodyText);
@@ -62,23 +52,20 @@ function createModal(id, title, content, footerContent) {  // Open popup modal p
 
   if (footerContent && footerContent != ""){
     const footer = createElementWithClass('footer', 'w3-theme-l1 modal-footer');
-        if (typeof footerContent === 'object' && !(footerContent instanceof Array)) {
-            // If footerContent is an object (not an array), handle as key-value pairs for links
-            for (const key in footerContent) {
-                const link = createElementWithClass('a', 'w3-button padding-top-bottom', key)
-                link.onclick = () => openInNewTab(footerContent[key]);
-                const item = createElementWithClass('p', '', '');
-                item.appendChild(link);
-                footer.appendChild(item);
-            }
-        } else {
-            // Handle as plain text
-            const footerP = createElementWithClass('p', '', footerContent);
-            footer.appendChild(footerP);
-        }
-        modalContent.appendChild(footer);
+    if (typeof footerContent === 'object' && !(footerContent instanceof Array)) {
+      for (const key in footerContent) { // If footerContent is an object (not an array), handle as key-value pairs for links
+        const link = createElementWithClass('a', 'w3-button padding-top-bottom', key)
+        link.onclick = () => openInNewTab(footerContent[key]);
+        const item = createElementWithClass('p', '', '');
+        item.appendChild(link);
+        footer.appendChild(item);
+      }
+      } else { // Handle as plain text
+        const footerP = createElementWithClass('p', '', footerContent); 
+        footer.appendChild(footerP);
+      }
+    modalContent.appendChild(footer);
   }
-
   modal.appendChild(modalContent);
   document.body.appendChild(modal);
 }
