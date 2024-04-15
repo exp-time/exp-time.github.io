@@ -35,6 +35,7 @@ function createSidebar(id, title, content) { // Sidebar popups
   document.body.appendChild(sidebar);
 }
 
+
 function createModal(id, title, content, footerContent) {  // Open popup modal page
   const modal = createElementWithClass('div', 'w3-modal');
   modal.setAttribute('id', id);
