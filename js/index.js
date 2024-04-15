@@ -39,7 +39,7 @@ function createModal(id, title, content, footerContent) {  // Open popup modal p
         if (typeof footerContent === 'object' && !(footerContent instanceof Array)) {
             // If footerContent is an object (not an array), handle as key-value pairs for links
             for (const key in footerContent) {
-                const link = createElementWithClass('a', 'w3-button padding-none', key)
+                const link = createElementWithClass('a', 'w3-button padding-top-bottom', key)
                 link.onclick = () => openInNewTab(footerContent[key]);
                 const item = createElementWithClass('p', '', '');
                 item.appendChild(link);
