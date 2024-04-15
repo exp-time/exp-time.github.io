@@ -41,17 +41,24 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
     return; // Safety check to ensure the container exists
   } 
   // Card Vars
-  var third = document.createElement('div').classList.add('w3-third');
-  var card = document.createElement('div').classList.add('w3-card','w3-container');
-  var row = document.createElement('div').classList.add('w3-row','w3-row-padding','w3-xlarge','container-title','flex-container');
-  var dummyButton = document.createElement('div').classList.add('dummy-button');
-  var titleDiv = document.createElement('div').classList.add('title');
-  var infoIcon = document.createElement('a').classList.add('fa','fa-info','w3-button','top-corner');
+  var third = document.createElement('div');
+  var card = document.createElement('div');
+  var row = document.createElement('div');
+  var dummyButton = document.createElement('div');
+  var titleDiv = document.createElement('div');
+  var infoIcon = document.createElement('a');
   var paragraph = document.createElement('p');
   var selectedIcon = document.createElement('i');
 
   // Content
+  third.className = 'w3-third';
+  card.className = 'w3-card w3-container';
+  row.className = 'w3-row w3-row-padding w3-xlarge container-title flex-container';
+  dummyButton.className = 'dummy-button';
+  titleDiv.className = "title";
   titleDiv.textContent = title;
+  infoIcon.className = 'fa fa-info w3-button top-corner';
+
   paragraph.textContent = content;
   selectedIcon.className = iconClass + ' w3-margin-bottom w3-text-theme';
 
