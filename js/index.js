@@ -18,7 +18,7 @@ function closeModal(event, id) { // Close if click outside of modal
   }
 }
 
-function createAboutsModal(id, title, content, footerContent) {  // Open popup modal page
+function createModal(id, title, content, footerContent) {  // Open popup modal page
   const modal = createElementWithClass('div', 'w3-modal');
   modal.setAttribute('id', id);
   modal.setAttribute('onmousedown', `closeModal(event, '${id}')`);
@@ -34,12 +34,14 @@ function createAboutsModal(id, title, content, footerContent) {  // Open popup m
   const body = createElementWithClass('div', 'w3-padding');
   const bodyText = createElementWithClass('p', 'font_15', content);
   body.appendChild(bodyText);
-
-  const footer = createElementWithClass('footer', 'w3-container w3-theme-l1');
-  const footerP = createElementWithClass('p', '', footerContent);
-  footer.appendChild(footerP);
-
-  modalContent.append(header, body, footer);
+  modalContent.append(header, body);
+  if (footerContent && footerContent != ""){
+    const footer = createElementWithClass('footer', 'w3-container w3-theme-l1');
+    const footerP = createElementWithClass('p', '', footerContent);
+    footer.appendChild(footerP);
+    modalContent.appendChild(footer);
+  }
+  
   modal.appendChild(modalContent);
   document.body.appendChild(modal);
 }
@@ -68,7 +70,7 @@ function createInfoModal(info_id, info_Title, info_Content) { // Info Popup moda
 
 document.addEventListener('DOMContentLoaded', function() {
   modalData.forEach(function(modal) {
-      createAboutsModal(modal.id, modal.title, modal.content, modal.footerContent);
+      createModal(modal.id, modal.title, modal.content, modal.footerContent);
   });
 });
 
@@ -105,7 +107,7 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
   third.appendChild(card);
   container.appendChild(third);
 
-  createInfoModal(info_id, info_Title, info_Content);
+  createModal(info_id, info_Title, info_Content);
 }
 
 document.addEventListener('DOMContentLoaded', function() {  // Set main cards on the page
