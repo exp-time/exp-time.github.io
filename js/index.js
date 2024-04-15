@@ -41,29 +41,7 @@ function createModal(id, title, content, footerContent) {  // Open popup modal p
     footer.appendChild(footerP);
     modalContent.appendChild(footer);
   }
-  
-  modal.appendChild(modalContent);
-  document.body.appendChild(modal);
-}
 
-function createInfoModal(info_id, info_Title, info_Content) { // Info Popup modals
-  const modal = createElementWithClass('div', 'w3-modal');
-  modal.setAttribute('id', info_id);
-  modal.setAttribute('onmousedown', 'closeModal(event, "' + info_id + '")');
-
-  const modalContent = createElementWithClass('div', 'w3-modal-content w3-card-4 w3-animate-top');
-  const header = createElementWithClass('header', 'w3-theme-l1 modal-header');
-  const closeButton = createElementWithClass('span', 'w3-button w3-display-topright', 'x');
-  closeButton.setAttribute('onclick', 'info_close("' + info_id + '")');
-  
-  const headerP = createElementWithClass('p', '', info_Title);
-  header.append(headerP, closeButton);
-
-  const body = createElementWithClass('div', 'w3-padding');
-  const paragraph = createElementWithClass('p', '', info_Content);
-
-  body.appendChild(paragraph);
-  modalContent.append(header, body);
   modal.appendChild(modalContent);
   document.body.appendChild(modal);
 }
