@@ -93,6 +93,7 @@ function createModal(info_id, info_Title, info_Content) {
   document.body.appendChild(modal);
 }
 
+// Set main cards on the page
 document.addEventListener('DOMContentLoaded', function() {
   cardData.forEach(function(card, index) {
       const contentId = `content-area${index + 1}`;
