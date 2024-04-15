@@ -105,3 +105,30 @@ const modalData = [
         footerContent: "",  
     },
 ];
+
+const sideBarData = [
+    {
+        id: "GitRepos",
+        title: "",
+        content:{
+            'Pickup and Delivery Problem (Unf.)': 'https://github.com/exp-time/Pickup-and-delivery',
+            'Placeholder (TODO)': '',
+            'Excel example (TODO)': '',
+            'Analytics Example(TODO)': '',
+            'Quantum Clustering (Unf.)': 'https://github.com/exp-time/Quantum-Clustering',
+            'Quantum Example 2 (TODO)': '',
+        },
+    },
+    {
+        id: "DocsLinks",
+        title: "",
+        content:{
+            'Weather Lane Api Docs (Unf.)': 'https://docs.google.com/document/d/e/2PACX-1vQTuUQwS_95SjMQVZ63veCzpdOkEb-D0hEQpQHAH2s0d7LQZr3sqefKGL3NkKgAQMc51UzFiGmrOHDA/pub',
+            'Template Document': 'Docs/Template Document.pdf',
+            'Docs ex.2 (TODO)': '',
+            'Docs ex.3 (TODO)': '',
+            'Docs ex.4 (TODO)': '',
+            'Docs ex.5 (TODO)': '',
+        },
+    },
+];

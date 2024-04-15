@@ -18,6 +18,32 @@ function closeModal(event, id) { // Close if click outside of modal
   }
 }
 
+function createSidebar(id, title, content) { // Sidebar popups
+  const sidebar = createElementWithClass('nav', 'w3-sidebar w3-bar-block w3-card w3-animate-left w3-center');
+  sidebar.setAttribute('id', id);
+  sidebar.style.display = 'none';
+
+  const closeButton = createElementWithClass('button', 'w3-bar-item w3-button', 'Close '); // Create the close button
+  closeButton.onclick = function() { info_close(id); };
+  const closeIcon = createElementWithClass('i', 'fa fa-remove');
+  closeButton.appendChild(closeIcon);
+  sidebar.appendChild(closeButton);
+
+  content.forEach(item => {
+      const menuItem = createElementWithClass('div', 'w3-bar-item w3-button'); // Add menu items
+      menuItem.textContent = item.text;
+      menuItem.onclick = function() {
+          if (item.link) {
+              openInNewTab(item.link);
+          }
+          info_close(id);
+      };
+      sidebar.appendChild(menuItem);
+  });
+
+  document.body.appendChild(sidebar);
+}
+
 function createModal(id, title, content, footerContent) {  // Open popup modal page
   const modal = createElementWithClass('div', 'w3-modal');
   modal.setAttribute('id', id);
@@ -59,7 +85,16 @@ function createModal(id, title, content, footerContent) {  // Open popup modal p
 
 document.addEventListener('DOMContentLoaded', function() {
   modalData.forEach(function(modal) {
-      createModal(modal.id, modal.title, modal.content, modal.footerContent);
+    createModal(modal.id, modal.title, modal.content, modal.footerContent);
+  });
+  sideBarData.forEach(function(item) {
+    createSidebar(item.id, item.title, item.content);
+  }); 
+  
+  cardData.forEach(function(card, index) {
+    const contentId = `content-area${index + 1}`;
+    const infoId = `info${index + 1}`;
+    createCard(contentId, infoId, card.title, card.iconClass, card.content, card.info_Title, card.info_Content);
   });
 });
 
@@ -80,7 +115,6 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
       console.error('Failed to create card: container not found.');
       return;
   }
-
   const third = createElementWithClass('div', 'w3-third');
   const card = createElementWithClass('div', 'w3-card w3-container');
   const row = createElementWithClass('div', 'w3-row w3-row-padding w3-xlarge container-title flex-container');
@@ -89,30 +123,19 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
   const infoIcon = createElementWithClass('a', 'fa fa-info w3-button top-corner');
   const paragraph = createElementWithClass('p', '', content);
   const selectedIcon = createElementWithClass('i', iconClass + ' w3-margin-bottom w3-text-theme');
-
   infoIcon.onclick = () => info_open(info_id);
   row.append(dummyButton, titleDiv, infoIcon);
   card.append(row, selectedIcon, paragraph);
   third.appendChild(card);
   container.appendChild(third);
-
   createModal(info_id, info_Title, info_Content);
 }
-
-document.addEventListener('DOMContentLoaded', function() {  // Set main cards on the page
-  cardData.forEach(function(card, index) {
-      const contentId = `content-area${index + 1}`;
-      const infoId = `info${index + 1}`;
-      createCard(contentId, infoId, card.title, card.iconClass, card.content, card.info_Title, card.info_Content);
-  });
-});
 
 document.addEventListener('DOMContentLoaded', function() { // pagination
   const container = document.querySelector('.content');
   const sections = container.querySelectorAll('.w3-third');
   let currentPage = 0;
-  const paginationContainer = document.createElement('div');
-  paginationContainer.className = 'pagination';
+  const paginationContainer = createElementWithClass('div', 'pagination')
   container.appendChild(paginationContainer);
 
   function getCurrentItemsPerPage() {
