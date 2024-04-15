@@ -108,7 +108,7 @@ const modalData = [
 
 const sideBarData = [
     {
-        id: "GitRepos",
+        id: 'GitRepos',
         title: "",
         content:{
             'Pickup and Delivery Problem (Unf.)': 'https://github.com/exp-time/Pickup-and-delivery',
@@ -120,7 +120,7 @@ const sideBarData = [
         },
     },
     {
-        id: "DocsLinks",
+        id: 'DocsLinks',
         title: "",
         content:{
             'Weather Lane Api Docs (Unf.)': 'https://docs.google.com/document/d/e/2PACX-1vQTuUQwS_95SjMQVZ63veCzpdOkEb-D0hEQpQHAH2s0d7LQZr3sqefKGL3NkKgAQMc51UzFiGmrOHDA/pub',
