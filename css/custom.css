@@ -232,12 +232,12 @@ p, h2 {margin: 0;}
 .w3-light-grey,.w3-hover-light-grey:hover,.w3-light-gray,.w3-hover-light-gray:hover{color:#000!important;background-color:#f1f1f1!important}
 
 .w3-sidebar{
+  top:0;
   width:30%;
   max-height: 40%;
   min-width: 350px;
   background-color:#fff;
   position:fixed!important;
-  display:block;
   z-index:100;
   overflow:auto;
 }
