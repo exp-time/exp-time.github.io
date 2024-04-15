@@ -1,9 +1,6 @@
 
-function info_open(id, top) {
+function info_open(id) {
   var x = document.getElementById(id);
-  if (top) {
-    x.style.paddingTop = "0%";
-  }
   x.style.display = "block";
 }
 
