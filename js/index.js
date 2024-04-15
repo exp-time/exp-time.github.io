@@ -15,7 +15,7 @@ function closeModal(event, id) {                      // Close if click outside 
 }
 
 function closeSideBar(event, id) {                      // Close if click outside of Sidebar
-  if (event.target.classList.contains('w3-sidebar')) {  // Check if the click was not directly on the Sidebar
+  if (!event.target.classList.contains('w3-sidebar')) {  // Check if the click was not directly on the Sidebar
       document.getElementById(id).style.display = 'none';
   }
 }
@@ -38,7 +38,6 @@ function createSidebar(id, title, content) { // Sidebar popups
   sidebar.appendChild(header);
   sidebar.setAttribute('id', id);
   sidebar.style.display = 'none';
-  sidebar.setAttribute('onmousedown', `closeSideBar(event, '${id}')`);
   for (const key in content) {
     const menuItem = createElementWithClass('div', 'w3-bar-item w3-button', key); // Add menu items
     menuItem.onclick = () => openInNewTab(content[key]);
@@ -86,12 +85,12 @@ document.addEventListener('DOMContentLoaded', function() {
   sideBarData.forEach(function(item) {
     createSidebar(item.id, item.title, item.content);
   }); 
-  
   cardData.forEach(function(card, index) {
     const contentId = `content-area${index + 1}`;
     const infoId = `info${index + 1}`;
     createCard(contentId, infoId, card.title, card.iconClass, card.content, card.info_Title, card.info_Content);
   });
+  this.body.setAttribute('onmousedown', `closeSideBar(event, '${id}')`);
 });
 
 function openInNewTab(url) {
