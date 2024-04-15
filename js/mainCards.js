@@ -84,3 +84,24 @@ const cardData = [
         info_Content:"Law inexpedient noble reason abstract revaluation war salvation\n snare burying merciful love inexpedient strong.Inexpedient\n prejudice ideal victorious deceptions good holiest.\n Faithful philosophy endless fearful enlightenment."
     }
 ];
+
+const modalData = [
+    {
+        id: "contact_modal",
+        title: "Contact Information",
+        content: "Email: Hello (at) this domain.",
+        foooter_content: "", 
+    },
+    {
+        id: "about_modal",
+        title: "About section",
+        content: "In computational complexity theory, the complexity class EXPTIME (sometimes called EXP or DEXPTIME) is the set of all decision problems that are solvable by a deterministic Turing machine in  exponential time, i.e., in O(2ᵖ⁽ⁿ⁾) time, where p(n) is a polynomial function of n <a class='w3-button padding-none'onclick='openInNewTab('https://en.wikipedia.org/wiki/EXPTIME')'> [Wiki].",
+        foooter_content: "", 
+    },
+    {
+        id: "unfinished_modal",
+        title: "Site Under Construction",
+        content: "The site is under construction. Most of the contents are copy-paste type placeholders, and thus links, contact address and most everything else might or might not work currently. Contents subject to major change.",
+        foooter_content: "",  
+    },
+];

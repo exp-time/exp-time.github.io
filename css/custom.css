@@ -270,9 +270,7 @@ p, h2 {margin: 0;}
   vertical-align: middle;
 }
 
-.top-correct {
-  padding-top:300px!important;
-}
+/*.top-correct {padding-top:300px!important;}*/
 
 @media (max-width:600px){.w3-modal-content{margin:0 10px;width:auto!important}.w3-modal{padding-top:30px}
 .w3-dropdown-hover.w3-mobile .w3-dropdown-content,.w3-dropdown-click.w3-mobile .w3-dropdown-content{position:relative}	

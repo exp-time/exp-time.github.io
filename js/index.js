@@ -21,6 +21,15 @@ function closeModal(event, id) {
   }
 }
 
+// Open popup modal page
+function createModal(id, title, content, foooter_content) {
+
+  if (event.target.classList.contains('w3-modal')) {
+      document.getElementById(id).style.display = 'none';
+  }
+}
+
+
 function openInNewTab(url) {
   window.open(url, '_blank').focus();
 }
