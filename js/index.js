@@ -23,7 +23,7 @@ function closeModal(event, id) {
 
 // Open popup modal page
 function createModal(id, title, content, foooter_content) {
-
+  const modal = document.createElement('div');
   if (event.target.classList.contains('w3-modal')) {
       document.getElementById(id).style.display = 'none';
   }
