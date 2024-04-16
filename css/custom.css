@@ -346,9 +346,6 @@ h6{font-size:16px}
   font-size:64px;
 }
 
-.w3-row {
-  
-}
 .sub-title {
   font-weight:400;
   font-size:18px;
@@ -480,6 +477,8 @@ h1,h2,h3,h4,h5,h6{
 
 .container-title {
   padding-top: 0.75%;
+  padding-right: 0.75%;
+  padding-left: 0.75%;
   font-size: 24px;
 } 
 
