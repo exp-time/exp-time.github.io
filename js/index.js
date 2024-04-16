@@ -27,22 +27,23 @@ function headerWithClose(id, title, theme) { // Create header and close button
 }
 
 function createTooltipIcon(link, title, icon, opts) {
-  const modal = createElementWithClass('div', 'w3-modal');
   const tooltip = createElementWithClass('div', 'w3-tooltip');
   const button = createElementWithClass('div', 'w3-text-white pointer-cursor fa');
 }
 
 function createSidebar(id, title, content) { // Sidebar popups
+  const modal = createElementWithClass('div', 'w3-modal');
   const sidebar = createElementWithClass('nav', 'w3-sidebar w3-bar-block w3-card w3-animate-left w3-center');
   const header = headerWithClose(id, title, "w3-theme")
   sidebar.appendChild(header);
-  sidebar.setAttribute('id', id);
+  modal.setAttribute('id', id);
   for (const key in content) {
     const menuItem = createElementWithClass('div', 'w3-bar-item w3-button', key); // Add menu items
     menuItem.onclick = () => openInNewTab(content[key]);
     sidebar.appendChild(menuItem)
   }
-  document.body.appendChild(sidebar);
+  modal.appendChild(sidebar)
+  document.body.appendChild(modal);
 }
 
 function createModal(id, title, content, footerContent) {  // Open popup modal page
