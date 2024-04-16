@@ -156,7 +156,6 @@ p, h2 {margin: 0;}
 .w3-tooltip {
   position: relative; 
   font-size:12px;
-  /*  padding: 3px 6px; /* top and bottom | left and right */
 }
 .w3-tooltip .w3-text{
   display:none;
@@ -165,7 +164,7 @@ p, h2 {margin: 0;}
   left: 50%;
   transform: translateX(-50%);
   white-space: nowrap;
-  padding: 1px;
+  padding: 3px 6px; /* top and bottom | left and right */
   z-index: 101;
 
 }
