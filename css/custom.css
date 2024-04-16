@@ -168,7 +168,7 @@ p, h2 {margin: 0;}
   transform: translateX(-50%);
   white-space: nowrap;
   padding: 1px;
-  z-index: 100;
+  z-index: 101;
 }
 .pointer-cursor{
   cursor:pointer;

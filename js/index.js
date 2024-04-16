@@ -26,6 +26,12 @@ function headerWithClose(id, title, theme) { // Create header and close button
   return header
 }
 
+function createTooltipIcon(link, title, icon, opts) {
+  const modal = createElementWithClass('div', 'w3-modal');
+  const tooltip = createElementWithClass('div', 'w3-tooltip');
+  const button = createElementWithClass('div', 'w3-tooltip');
+}
+
 function createSidebar(id, title, content) { // Sidebar popups
   const sidebar = createElementWithClass('nav', 'w3-sidebar w3-bar-block w3-card w3-animate-left w3-center');
   const header = headerWithClose(id, title, "w3-theme")
