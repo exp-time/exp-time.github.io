@@ -161,6 +161,7 @@ p, h2 {margin: 0;}
 .w3-tooltip {
   position: relative; 
   font-size:12px;
+  padding: 3px;
 }
 
 .w3-tooltip .w3-text{
