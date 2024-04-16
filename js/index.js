@@ -14,6 +14,14 @@ function closeModal(event, id) {                      // Close if click outside 
   }
 }
 
+function makeDocumentModal(id, content) {
+  const modal = createElementWithClass('div', 'w3-modal');
+  modal.setAttribute('id', id);
+  modal.setAttribute('onmousedown', `closeModal(event, '${id}')`);
+  modal.appendChild(content);
+  document.body.appendChild(modal);
+}
+
 function headerWithClose(id, title, theme) { // Create header and close button
   const header = createElementWithClass('header', 'modal-header')
   const headerP = createElementWithClass('p', '', title);
@@ -32,31 +40,24 @@ function createTooltipIcon(link, title, icon, opts) {
 }
 
 function createSidebar(id, title, content) { // Sidebar popups
-  const modal = createElementWithClass('div', 'w3-modal');
   const sidebar = createElementWithClass('nav', 'w3-sidebar w3-bar-block w3-card w3-animate-left w3-center');
   const header = headerWithClose(id, title, "w3-theme")
   sidebar.appendChild(header);
-  modal.setAttribute('id', id);
   for (const key in content) {
     const menuItem = createElementWithClass('div', 'w3-bar-item w3-button', key); // Add menu items
     menuItem.onclick = () => openInNewTab(content[key]);
     sidebar.appendChild(menuItem)
   }
-  modal.appendChild(sidebar)
-  document.body.appendChild(modal);
+  makeDocumentModal(id, sidebar)
 }
 
 function createModal(id, title, content, footerContent) {  // Open popup modal page
-  const modal = createElementWithClass('div', 'w3-modal');
-  modal.setAttribute('id', id);
-  modal.setAttribute('onmousedown', `closeModal(event, '${id}')`);
   const modalContent = createElementWithClass('div', 'w3-modal-content w3-card-4 modal-animate-top');
   const header = headerWithClose(id, title, "w3-theme-l1")
   const body = createElementWithClass('div', 'w3-padding');
   const bodyText = createElementWithClass('p', 'font_15', content);
   body.appendChild(bodyText);
   modalContent.append(header, body);
-
   if (footerContent && footerContent != ""){
     const footer = createElementWithClass('footer', 'w3-theme-l1 modal-footer');
     if (typeof footerContent === 'object' && !(footerContent instanceof Array)) {
@@ -73,8 +74,7 @@ function createModal(id, title, content, footerContent) {  // Open popup modal p
       }
     modalContent.appendChild(footer);
   }
-  modal.appendChild(modalContent);
-  document.body.appendChild(modal);
+  makeDocumentModal(id, modalContent)
 }
 
 document.addEventListener('DOMContentLoaded', function() {
