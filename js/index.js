@@ -44,7 +44,7 @@ function createModal(id, title, content, footerContent) {  // Open popup modal p
   const modal = createElementWithClass('div', 'w3-modal');
   modal.setAttribute('id', id);
   modal.setAttribute('onmousedown', `closeModal(event, '${id}')`);
-  const modalContent = createElementWithClass('div', 'w3-modal-content w3-card-4 w3-animate-top');
+  const modalContent = createElementWithClass('div', 'w3-modal-content w3-card-4 modal-animate-top');
   const header = headerWithClose(id, title, "w3-theme-l1")
   const body = createElementWithClass('div', 'w3-padding');
   const bodyText = createElementWithClass('p', 'font_15', content);
