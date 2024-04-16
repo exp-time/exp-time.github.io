@@ -166,7 +166,6 @@ p, h2 {margin: 0;}
   white-space: nowrap;
   padding: 2px 4px; /* top and bottom | left and right */
   z-index: 101;
-
 }
 .pointer-cursor{
   cursor:pointer;
