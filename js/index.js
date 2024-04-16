@@ -41,13 +41,15 @@ function createTooltipIcon(link, title, icon, opts) {
 
 function createSidebar(id, title, content) { // Sidebar popups
   const sidebar = createElementWithClass('nav', 'w3-sidebar w3-bar-block w3-card w3-animate-left w3-center');
+  const sidebarContent = createElementWithClass('div', 'sidebar-content')
   const header = headerWithClose(id, title, "w3-theme")
   sidebar.appendChild(header);
   for (const key in content) {
     const menuItem = createElementWithClass('div', 'w3-bar-item w3-button', key); // Add menu items
     menuItem.onclick = () => openInNewTab(content[key]);
-    sidebar.appendChild(menuItem)
+    sidebarContent.appendChild(menuItem)
   }
+  sidebar.appendChild(sidebarContent)
   makeDocumentModal(id, sidebar)
 }
 

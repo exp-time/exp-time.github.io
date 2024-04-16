@@ -237,6 +237,9 @@ p, h2 {margin: 0;}
   background-color:#fff;
   z-index:100;
   overflow:auto;
+}
+
+.sidebar-content{
   border-width: 0 4px 4px 0; /* top | right | bottom | left */
   border-style: inset;
   border-color: #cccccc;
