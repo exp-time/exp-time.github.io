@@ -138,19 +138,19 @@ const clickablesData = [
     link: 'https://github.com/exp-time',
     title: 'github.com/exp-time',
     icon: 'fa-github',
-    opts: {'class': 'w3-xxlarge', },
+    opts: { 'div': {'class': 'w3-xxlarge'}, },
   },
   {
     link: 'https://discord.gg/h4F49RCZcy',
     title: 'To Discord',
     icon: 'fa-discord',
-    opts: {'class': 'w3-xxlarge', },
+    opts: { 'div': {'class': 'w3-xxlarge'}, },
   },
   {
     link: '#top',
     title: 'Go top',
     icon: 'fa-chevron-circle-up',
-    opts: {'class': 'w3-xxlarge', },
+    opts: { 'div': {'class': 'w3-xxlarge'}, },
   },
   {
     link: 'info_open("GitRepos")',
