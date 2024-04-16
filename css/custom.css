@@ -164,7 +164,7 @@ p, h2 {margin: 0;}
   left: 50%;
   transform: translateX(-50%);
   white-space: nowrap;
-  padding: 3px 6px; /* top and bottom | left and right */
+  padding: 2px 4px; /* top and bottom | left and right */
   z-index: 101;
 
 }
