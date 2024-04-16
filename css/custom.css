@@ -237,7 +237,7 @@ p, h2 {margin: 0;}
   background-color:#fff;
   z-index:100;
   overflow:auto;
-  border-width: 0 0 2px 2px; /* top | right | bottom | left */
+  border-width: 0 4px 4px 0; /* top | right | bottom | left */
   border-style: inset;
   border-color: #cccccc;
 }
