@@ -117,6 +117,16 @@ p, h2 {margin: 0;}
   }
 }
 
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 98;  
+
+  display: none;
+}
 
 
 .hidden {
@@ -265,7 +275,6 @@ p, h2 {margin: 0;}
 .w3-modal{
   z-index:3;
   display:none;
-  padding-top:100px;
   position:fixed;
   left:0;
   top:0;
@@ -277,6 +286,7 @@ p, h2 {margin: 0;}
 }
 .w3-modal-content{
   margin:auto;
+  padding-top:100px;
   background-color:#fff;
   position:relative;
   padding:0;
