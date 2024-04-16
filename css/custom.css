@@ -242,6 +242,7 @@ p, h2 {margin: 0;}
 .w3-sidebar{
   top:0;
   width:30%;
+  display:none;
   max-height: 40%;
   min-width: 350px;
   background-color:#fff;
