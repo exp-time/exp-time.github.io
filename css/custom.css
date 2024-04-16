@@ -85,9 +85,7 @@ body {
   
 .content {
   display: block;
-  padding-top: 0.5em;
-  padding-left: 0.5em;
-  padding-right: 0.5em;
+  padding: 0.5em 0.5em 0; /* top | left and right | bottom */
 }
 
 p, h2 {margin: 0;}
@@ -129,7 +127,6 @@ p, h2 {margin: 0;}
   display: none;
 }
 
-
 .hidden {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
@@ -151,18 +148,16 @@ p, h2 {margin: 0;}
   display: flex;
   justify-content: space-between; 
   align-items: center; 
-  padding: 2em; 
+  padding: 2em 4em 2em 4em; /* top | right | bottom | left */
 }
 .footer-container p {
   margin: 0; 
 }
-
 .w3-tooltip {
   position: relative; 
   font-size:12px;
   padding: 3px;
 }
-
 .w3-tooltip .w3-text{
   display:none;
   position: absolute;
