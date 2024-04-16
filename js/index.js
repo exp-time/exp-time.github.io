@@ -29,7 +29,7 @@ function headerWithClose(id, title, theme) { // Create header and close button
 function createTooltipIcon(link, title, icon, opts) {
   const modal = createElementWithClass('div', 'w3-modal');
   const tooltip = createElementWithClass('div', 'w3-tooltip');
-  const button = createElementWithClass('div', 'w3-tooltip');
+  const button = createElementWithClass('div', 'w3-text-white pointer-cursor fa');
 }
 
 function createSidebar(id, title, content) { // Sidebar popups
