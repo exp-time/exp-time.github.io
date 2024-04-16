@@ -109,7 +109,7 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
   }
   const third = createElementWithClass('div', 'w3-third');
   const card = createElementWithClass('div', 'w3-card w3-container');
-  const row = createElementWithClass('div', 'w3-row w3-row-padding w3-xlarge container-title flex-container');
+  const row = createElementWithClass('div', 'w3-row w3-xlarge container-title flex-container');
   const dummyButton = createElementWithClass('div', 'dummy-button');
   const titleDiv = createElementWithClass('div', 'title', title);
   const infoIcon = createElementWithClass('a', 'fa fa-info w3-button top-corner');
