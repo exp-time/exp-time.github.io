@@ -286,12 +286,12 @@ p, h2 {margin: 0;}
 }
 .w3-modal-content{
   margin:auto;
-  padding-top:100px;
+  top:5%;
   background-color:#fff;
   position:relative;
   padding:0;
   outline:0;
-  width:50%;
+  width:60%;
   min-width:350px;
 }
 @media (max-width:600px){.w3-modal-content{margin:0 10px;width:auto!important}.w3-modal{padding-top:30px}
