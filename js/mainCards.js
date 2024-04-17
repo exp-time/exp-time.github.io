@@ -156,12 +156,12 @@ const clickablesData = [
     link: 'info_open("GitRepos")',
     title: 'Project Repositories',
     icon: 'fa-github',
-    opts: {'class': 'w3-xxxlarge w3-button w3-theme', },
+    opts: {'class': 'w3-xxxlarge w3-button w3-theme-l1', },
   },
   {
     link: 'info_open("DocsLinks")',
     title: 'Documentation',
     icon: 'fa-file-text',
-    opts: {'class': 'w3-xxxlarge w3-button w3-theme', },
+    opts: {'class': 'w3-xxxlarge w3-button w3-theme-l1', },
   },
 ];
