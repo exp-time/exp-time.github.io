@@ -105,6 +105,7 @@ document.addEventListener('DOMContentLoaded', function() {
   clickablesData.forEach(function(item) {
     createTooltipIcon(item.link, item.content, item.icon);
   }); 
+  /* TERMINAL */
   document.getElementById('input').addEventListener('keydown', function(event) {
     if (event.key === 'Enter') {
         let input = this.value;
