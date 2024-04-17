@@ -196,12 +196,13 @@ body {font-size:15px;margin:0;font-family: Arial, sans-serif;}
 .main-title, .sub-title {
   position: relative; 
   font-weight:400;
-  
 }
-
 .main-title {font-size:64px;}
 .sub-title {font-size:18px;margin:2em 0;}
-
+header.w3-theme {
+  overflow: hidden;  /* Hide overflow content outside the header */
+  position: relative; /* Ensures proper calculation of overflow area */
+}
 
 .font-900 {font-weight:900;}
 
