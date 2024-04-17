@@ -288,8 +288,6 @@ body {font-size:15px;margin:0;font-family: Arial, sans-serif;}
   box-shadow: 0 4px 10px rgba(0,0,0,0.5);
   text-align: left!important;
   width: 100%;
-  z-index: 1;
-  position: relative;
 }
 
 .output {
