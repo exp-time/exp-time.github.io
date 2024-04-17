@@ -279,3 +279,37 @@ body {font-size:15px;margin:0;font-family: Arial, sans-serif;}
 ::-webkit-scrollbar-track {background: #f1f1f1;} /* Track */
 ::-webkit-scrollbar-thumb {background: #888;} /* Handle */
 ::-webkit-scrollbar-thumb:hover {background: #555;} /* Handle on hover */
+
+/* Terminal */
+.terminal {
+  background-color: #333;
+  color: #f1f1f1;
+  border-radius: 5px;
+  padding: 0.25em;
+  width: 90%;
+  max-width: 800px;
+  margin: 0.25em;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+.output {
+  min-height: 100px;
+  padding: 5px;
+  overflow-y: auto;
+  max-height: 300px;
+}
+
+.input {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-top: 10px;
+  border: none;
+  background-color: #222;
+  color: #fff;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+
+.input:focus {
+  outline: none;
+}

@@ -134,11 +134,11 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
   infoIcon.onclick = () => info_open(info_id);
   row.append(dummyButton, titleDiv, infoIcon);
   let paragraph;
-  if (isString(content)) {
+  if (isString(content)) { 
     paragraph = createElementWithClass('p', '', content);
   }
-  else {
-    // TODO: Create terminal window
+  else { // TODO: modify else..
+    paragraph = createWebTerminal()
   }
   card.append(row, selectedIcon, paragraph);
   third.appendChild(card);
