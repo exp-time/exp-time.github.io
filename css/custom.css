@@ -1,31 +1,26 @@
 /* Theme */
-
 .w3-theme {color:#fff !important; background-color:#000000 !important}
 .w3-theme-l1 {color:#fff !important; background-color:#333333 !important}
 .w3-theme-light {color:#000 !important; background-color:#f0f0f0 !important}
 
-.w3-text-theme {
-  color:#000000 !important;
-  font-size:100px !important;
-}
+.w3-text-theme {color:#000000 !important;font-size:100px !important;}
 
-.w3-hover-light-grey:hover{color:#000!important;background-color:#f1f1f1!important}
+.w3-dark-grey{color:#fff!important;background-color:#616161!important}
+.w3-dark-grey:hover{color:#000!important;background-color:#f1f1f1!important}
 
 /* pagination */
-
 html{box-sizing:border-box}*,*:before,*:after{box-sizing:inherit}
-/* Extract from normalize.css by Nicolas Gallagher and Jonathan Neal git.io/normalize */
 html{
   font-size:15px;
   -ms-text-size-adjust:100%;
   -webkit-text-size-adjust:100%;
-  overflow-x:hidden
-}
+  overflow-x:hidden}
 
 article,aside,details,figcaption,figure,footer,header,main,menu{display:block}
 summary{display:list-item}
 audio,canvas,progress,video{display:inline-block}progress{vertical-align:baseline}
 audio:not([controls]){display:none;height:0}[hidden],template{display:none}
+
 a{background-color:transparent}a:active,a:hover{outline-width:0}
 abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}
 b,strong{font-weight:bolder}dfn{font-style:italic}mark{background:#ff0;color:#000}
@@ -116,10 +111,7 @@ p, h2 {margin: 0;}
   float:right!important;
   flex-grow: 0;
 }
-.w3-dark-grey,.w3-hover-dark-grey:hover,.w3-dark-gray,.w3-hover-dark-gray:hover{
-  color:#fff!important;
-  background-color:#616161!important
-}
+
 .footer-container {
   display: flex;
   justify-content: space-between; 
@@ -290,12 +282,7 @@ p, h2 {margin: 0;}
 .w3-animate-right{position:relative;animation:animateright 0.4s}@keyframes animateright{from{right:-300px;opacity:0} to{right:0;opacity:1}}
 .w3-animate-zoom {animation:animatezoom 0.6s}@keyframes animatezoom{from{transform:scale(0)} to{transform:scale(1)}}
 
-h1{font-size:46px}
-h2{font-size:30px}
-h3{font-size:24px}
-h4{font-size:20px}
-h5{font-size:18px}
-h6{font-size:16px}
+
 
 .w3-center .w3-bar{
   display:inline-block;
@@ -318,12 +305,6 @@ h6{font-size:16px}
   font-weight:400;
   font-size:18px;
   margin:2em 0;
-}
-
-h1,h2,h3,h4,h5,h6{
-  font-family:"Segoe UI",Arial,sans-serif;
-  font-weight:400;
-  margin:10px 0;
 }
 
 .font-900 {
