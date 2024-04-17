@@ -53,10 +53,8 @@ body {
 .w3-margin{margin:16px!important}.w3-margin-top{margin-top:16px!important}.w3-margin-bottom{margin-bottom:16px!important}
 .w3-margin-left{margin-left:16px!important}.w3-margin-right{margin-right:16px!important}
   
-.content {
-  display: block;
-  padding: 0.5em 0.5em 0; /* top | left and right | bottom */
-}
+.content {display: block;padding: 0.5em 0.5em 0;} /* top | left and right | bottom */
+
 
 p{margin: 0;}
 
