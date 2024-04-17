@@ -3,7 +3,7 @@ const cardData = [
     title: "API Endpoints",
     iconClass: "fa fa-terminal",
     content: "Custom built, with effortless use.\nData-products for seamless integration.\nAdvanced applications and tangible value generation",
-    info_Title: "first_info", 
+    info_Title: "API Information", 
     info_Content:"Law inexpedient noble reason abstract revaluation war salvation\n snare burying merciful love inexpedient strong.Inexpedient\n prejudice ideal victorious deceptions good holiest.\n Faithful philosophy endless fearful enlightenment."
   },
   {
