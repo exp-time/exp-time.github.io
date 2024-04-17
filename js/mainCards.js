@@ -14,6 +14,13 @@ const cardData = [
     info_Content:"Law inexpedient noble reason abstract revaluation war salvation\n snare burying merciful love inexpedient strong.Inexpedient\n prejudice ideal victorious deceptions good holiest.\n Faithful philosophy endless fearful enlightenment."
   },
   {
+    title: "Excel Automation",
+    iconClass: "",
+    content: 1,
+    info_Title: "eight_info", 
+    info_Content:"Law inexpedient noble reason abstract revaluation war salvation\n snare burying merciful love inexpedient strong.Inexpedient\n prejudice ideal victorious deceptions good holiest.\n Faithful philosophy endless fearful enlightenment."
+  },
+  {
     title: "Artificial Intelligence",
     iconClass: "fa fa-cog",
     content: "AI methods in support of people. Useful AI.",
@@ -46,13 +53,6 @@ const cardData = [
     iconClass: "fa fa-code-fork",
     content: "Network analysis",
     info_Title: "seventh_info", 
-    info_Content:"Law inexpedient noble reason abstract revaluation war salvation\n snare burying merciful love inexpedient strong.Inexpedient\n prejudice ideal victorious deceptions good holiest.\n Faithful philosophy endless fearful enlightenment."
-  },
-  {
-    title: "Excel Automation",
-    iconClass: "fa fa-check-square",
-    content: "TODO TEST",
-    info_Title: "eight_info", 
     info_Content:"Law inexpedient noble reason abstract revaluation war salvation\n snare burying merciful love inexpedient strong.Inexpedient\n prejudice ideal victorious deceptions good holiest.\n Faithful philosophy endless fearful enlightenment."
   },
   {
