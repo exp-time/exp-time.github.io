@@ -1,15 +1,13 @@
-
-
 function createWebTerminal() {
   const terminal = document.createElement('div');
   terminal.setAttribute('id', 'terminal');
   terminal.className = 'terminal';
 
-  const output = document.createElement('div'); // Create the output area
+  const output = document.createElement('div');
   output.setAttribute('id', 'output');
   output.className = 'output';
 
-  const input = document.createElement('input'); // Create the input field
+  const input = document.createElement('input');
   input.setAttribute('type', 'text');
   input.setAttribute('id', 'input');
   input.className = 'input';
