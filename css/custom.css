@@ -324,6 +324,22 @@ header.w3-theme {
   box-sizing: border-box;
 }
 
+/* WebKit scrollbar styles */
+.output::-webkit-scrollbar {
+  width: 6px;  /* scrollbar width */
+}
+
+.output::-webkit-scrollbar-track {
+  background: #f1f1f1;  /* track color */
+}
+
+.output::-webkit-scrollbar-thumb {
+  background: #000000;  /* handle color */
+}
+
+.output::-webkit-scrollbar-thumb:hover {
+  background: #555;  /* handle color on hover */
+}
 .input:focus {
   outline: none;
 }
