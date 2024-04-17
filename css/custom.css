@@ -288,6 +288,8 @@ header.w3-theme {
 .terminal {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
   background-color: #333;
   color: #f1f1f1;
   padding: 0.5em;
@@ -296,6 +298,7 @@ header.w3-theme {
   text-align: left!important;
   height: 100%;
   max-height: 100%;
+  box-sizing: border-box;
 }
 
 .output {
