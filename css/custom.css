@@ -288,16 +288,12 @@ header.w3-theme {
 .terminal {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   background-color: #333;
   color: #f1f1f1;
-  border-radius: 5px;
   padding: 0.5em;
   margin: 1.0em;
   box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-  align-items: stretch;
   text-align: left!important;
-  box-sizing: border-box;
   height: 100%;
   max-height: 100%;
 }
@@ -308,6 +304,7 @@ header.w3-theme {
   margin-bottom: 10px;
   overflow-y: auto;
   width: 100%;
+  max-height: 100%;
 }
 
 .input {
