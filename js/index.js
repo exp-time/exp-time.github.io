@@ -130,7 +130,7 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
   const titleDiv = createElementWithClass('div', 'title', title);
   const infoIcon = createElementWithClass('a', 'fa fa-info w3-button top-corner');
   const paragraph = createElementWithClass('p', '', content);
-  const selectedIcon = createElementWithClass('i', iconClass + ' w3-margin-bottom w3-text-theme');
+  const selectedIcon = createElementWithClass('i', iconClass + ' w3-margin w3-text-theme');
   infoIcon.onclick = () => info_open(info_id);
   row.append(dummyButton, titleDiv, infoIcon);
   card.append(row, selectedIcon, paragraph);

@@ -40,8 +40,8 @@ body {font-size:15px;margin:0;font-family: Arial, sans-serif;}
 ::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}
 /* End extract */
 
-.w3-margin{margin:16px!important}.w3-margin-top{margin-top:16px!important}.w3-margin-bottom{margin-bottom:16px!important}
-.w3-margin-left{margin-left:16px!important}.w3-margin-right{margin-right:16px!important}
+.w3-margin{margin:1.5em 0em!important} /* top and bottom | left and right */
+
   
 .content {display: block;padding: 0.5em 0.5em 0;} /* top | left and right | bottom */
 
