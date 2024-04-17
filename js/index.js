@@ -1,3 +1,4 @@
+let isString = value => typeof value === 'string';
 
 function info_open(id) {
   var x = document.getElementById(id);
@@ -129,10 +130,16 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
   const dummyButton = createElementWithClass('div', 'dummy-button');
   const titleDiv = createElementWithClass('div', 'title', title);
   const infoIcon = createElementWithClass('a', 'fa fa-info w3-button top-corner');
-  const paragraph = createElementWithClass('p', '', content);
   const selectedIcon = createElementWithClass('i', iconClass + ' w3-margin w3-text-theme');
   infoIcon.onclick = () => info_open(info_id);
   row.append(dummyButton, titleDiv, infoIcon);
+  let paragraph;
+  if (isString(content)) {
+    paragraph = createElementWithClass('p', '', content);
+  }
+  else {
+    
+  }
   card.append(row, selectedIcon, paragraph);
   third.appendChild(card);
   container.appendChild(third);
