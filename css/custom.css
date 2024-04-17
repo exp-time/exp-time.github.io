@@ -69,7 +69,6 @@ body {font-size:15px;margin:0;font-family: Arial, sans-serif;}
 .w3-tooltip:hover .w3-text{display:block;}
 .w3-tooltip {position: relative;font-size:12px;}
 
-
 /* top | right | bottom | left */
 .upShadow {box-shadow:0 -4px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);}
 .downShadow {box-shadow:0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);}
