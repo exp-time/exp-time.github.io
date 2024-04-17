@@ -296,6 +296,7 @@ header.w3-theme {
   padding: 0.5em;
   margin: 0.5em;
   box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  align-items: stretch;
   text-align: left!important;
   box-sizing: border-box;
 }
