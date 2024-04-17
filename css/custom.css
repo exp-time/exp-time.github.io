@@ -298,6 +298,7 @@ header.w3-theme {
   align-items: stretch;
   text-align: left!important;
   box-sizing: border-box;
+  height: 100%;
   max-height: 100%;
 }
 
