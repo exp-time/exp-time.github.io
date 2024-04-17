@@ -25,7 +25,7 @@ function makeDocumentModal(id, content) {
 function headerWithClose(id, title, theme) { // Create header and close button
   const header = createElementWithClass('header', 'modal-header')
   const headerP = createElementWithClass('p', '', title);
-  const closeButton = createElementWithClass('span', 'w3-button w3-display-topright');
+  const closeButton = createElementWithClass('span', 'w3-button display-topright');
   const closeIcon = createElementWithClass('i', 'fa fa-remove');
   closeButton.appendChild(closeIcon);
   closeButton.onclick = () =>  info_close(id);
