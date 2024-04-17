@@ -38,47 +38,20 @@ body {font-size:15px;margin:0;font-family: Arial, sans-serif;}
 [type=search]{-webkit-appearance:textfield;outline-offset:-2px;appearance: textfield;}
 [type=search]::-webkit-search-decoration{-webkit-appearance:none}
 ::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}
-/* End extract */
 
 .w3-margin{margin:1.5em 0em!important} /* top and bottom | left and right */
-
-  
 .content {display: block;padding: 0.5em 0.5em 0;} /* top | left and right | bottom */
 
-
 /* Assume the base case is the smallest, i.e., mobile-first approach */
-/* Base case: 1 item per row, suitable for narrow screens */
 .w3-third {width: 100% !important; padding: 0.5em;}/* Adjust width to full width for small screens */
-
 /* Medium screens: 2 items per row (min-width of 1100px for 550px each) */
-@media (min-width: 1100px) {
-  .w3-third {
-    width: 50% !important;
-  }
-}
-
+@media (min-width: 1100px) {.w3-third {width: 50% !important;}}
 /* Large screens: 3 items per row (min-width of 1650px for 550px each) */
-@media (min-width: 1650px) {
-  .w3-third {
-    width: 33.3333% !important;
-  }
-}
+@media (min-width: 1650px) {.w3-third {width: 33.3333% !important;}}
 
-.top-corner {
-  float:right!important;
-  flex-grow: 0;
-}
-
-.footer-container {
-  display: flex;
-  justify-content: space-between; 
-  align-items: center; 
-  padding: 1.5em 4em 1.5em 4em; /* top | right | bottom | left */
-}
-.footer-container p {
-  margin: 0; 
-}
-
+.top-corner {float:right!important;flex-grow: 0;}
+.footer-container {display:flex;justify-content:space-between;align-items: center;padding: 1.5em 4em 1.5em 4em;} /* top | right | bottom | left */
+.footer-container p {margin: 0;}
 
 .w3-tooltip .w3-text{
   display:none;
