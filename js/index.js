@@ -37,12 +37,13 @@ function headerWithClose(id, title, theme) { // Create header and close button
 function createTooltipIcon(link, title, icon, opts) { // Create Icon to click on, with opt tooltip
   const tooltip = createElementWithClass('div', 'w3-tooltip');
   const button = createElementWithClass('div', 'w3-text-white pointer-cursor fa');
+
 }
 
 function createSidebar(id, title, content) { // Sidebar popups
   const sidebar = createElementWithClass('nav', 'w3-sidebar w3-bar-block w3-card w3-animate-left w3-center');
   const sidebarContent = createElementWithClass('div', 'sidebar-content')
-  const header = headerWithClose(id, title, "w3-theme")
+  const header = headerWithClose(id, title, "w3-theme-l1")
   sidebar.appendChild(header);
   for (const key in content) {
     const menuItem = createElementWithClass('div', 'w3-bar-item w3-button', key); // Add menu items

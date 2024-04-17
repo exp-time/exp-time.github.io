@@ -1,5 +1,4 @@
 /* Theme */
-
 .w3-theme-l5 {color:#000 !important; background-color:#f0f0f0 !important}
 .w3-theme-l4 {color:#000 !important; background-color:#cccccc !important}
 .w3-theme-l3 {color:#fff !important; background-color:#999999 !important}
@@ -477,10 +476,8 @@ h1,h2,h3,h4,h5,h6{
 }
 
 .w3-btn.w3-disabled:hover,.w3-btn:disabled:hover{box-shadow:none}
-
 .w3-dropdown-hover:hover > .w3-button:first-child,.w3-dropdown-click:hover > .w3-button:first-child{background-color:#ccc;color:#000}
 .w3-bar-block .w3-dropdown-hover .w3-button,.w3-bar-block .w3-dropdown-click .w3-button{width:100%;text-align:left;padding:8px 16px}
-
 .w3-button:hover{color:#000!important;background-color:#ccc!important}
 .w3-bar .w3-button{white-space:normal}
 
