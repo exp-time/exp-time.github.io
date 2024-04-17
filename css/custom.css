@@ -366,7 +366,6 @@ h1,h2,h3,h4,h5,h6{
 .w3-padding-large{padding:12px 24px!important}
 .w3-padding-16{padding-top:16px!important;padding-bottom:16px!important}
 .w3-padding-24{padding-top:24px!important;padding-bottom:24px!important}
-.w3-padding-32{padding-top:32px!important;padding-bottom:32px!important}
 .w3-padding-48{padding-top:48px!important;padding-bottom:48px!important}
 .w3-padding-64{padding-top:64px!important;padding-bottom:64px!important}
 .w3-padding-top-64{padding-top:64px!important}
@@ -407,6 +406,11 @@ h1,h2,h3,h4,h5,h6{
 .w3-container:after,.w3-container:before,.w3-panel:after,.w3-panel:before,.w3-row:after,.w3-row:before,.w3-row-padding:after,.w3-row-padding:before,
 .w3-cell-row:before,.w3-cell-row:after,.w3-clear:after,.w3-clear:before,.w3-bar:before,.w3-bar:after{content:"";display:table;clear:both}
 */
+
+.padding-3{
+  padding:1.5em 0;
+}
+
 
 .w3-animate-bottom{
   position:relative;

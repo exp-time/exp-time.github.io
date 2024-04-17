@@ -34,7 +34,7 @@ function headerWithClose(id, title, theme) { // Create header and close button
   return header
 }
 
-function createTooltipIcon(link, title, icon, opts) {
+function createTooltipIcon(link, title, icon, opts) { // Create Icon to click on, with opt tooltip
   const tooltip = createElementWithClass('div', 'w3-tooltip');
   const button = createElementWithClass('div', 'w3-text-white pointer-cursor fa');
 }
