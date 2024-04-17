@@ -138,7 +138,7 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
     paragraph = createElementWithClass('p', '', content);
   }
   else {
-    
+    // TODO: Create terminal window
   }
   card.append(row, selectedIcon, paragraph);
   third.appendChild(card);
