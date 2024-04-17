@@ -9,7 +9,7 @@ const cardData = [
   {
     title: "Terminal Test",
     iconClass: "",
-    content: true,
+    content: 0,
     info_Title: "second_info", 
     info_Content:"Law inexpedient noble reason abstract revaluation war salvation\n snare burying merciful love inexpedient strong.Inexpedient\n prejudice ideal victorious deceptions good holiest.\n Faithful philosophy endless fearful enlightenment."
   },

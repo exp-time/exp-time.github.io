@@ -137,8 +137,14 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
   if (isString(content)) { 
     paragraph = createElementWithClass('p', '', content);
   }
-  else { // TODO: modify else..
+  else if (content === 0){ // TODO: modify else..
     paragraph = createWebTerminal()
+  }
+  else if (content === 1){ // TODO: modify else..
+    //paragraph = createWebExcel()
+  }
+  else {
+    // TODO HANDLE
   }
   if (iconClass != '') {
     const selectedIcon = createElementWithClass('i', iconClass + ' w3-margin w3-text-theme');
