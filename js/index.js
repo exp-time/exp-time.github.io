@@ -141,7 +141,7 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
     paragraph = createWebTerminal()
   }
   else if (content === 1){ // TODO: modify else..
-    //paragraph = createWebExcel()
+    paragraph = ""
   }
   else {
     // TODO HANDLE
