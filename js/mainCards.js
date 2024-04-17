@@ -10,7 +10,7 @@ const cardData = [
     title: "Terminal Test",
     iconClass: "",
     content: true,
-    info_Title: "seventh_info", 
+    info_Title: "second_info", 
     info_Content:"Law inexpedient noble reason abstract revaluation war salvation\n snare burying merciful love inexpedient strong.Inexpedient\n prejudice ideal victorious deceptions good holiest.\n Faithful philosophy endless fearful enlightenment."
   },
   {
@@ -45,7 +45,7 @@ const cardData = [
     title: "Networks",
     iconClass: "fa fa-code-fork",
     content: "Network analysis",
-    info_Title: "second_info", 
+    info_Title: "seventh_info", 
     info_Content:"Law inexpedient noble reason abstract revaluation war salvation\n snare burying merciful love inexpedient strong.Inexpedient\n prejudice ideal victorious deceptions good holiest.\n Faithful philosophy endless fearful enlightenment."
   },
   {
