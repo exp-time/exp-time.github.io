@@ -15,7 +15,7 @@ function createWebTerminal() {
   input.className = 'input';
   input.setAttribute('placeholder', 'Type command...');
 
-  terminal.append(output. input);
+  terminal.append(output, input);
 
   return terminal
 }
