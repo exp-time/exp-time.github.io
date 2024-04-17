@@ -34,10 +34,19 @@ function headerWithClose(id, title, theme) { // Create header and close button
   return header
 }
 
-function createTooltipIcon(link, title, icon, opts) { // Create Icon to click on, with opt tooltip
+function createTooltipIcon(link, title, icon) { // Create Icon to click on with tooltip
+  const container = document.querySelector('.footer-container');
   const tooltip = createElementWithClass('div', 'w3-tooltip');
-  const button = createElementWithClass('div', 'w3-text-white pointer-cursor fa');
-
+  const text = createElementWithClass('span', 'w3-text w3-theme-light', title);
+  const button = createElementWithClass('div', 'w3-text-white pointer-cursor w3-xxlarge fa ' + icon);
+  if (link != '') {
+    button.onclick = () => openInNewTab(link);
+  }
+  else {
+    button.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+  tooltip.append(button, text)
+  container.appendChild(tooltip)
 }
 
 function createSidebar(id, title, content) { // Sidebar popups
@@ -92,6 +101,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const infoId = `info${index + 1}`;
     createCard(contentId, infoId, card.title, card.iconClass, card.content, card.info_Title, card.info_Content);
   });
+  clickablesData.forEach(function(item) {
+    createTooltipIcon(item.link, item.content, item.icon);
+  }); 
 });
 
 function openInNewTab(url) {

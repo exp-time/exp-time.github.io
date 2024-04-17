@@ -136,20 +136,17 @@ const sideBarData = [
 const clickablesData = [
   {
     link: 'https://github.com/exp-time',
-    title: 'github.com/exp-time',
+    content: 'github.com/exp-time',
     icon: 'fa-github',
-    opts: { 'div': {'class': 'w3-xxlarge'}, },
   },
   {
     link: 'https://discord.gg/h4F49RCZcy',
-    title: 'To Discord',
+    content: 'To Discord',
     icon: 'fa-discord',
-    opts: { 'div': {'class': 'w3-xxlarge'}, },
   },
   {
-    link: '#top',
-    title: 'Go top',
+    link: '',
+    content: 'Go top',
     icon: 'fa-chevron-circle-up',
-    opts: { 'div': {'class': 'w3-xxlarge'}, },
   },
 ];
