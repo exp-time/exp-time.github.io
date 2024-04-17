@@ -39,7 +39,7 @@ body {font-size:15px;margin:0;font-family: Arial, sans-serif;}
 [type=search]::-webkit-search-decoration{-webkit-appearance:none}
 ::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}
 
-.w3-margin{margin:1.5em 0em!important} /* top and bottom | left and right */
+.w3-margin{margin:0.25em 0em!important} /* top and bottom | left and right */
 .content {display: block;padding: 0.5em 0.5em 0;} /* top | left and right | bottom */
 
 /* Assume the base case is the smallest, i.e., mobile-first approach */
