@@ -24,29 +24,19 @@ sub{bottom:-0.25em}sup{top:-0.5em}figure{margin:1em 40px}img{border-style:none}
 code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}hr{box-sizing:content-box;height:0;overflow:visible}
 button,input,select,textarea,optgroup{font:inherit;margin:0}optgroup{font-weight:bold}
 button,input{overflow:visible}button,select{text-transform:none}
-
 button,[type=button],[type=reset],[type=submit]{-webkit-appearance:button;appearance: button; }
 button::-moz-focus-inner,[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner{border-style:none;padding:0}
 button:-moz-focusring,[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring{outline:1px dotted ButtonText}
 fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:.35em .625em .75em}
 legend{color:inherit;display:table;max-width:100%;padding:0;white-space:normal}textarea{overflow:auto}
 hr{border:0;border-top:1px solid #eee;margin:20px 0}
-
-body {
-  font-size:15px;
-  margin:0;
-  font-family: Arial, sans-serif;
-}
+p{margin: 0;}
+body {font-size:15px;margin:0;font-family: Arial, sans-serif;}
 
 [type=checkbox],[type=radio]{padding:0}
 [type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}
-[type=search]{
-  -webkit-appearance:textfield;
-  outline-offset:-2px;
-  appearance: textfield;
-}
+[type=search]{-webkit-appearance:textfield;outline-offset:-2px;appearance: textfield;}
 [type=search]::-webkit-search-decoration{-webkit-appearance:none}
-
 ::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}
 /* End extract */
 
@@ -56,14 +46,9 @@ body {
 .content {display: block;padding: 0.5em 0.5em 0;} /* top | left and right | bottom */
 
 
-p{margin: 0;}
-
 /* Assume the base case is the smallest, i.e., mobile-first approach */
 /* Base case: 1 item per row, suitable for narrow screens */
-.w3-third {
-  width: 100% !important; /* Adjust width to full width for small screens */
-  padding: 0.5em;
-}
+.w3-third {width: 100% !important; padding: 0.5em;}/* Adjust width to full width for small screens */
 
 /* Medium screens: 2 items per row (min-width of 1100px for 550px each) */
 @media (min-width: 1100px) {
