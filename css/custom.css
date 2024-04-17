@@ -193,8 +193,16 @@ body {font-size:15px;margin:0;font-family: Arial, sans-serif;}
 .w3-col,.w3-half,.w3-third,.w3-twothird,.w3-threequarter,.w3-quarter{float:left;width:100%}
 .w3-center{text-align:center!important}
 
-.main-title {font-weight:400;font-size:64px;}
-.sub-title {font-weight:400;font-size:18px;margin:2em 0;}
+.main-title, .sub-title {
+  position: relative; 
+  font-weight:400;
+  
+}
+
+.main-title {font-size:64px;}
+.sub-title {font-size:18px;margin:2em 0;}
+
+
 .font-900 {font-weight:900;}
 
 .w3-bar-block .w3-dropdown-hover,.w3-bar-block .w3-dropdown-click{width:100%}
