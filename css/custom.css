@@ -20,7 +20,6 @@ article,aside,details,figcaption,figure,footer,header,main,menu{display:block}
 summary{display:list-item}
 audio,canvas,progress,video{display:inline-block}progress{vertical-align:baseline}
 audio:not([controls]){display:none;height:0}[hidden],template{display:none}
-
 a{background-color:transparent}a:active,a:hover{outline-width:0}
 abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}
 b,strong{font-weight:bolder}dfn{font-style:italic}mark{background:#ff0;color:#000}
@@ -88,25 +87,6 @@ p, h2 {margin: 0;}
   }
 }
 
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 98;  
-  display: none;
-}
-
-.hidden {
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  height: 1px;
-  overflow: hidden;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-}
 .top-corner {
   float:right!important;
   flex-grow: 0;
@@ -328,8 +308,6 @@ p, h2 {margin: 0;}
 .w3-top,.w3-bottom{position:fixed;width:100%;z-index:1}
 .w3-top{top:0}
 .w3-bottom{bottom:0}
-.w3-overlay{position:fixed;display:none;width:100%;height:100%;top:0;left:0;right:0;bottom:0;background-color:rgba(0,0,0,0.5);z-index:2}
-
 .display-topright{position:absolute;right:0;top:0}
 
 
