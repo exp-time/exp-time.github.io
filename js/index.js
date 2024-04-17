@@ -130,9 +130,9 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
   const dummyButton = createElementWithClass('div', 'dummy-button');
   const titleDiv = createElementWithClass('div', 'title', title);
   const infoIcon = createElementWithClass('a', 'fa fa-info w3-button top-corner');
-  const selectedIcon = createElementWithClass('i', iconClass + ' w3-margin w3-text-theme');
   infoIcon.onclick = () => info_open(info_id);
   row.append(dummyButton, titleDiv, infoIcon);
+  card.appendChild(row);
   let paragraph;
   if (isString(content)) { 
     paragraph = createElementWithClass('p', '', content);
@@ -140,7 +140,11 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
   else { // TODO: modify else..
     paragraph = createWebTerminal()
   }
-  card.append(row, selectedIcon, paragraph);
+  if (iconClass != '') {
+    const selectedIcon = createElementWithClass('i', iconClass + ' w3-margin w3-text-theme');
+    card.appendChild(selectedIcon)
+  }
+  card.appendChild(paragraph);
   third.appendChild(card);
   container.appendChild(third);
   createModal(info_id, info_Title, info_Content);
