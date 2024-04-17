@@ -1,5 +1,5 @@
 /* Theme */
-.w3-theme {color:#fff !important; background-color:#000000 !important;z-index: -1;}
+.w3-theme {color:#fff !important; background-color:#000000 !important;z-index: -1;position: relative;}
 .w3-theme-l1 {color:#fff !important; background-color:#333333 !important}
 .w3-theme-light {color:#000 !important; background-color:#f0f0f0 !important}
 
@@ -289,6 +289,7 @@ body {font-size:15px;margin:0;font-family: Arial, sans-serif;}
   text-align: left!important;
   width: 100%;
   z-index: 1;
+  position: relative;
 }
 
 .output {
