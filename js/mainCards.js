@@ -28,7 +28,7 @@ const cardData = [
     info_Content:"Law inexpedient noble reason abstract revaluation war salvation\n snare burying merciful love inexpedient strong.Inexpedient\n prejudice ideal victorious deceptions good holiest.\n Faithful philosophy endless fearful enlightenment."
   },
   {
-    title: "Advanced Mathematics",
+    title: "High Level Mathematics",
     iconClass: "fa fa-superscript",
     content: "Cutting edge optimization.",
     info_Title: "fifth_info", 
