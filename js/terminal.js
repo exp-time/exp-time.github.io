@@ -16,21 +16,23 @@ function createWebTerminal() {
   input.setAttribute('placeholder', 'Type command...');
 
   terminal.append(output. input);
-  document.getElementById('input').addEventListener('keydown', function(event) {
-    if (event.key === 'Enter') {
-        let input = this.value;
-        this.value = ''; // clear input field
-        let output = document.getElementById('output');
-        let commandHandled = handleCommand(input.trim());
-        if (!commandHandled) {
-            output.innerHTML += `<div>> ${input}</div>`;
-            output.innerHTML += `<div>Unknown command: ${input}</div>`;
-        }
-        output.scrollTop = output.scrollHeight; // scroll to the bottom
-    }
-  });
+
   return terminal
 }
+
+document.getElementById('input').addEventListener('keydown', function(event) {
+  if (event.key === 'Enter') {
+      let input = this.value;
+      this.value = ''; // clear input field
+      let output = document.getElementById('output');
+      let commandHandled = handleCommand(input.trim());
+      if (!commandHandled) {
+          output.innerHTML += `<div>> ${input}</div>`;
+          output.innerHTML += `<div>Unknown command: ${input}</div>`;
+      }
+      output.scrollTop = output.scrollHeight; // scroll to the bottom
+  }
+});
 
 function handleCommand(command) {
   let output = document.getElementById('output');
