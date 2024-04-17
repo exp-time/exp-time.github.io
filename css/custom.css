@@ -90,12 +90,6 @@ body {
 
 p, h2 {margin: 0;}
 
-/*
-.w3-third{
-  width: 33.3333% !important;
-  padding: 0.5em;
-}
-*/
 /* Assume the base case is the smallest, i.e., mobile-first approach */
 /* Base case: 1 item per row, suitable for narrow screens */
 .w3-third {
@@ -361,17 +355,10 @@ h1,h2,h3,h4,h5,h6{
 .w3-bar-block.w3-center .w3-bar-item{
     text-align:center
 }
-.w3-padding-small{padding:4px 8px!important}
+
+
 .w3-padding{padding:8px 16px!important}
-.w3-padding-large{padding:12px 24px!important}
-.w3-padding-16{padding-top:16px!important;padding-bottom:16px!important}
-.w3-padding-24{padding-top:24px!important;padding-bottom:24px!important}
-.w3-padding-48{padding-top:48px!important;padding-bottom:48px!important}
-.w3-padding-64{padding-top:64px!important;padding-bottom:64px!important}
-.w3-padding-top-64{padding-top:64px!important}
-.w3-padding-top-48{padding-top:48px!important}
-.w3-padding-top-32{padding-top:32px!important}
-.w3-padding-top-24{padding-top:24px!important}
+
 .w3-left{float:left!important}
 .w3-right{float:right!important}
 
