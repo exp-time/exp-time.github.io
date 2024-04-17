@@ -238,7 +238,7 @@ p, h2 {margin: 0;}
 }
 
 .sidebar-content{
-  border-width: 0 4px 4px 0; /* top | right | bottom | left */
+  border-width: 0 2px 2px 0; /* top | right | bottom | left */
   border-style: inset;
   border-color: #cccccc;
 }
