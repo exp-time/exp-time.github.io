@@ -152,16 +152,4 @@ const clickablesData = [
     icon: 'fa-chevron-circle-up',
     opts: { 'div': {'class': 'w3-xxlarge'}, },
   },
-  {
-    link: 'info_open("GitRepos")',
-    title: 'Project Repositories',
-    icon: 'fa-github',
-    opts: {'class': 'w3-xxxlarge w3-button w3-theme-l1', },
-  },
-  {
-    link: 'info_open("DocsLinks")',
-    title: 'Documentation',
-    icon: 'fa-file-text',
-    opts: {'class': 'w3-xxxlarge w3-button w3-theme-l1', },
-  },
 ];
