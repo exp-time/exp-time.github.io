@@ -129,6 +129,8 @@ const sideBarData = [
       'Docs ex.3 (TODO)': '',
       'Docs ex.4 (TODO)': '',
       'Docs ex.5 (TODO)': '',
+      'Docs ex.6 (TODO)': '',
+      'Docs ex.7 (TODO)': '',
     },
   },
 ];
