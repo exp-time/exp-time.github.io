@@ -18,7 +18,6 @@ function createWebTerminal() {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-  /* TERMINAL */
   document.getElementById('input').addEventListener('keydown', function(event) {
     if (event.key === 'Enter') {
       let input = this.value;
