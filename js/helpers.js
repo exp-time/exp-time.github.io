@@ -2,18 +2,11 @@ class Elem {
   constructor(tag, attrs = {}, children = []) {
       this.elem = document.createElement(tag);
       this.setAttr(attrs);
-      this.addChildren(children);
+      this.addChildren(children); // Automatically handle children during initialization
   }
 
   setAttr(attributes) {
-      for (const key in attributes) {
-          if (attributes.hasOwnProperty(key)) {
-              this.elem[key] = attributes[key];
-          }
-          else {
-            console.log("Error, no hasOwnProperty(key)")
-          }
-      }
+      Object.entries(attributes).forEach(([key, value]) => this.elem[key] = value);
       return this;
   }
 
@@ -22,16 +15,13 @@ class Elem {
       return this;
   }
 
-  addChild(childSpec) {
+  addChild(childSpec, returnParent = false) {
       const child = new Elem(childSpec.tag, childSpec.attrs, childSpec.children || []);
       this.elem.appendChild(child.elem);
-      return child;
+      return returnParent ? this : child;  // Control whether to return the parent or the child
   }
 
   addChildren(childrenSpecs) {
-      if (!Array.isArray(childrenSpecs)) {
-          childrenSpecs = [childrenSpecs]; 
-      }
       childrenSpecs.forEach(spec => this.addChild(spec));
       return this;
   }
