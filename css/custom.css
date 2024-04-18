@@ -371,3 +371,14 @@ header.w3-theme {
   background-color: #4CAF50;
   color: white;
 }
+
+.editable-cell {
+  border: none;
+  background-color: transparent;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.editable-cell:focus {
+  border: 1px solid #ccc;
+}
