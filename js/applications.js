@@ -47,7 +47,7 @@ function handleCommand(command) {
           output.innerHTML = '';
           return true;
       case "test":
-        output.innerHTML = 'Testing';
+        output.innerHTML += 'Testing';
         return true;
       default:
           return false;
