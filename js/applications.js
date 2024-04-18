@@ -43,11 +43,10 @@ function handleCommand(command) { // Terminal commands
   }
 }
 function createEditableTable(headers, initialRowsData) {
-  const tableContainer = new Elem('div', {id: 'table-container', className: 'table-container'});
+  const tableContainer = new Elem('div', {id: 'table-container'});
   const table = tableContainer.addChild({tag: 'table', attrs: {id: 'data-table'}});
   const thead = table.addChild({tag: 'thead'});
   const headerRow = thead.addChild({tag: 'tr'});
-  
   headers.forEach(header => {
       headerRow.addChild({tag: 'th', attrs: {textContent: header}});
   });
@@ -58,16 +57,11 @@ function createEditableTable(headers, initialRowsData) {
       rowData.forEach(cellData => {
           row.addChild({tag: 'td', attrs: {textContent: cellData, contenteditable: "true"}});
       });
-  });
-
-  tableContainer.addChild({
-      tag: 'button',
-      attrs: {
-          textContent: 'Add Row',
-          onclick: () => addRow(tbody.elem) // Make sure to pass the correct element to addRow
+      // Optionally add an additional cell if rowData has less than 4 items
+      while (row.elem.children.length < headers.length) {
+          row.addChild({tag: 'td', attrs: {textContent: "", contenteditable: "true"}});
       }
   });
-
   tableContainer.appendTo(document.body);
   return tableContainer.elem;
 }
