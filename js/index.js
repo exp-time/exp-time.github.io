@@ -22,15 +22,20 @@ function makeDocumentModal(id, content) {
   modal.elem.onmousedown = function(event) {closeModal(event, id)};
   modal.appendTo(document.body);
 }
-
 function headerWithClose(id, title, theme) {
   const header = new Elem('header').setAttr({className: `modal-header ${theme}`});
-  header.addChild({tag: 'p',attrs: {textContent: title}});
-  const closeButton = header.addChild({tag: 'span', attrs: {className: 'w3-button display-topright'},
-    children: {  tag: 'i', attrs: {className: 'fa fa-remove'}}});
-  closeButton.onclick = function(event) {
-    event.stopPropagation();
-    info_close(id);
+  header.addChild({tag: 'p', attrs: {textContent: title}});
+  const closeButton = header.addChild({
+      tag: 'span',
+      attrs: {className: 'w3-button display-topright'},
+      children: [{  
+          tag: 'i',
+          attrs: {className: 'fa fa-remove'}
+      }]
+  });
+  closeButton.elem.onclick = function(event) {
+      event.stopPropagation();
+      info_close(id);
   };
   return header.elem;
 }
