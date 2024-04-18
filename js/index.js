@@ -34,10 +34,7 @@ function headerWithClose(id, title, theme) {
           attrs: {className: 'fa fa-remove'}
       }]
   });
-  closeButton.elem.onclick = function(event) {
-      event.stopPropagation();
-      info_close(id);
-  };
+  closeButton.elem.onmousedown = function(event) {info_close(id)};
   return header.elem;
 }
 
