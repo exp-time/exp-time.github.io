@@ -10,6 +10,9 @@ class Elem {
           if (attributes.hasOwnProperty(key)) {
               this.elem[key] = attributes[key];
           }
+          else {
+            console.log("Error, no hasOwnProperty(key)")
+          }
       }
       return this;
   }
