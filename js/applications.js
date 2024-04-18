@@ -41,10 +41,14 @@ function handleCommand(command) {
           output.innerHTML += `<div>List of commands:</div>`;
           output.innerHTML += `<div>- help: Display this help message</div>`;
           output.innerHTML += `<div>- clear: Clear the terminal output</div>`;
+          output.innerHTML += `<div>- test: test the terminal output</div>`;
           return true;
       case "clear":
           output.innerHTML = '';
           return true;
+      case "test":
+        output.innerHTML = 'Testing';
+        return true;
       default:
           return false;
   }
