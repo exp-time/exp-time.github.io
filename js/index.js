@@ -9,8 +9,8 @@ function info_close(id) {                             // Closing modals
   document.getElementById(id).style.display = "none";
 }
 
-function closeModal(event, id) {                      // Close if click outside of modal
-  if (event.target.classList.contains('w3-modal')) {  // Check if the click was directly on the modal background
+function closeElem(event, id, elem) {                      // Close if click outside of modal
+  if (event.target.classList.contains(elem)) {  // Check if the click was directly on the modal background
       document.getElementById(id).style.display = 'none';
   }
 }
@@ -19,7 +19,7 @@ function makeDocumentModal(id, content) {
   const modal = new Elem('div').setAttr({className: 'w3-modal',id:id});
   if (content instanceof Elem) {content.appendTo(modal.elem)}
   else { modal.elem.appendChild(content)}
-  modal.elem.onmousedown = function(event) {closeModal(event, id)};
+  modal.elem.onmousedown = function(event) {closeElem(event, id, 'w3-modal')};
   modal.appendTo(document.body);
 }
 
