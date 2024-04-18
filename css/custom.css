@@ -7,7 +7,7 @@
 .w3-dark-grey{color:#fff!important;background-color:#616161!important}
 .w3-dark-grey:hover{color:#000!important;background-color:#f1f1f1!important}
 
-.w3-text-white,.w3-hover-text-white:hover{color:#fff!important}
+.w3-text-white{color:#fff!important}
 
 html{box-sizing:border-box}*,*:before,*:after{box-sizing:inherit}
 html{font-size:15px;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;overflow-x:hidden}
@@ -98,7 +98,7 @@ body {font-size:15px;margin:0;font-family: Arial, sans-serif;}
   background-color:#414040 !important
 }
   
-.w3-card-4,.w3-hover-shadow:hover{box-shadow:0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19)}
+.w3-card-4{box-shadow:0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19)}
 .w3-card.w3-container {
   min-height:520px;
   max-height:520px;
