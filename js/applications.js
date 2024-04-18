@@ -45,7 +45,7 @@ function handleCommand(command) {
           document.getElementById('output').innerHTML = '';
           return "Output cleared.";
       case "test":
-          return "Testing<br>";
+          return "Testing";
       default:
           return null;  // Indicates unknown command
   }
