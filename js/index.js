@@ -14,13 +14,22 @@ function closeModal(event, id) {                      // Close if click outside 
       document.getElementById(id).style.display = 'none';
   }
 }
-
+/*
 function makeDocumentModal(id, content) { 
   const modal = createElementWithClass('div', 'w3-modal');
   modal.setAttribute('id', id);
   modal.setAttribute('onmousedown', `closeModal(event, '${id}')`);
   modal.appendChild(content);
   document.body.appendChild(modal);
+}
+*/
+function makeDocumentModal(id, content) {
+  const modal = new Elem('div').setAttr({
+                className: 'w3-modal',id:id, onmousedown: `closeModal(event, '${id}')`});
+  if (content instanceof Elem) {content.appendTo(modal.elem)}
+  else { modal.elem.appendChild(content)}
+  modal.appendTo(document.body);
+  return modal.elem;
 }
 
 function headerWithClose(id, title, theme) {
