@@ -14,18 +14,9 @@ function closeModal(event, id) {                      // Close if click outside 
       document.getElementById(id).style.display = 'none';
   }
 }
-/*
-function makeDocumentModal(id, content) { 
-  const modal = createElementWithClass('div', 'w3-modal');
-  modal.setAttribute('id', id);
-  modal.setAttribute('onmousedown', `closeModal(event, '${id}')`);
-  modal.appendChild(content);
-  document.body.appendChild(modal);
-}
-*/
+
 function makeDocumentModal(id, content) {
-  const modal = new Elem('div').setAttr({
-                className: 'w3-modal',id:id});
+  const modal = new Elem('div').setAttr({className: 'w3-modal',id:id});
   if (content instanceof Elem) {content.appendTo(modal.elem)}
   else { modal.elem.appendChild(content)}
   modal.elem.onmousedown = function(event) {closeModal(event, id)};
@@ -37,7 +28,10 @@ function headerWithClose(id, title, theme) {
   header.addChild({tag: 'p',attrs: {textContent: title}});
   const closeButton = header.addChild({tag: 'span', attrs: {className: 'w3-button display-topright'},
     children: {  tag: 'i', attrs: {className: 'fa fa-remove'}}});
-  closeButton.onclick = () => info_close(id);
+  closeButton.onclick = function(event) {
+    event.stopPropagation();
+    info_close(id);
+  };
   return header.elem;
 }
 
