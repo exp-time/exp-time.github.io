@@ -28,10 +28,10 @@ const cardData = [
     info_Content:"Law inexpedient noble reason abstract revaluation war salvation\n snare burying merciful love inexpedient strong.Inexpedient\n prejudice ideal victorious deceptions good holiest.\n Faithful philosophy endless fearful enlightenment."
   },
   {
-    title: "High Level Mathematics",
-    iconClass: "fa fa-superscript",
-    content: "Cutting edge optimization.",
-    info_Title: "fifth_info", 
+    title: "Networks",
+    iconClass: "fa fa-code-fork",
+    content: "Network analysis",
+    info_Title: "seventh_info", 
     info_Content:"Law inexpedient noble reason abstract revaluation war salvation\n snare burying merciful love inexpedient strong.Inexpedient\n prejudice ideal victorious deceptions good holiest.\n Faithful philosophy endless fearful enlightenment."
   },
   {
@@ -49,10 +49,10 @@ const cardData = [
     info_Content:"Law inexpedient noble reason abstract revaluation war salvation\n snare burying merciful love inexpedient strong.Inexpedient\n prejudice ideal victorious deceptions good holiest.\n Faithful philosophy endless fearful enlightenment."
   },
   {
-    title: "Networks",
-    iconClass: "fa fa-code-fork",
-    content: "Network analysis",
-    info_Title: "seventh_info", 
+    title: "High Level Mathematics",
+    iconClass: "fa fa-superscript",
+    content: "Cutting edge optimization.",
+    info_Title: "fifth_info", 
     info_Content:"Law inexpedient noble reason abstract revaluation war salvation\n snare burying merciful love inexpedient strong.Inexpedient\n prejudice ideal victorious deceptions good holiest.\n Faithful philosophy endless fearful enlightenment."
   },
   {
