@@ -122,9 +122,13 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
     paragraph = createWebTerminal()
   }
   else if (content === 1){ // TODO: modify else..
-    paragraph =  createEditableTable(["Name", "Age", "Job"], [
-      ["John Doe", "28", "Developer"],
-      ["Jane Doe", "34", "Designer"]
+    paragraph =  createEditableTable(["Name", "Age", "Job", "Location"], [
+      ["John Doe", "28", "Developer", "New York"],
+      ["Jane Doe", "34", "Designer", "San Francisco"],
+      ["Jane Doe", "34", "Designer", "San Francisco"],
+      ["Jane Doe", "34", "Designer", "San Francisco"],
+      ["Jane Doe", "34", "Designer", "San Francisco"],
+      ["Jane Doe", "34", "Designer", "San Francisco"]
   ]);
   }
   else {
