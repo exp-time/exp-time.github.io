@@ -38,19 +38,14 @@ function headerWithClose(id, title, theme) { // Create header and close button
   return header
 }
 
-function createTooltipIcon(link, title, icon) { // Create Icon to click on with tooltip
+function createTooltipIcon(link, title, icon) {
   const container = document.querySelector('.footer-container');
-  const tooltip = createElementWithClass('div', 'w3-tooltip');
-  const text = createElementWithClass('span', 'w3-text w3-theme-light', title);
-  const button = createElementWithClass('div', 'w3-text-white pointer-cursor w3-xxlarge fa ' + icon);
-  if (link != '') {
-    button.onclick = () => openInNewTab(link);
-  }
-  else {
-    button.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-  tooltip.append(button, text)
-  container.appendChild(tooltip)
+  const tooltip = new Elem('div').setAttr({className: 'w3-tooltip'}).appendTo(container);
+  tooltip.addChild({tag: 'span',attrs: {className: 'w3-text w3-theme-light',textContent: title}});
+  const buttonAttributes = {
+      className: 'w3-text-white pointer-cursor w3-xxlarge fa ' + icon,
+      onclick: link ? () => openInNewTab(link) : () => window.scrollTo({top: 0, behavior: 'smooth'})};
+  tooltip.addChild({tag: 'div', attrs: buttonAttributes});
 }
 
 function createSidebar(id, title, content) { // Sidebar popups
