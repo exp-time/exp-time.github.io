@@ -2,7 +2,7 @@ class Elem {
   constructor(tag, attrs = {}, children = []) {
       this.elem = document.createElement(tag);
       this.setAttr(attrs);
-      this.addChildren(children); // Ensure children are processed during construction
+      this.addChildren(children);
   }
 
   setAttr(attributes) {
@@ -27,7 +27,7 @@ class Elem {
 
   addChildren(childrenSpecs) {
       if (!Array.isArray(childrenSpecs)) {
-          childrenSpecs = [childrenSpecs];  // Convert non-array to array
+          childrenSpecs = [childrenSpecs]; 
       }
       childrenSpecs.forEach(spec => this.addChild(spec));
       return this;
