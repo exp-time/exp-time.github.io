@@ -15,7 +15,7 @@ function closeModal(event, id) {                      // Close if click outside 
   }
 }
 
-function makeDocumentModal(identifier, content) {
+function makeDocumentModal(id, content) { //identifier
   //const modal = new Elem('div').setAttr({className: 'w3-modal', id:identifier, 
                   //onmousedown: `closeModal(event, '${identifier}')`}).appendTo(document.body);
   //modal.addChild(content)
