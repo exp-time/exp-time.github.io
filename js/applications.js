@@ -44,25 +44,35 @@ function handleCommand(command) { // Terminal commands
 }
 
 function createEditableTable(headers, initialRowsData) {
-  const tableContainer = new Elem('div', {id: 'table-container', className: 'table-container'});
+  const tableContainer = new Elem('div', {id: 'table-container'});
   const table = tableContainer.addChild({tag: 'table', attrs: {id: 'data-table'}});
   const thead = table.addChild({tag: 'thead'});
   const headerRow = thead.addChild({tag: 'tr'});
   headers.forEach(header => {
       headerRow.addChild({tag: 'th', attrs: {textContent: header}});
   });
-
   const tbody = table.addChild({tag: 'tbody'});
   initialRowsData.forEach(rowData => {
       const row = tbody.addChild({tag: 'tr'});
       rowData.forEach(cellData => {
-          row.addChild({tag: 'td', attrs: {textContent: cellData, contenteditable: "true"}});
+          const cell = row.addChild({tag: 'td'});
+          cell.addChild({
+              tag: 'input',
+              attrs: {
+                  type: 'text',
+                  value: cellData,
+                  className: 'editable-cell',
+                  onchange: 'saveCellData(this)' // Optionally handle data change
+              }
+          });
       });
-      // Optionally add an additional cell if rowData has less than 4 items
-      while (row.elem.children.length < headers.length) {
-          row.addChild({tag: 'td', attrs: {textContent: "", contenteditable: "true"}});
-      }
   });
+
   tableContainer.appendTo(document.body);
   return tableContainer.elem;
+}
+
+function saveCellData(inputElement) {
+  console.log('Data changed in cell:', inputElement.value);
+  // Additional logic to save or process new cell data
 }
