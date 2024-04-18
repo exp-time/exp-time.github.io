@@ -1,34 +1,35 @@
 class Elem {
-  constructor(tag) {
-    this.elem = document.createElement(tag);
+  constructor(tag, attrs = {}, children = []) {
+      this.elem = document.createElement(tag);
+      this.setAttr(attrs);
+      this.addChildren(children); // Ensure children are processed during construction
   }
 
   setAttr(attributes) {
-    for (const attr in attributes) {
-      this.elem[attr] = attributes[attr];
-    }
-    return this;
+      for (const key in attributes) {
+          if (attributes.hasOwnProperty(key)) {
+              this.elem[key] = attributes[key];
+          }
+      }
+      return this;
   }
 
   appendTo(parent) {
-    parent.appendChild(this.elem);
-    return this;
+      parent.appendChild(this.elem);
+      return this;
   }
 
   addChild(childSpec) {
-    if (typeof childSpec.tag !== 'string') {
-      console.error('Invalid tag in addChild:', childSpec.tag);  // Additional debugging
-      throw new Error("Child tag must be a string, got " + typeof childSpec.tag);
-    }
-    const child = new Elem(childSpec.tag).setAttr(childSpec.attrs || {}).appendTo(this.elem);
-    if (childSpec.children) {
-      child.addChildren(childSpec.children);
-    }
-    return this;
+      const child = new Elem(childSpec.tag, childSpec.attrs, childSpec.children || []);
+      this.elem.appendChild(child.elem);
+      return child;
   }
 
-  addChildren(children) {
-    children.forEach(childSpec => this.addChild(childSpec));
-    return this;
+  addChildren(childrenSpecs) {
+      if (!Array.isArray(childrenSpecs)) {
+          childrenSpecs = [childrenSpecs];  // Convert non-array to array
+      }
+      childrenSpecs.forEach(spec => this.addChild(spec));
+      return this;
   }
 }
