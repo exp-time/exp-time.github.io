@@ -28,8 +28,8 @@ function makeDocumentModal(id, content) {
                 className: 'w3-modal',id:id});
   if (content instanceof Elem) {content.appendTo(modal.elem)}
   else { modal.elem.appendChild(content)}
-  modal.appendTo(document.body);
   modal.elem.onmousedown = function(event) {closeModal(event, id)};
+  modal.appendTo(document.body);
 }
 
 function headerWithClose(id, title, theme) {
