@@ -9,7 +9,7 @@ const cardData = [
   {
     title: "Terminal Test",
     iconClass: "",
-    content: 0,
+    content: 0, // createWebTerminal()
     info_Title: "second_info", 
     info_Content:"Law inexpedient noble reason abstract revaluation war salvation\n snare burying merciful love inexpedient strong.Inexpedient\n prejudice ideal victorious deceptions good holiest.\n Faithful philosophy endless fearful enlightenment."
   },
@@ -51,7 +51,7 @@ const cardData = [
   {
     title: "Excel Automation",
     iconClass: "",
-    content: 1,
+    content: 1, // createWebExcel()
     info_Title: "eight_info", 
     info_Content:"Law inexpedient noble reason abstract revaluation war salvation\n snare burying merciful love inexpedient strong.Inexpedient\n prejudice ideal victorious deceptions good holiest.\n Faithful philosophy endless fearful enlightenment."
   },
