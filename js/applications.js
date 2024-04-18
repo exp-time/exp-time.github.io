@@ -43,29 +43,28 @@ function handleCommand(command) { // Terminal commands
   }
 }
 function createEditableTable(headers, initialRowsData) {
-  const tableContainer = new Elem('div').setAttr({
-      id: 'table-container',className: 'table-container'});
-  const table = tableContainer.addChild({
-      tag: 'table',attrs: {id: 'data-table'}});
+  const tableContainer = new Elem('div', {id: 'table-container'});
+  const table = tableContainer.addChild({tag: 'table', attrs: {id: 'data-table'}});
   const thead = table.addChild({tag: 'thead'});
   const headerRow = thead.addChild({tag: 'tr'});
-
+  
   headers.forEach(header => {
-      headerRow.addChild({
-          tag: 'th',attrs: {textContent: header}})});
-  const tbody = table.addChild({tag: 'tbody'});
+      headerRow.addChild({tag: 'th', attrs: {textContent: header}});
+  });
 
+  const tbody = table.addChild({tag: 'tbody'});
   initialRowsData.forEach(rowData => {
       const row = tbody.addChild({tag: 'tr'});
       rowData.forEach(cellData => {
-          row.addChild({
-              tag: 'td',attrs: {textContent: cellData, contenteditable: "true"}})})});
+          row.addChild({tag: 'td', attrs: {textContent: cellData, contenteditable: "true"}});
+      });
+  });
 
   tableContainer.addChild({
       tag: 'button',
       attrs: {
           textContent: 'Add Row',
-          onclick: `addRow(document.getElementById('data-table').getElementsByTagName('tbody')[0], ['','',''])`
+          onclick: () => addRow(tbody.elem) // Make sure to pass the correct element to addRow
       }
   });
 
@@ -73,10 +72,14 @@ function createEditableTable(headers, initialRowsData) {
   return tableContainer.elem;
 }
 
-function addRow(tbody, defaultData) {
+function addRow(tbody) {
+  const rowData = ["", "", ""]; // Blank cells by default; adjust if needed
   const newRow = new Elem('tr');
-  defaultData.forEach(cellData => {
+  rowData.forEach(cellData => {
       newRow.addChild({
-          tag: 'td',attrs: {textContent: cellData, contenteditable: "true"}})});
-  newRow.appendTo(tbody);
+          tag: 'td',
+          attrs: {textContent: cellData, contenteditable: "true"}
+      });
+  });
+  newRow.appendTo(tbody); 
 }
