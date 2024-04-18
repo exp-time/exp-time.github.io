@@ -15,18 +15,20 @@ class Elem {
     return this;
   }
 
-  addChild(tag, attributes = {}) {
-    const child = new Elem(tag).setAttr(attributes).appendTo(this.elem);
-    return child;
+  addChild(childSpec) {
+    if (typeof childSpec.tag !== 'string') {
+      console.error('Invalid tag in addChild:', childSpec.tag);  // Additional debugging
+      throw new Error("Child tag must be a string, got " + typeof childSpec.tag);
+    }
+    const child = new Elem(childSpec.tag).setAttr(childSpec.attrs || {}).appendTo(this.elem);
+    if (childSpec.children) {
+      child.addChildren(childSpec.children);
+    }
+    return this;
   }
 
   addChildren(children) {
-    if (!Array.isArray(children)) {children = [children]} // Ensure it's an array even if single child spec is passed
-
-    children.forEach(childSpec => {
-      const child = new Elem(childSpec.tag).setAttr(childSpec.attrs || {}).appendTo(this.elem);
-        if (childSpec.children) {child.addChild(childSpec.children)}  // Recursively add children
-    });
-    return this; 
-    }
+    children.forEach(childSpec => this.addChild(childSpec));
+    return this;
+  }
 }

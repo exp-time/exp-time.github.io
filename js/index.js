@@ -45,7 +45,7 @@ function createTooltipIcon(link, title, icon) {
   const buttonAttributes = {
       className: 'w3-text-white pointer-cursor w3-xxlarge fa ' + icon,
       onclick: link ? () => openInNewTab(link) : () => window.scrollTo({top: 0, behavior: 'smooth'})};
-  tooltip.addChild({tag: 'div', attrs: buttonAttributes});
+  tooltip.addChild({tag: 'div',attrs: buttonAttributes});
 }
 
 function createSidebar(id, title, content) { // Sidebar popups
