@@ -22,6 +22,7 @@ function makeDocumentModal(id, content) {
   modal.elem.onmousedown = function(event) {closeModal(event, id)};
   modal.appendTo(document.body);
 }
+
 function headerWithClose(id, title, theme) {
   const header = new Elem('header').setAttr({className: `modal-header ${theme}`});
   header.addChild({tag: 'p', attrs: {textContent: title}});
@@ -50,55 +51,6 @@ function createTooltipIcon(link, title, icon) {
   tooltip.addChild({tag: 'div',attrs: buttonAttributes});
 }
 
-function createSidebar(id, title, content) {
-  // Create the modal overlay
-  const modal = new Elem('div').setAttr({
-      className: 'w3-modal',
-      id: id,
-      onmousedown: function(event) {
-          if (event.target === this) {
-              this.style.display = 'none';  // Closes the modal when clicked outside the sidebar
-          }
-      }
-  });
-
-  // Create the sidebar within the modal
-  const sidebar = new Elem('nav').setAttr({
-      className: 'w3-sidebar w3-bar-block w3-card w3-animate-left w3-center'
-  }).appendTo(modal.elem);
-
-  // Create header within the sidebar with a close button
-  const header = new Elem('header').setAttr({className: 'modal-header w3-theme-l1'}).appendTo(sidebar.elem);
-  header.addChild({
-      tag: 'p',
-      attrs: {textContent: title}
-  });
-  const closeButton = new Elem('span').setAttr({
-        className: 'w3-button display-topright'
-    }).addChild({
-        tag: 'i',
-        attrs: {className: 'fa fa-remove'}
-    }).appendTo(header.elem);
-
-  // Configure close button to close the modal
-  closeButton.elem.onclick = function(event) {
-      event.stopPropagation();  // Prevent the modal's onmousedown from being executed
-      modal.elem.style.display = 'none';
-  };
-
-  // Create and append content items to the sidebar
-  const sidebarContent = new Elem('div').setAttr({className: 'sidebar-content'}).appendTo(sidebar.elem);
-  Object.keys(content).forEach(key => {
-      sidebarContent.addChild({
-          tag: 'div',
-          attrs: {className: 'w3-bar-item w3-button', textContent: key, onclick: () => openInNewTab(content[key])}
-      });
-  });
-
-  // Append the modal to the document body
-  modal.appendTo(document.body);
-}
-/*
 function createSidebar(id, title, content) { // Sidebar popups
   const sidebar = createElementWithClass('nav', 'w3-sidebar w3-bar-block w3-card w3-animate-left w3-center');
   const sidebarContent = createElementWithClass('div', 'sidebar-content')
@@ -113,7 +65,7 @@ function createSidebar(id, title, content) { // Sidebar popups
   
   makeDocumentModal(id, sidebar)
 }
-*/
+
 function createModal(id, title, content, footerContent) {  // Open popup modal page
   //const modalContent = new Elem('div').setAttr({className: 'w3-modal-content w3-card-4 modal-animate-top'})
   const modalContent = createElementWithClass('div', 'w3-modal-content w3-card-4 modal-animate-top');
