@@ -29,7 +29,6 @@ function makeDocumentModal(id, content) {
   if (content instanceof Elem) {content.appendTo(modal.elem)}
   else { modal.elem.appendChild(content)}
   modal.appendTo(document.body);
-  return modal.elem;
 }
 
 function headerWithClose(id, title, theme) {
