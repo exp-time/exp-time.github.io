@@ -52,7 +52,7 @@ function createTooltipIcon(link, title, icon) {
 }
 
 function createSidebar(id, title, content) { // Sidebar popups
-  const sidebar = new Elem('nav').setAttr({className: 'w3-sidebar w3-bar-block w3-card w3-animate-left w3-center'}.elem);
+  const sidebar = createElementWithClass('nav', 'w3-sidebar w3-bar-block w3-card w3-animate-left w3-center');
   const sidebarContent = createElementWithClass('div', 'sidebar-content')
   const header = headerWithClose(id, title, "w3-theme-l1")
   sidebar.appendChild(header);
