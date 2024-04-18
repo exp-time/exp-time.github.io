@@ -3,7 +3,7 @@ function createWebTerminal() { // Web Terminal
   const terminal = new Elem('div').setAttr({id: 'terminal',className: 'terminal'});
   terminal.addChild({tag: 'div', attrs: {id: 'output',className: 'output'}});
   terminal.addChild({tag: 'input',
-      attrs: {type: 'text', id: 'input',className: 'input', placeholder: 'Type command...'}});
+      attrs: {type: 'text', id: 'input', className: 'input', placeholder: 'Type command...'}});
   return terminal.elem;
 }
 
@@ -42,8 +42,9 @@ function handleCommand(command) { // Terminal commands
           return null;
   }
 }
+
 function createEditableTable(headers, initialRowsData) {
-  const tableContainer = new Elem('div', {id: 'table-container'});
+  const tableContainer = new Elem('div', {id: 'table-container', className: 'table-container'});
   const table = tableContainer.addChild({tag: 'table', attrs: {id: 'data-table'}});
   const thead = table.addChild({tag: 'thead'});
   const headerRow = thead.addChild({tag: 'tr'});
@@ -67,7 +68,7 @@ function createEditableTable(headers, initialRowsData) {
 }
 
 function addRow(tbody) {
-  const rowData = ["", "", ""]; // Blank cells by default; adjust if needed
+  const rowData = ["", "", "", ""]; // Blank cells by default; adjust if needed
   const newRow = new Elem('tr');
   rowData.forEach(cellData => {
       newRow.addChild({
