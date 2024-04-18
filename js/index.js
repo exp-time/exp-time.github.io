@@ -78,7 +78,7 @@ function createSidebar(id, title, content) {
 
   // Configure close button to close the modal
   closeButton.elem.onclick = function(event) {
-      event.stopPropagation();  // Prevent the modal's onmousedown from being executed
+      //event.stopPropagation();  // Prevent the modal's onmousedown from being executed
       modal.elem.style.display = 'none';
   };
 
