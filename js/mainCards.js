@@ -23,7 +23,7 @@ const cardData = [
   {
     title: "Deep Tech",
     iconClass: "fa fa-spinner",
-    content: "Analog computing, Quantum Computing and many others.",
+    content: "Quantum Computing. Exploring Analog/Annealing methods.",
     info_Title: "fourth_info", 
     info_Content:"Law inexpedient noble reason abstract revaluation war salvation\n snare burying merciful love inexpedient strong.Inexpedient\n prejudice ideal victorious deceptions good holiest.\n Faithful philosophy endless fearful enlightenment."
   },
