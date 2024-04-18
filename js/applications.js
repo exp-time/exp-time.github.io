@@ -16,6 +16,7 @@ function createWebTerminal() {
 
   return terminal
 }
+
 document.addEventListener('DOMContentLoaded', function() {
   const inputField = document.getElementById('input');
   const outputDiv = document.getElementById('output');
@@ -49,4 +50,8 @@ function handleCommand(command) {
       default:
           return null;  // Indicates unknown command
   }
+}
+
+function createWebExcel() {
+
 }
