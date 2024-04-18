@@ -346,9 +346,12 @@ header.w3-theme {
 
 /* EXCEL */
 
+.table-container {
+  margin: 1.0em;
+}
+
 #data-table {
   width: 100%;
-  margin: 1.0em;
   border-collapse: collapse;
 }
 
