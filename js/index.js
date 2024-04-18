@@ -68,17 +68,15 @@ function createSidebar(id, title, content) {
       tag: 'p',
       attrs: {textContent: title}
   });
-  const closeButton = header.addChild({
-      tag: 'span',
-      attrs: {className: 'w3-button display-topright'}
-  }).addChild({
-      tag: 'i',
-      attrs: {className: 'fa fa-remove'}
-  });
+  const closeButton = new Elem('span').setAttr({
+    className: 'w3-button display-topright'})
+    .addChild({
+    tag: 'i',
+    attrs: {className: 'fa fa-remove'}}).appendTo(header.elem);
 
   // Configure close button to close the modal
   closeButton.elem.onclick = function(event) {
-      //event.stopPropagation();  // Prevent the modal's onmousedown from being executed
+      event.stopPropagation();  // Prevent the modal's onmousedown from being executed
       modal.elem.style.display = 'none';
   };
 
