@@ -133,7 +133,6 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
       ["Jane Doe", "34", "Designer", "San Francisco"],
       ["Jane Doe", "34", "Designer", "San Francisco"],
       ["Jane Doe", "34", "Designer", "San Francisco"],
-      ["Jane Doe", "34", "Designer", "San Francisco"],
       ["Jane Doe", "34", "Designer", "San Francisco"]
       
   ]);

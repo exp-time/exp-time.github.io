@@ -44,7 +44,7 @@ function handleCommand(command) { // Terminal commands
 }
 
 function createEditableTable(headers, initialRowsData) {
-  const tableContainer = new Elem('div', {id: 'table-container'});
+  const tableContainer = new Elem('div', {id: 'table-container',className: 'table-container'});
   const table = tableContainer.addChild({tag: 'table', attrs: {id: 'data-table'}});
   const thead = table.addChild({tag: 'thead'});
   const headerRow = thead.addChild({tag: 'tr'});
