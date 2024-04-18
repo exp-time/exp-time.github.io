@@ -88,23 +88,6 @@ function createModal(id, title, content, footerContent) {
   makeDocumentModal(id, modalContent)
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-  modalData.forEach(function(modal) {
-    createModal(modal.id, modal.title, modal.content, modal.footerContent);
-  });
-  sideBarData.forEach(function(item) {
-    createSidebar(item.id, item.title, item.content);
-  }); 
-  cardData.forEach(function(card, index) {
-    const contentId = `content-area${index + 1}`;
-    const infoId = `info${index + 1}`;
-    createCard(contentId, infoId, card.title, card.iconClass, card.content, card.info_Title, card.info_Content);
-  });
-  clickablesData.forEach(function(item) {
-    createTooltipIcon(item.link, item.content, item.icon);
-  }); 
-});
-
 function openInNewTab(url) {
   window.open(url, '_blank').focus();
 }
@@ -154,7 +137,22 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
   createModal(info_id, info_Title, info_Content);
 }
 
-document.addEventListener('DOMContentLoaded', function() { // pagination
+document.addEventListener('DOMContentLoaded', function() { // pagination + others
+  modalData.forEach(function(modal) {
+    createModal(modal.id, modal.title, modal.content, modal.footerContent);
+  });
+  sideBarData.forEach(function(item) {
+    createSidebar(item.id, item.title, item.content);
+  }); 
+  cardData.forEach(function(card, index) {
+    const contentId = `content-area${index + 1}`;
+    const infoId = `info${index + 1}`;
+    createCard(contentId, infoId, card.title, card.iconClass, card.content, card.info_Title, card.info_Content);
+  });
+  clickablesData.forEach(function(item) {
+    createTooltipIcon(item.link, item.content, item.icon);
+  }); 
+
   const container = document.querySelector('.content');
   const sections = container.querySelectorAll('.w3-third');
   let currentPage = 0;
