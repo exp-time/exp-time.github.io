@@ -29,11 +29,7 @@ function makeDocumentModal(id, content) {
   if (content instanceof Elem) {content.appendTo(modal.elem)}
   else { modal.elem.appendChild(content)}
   modal.appendTo(document.body);
-  modal.elem.onmousedown = function(event) {
-    if (event.target === this) {  // Ensures that the handler fires only when the modal background is clicked
-        closeModal(event, id);
-    }
-  };
+  modal.elem.onmousedown = function(event) {closeModal(event, id)};
 }
 
 function headerWithClose(id, title, theme) {
