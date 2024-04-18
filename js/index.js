@@ -15,10 +15,7 @@ function closeModal(event, id) {                      // Close if click outside 
   }
 }
 
-function makeDocumentModal(id, content) { //identifier
-  //const modal = new Elem('div').setAttr({className: 'w3-modal', id:identifier, 
-                  //onmousedown: `closeModal(event, '${identifier}')`}).appendTo(document.body);
-  //modal.addChild(content)
+function makeDocumentModal(id, content) { 
   const modal = createElementWithClass('div', 'w3-modal');
   modal.setAttribute('id', id);
   modal.setAttribute('onmousedown', `closeModal(event, '${id}')`);
@@ -26,16 +23,13 @@ function makeDocumentModal(id, content) { //identifier
   document.body.appendChild(modal);
 }
 
-function headerWithClose(id, title, theme) { // Create header and close button
-  const header = createElementWithClass('header', 'modal-header')
-  const headerP = createElementWithClass('p', '', title);
-  const closeButton = createElementWithClass('span', 'w3-button display-topright');
-  const closeIcon = createElementWithClass('i', 'fa fa-remove');
-  closeButton.appendChild(closeIcon);
-  closeButton.onclick = () =>  info_close(id);
-  header.append(headerP,closeButton)
-  header.classList.add(theme);
-  return header
+function headerWithClose(id, title, theme) {
+  const header = new Elem('header').setAttr({className: `modal-header ${theme}`});
+  header.addChild({tag: 'p',attrs: {textContent: title}});
+  const closeButton = header.addChild({tag: 'span',attrs: {className: 'w3-button display-topright'}}).elem;
+  closeButton.appendChild(new Elem('i').setAttr({className: 'fa fa-remove'}).elem);
+  closeButton.onclick = () => info_close(id);
+  return header.elem;
 }
 
 function createTooltipIcon(link, title, icon) {
