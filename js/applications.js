@@ -16,40 +16,37 @@ function createWebTerminal() {
 
   return terminal
 }
-
 document.addEventListener('DOMContentLoaded', function() {
-  document.getElementById('input').addEventListener('keydown', function(event) {
-    if (event.key === 'Enter') {
-      let input = this.value;
-      this.value = ''; // clear input field
-      let output = document.getElementById('output');
-      let commandHandled = handleCommand(input.trim());
-      if (!commandHandled) {
-        output.innerHTML += `<div>> ${input}</div>`;
-        output.innerHTML += `<div>Unknown command: ${input}</div>`;
+  const inputField = document.getElementById('input');
+  const outputDiv = document.getElementById('output');
+
+  inputField.addEventListener('keydown', function(event) {
+      if (event.key === 'Enter') {
+          const input = this.value;
+          this.value = ''; // clear input field
+          const result = handleCommand(input.trim());
+          if (result) {
+              outputDiv.innerHTML += `<div>> ${input}</div>`;
+              outputDiv.innerHTML += `<div>${result}</div>`;
+          } else {
+              outputDiv.innerHTML += `<div>> ${input}</div>`;
+              outputDiv.innerHTML += `<div>Unknown command: ${input}</div>`;
+          }
+          outputDiv.scrollTop = outputDiv.scrollHeight; // scroll to the bottom
       }
-      output.scrollTop = output.scrollHeight; // scroll to the bottom
-    }
   });
 });
 
 function handleCommand(command) {
-  let output = document.getElementById('output');
   switch(command.toLowerCase()) {
       case "help":
-          output.innerHTML += `<div>> ${command}</div>`;
-          output.innerHTML += `<div>List of commands:</div>`;
-          output.innerHTML += `<div>- help: Display this help message</div>`;
-          output.innerHTML += `<div>- clear: Clear the terminal output</div>`;
-          output.innerHTML += `<div>- test: test the terminal output</div>`;
-          return true;
+          return "List of commands:<br>- help: Display this help message<br>- clear: Clear the terminal output<br>- test: Test the terminal output";
       case "clear":
-          output.innerHTML = '';
-          return true;
+          document.getElementById('output').innerHTML = '';
+          return "Output cleared.";
       case "test":
-        output.innerHTML += 'Testing';
-        return true;
+          return "Testing";
       default:
-          return false;
+          return null;  // Indicates unknown command
   }
 }
