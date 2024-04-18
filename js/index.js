@@ -25,10 +25,9 @@ function makeDocumentModal(id, content) {
 */
 function makeDocumentModal(id, content) {
   const modal = new Elem('div').setAttr({
-                className: 'w3-modal',id:id});
+                className: 'w3-modal',id:id, onmousedown: `closeModal(event, '${id}')`});
   if (content instanceof Elem) {content.appendTo(modal.elem)}
   else { modal.elem.appendChild(content)}
-  modal.onclick = () => info_close(id)
   modal.appendTo(document.body);
   return modal.elem;
 }
