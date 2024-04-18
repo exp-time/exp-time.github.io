@@ -15,12 +15,14 @@ function closeModal(event, id) {                      // Close if click outside 
   }
 }
 
-function makeDocumentModal(id, content) {
-  const modal = createElementWithClass('div', 'w3-modal');
-  modal.setAttribute('id', id);
-  modal.setAttribute('onmousedown', `closeModal(event, '${id}')`);
-  modal.appendChild(content);
-  document.body.appendChild(modal);
+function makeDocumentModal(identifier, content) {
+  const modal = new Elem('div').setAttr({className: 'w3-modal', id:identifier, onmousedown: `closeModal(event, '${id}')`}).appendTo(document.body);
+  modal.addChild(content)
+  //const modal = createElementWithClass('div', 'w3-modal');
+  //modal.setAttribute('id', id);
+  //modal.setAttribute('onmousedown', `closeModal(event, '${id}')`);
+  //modal.appendChild(content);
+  //document.body.appendChild(modal);
 }
 
 function headerWithClose(id, title, theme) { // Create header and close button
@@ -65,6 +67,7 @@ function createSidebar(id, title, content) { // Sidebar popups
 }
 
 function createModal(id, title, content, footerContent) {  // Open popup modal page
+  //const modalContent = new Elem('div').setAttr({className: 'w3-modal-content w3-card-4 modal-animate-top'})
   const modalContent = createElementWithClass('div', 'w3-modal-content w3-card-4 modal-animate-top');
   const header = headerWithClose(id, title, "w3-theme-l1")
   const body = createElementWithClass('div', 'w3-padding');
