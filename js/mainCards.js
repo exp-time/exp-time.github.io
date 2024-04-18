@@ -44,7 +44,7 @@ const cardData = [
   {
     title: "Excel Automation",
     iconClass: "",
-    content: 1, // createWebExcel()
+    content: 1, // createEditableTable()
     info_Title: "eight_info", 
     info_Content:"Law inexpedient noble reason abstract revaluation war salvation\n snare burying merciful love inexpedient strong.Inexpedient\n prejudice ideal victorious deceptions good holiest.\n Faithful philosophy endless fearful enlightenment."
   },
