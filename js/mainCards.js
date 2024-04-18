@@ -35,6 +35,13 @@ const cardData = [
     info_Content:"Law inexpedient noble reason abstract revaluation war salvation\n snare burying merciful love inexpedient strong.Inexpedient\n prejudice ideal victorious deceptions good holiest.\n Faithful philosophy endless fearful enlightenment."
   },
   {
+    title: "Excel Automation",
+    iconClass: "",
+    content: 1, // createWebExcel()
+    info_Title: "eight_info", 
+    info_Content:"Law inexpedient noble reason abstract revaluation war salvation\n snare burying merciful love inexpedient strong.Inexpedient\n prejudice ideal victorious deceptions good holiest.\n Faithful philosophy endless fearful enlightenment."
+  },
+  {
     title: "Analytics",
     iconClass: "fa fa-bar-chart",
     content: "Combine API's with analytics.",
@@ -46,13 +53,6 @@ const cardData = [
     iconClass: "fa fa-code-fork",
     content: "Network analysis",
     info_Title: "seventh_info", 
-    info_Content:"Law inexpedient noble reason abstract revaluation war salvation\n snare burying merciful love inexpedient strong.Inexpedient\n prejudice ideal victorious deceptions good holiest.\n Faithful philosophy endless fearful enlightenment."
-  },
-  {
-    title: "Excel Automation",
-    iconClass: "",
-    content: 1, // createWebExcel()
-    info_Title: "eight_info", 
     info_Content:"Law inexpedient noble reason abstract revaluation war salvation\n snare burying merciful love inexpedient strong.Inexpedient\n prejudice ideal victorious deceptions good holiest.\n Faithful philosophy endless fearful enlightenment."
   },
   {
