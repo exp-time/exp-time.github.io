@@ -25,22 +25,6 @@ document.addEventListener('DOMContentLoaded', function() {
           outputDiv.scrollTop = outputDiv.scrollHeight; // scroll to the bottom
       }
   });
-  // Jexcel
-  jexcel(document.getElementById('spreadsheet'), {
-    data:[
-        ['Mazda', 2001, 2000, 'Black', 'Buy'],
-        ['Peugeot', 2010, 5000, 'Blue', 'Rent'],
-        ['Honda Fit', 2009, 3000, 'Blue', 'Buy'],
-        ['Honda CRV', 2010, 6000, 'Gray', 'Sell'],
-    ],
-    columns: [
-        { type: 'text', title:'Car', width:120 },
-        { type: 'numeric', title:'Year', width:80 },
-        { type: 'numeric', title:'Price', width:100 },
-        { type: 'text', title:'Color', width:100 },
-        { type: 'dropdown', title:'Condition', width:100, source:['Buy', 'Sell', 'Rent'] }
-    ]
-  });
 });
 
 function handleCommand(command) {
@@ -55,8 +39,4 @@ function handleCommand(command) {
       default:
           return null;  // Indicates unknown command
   }
-}
-
-function createWebExcel() {
-
 }
