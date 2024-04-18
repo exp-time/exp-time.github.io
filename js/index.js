@@ -52,7 +52,7 @@ function createTooltipIcon(link, title, icon) {
 }
 
 function createSidebar(id, title, content) { // Sidebar popups
-  const sidebar = createElementWithClass('nav', 'w3-sidebar w3-bar-block w3-card w3-animate-left w3-center');
+  const sidebar = new Elem('nav').setAttr({className: 'w3-sidebar w3-bar-block w3-card w3-animate-left w3-center'}.elem);
   const sidebarContent = createElementWithClass('div', 'sidebar-content')
   const header = headerWithClose(id, title, "w3-theme-l1")
   sidebar.appendChild(header);
@@ -62,12 +62,10 @@ function createSidebar(id, title, content) { // Sidebar popups
     sidebarContent.appendChild(menuItem)
   }
   sidebar.appendChild(sidebarContent)
-  
   makeDocumentModal(id, sidebar)
 }
 
-function createModal(id, title, content, footerContent) {  // Open popup modal page
-  //const modalContent = new Elem('div').setAttr({className: 'w3-modal-content w3-card-4 modal-animate-top'})
+function createModal(id, title, content, footerContent) {  
   const modalContent = createElementWithClass('div', 'w3-modal-content w3-card-4 modal-animate-top');
   const header = headerWithClose(id, title, "w3-theme-l1")
   const body = createElementWithClass('div', 'w3-padding');
