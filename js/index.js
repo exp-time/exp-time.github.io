@@ -69,10 +69,11 @@ function createSidebar(id, title, content) {
       attrs: {textContent: title}
   });
   const closeButton = new Elem('span').setAttr({
-    className: 'w3-button display-topright'})
-    .addChild({
-    tag: 'i',
-    attrs: {className: 'fa fa-remove'}}).appendTo(header.elem);
+        className: 'w3-button display-topright'
+    }).addChild({
+        tag: 'i',
+        attrs: {className: 'fa fa-remove'}
+    }).appendTo(header.elem);
 
   // Configure close button to close the modal
   closeButton.elem.onclick = function(event) {
