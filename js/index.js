@@ -25,10 +25,15 @@ function makeDocumentModal(id, content) {
 */
 function makeDocumentModal(id, content) {
   const modal = new Elem('div').setAttr({
-                className: 'w3-modal',id:id, onmousedown: `closeModal(event, '${id}')`});
+                className: 'w3-modal',id:id});
   if (content instanceof Elem) {content.appendTo(modal.elem)}
   else { modal.elem.appendChild(content)}
   modal.appendTo(document.body);
+  modal.elem.onmousedown = function(event) {
+    if (event.target === this) {  // Ensures that the handler fires only when the modal background is clicked
+        closeModal(event, id);
+    }
+  };
 }
 
 function headerWithClose(id, title, theme) {
