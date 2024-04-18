@@ -66,15 +66,3 @@ function createEditableTable(headers, initialRowsData) {
   tableContainer.appendTo(document.body);
   return tableContainer.elem;
 }
-
-function addRow(tbody) {
-  const rowData = ["", "", "", ""]; // Blank cells by default; adjust if needed
-  const newRow = new Elem('tr');
-  rowData.forEach(cellData => {
-      newRow.addChild({
-          tag: 'td',
-          attrs: {textContent: cellData, contenteditable: "true"}
-      });
-  });
-  newRow.appendTo(tbody); 
-}
