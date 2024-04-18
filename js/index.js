@@ -22,7 +22,15 @@ function makeDocumentModal(id, content) {
   modal.appendChild(content);
   document.body.appendChild(modal);
 }
-
+function makeDocumentModal(id, content) {
+  // Create the modal div using Elem class
+  const modal = new Elem('div').setAttr({
+                className: 'w3-modal',id: id,onmousedown: `closeModal(event, '${id}')`});
+  if (content instanceof Elem) {content.appendTo(modal.elem)}
+  else { modal.elem.appendChild(content)}
+  modal.appendTo(document.body);
+  return modal.elem;
+}
 function headerWithClose(id, title, theme) {
   const header = new Elem('header').setAttr({className: `modal-header ${theme}`});
   header.addChild({tag: 'p',attrs: {textContent: title}});
