@@ -15,15 +15,15 @@ function closeModal(event, id) {                      // Close if click outside 
   }
 }
 
-function makeDocumentModal(identifier, content) { //
-  const modal = new Elem('div').setAttr({className: 'w3-modal', id:identifier, 
-                  onmousedown: `closeModal(event, '${identifier}')`}).appendTo(document.body);
-  modal.addChild(content)
-  //const modal = createElementWithClass('div', 'w3-modal');
-  //modal.setAttribute('id', id);
-  //modal.setAttribute('onmousedown', `closeModal(event, '${id}')`);
-  //modal.appendChild(content);
-  //document.body.appendChild(modal);
+function makeDocumentModal(id, content) { //identifier
+  //const modal = new Elem('div').setAttr({className: 'w3-modal', id:identifier, 
+                  //onmousedown: `closeModal(event, '${identifier}')`}).appendTo(document.body);
+  //modal.addChild(content)
+  const modal = createElementWithClass('div', 'w3-modal');
+  modal.setAttribute('id', id);
+  modal.setAttribute('onmousedown', `closeModal(event, '${id}')`);
+  modal.appendChild(content);
+  document.body.appendChild(modal);
 }
 
 function headerWithClose(id, title, theme) { // Create header and close button
