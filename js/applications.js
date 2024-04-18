@@ -1,20 +1,9 @@
 function createWebTerminal() {
-  const terminal = document.createElement('div');
-  terminal.setAttribute('id', 'terminal');
-  terminal.className = 'terminal';
-
-  const output = document.createElement('div');
-  output.setAttribute('id', 'output');
-  output.className = 'output';
-
-  const input = document.createElement('input');
-  input.setAttribute('type', 'text');
-  input.setAttribute('id', 'input');
-  input.className = 'input';
-  input.setAttribute('placeholder', 'Type command...');
-  terminal.append(output, input);
-
-  return terminal
+  const terminal = new Elem('div').setAttr({id: 'terminal',className: 'terminal'});
+  terminal.addChild({tag: 'div', attrs: {id: 'output',className: 'output'}});
+  terminal.addChild({tag: 'input',
+      attrs: {type: 'text', id: 'input',className: 'input', placeholder: 'Type command...'}});
+  return terminal.elem;
 }
 
 document.addEventListener('DOMContentLoaded', function() {
