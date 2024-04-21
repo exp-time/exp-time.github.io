@@ -110,13 +110,14 @@ body {font-size:15px;margin:0;font-family: Arial, sans-serif;}
   width:30%;
   max-height: 40%;
   min-width: 350px;
-  background-color:#fff;
+  
 }
 
 .sidebar-content{
   border-width: 0 2px 2px 0; /* top | right | bottom | left */
   border-style: inset;
   border-color: #cccccc;
+  background-color:#fff;
   overflow:auto;
 }
 @media (min-width:993px){.w3-modal-content{width:900px}.w3-hide-large{display:none!important}.w3-sidebar.w3-collapse{display:block!important}}
