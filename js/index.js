@@ -142,7 +142,7 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
     // TODO HANDLE
   }
   if (iconClass != '') {
-    const selectedIcon = createElementWithClass('i', iconClass + ' w3-margin w3-text-theme');
+    const selectedIcon = createElementWithClass('i', iconClass + ' w3-margin font-mega w3-text-theme');
     card.appendChild(selectedIcon)
   }
   card.appendChild(paragraph);

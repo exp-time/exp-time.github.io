@@ -3,7 +3,7 @@
 .w3-theme-l1 {color:#fff !important; background-color:#333333 !important}
 .w3-theme-light {color:#000 !important; background-color:#f0f0f0 !important}
 
-.w3-text-theme {color:#000000 !important;font-size:100px !important;}
+.w3-text-theme {color:#000000 !important;}
 .w3-dark-grey{color:#fff!important;background-color:#616161!important}
 .w3-dark-grey:hover{color:#000!important;background-color:#f1f1f1!important}
 
@@ -69,6 +69,7 @@ body {font-size:15px;margin:0;font-family: Arial, sans-serif;}
 .font-xxlarge{font-size:1.75vw!important}
 .font-xxxlarge{font-size:2.5vw!important}
 .font-jumbo{font-size:3.5vw!important}
+.font-mega{font-size:5.5vw!important}
 
 /* Medium screens: 2 items per row (min-width of 1100px for 550px each) */
 @media (min-width: 1100px) {.w3-third {width: 50% !important;}}
