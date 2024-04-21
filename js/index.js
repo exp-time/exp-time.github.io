@@ -66,7 +66,7 @@ function createModal(id, title, content, footerContent) {
   const modalContent = createElementWithClass('div', 'w3-modal-content w3-card-4 modal-animate-top');
   const header = headerWithClose(id, title, "w3-theme-l1")
   const body = createElementWithClass('div', 'w3-padding');
-  const bodyText = createElementWithClass('p', 'font_15', content);
+  const bodyText = createElementWithClass('p', 'font-medium', content);
   body.appendChild(bodyText);
   modalContent.append(header, body);
   if (footerContent && footerContent != ""){
@@ -75,12 +75,12 @@ function createModal(id, title, content, footerContent) {
       for (const key in footerContent) { // If footerContent is an object (not an array), handle as key-value pairs for links
         const link = createElementWithClass('a', 'w3-button padding-top-bottom', key)
         link.onclick = () => openInNewTab(footerContent[key]);
-        const item = createElementWithClass('p', '', '');
+        const item = createElementWithClass('p', 'font-medium', '');
         item.appendChild(link);
         footer.appendChild(item);
       }
       } else { // Handle as plain text
-        const footerP = createElementWithClass('p', '', footerContent); 
+        const footerP = createElementWithClass('p', 'font-medium', footerContent); 
         footer.appendChild(footerP);
       }
     modalContent.appendChild(footer);
@@ -116,7 +116,7 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
   card.appendChild(row);
   let paragraph;
   if (isString(content)) { 
-    paragraph = createElementWithClass('p', '', content);
+    paragraph = createElementWithClass('p', 'font-medium', content);
   }
   else if (content === 0){ // TODO: modify else..
     paragraph = createWebTerminal()
