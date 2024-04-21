@@ -27,7 +27,7 @@ function headerWithClose(id, title, theme) {
   const header = new Elem('header').setAttr({className: `modal-header font-large ${theme}`});
   header.addChild({tag: 'p', attrs: {textContent: title}});
   const closeButton = header.addChild({
-      tag: 'span',
+      tag: 'div',
       attrs: {className: 'w3-button display-topright'},
       children: [{  
           tag: 'i',
