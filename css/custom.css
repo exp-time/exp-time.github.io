@@ -108,7 +108,6 @@ body {font-size:15px;margin:0;font-family: Arial, sans-serif;}
 .w3-sidebar{
   top:5%;
   width:30%;
-  max-height: 40%;
   min-width: 350px;
   max-width: 450px;
 }
@@ -119,6 +118,7 @@ body {font-size:15px;margin:0;font-family: Arial, sans-serif;}
   border-color: #cccccc;
   background-color:#fff;
   overflow:auto;
+  max-height: 30%;
 }
 @media (min-width:993px){.w3-modal-content{width:900px}.w3-hide-large{display:none!important}.w3-sidebar.w3-collapse{display:block!important}}
 @media (max-width:992px){.w3-sidebar.w3-collapse{display:none}.w3-main{margin-left:0!important;margin-right:0!important}.w3-auto{max-width:100%}}
