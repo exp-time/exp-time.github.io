@@ -50,8 +50,15 @@ body {font-size:15px;margin:0;font-family: Arial, sans-serif;}
 @media (min-width: 1650px) {.w3-third {width: 33.3333% !important;}}
 
 .top-corner {float:right!important;flex-grow: 0;}
-.footer-container {display:flex;justify-content:space-between;align-items: center;padding: 1.5em 4em 1.5em 4em;} /* top | right | bottom | left */
-.footer-container p {margin: 0;}
+
+.footer-container {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding: 1.5em 4em 1.5em 4em;
+  border-top:3px solid #555;
+
+} /* top | right | bottom | left */
 
 .w3-tooltip .w3-text{
   display:none;
