@@ -52,12 +52,12 @@ body {font-size:15px;margin:0;font-family: Arial, sans-serif;}
 .dummy-button {visibility: hidden; width: 40.57px; }
 .container-title {padding: 0.5em;} 
 .container-title a {flex-grow: 0!important;}
+
 .main-title, .sub-title {
   position: relative; 
   font-weight:400;
 }
-.main-title {font-size:64px;}
-.sub-title {font-size:18px;margin:2em 0;}
+.sub-title {margin:2em 0;}
 /* Assume the base case is the smallest, i.e., mobile-first approach */
 
 .w3-third {width: 100% !important; padding: 0.5em;}/* Adjust width to full width for small screens */
