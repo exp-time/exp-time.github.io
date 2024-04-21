@@ -64,6 +64,7 @@ body {font-size:15px;margin:0;font-family: Arial, sans-serif;}
 .font-mega{font-size:5.5vw!important}
 */
 /* Base font sizes for very small screens */
+.w3-third {width: 100% !important; padding: 0.5em;}
 .font-small { font-size: 10px; }  /* Minimum readable size */
 .font-medium { font-size: 12px; }
 .font-large { font-size: 14px; }
@@ -87,6 +88,7 @@ body {font-size:15px;margin:0;font-family: Arial, sans-serif;}
 
 /* Adjust for medium screens: 2 items per row */
 @media (min-width: 1100px) and (max-width: 1649px) {
+    .w3-third {width: 50% !important;}
     .font-small { font-size: 11px; }
     .font-medium { font-size: 13px; }
     .font-large { font-size: 15px; }
@@ -99,6 +101,7 @@ body {font-size:15px;margin:0;font-family: Arial, sans-serif;}
 
 /* Large screens: 3 items per row */
 @media (min-width: 1650px) {
+    .w3-third {width: 33.3333% !important;}
     .font-small { font-size: 0.45vw; }
     .font-medium { font-size: 0.68vw; }
     .font-large { font-size: 0.9vw; }
@@ -120,12 +123,6 @@ body {font-size:15px;margin:0;font-family: Arial, sans-serif;}
     .font-jumbo { font-size: 2.86vw; }
     .font-mega { font-size: 4.49vw; }
 }
-.w3-third {width: 100% !important; padding: 0.5em;}/* Adjust width to full width for small screens */
-/* Medium screens: 2 items per row (min-width of 1100px for 550px each) */
-@media (min-width: 1100px) {.w3-third {width: 50% !important;}}
-/* Large screens: 3 items per row (min-width of 1650px for 550px each) */
-@media (min-width: 1650px) {.w3-third {width: 33.3333% !important;}}
-
 .top-corner {float:right!important;flex-grow: 0;}
 
 .footer-container {
