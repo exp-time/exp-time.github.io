@@ -43,12 +43,18 @@ body {font-size:15px;margin:0;font-family: Arial, sans-serif;}
 .content {display: block;padding: 0.5em 0.5em 0;} /* top | left and right | bottom */
 
 /* Assume the base case is the smallest, i.e., mobile-first approach */
+
+
 .w3-third {width: 100% !important; padding: 0.5em;}/* Adjust width to full width for small screens */
 /* Medium screens: 2 items per row (min-width of 1100px for 550px each) */
 @media (min-width: 1100px) {.w3-third {width: 50% !important;}}
 /* Large screens: 3 items per row (min-width of 1650px for 550px each) */
 @media (min-width: 1650px) {.w3-third {width: 33.3333% !important;}}
-
+/*
+@media (max-width:600px){.w3-modal-content{margin:0 10px;width:auto!important}}
+@media (max-width:768px){.w3-modal-content{width:500px}}
+@media (min-width:993px){.w3-modal-content{width:900px}}
+*/
 .top-corner {float:right!important;flex-grow: 0;}
 
 .footer-container {
@@ -126,8 +132,7 @@ body {font-size:15px;margin:0;font-family: Arial, sans-serif;}
   overflow:auto;
   max-height: 165px;
 }
-@media (min-width:993px){.w3-modal-content{width:900px}.w3-hide-large{display:none!important}.w3-sidebar.w3-collapse{display:block!important}}
-@media (max-width:992px){.w3-sidebar.w3-collapse{display:none}.w3-main{margin-left:0!important;margin-right:0!important}.w3-auto{max-width:100%}}
+
 
 .w3-image{max-width:100%;height:auto}img{vertical-align:middle}a{color:inherit}
 
@@ -174,23 +179,14 @@ body {font-size:15px;margin:0;font-family: Arial, sans-serif;}
   min-width:350px;
 }
 
-@media (max-width:600px){.w3-modal-content{margin:0 10px;width:auto!important}}
 
-@media (max-width:768px){.w3-modal-content{width:500px}}
 
 .w3-dropdown-hover.w3-mobile .w3-dropdown-content,.w3-dropdown-click.w3-mobile .w3-dropdown-content{position:relative}	
 .w3-hide-small{display:none!important}.w3-mobile{display:block;width:100%!important}.w3-bar-item.w3-mobile,.w3-dropdown-hover.w3-mobile,.w3-dropdown-click.w3-mobile{text-align:center}
 .w3-dropdown-hover.w3-mobile,.w3-dropdown-hover.w3-mobile .w3-button,.w3-dropdown-click.w3-mobile,.w3-dropdown-click.w3-mobile .w3-button{width:100%}
 
 
-@media (min-width:601px){.w3-col.m1{width:8.33333%}.w3-col.m2{width:16.66666%}.w3-col.m3,.w3-quarter{width:24.99999%}.w3-col.m4,
-.w3-col.m5{width:41.66666%}.w3-col.m6,.w3-half{width:49.99999%}.w3-col.m7{width:58.33333%}.w3-col.m8,.w3-twothird{width:66.66666%}
-.w3-col.m9,.w3-threequarter{width:74.99999%}.w3-col.m10{width:83.33333%}.w3-col.m11{width:91.66666%}.w3-col.m12{width:99.99999%}}
-@media (min-width:993px){.w3-col.l1{width:8.33333%}.w3-col.l2{width:16.66666%}.w3-col.l3{width:24.99999%}.w3-col.l4{width:33.33333%}
-.w3-col.l5{width:41.66666%}.w3-col.l6{width:49.99999%}.w3-col.l7{width:58.33333%}.w3-col.l8{width:66.66666%}
-.w3-col.l9{width:74.99999%}.w3-col.l10{width:83.33333%}.w3-col.l11{width:91.66666%}.w3-col.l12{width:99.99999%}}
-@media (max-width:1205px){.w3-auto{max-width:95%}}
-@media (max-width:992px) and (min-width:601px){.w3-hide-medium{display:none!important}}
+
 
 .w3-spin{animation:w3-spin 2s infinite linear}@keyframes w3-spin{0%{transform:rotate(0deg)}100%{transform:rotate(359deg)}}
 .w3-animate-fading{animation:fading 10s infinite}@keyframes fading{0%{opacity:0}50%{opacity:1}100%{opacity:0}}
@@ -219,6 +215,7 @@ header.w3-theme {
 .w3-bar-block .w3-bar-item{width:100%;display:block;padding:8px 16px;border:none;white-space:normal;float:none;outline:0}
 
 .w3-padding{padding:8px 16px!important}
+
 .w3-large{font-size:18px!important}
 .w3-xlarge{font-size:24px!important}
 .w3-xxlarge{font-size:36px!important}
