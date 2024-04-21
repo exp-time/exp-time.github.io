@@ -42,13 +42,7 @@ body {font-size:15px;margin:0;font-family: Arial, sans-serif;}
 
 .w3-margin{margin:0.25em 0em!important} /* top and bottom | left and right */
 .content {display: block;padding: 0.5em 0.5em 0;} /* top | left and right | bottom */
-/*
-.w3-large{font-size:18px!important}
-.font-xlarge{font-size:24px!important}
-.font-xxlarge{font-size:36px!important}
-.font-xxxlarge{font-size:48px!important}
-.font-jumbo{font-size:64px!important}
-*/
+
 .dummy-button {visibility: hidden; width: 40.57px; }
 .container-title {padding: 0.5em;} 
 .container-title a {flex-grow: 0!important;}
