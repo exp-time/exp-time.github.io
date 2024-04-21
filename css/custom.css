@@ -53,6 +53,7 @@ body {font-size:15px;margin:0;font-family: Arial, sans-serif;}
 }
 .sub-title {margin:2em 0;}
 /* Assume the base case is the smallest, i.e., mobile-first approach */
+/*
 .font-small{font-size:0.5vw!important}
 .font-medium{font-size:0.75vw!important}
 .font-large{font-size:1vw!important}
@@ -61,11 +62,65 @@ body {font-size:15px;margin:0;font-family: Arial, sans-serif;}
 .font-xxxlarge{font-size:2.5vw!important}
 .font-jumbo{font-size:3.5vw!important}
 .font-mega{font-size:5.5vw!important}
+*/
+/* Base font sizes for very small screens */
+.font-small { font-size: 10px; }  /* Minimum readable size */
+.font-medium { font-size: 12px; }
+.font-large { font-size: 14px; }
+.font-xlarge { font-size: 16px; }
+.font-xxlarge { font-size: 20px; }
+.font-xxxlarge { font-size: 24px; }
+.font-jumbo { font-size: 28px; }
+.font-mega { font-size: 36px; }
 
+/* Increase font sizes for screens wider than 1100px */
+@media (min-width: 1100px) {
+    .font-small { font-size: 0.5vw; }
+    .font-medium { font-size: 0.75vw; }
+    .font-large { font-size: 1vw; }
+    .font-xlarge { font-size: 1.25vw; }
+    .font-xxlarge { font-size: 1.75vw; }
+    .font-xxxlarge { font-size: 2.5vw; }
+    .font-jumbo { font-size: 3.5vw; }
+    .font-mega { font-size: 5.5vw; }
+}
+
+/* Adjust for medium screens: 2 items per row */
+@media (min-width: 1100px) and (max-width: 1649px) {
+    .font-small { font-size: 11px; }
+    .font-medium { font-size: 13px; }
+    .font-large { font-size: 15px; }
+    .font-xlarge { font-size: 17px; }
+    .font-xxlarge { font-size: 21px; }
+    .font-xxxlarge { font-size: 25px; }
+    .font-jumbo { font-size: 29px; }
+    .font-mega { font-size: 37px; }
+}
+
+/* Large screens: 3 items per row */
+@media (min-width: 1650px) {
+    .font-small { font-size: 0.45vw; }
+    .font-medium { font-size: 0.68vw; }
+    .font-large { font-size: 0.9vw; }
+    .font-xlarge { font-size: 1.13vw; }
+    .font-xxlarge { font-size: 1.58vw; }
+    .font-xxxlarge { font-size: 2.25vw; }
+    .font-jumbo { font-size: 3.15vw; }
+    .font-mega { font-size: 4.95vw; }
+}
+
+/* Optionally, further scale up for very large screens (greater than 1920px) */
+@media (min-width: 1920px) {
+    .font-small { font-size: 0.41vw; }
+    .font-medium { font-size: 0.61vw; }
+    .font-large { font-size: 0.82vw; }
+    .font-xlarge { font-size: 1.02vw; }
+    .font-xxlarge { font-size: 1.43vw; }
+    .font-xxxlarge { font-size: 2.05vw; }
+    .font-jumbo { font-size: 2.86vw; }
+    .font-mega { font-size: 4.49vw; }
+}
 .w3-third {width: 100% !important; padding: 0.5em;}/* Adjust width to full width for small screens */
-
-
-
 /* Medium screens: 2 items per row (min-width of 1100px for 550px each) */
 @media (min-width: 1100px) {.w3-third {width: 50% !important;}}
 /* Large screens: 3 items per row (min-width of 1650px for 550px each) */
