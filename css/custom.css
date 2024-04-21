@@ -106,7 +106,7 @@ body {font-size:15px;margin:0;font-family: Arial, sans-serif;}
 .w3-card{box-shadow:0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);}
 
 .w3-sidebar{
-  top:0;
+  top:5%;
   width:30%;
   max-height: 40%;
   min-width: 350px;
