@@ -98,7 +98,6 @@ body {font-size:15px;margin:0;font-family: Arial, sans-serif;}
     .font-jumbo { font-size: 29px; }
     .font-mega { font-size: 37px; }
 }
-
 /* Large screens: 3 items per row */
 @media (min-width: 1650px) {
     .w3-third {width: 33.3333% !important;}
@@ -111,7 +110,6 @@ body {font-size:15px;margin:0;font-family: Arial, sans-serif;}
     .font-jumbo { font-size: 3.15vw; }
     .font-mega { font-size: 4.95vw; }
 }
-
 /* Optionally, further scale up for very large screens (greater than 1920px) */
 @media (min-width: 1920px) {
     .font-small { font-size: 0.41vw; }
