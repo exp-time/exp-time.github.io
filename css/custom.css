@@ -328,15 +328,15 @@ header.w3-theme {
   width: 6px;  /* scrollbar width */
 }
 
-.output::-webkit-scrollbar-track,.sidebar-content::-webkit-scrollbar-track {
+.output::-webkit-scrollbar-track {
   background: #f1f1f1;  /* track color */
 }
 
-.output::-webkit-scrollbar-thumb,.sidebar-content::-webkit-scrollbar-thumb {
+.output::-webkit-scrollbar-thumb {
   background: #000000;  /* handle color */
 }
 
-.output::-webkit-scrollbar-thumb:hover,.sidebar-content::-webkit-scrollbar-thumb:hover {
+.output::-webkit-scrollbar-thumb:hover {
   background: #555;  /* handle color on hover */
 }
 .input:focus {
