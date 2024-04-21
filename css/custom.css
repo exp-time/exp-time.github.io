@@ -19,7 +19,8 @@ audio:not([controls]){display:none;height:0}[hidden],template{display:none}
 a{background-color:transparent}a:active,a:hover{outline-width:0}
 abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}
 b,strong{font-weight:bolder}dfn{font-style:italic}mark{background:#ff0;color:#000}
-small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}
+
+/*small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline} */
 sub{bottom:-0.25em}sup{top:-0.5em}figure{margin:1em 40px}img{border-style:none}
 code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}hr{box-sizing:content-box;height:0;overflow:visible}
 button,input,select,textarea,optgroup{font:inherit;margin:0}optgroup{font-weight:bold}
@@ -41,20 +42,33 @@ body {font-size:15px;margin:0;font-family: Arial, sans-serif;}
 
 .w3-margin{margin:0.25em 0em!important} /* top and bottom | left and right */
 .content {display: block;padding: 0.5em 0.5em 0;} /* top | left and right | bottom */
-
+/*
+.w3-large{font-size:18px!important}
+.font-xlarge{font-size:24px!important}
+.font-xxlarge{font-size:36px!important}
+.font-xxxlarge{font-size:48px!important}
+.font-jumbo{font-size:64px!important}
+*/
+.dummy-button {visibility: hidden; width: 40.57px; }
+.container-title {padding: 0.5em;} 
+.container-title a {flex-grow: 0!important;}
 /* Assume the base case is the smallest, i.e., mobile-first approach */
 
-
 .w3-third {width: 100% !important; padding: 0.5em;}/* Adjust width to full width for small screens */
+
+.font-small{font-size:0.5vw!important}
+.font-medium{font-size:0.75vw!important}
+.font-large{font-size:1vw!important}
+.font-xlarge{font-size:1.25vw!important}
+.font-xxlarge{font-size:1.75vw!important}
+.font-xxxlarge{font-size:2.5vw!important}
+.font-jumbo{font-size:3.5vw!important}
+
 /* Medium screens: 2 items per row (min-width of 1100px for 550px each) */
 @media (min-width: 1100px) {.w3-third {width: 50% !important;}}
 /* Large screens: 3 items per row (min-width of 1650px for 550px each) */
 @media (min-width: 1650px) {.w3-third {width: 33.3333% !important;}}
-/*
-@media (max-width:600px){.w3-modal-content{margin:0 10px;width:auto!important}}
-@media (max-width:768px){.w3-modal-content{width:500px}}
-@media (min-width:993px){.w3-modal-content{width:900px}}
-*/
+
 .top-corner {float:right!important;flex-grow: 0;}
 
 .footer-container {
@@ -216,11 +230,7 @@ header.w3-theme {
 
 .w3-padding{padding:8px 16px!important}
 
-.w3-large{font-size:18px!important}
-.w3-xlarge{font-size:24px!important}
-.w3-xxlarge{font-size:36px!important}
-.w3-xxxlarge{font-size:48px!important}
-.w3-jumbo{font-size:64px!important}
+
 
 .display-topright{position:absolute;right:0;top:0}
 
@@ -269,9 +279,7 @@ header.w3-theme {
 
 .flex-container {display: flex;justify-content: space-between;align-items: center;position: relative;}
 .title {flex-grow: 1;text-align: center;}
-.dummy-button {visibility: hidden; width: 40.57px; }
-.container-title {padding: 0.5em;font-size: 24px;} 
-.container-title a {flex-grow: 0!important;}
+
 .padding-none{padding:0px 0px!important;}
 .padding-top-bottom{padding: 2px 0px!important;} /* top and bottom | left and right */
 .w3-button:disabled{cursor:not-allowed;opacity:0.3}

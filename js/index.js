@@ -43,7 +43,7 @@ function createTooltipIcon(link, title, icon) {
   const tooltip = new Elem('div').setAttr({className: 'w3-tooltip'}).appendTo(container);
   tooltip.addChild({tag: 'span',attrs: {className: 'w3-text w3-theme-light',textContent: title}});
   const buttonAttributes = {
-      className: 'w3-text-white pointer-cursor w3-xxlarge fa ' + icon,
+      className: 'w3-text-white pointer-cursor font-xxlarge fa ' + icon,
       onclick: link ? () => openInNewTab(link) : () => window.scrollTo({top: 0, behavior: 'smooth'})};
   tooltip.addChild({tag: 'div',attrs: buttonAttributes});
 }
@@ -107,7 +107,7 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
   }
   const third = createElementWithClass('div', 'w3-third');
   const card = createElementWithClass('div', 'w3-card w3-container');
-  const row = createElementWithClass('div', 'w3-row w3-xlarge container-title flex-container');
+  const row = createElementWithClass('div', 'w3-row font-xlarge container-title flex-container');
   const dummyButton = createElementWithClass('div', 'dummy-button');
   const titleDiv = createElementWithClass('div', 'title', title);
   const infoIcon = createElementWithClass('a', 'fa fa-info w3-button top-corner');
