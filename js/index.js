@@ -24,7 +24,7 @@ function makeDocumentModal(id, content) {
 }
 
 function headerWithClose(id, title, theme) {
-  const header = new Elem('header').setAttr({className: `modal-header ${theme}`});
+  const header = new Elem('header').setAttr({className: `modal-header font-large ${theme}`});
   header.addChild({tag: 'p', attrs: {textContent: title}});
   const closeButton = header.addChild({
       tag: 'span',
@@ -50,7 +50,7 @@ function createTooltipIcon(link, title, icon) {
 
 function createSidebar(id, title, content) { // Sidebar popups
   const sidebar = createElementWithClass('nav', 'w3-sidebar w3-card w3-animate-left w3-center');
-  const sidebarContent = createElementWithClass('div', 'sidebar-content w3-bar-block')
+  const sidebarContent = createElementWithClass('div', 'sidebar-content font-medium w3-bar-block')
   const header = headerWithClose(id, title, "w3-theme-l1")
   sidebar.appendChild(header);
   for (const key in content) {
@@ -70,7 +70,7 @@ function createModal(id, title, content, footerContent) {
   body.appendChild(bodyText);
   modalContent.append(header, body);
   if (footerContent && footerContent != ""){
-    const footer = createElementWithClass('footer', 'w3-theme-l1 modal-footer');
+    const footer = createElementWithClass('footer', 'w3-theme-l1 modal-footer font-small');
     if (typeof footerContent === 'object' && !(footerContent instanceof Array)) {
       for (const key in footerContent) { // If footerContent is an object (not an array), handle as key-value pairs for links
         const link = createElementWithClass('a', 'w3-button padding-top-bottom', key)
