@@ -51,6 +51,7 @@ body {font-size:15px;margin:0;font-family: Arial, sans-serif;}
   position: relative; 
   font-weight:400;
 }
+
 .sub-title {margin:2em 0;}
 
 .modal-header{
@@ -175,7 +176,7 @@ body {font-size:15px;margin:0;font-family: Arial, sans-serif;}
   top:5%;
   width:30%;
   min-width: 350px;
-  max-height: 15%;
+  max-height: 15vh;
 }
 
 .sidebar-content{
