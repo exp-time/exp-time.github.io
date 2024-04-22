@@ -76,6 +76,7 @@ p{margin: 0;}
 .font-jumbo { font-size: 28px!important; }
 .font-mega { font-size: 36px!important; }
 .modal-footer,.modal-header{padding: 2%;}
+.w3-sidebar{ width: 70%;}
 /* Increase font sizes for screens wider than 1100px */
 @media (min-width: 1100px) {
     .font-small { font-size: 0.5vw!important; }
@@ -181,7 +182,6 @@ p{margin: 0;}
 
 .w3-sidebar{
   top:5%;
-  width:30%;
   min-width: 350px;
 }
 
@@ -191,7 +191,6 @@ p{margin: 0;}
   border-color: #cccccc;
   background-color:#fff;
   overflow:auto;
-  max-height:85%;
 }
 
 .w3-image{max-width:100%;height:auto}img{vertical-align:middle}a{color:inherit}
@@ -249,8 +248,15 @@ header.w3-theme {
 }
 
 .font-900 {font-weight:900;}
-
-.w3-bar-block .w3-bar-item{width:100%;display:block;padding:8px 16px;border:none;white-space:normal;float:none;outline:0}
+ /* top and bottom | left and right */
+.w3-bar-block.w3-bar-item{
+  width:100%;
+  display:block;
+  padding: 0.5vh;
+  border:none;
+  white-space:normal;
+  float:none;outline:0
+}
 
 .w3-padding{padding:8px 16px!important}
 
