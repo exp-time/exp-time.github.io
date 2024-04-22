@@ -99,7 +99,7 @@ body {font-size:15px;margin:0;font-family: Arial, sans-serif;}
     .modal-footer,.modal-header{padding: 0.75%;}
 }
 /* Optionally, further scale up for very large screens (greater than 1920px) */
-@media (min-width: 1920px) {
+@media (min-width: 1921px) {
     .font-small { font-size: 0.41vw!important; }
     .font-medium { font-size: 0.61vw!important; }
     .font-large { font-size: 0.82vw!important; }
