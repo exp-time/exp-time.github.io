@@ -10,9 +10,9 @@
 .w3-text-white{color:#fff!important}
 
 html{box-sizing:border-box}*,*:before,*:after{box-sizing:inherit}
+
 html{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;overflow-x:hidden}
 body {margin:0;font-family: Arial, sans-serif;}
-
 
 article,aside,details,figcaption,figure,footer,header,main,menu{display:block}
 summary{display:list-item}
@@ -199,7 +199,7 @@ p{margin: 0;}
   position:relative;
   animation:animatetop 0.4s
 }@keyframes animatetop{
-  from{top:-500px;opacity:0} to{top:5%;opacity:1}}
+  from{top:-500px;opacity:0} to{top:10%;opacity:1}}
 
 .w3-modal{
   display:none;
