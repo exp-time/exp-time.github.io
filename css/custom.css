@@ -58,6 +58,7 @@ p{margin: 0;}
 .w3-sidebar{width: 35%; top:5%;}
 .modal-footer{vertical-align: middle;}
 
+.font-900 {font-weight:900}
 /* Base font sizes for very small screens */
 .w3-third {width: 100% !important; padding: 0.5em;}
 .font-small { font-size: 10px!important; }  /* Minimum readable size */
@@ -70,7 +71,7 @@ p{margin: 0;}
 .font-mega { font-size: 36px!important; }
 .modal-footer,.modal-header{padding: 2%;}
 .sidebar-header{padding: 4%;}
-
+.font-900 {padding: 3%  6%!important;}
 /* Increase font sizes for screens wider than 1100px */
 @media (min-width: 1100px) {
     .font-small { font-size: 0.5vw!important; }
@@ -83,6 +84,7 @@ p{margin: 0;}
     .font-mega { font-size: 5.5vw!important; }
     .modal-footer,.modal-header{padding: 1%;}
     .sidebar-header{padding: 2%;}
+    .font-900 {font-weight:900;padding: 1.5%  3%!important;}
 }
 
 /* Large screens: 3 items per row */
@@ -98,6 +100,7 @@ p{margin: 0;}
     .font-mega { font-size: 4.95vw!important; }
     .modal-footer,.modal-header{padding: 0.75%;}
     .sidebar-header{padding: 1.5%;}
+    .font-900 {font-weight:900;padding: 1.125%  2.25%!important;}
 }
 /* Optionally, further scale up for very large screens (greater than 1920px) */
 @media (min-width: 1920px) {
@@ -111,6 +114,7 @@ p{margin: 0;}
     .font-mega { font-size: 4.49vw!important; }
     .modal-footer,.modal-header{padding: 0.5%;}
     .sidebar-header{padding: 1%;}
+    .font-900 {font-weight:900;padding: 0.75%  1.5%!important;}
 }
 
 .top-corner {float:right!important;flex-grow: 0;}
@@ -243,10 +247,7 @@ header.w3-theme {
   position: relative; /* Ensures proper calculation of overflow area */
 }
 
-.font-900 {
-  font-weight:900;
-  padding: 1%  2%!important;
-}
+
  /* top and bottom | left and right */
 .w3-bar-block .w3-bar-item{
   width:100%;
