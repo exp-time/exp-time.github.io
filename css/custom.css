@@ -63,6 +63,17 @@ body {font-size:15px;margin:0;font-family: Arial, sans-serif;}
 .font-jumbo{font-size:3.5vw!important}
 .font-mega{font-size:5.5vw!important}
 */
+.modal-header{
+  padding: 2%;
+  vertical-align: middle;
+  box-shadow:0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+}
+
+.modal-footer{
+  padding: 2%;
+  vertical-align: middle;
+}
+
 /* Base font sizes for very small screens */
 .w3-third {width: 100% !important; padding: 0.5em;}
 .font-small { font-size: 10px!important; }  /* Minimum readable size */
@@ -230,16 +241,7 @@ body {font-size:15px;margin:0;font-family: Arial, sans-serif;}
   min-width:350px;
 }
 
-.modal-header{
-  padding: 2%;
-  vertical-align: middle;
-  box-shadow:0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
-}
 
-.modal-footer{
-  padding: 8px 16px!important;
-  vertical-align: middle;
-}
 
 .w3-dropdown-hover.w3-mobile .w3-dropdown-content,.w3-dropdown-click.w3-mobile .w3-dropdown-content{position:relative}	
 .w3-hide-small{display:none!important}.w3-mobile{display:block;width:100%!important}.w3-bar-item.w3-mobile,.w3-dropdown-hover.w3-mobile,.w3-dropdown-click.w3-mobile{text-align:center}
