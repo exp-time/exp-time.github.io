@@ -24,11 +24,12 @@ function makeDocumentModal(id, content) {
 }
 
 function headerWithClose(id, title, theme, sidebar) {
+  let header
   if (sidebar) {
-    const header = new Elem('header').setAttr({className: `sidebar-header font-large ${theme}`});
+    header = new Elem('header').setAttr({className: `sidebar-header font-large ${theme}`});
   }
   else {
-    const header = new Elem('header').setAttr({className: `modal-header font-large ${theme}`});
+    header = new Elem('header').setAttr({className: `modal-header font-large ${theme}`});
   }
   header.addChild({tag: 'p', attrs: {textContent: title}});
   const closeButton = header.addChild({
