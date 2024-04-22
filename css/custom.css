@@ -249,7 +249,7 @@ header.w3-theme {
 
 .font-900 {font-weight:900;}
  /* top and bottom | left and right */
-.w3-bar-block.w3-bar-item{
+.w3-bar-block .w3-bar-item{
   width:100%;
   display:block;
   padding: 0.5vh;
