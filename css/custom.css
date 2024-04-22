@@ -64,15 +64,11 @@ body {font-size:15px;margin:0;font-family: Arial, sans-serif;}
 .font-mega{font-size:5.5vw!important}
 */
 .modal-header{
-  padding: 2%;
   vertical-align: middle;
   box-shadow:0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
 }
 
-.modal-footer{
-  padding: 2%;
-  vertical-align: middle;
-}
+.modal-footer{vertical-align: middle;}
 
 /* Base font sizes for very small screens */
 .w3-third {width: 100% !important; padding: 0.5em;}
@@ -84,7 +80,7 @@ body {font-size:15px;margin:0;font-family: Arial, sans-serif;}
 .font-xxxlarge { font-size: 24px!important; }
 .font-jumbo { font-size: 28px!important; }
 .font-mega { font-size: 36px!important; }
-
+.modal-footer,.modal-header{padding: 2%;}
 /* Increase font sizes for screens wider than 1100px */
 @media (min-width: 1100px) {
     .font-small { font-size: 0.5vw!important; }
@@ -95,20 +91,9 @@ body {font-size:15px;margin:0;font-family: Arial, sans-serif;}
     .font-xxxlarge { font-size: 2.5vw!important; }
     .font-jumbo { font-size: 3.5vw!important; }
     .font-mega { font-size: 5.5vw!important; }
+    .modal-footer,.modal-header{padding: 1%;}
 }
 
-/* Adjust for medium screens: 2 items per row */
-@media (min-width: 1100px) and (max-width: 1649px) {
-    .w3-third {width: 50% !important;}
-    .font-small { font-size: 11px!important; }
-    .font-medium { font-size: 13px!important; }
-    .font-large { font-size: 15px!important; }
-    .font-xlarge { font-size: 17px!important; }
-    .font-xxlarge { font-size: 21px!important; }
-    .font-xxxlarge { font-size: 25px!important; }
-    .font-jumbo { font-size: 29px!important; }
-    .font-mega { font-size: 37px!important; }
-}
 /* Large screens: 3 items per row */
 @media (min-width: 1650px) {
     .w3-third {width: 33.3333% !important;}
@@ -120,6 +105,7 @@ body {font-size:15px;margin:0;font-family: Arial, sans-serif;}
     .font-xxxlarge { font-size: 2.25vw!important; }
     .font-jumbo { font-size: 3.15vw!important; }
     .font-mega { font-size: 4.95vw!important; }
+    .modal-footer,.modal-header{padding: 0.75%;}
 }
 /* Optionally, further scale up for very large screens (greater than 1920px) */
 @media (min-width: 1920px) {
@@ -131,6 +117,7 @@ body {font-size:15px;margin:0;font-family: Arial, sans-serif;}
     .font-xxxlarge { font-size: 2.05vw!important; }
     .font-jumbo { font-size: 2.86vw!important; }
     .font-mega { font-size: 4.49vw!important; }
+    .modal-footer,.modal-header{padding: 0.5%;}
 }
 
 .top-corner {float:right!important;flex-grow: 0;}
