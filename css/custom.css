@@ -58,11 +58,12 @@ p{margin: 0;}
 
 .sub-title {margin:2em 0;}
 
-.modal-header{
+.modal-header,.sidebar-header{
   vertical-align: middle;
   box-shadow:0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
 }
-
+.sidebar-header{}
+.w3-sidebar{ width: 35%;}
 .modal-footer{vertical-align: middle;}
 
 /* Base font sizes for very small screens */
@@ -76,7 +77,8 @@ p{margin: 0;}
 .font-jumbo { font-size: 28px!important; }
 .font-mega { font-size: 36px!important; }
 .modal-footer,.modal-header{padding: 2%;}
-.w3-sidebar{ width: 70%;}
+.sidebar-header{padding: 4%;}
+
 /* Increase font sizes for screens wider than 1100px */
 @media (min-width: 1100px) {
     .font-small { font-size: 0.5vw!important; }
@@ -88,6 +90,7 @@ p{margin: 0;}
     .font-jumbo { font-size: 3.5vw!important; }
     .font-mega { font-size: 5.5vw!important; }
     .modal-footer,.modal-header{padding: 1%;}
+    .sidebar-header{padding: 2%;}
 }
 
 /* Large screens: 3 items per row */
@@ -102,6 +105,7 @@ p{margin: 0;}
     .font-jumbo { font-size: 3.15vw!important; }
     .font-mega { font-size: 4.95vw!important; }
     .modal-footer,.modal-header{padding: 0.75%;}
+    .sidebar-header{padding: 1.5%;}
 }
 /* Optionally, further scale up for very large screens (greater than 1920px) */
 @media (min-width: 1920px) {
@@ -114,6 +118,7 @@ p{margin: 0;}
     .font-jumbo { font-size: 2.86vw!important; }
     .font-mega { font-size: 4.49vw!important; }
     .modal-footer,.modal-header{padding: 0.5%;}
+    .sidebar-header{padding: 1%;}
 }
 
 .top-corner {float:right!important;flex-grow: 0;}
@@ -299,7 +304,7 @@ header.w3-theme {
   white-space:nowrap
 }
 
-.w3-button,.title,.user-select-none,.pagination,.modal-header,.container-title{
+.w3-button,.title,.user-select-none,.pagination,.modal-header,.sidebar-header,.container-title{
   -webkit-touch-callout:none;
   -webkit-user-select:none;
   -khtml-user-select:none;
