@@ -43,7 +43,7 @@ function createTooltipIcon(link, title, icon) {
   const tooltip = new Elem('div').setAttr({className: 'w3-tooltip'}).appendTo(container);
   tooltip.addChild({tag: 'span',attrs: {className: 'w3-text w3-theme-light',textContent: title}});
   const buttonAttributes = {
-      className: 'w3-text-white pointer-cursor font-xxlarge fa ' + icon,
+      className: 'w3-text-white pointer-cursor font-xxxlarge fa ' + icon,
       onclick: link ? () => openInNewTab(link) : () => window.scrollTo({top: 0, behavior: 'smooth'})};
   tooltip.addChild({tag: 'div',attrs: buttonAttributes});
 }
