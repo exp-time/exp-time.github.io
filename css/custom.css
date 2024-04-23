@@ -47,7 +47,7 @@ p{margin: 0;}
   position: relative; 
   font-weight:400;
 }
-.sidebar-btns{padding:0.25% 1%;top:0.5%;left:0;margin-top:0;} /* top and bottom | left and right */
+.sidebar-btns{padding:0.25% 0.5%;top:0.5%;left:0;margin-top:0;} /* top and bottom | left and right */
 .sub-title {margin:2em 0;}
 
 .modal-header,.sidebar-header{
@@ -57,8 +57,8 @@ p{margin: 0;}
 
 .w3-sidebar{width: 35%; top:5%;}
 .modal-footer{vertical-align: middle;}
-
 .font-900 {font-weight:900}
+
 /* Base font sizes for very small screens */
 .w3-third {width: 100% !important; padding: 0.5em;}
 .font-small { font-size: 10px!important; }  /* Minimum readable size */
@@ -86,7 +86,6 @@ p{margin: 0;}
     .sidebar-header{padding: 2%;}
     .font-900 {font-weight:900;padding: 1.5%  3%!important;}
 }
-
 /* Large screens: 3 items per row */
 @media (min-width: 1650px) {
     .w3-third {width: 33.3333% !important;}
