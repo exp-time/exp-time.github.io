@@ -23,14 +23,8 @@ function makeDocumentModal(id, content) {
   modal.appendTo(document.body);
 }
 
-function headerWithClose(id, title, theme, sidebar) {
-  let header
-  if (sidebar) {
-    header = new Elem('header').setAttr({className: `sidebar-header font-large ${theme}`});
-  }
-  else {
-    header = new Elem('header').setAttr({className: `modal-header font-large ${theme}`});
-  }
+function headerWithClose(id, title, theme) {
+  const header = new Elem('header').setAttr({className: `w3-theme-l1 font-large ${theme}`});
   header.addChild({tag: 'p', attrs: {textContent: title}});
   const closeButton = header.addChild({
       tag: 'div',
@@ -57,7 +51,7 @@ function createTooltipIcon(link, title, icon) {
 function createSidebar(id, title, content) { // Sidebar popups
   const sidebar = createElementWithClass('div', 'w3-sidebar w3-card w3-animate-left w3-center');
   const sidebarContent = createElementWithClass('div', 'sidebar-content font-medium w3-bar-block')
-  const header = headerWithClose(id, title, "w3-theme-l1", true)
+  const header = headerWithClose(id, title, "sidebar-header")
   sidebar.appendChild(header);
   for (const key in content) {
     const menuItem = createElementWithClass('div', 'w3-bar-item w3-button', key); // Add menu items
@@ -70,7 +64,7 @@ function createSidebar(id, title, content) { // Sidebar popups
 
 function createModal(id, title, content, footerContent) {  
   const modalContent = createElementWithClass('div', 'w3-modal-content w3-card-4 modal-animate-top');
-  const header = headerWithClose(id, title, "w3-theme-l1")
+  const header = headerWithClose(id, title, "modal-header")
   const body = createElementWithClass('div', 'w3-padding');
   const bodyText = createElementWithClass('p', 'font-medium', content);
   body.appendChild(bodyText);
