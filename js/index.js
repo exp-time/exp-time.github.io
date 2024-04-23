@@ -114,7 +114,7 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
   const third = createElementWithClass('div', 'w3-third');
   const card = createElementWithClass('div', 'w3-card w3-container');
   const row = createElementWithClass('div', 'w3-row font-xlarge container-title flex-container');
-  const dummyButton = createElementWithClass('div', 'dummy-button');
+  const dummyButton = createElementWithClass('a', 'fa fa-info dummy-button w3-button');
   const titleDiv = createElementWithClass('div', 'title', title);
   const infoIcon = createElementWithClass('a', 'fa fa-info w3-button top-corner');
   infoIcon.onclick = () => info_open(info_id);

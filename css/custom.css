@@ -39,7 +39,7 @@ p{margin: 0;}
 .w3-margin{margin:0.25em 0em!important} /* top and bottom | left and right */
 .content {display: block;padding: 0.5em 0.5em 0;} /* top | left and right | bottom */
 
-.dummy-button {visibility: hidden; width: 40.57px; }
+.dummy-button {visibility: hidden; opacity: 0; }
 .container-title {padding: 0.5em;} 
 .container-title a {flex-grow: 0!important;}
 
