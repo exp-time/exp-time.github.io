@@ -47,7 +47,7 @@ p{margin: 0;}
   position: relative; 
   font-weight:400;
 }
-.sidebar-btns{padding:0.25% 1%;top:0.5%;left:0;} /* top and bottom | left and right */
+.sidebar-btns{padding:0.25% 1%;top:0.5%;left:0;margin-top:0;} /* top and bottom | left and right */
 .sub-title {margin:2em 0;}
 
 .modal-header,.sidebar-header{
