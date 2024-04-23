@@ -47,7 +47,7 @@ p{margin: 0;}
   position: relative; 
   font-weight:400;
 }
-
+.sidebar-btns{padding:5%}
 .sub-title {margin:2em 0;}
 
 .modal-header,.sidebar-header{
