@@ -7,9 +7,7 @@ function createWebTerminal() { // Web Terminal
   return terminal.elem;
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-
-  // TERMINAL
+document.addEventListener('DOMContentLoaded', function() { // TERMINAL
   const inputField = document.getElementById('input');
   const outputDiv = document.getElementById('output');
   inputField.addEventListener('keydown', function(event) {

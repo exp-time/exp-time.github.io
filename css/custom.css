@@ -65,7 +65,7 @@ button:-moz-focusring,[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[
     .font-mega { font-size: 5.5vw!important; }
     .modal-footer,.modal-header{padding: 1%;}
     .sidebar-header{padding: 2%;}
-    .font-900 {font-weight:900;padding: 1.5%  3%!important;}
+    .font-900 {padding: 1.5%  3%!important;}
 }
 @media (min-width: 1650px) {
     .w3-third {width: 33.3333% !important;}
@@ -79,7 +79,7 @@ button:-moz-focusring,[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[
     .font-mega { font-size: 4.95vw!important; }
     .modal-footer,.modal-header{padding: 0.75%;}
     .sidebar-header{padding: 1.5%;}
-    .font-900 {font-weight:900;padding: 1.125%  2.25%!important;}
+    .font-900 {padding: 1.125%  2.25%!important;}
 }
 @media (min-width: 1920px) {
     .font-small { font-size: 0.41vw!important; }
@@ -92,7 +92,7 @@ button:-moz-focusring,[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[
     .font-mega { font-size: 4.49vw!important; }
     .modal-footer,.modal-header{padding: 0.5%;}
     .sidebar-header{padding: 1%;}
-    .font-900 {font-weight:900;padding: 0.75%  1.5%!important;}
+    .font-900 {padding: 0.75%  1.5%!important;}
 }
 
 .top-corner {float:right!important;flex-grow: 0;}
