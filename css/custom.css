@@ -151,8 +151,6 @@ button:-moz-focusring,[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[
   background-color:#fff;
   overflow:auto;}
 
-.w3-image{max-width:100%;height:auto}img{vertical-align:middle}a{color:inherit}
-
 .modal-animate-top{
   position:relative;
   animation:animatetop 0.4s
