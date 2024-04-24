@@ -1,12 +1,9 @@
-/* Theme */
 .w3-theme {color:#fff !important; background-color:#000000 !important;}
 .w3-theme-l1 {color:#fff !important; background-color:#333333 !important}
 .w3-theme-light {color:#000 !important; background-color:#f0f0f0 !important}
-
 .w3-text-theme {color:#000000 !important;}
 .w3-dark-grey{color:#fff!important;background-color:#616161!important}
 .w3-dark-grey:hover{color:#000!important;background-color:#f1f1f1!important}
-
 .w3-text-white{color:#fff!important}
 
 html{box-sizing:border-box}*,*:before,*:after{box-sizing:inherit}
