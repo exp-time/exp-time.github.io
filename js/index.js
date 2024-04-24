@@ -66,7 +66,7 @@ function createModal(id, title, content, footerContent) {
   const modalContent = createElementWithClass('div', 'w3-modal-content w3-card-4 modal-animate-top');
   const header = headerWithClose(id, title, "modal-header")
   const body = createElementWithClass('div', 'w3-padding');
-  const bodyText = createElementWithClass('p', 'font-large', content);
+  const bodyText = createElementWithClass('p', 'font-medium', content);
   body.appendChild(bodyText);
   modalContent.append(header, body);
   if (footerContent && footerContent != ""){
@@ -116,7 +116,7 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
   card.appendChild(row);
   let paragraph;
   if (isString(content)) { 
-    paragraph = createElementWithClass('p', 'font-medium', content);
+    paragraph = createElementWithClass('p', 'font-large', content);
   }
   else if (content === 0){ // TODO: modify else..
     paragraph = createWebTerminal()
