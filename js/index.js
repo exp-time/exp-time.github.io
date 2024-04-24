@@ -66,7 +66,7 @@ function createModal(id, title, content, footerContent) {
   const modalContent = createElementWithClass('div', 'w3-modal-content w3-card-4 modal-animate-top');
   const header = headerWithClose(id, title, "modal-header")
   const body = createElementWithClass('div', 'w3-padding');
-  const bodyText = createElementWithClass('p', 'font-medium', content);
+  const bodyText = createElementWithClass('p', 'font-large', content);
   body.appendChild(bodyText);
   modalContent.append(header, body);
   if (footerContent && footerContent != ""){
