@@ -152,6 +152,9 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
 }
 
 document.addEventListener('DOMContentLoaded', function() { // pagination + others
+  /* REMOVE */
+  document.getElementById('unfinished_modal').style.display='block'
+  /* REMOVE */
   modalData.forEach(function(modal) {
     createModal(modal.id, modal.title, modal.content, modal.footerContent);
   });
