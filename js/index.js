@@ -24,7 +24,7 @@ function makeDocumentModal(id, content) {
 }
 
 function headerWithClose(id, title, theme) {
-  const header = new Elem('header').setAttr({className: `w3-theme-l1 font-large ${theme}`});
+  const header = new Elem('header').setAttr({className: `w3-theme-l1 ${theme}`});
   header.addChild({tag: 'p', attrs: {textContent: title}});
   const closeButton = header.addChild({
       tag: 'div',
@@ -51,7 +51,7 @@ function createTooltipIcon(link, title, icon) {
 function createSidebar(id, title, content) { // Sidebar popups
   const sidebar = createElementWithClass('div', 'w3-sidebar w3-card w3-animate-left w3-center');
   const sidebarContent = createElementWithClass('div', 'sidebar-content font-medium w3-bar-block')
-  const header = headerWithClose(id, title, "sidebar-header")
+  const header = headerWithClose(id, title, "sidebar-header font-large")
   sidebar.appendChild(header);
   for (const key in content) {
     const menuItem = createElementWithClass('div', 'w3-bar-item w3-button', key); // Add menu items
@@ -64,13 +64,13 @@ function createSidebar(id, title, content) { // Sidebar popups
 
 function createModal(id, title, content, footerContent) {  
   const modalContent = createElementWithClass('div', 'w3-modal-content w3-card-4 modal-animate-top');
-  const header = headerWithClose(id, title, "modal-header")
+  const header = headerWithClose(id, title, "modal-header font-xlarge")
   const body = createElementWithClass('div', 'w3-padding');
-  const bodyText = createElementWithClass('p', 'font-medium', content);
+  const bodyText = createElementWithClass('p', 'font-large', content);
   body.appendChild(bodyText);
   modalContent.append(header, body);
   if (footerContent && footerContent != ""){
-    const footer = createElementWithClass('footer', 'w3-theme-l1 modal-footer font-small');
+    const footer = createElementWithClass('footer', 'w3-theme-l1 modal-footer font-medium');
     if (typeof footerContent === 'object' && !(footerContent instanceof Array)) {
       for (const key in footerContent) { // If footerContent is an object (not an array), handle as key-value pairs for links
         const link = createElementWithClass('a', 'w3-button padding-top-bottom', key)
