@@ -152,3 +152,10 @@ const clickablesData = [
     icon: 'fa-chevron-circle-up',
   },
 ];
+const headerButtons = [
+  {
+    id: 'https://github.com/exp-time',
+    content: 'github.com/exp-time',
+    icon: 'fa-github',
+  },
+];
