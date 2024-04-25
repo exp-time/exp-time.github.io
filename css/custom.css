@@ -17,7 +17,6 @@ button,[type=button],[type=reset],[type=submit]{-webkit-appearance:button;appear
 button::-moz-focus-inner,[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner{border-style:none;padding:0}
 button:-moz-focusring,[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring{outline:1px dotted ButtonText}
 
-
 .w3-padding{padding:8px 16px!important}
 .w3-margin{margin:0.25em 0em!important}           /* top and bottom | left and right */
 .content {display: block;padding: 0.5em 0.5em 0;} /* top | left and right | bottom */
@@ -36,11 +35,10 @@ button:-moz-focusring,[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[
   vertical-align: middle;
   box-shadow:0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);}
 
-
 .modal-footer{vertical-align: middle;}
 
 /* Base font sizes for very small screens */
-.w3-third {width: 100% !important; padding: 0.5em;}
+.w3-third {width: 100% !important; padding: 0.5em;float:left;}
 .font-small { font-size: 10px!important; }  /* Minimum readable size */
 .font-medium { font-size: 12px!important; }
 .font-large { font-size: 14px!important; }
@@ -182,9 +180,7 @@ button:-moz-focusring,[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[
   outline:0;
   width:70%;}
 
-.w3-third{
-  float:left;
-  width:100%}
+
 
 .w3-center{text-align:center!important}
 
@@ -246,11 +242,6 @@ button:-moz-focusring,[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[
 .padding-top-bottom{padding: 2px 0px!important;} /* top and bottom | left and right */
 .w3-button:hover{color:#000!important;background-color:#ccc!important}
 
-::-webkit-scrollbar {width: 10px;} /* width */
-::-webkit-scrollbar-track {background: #f1f1f1;} /* Track */
-::-webkit-scrollbar-thumb {background: #888;} /* Handle */
-::-webkit-scrollbar-thumb:hover {background: #555;} /* Handle on hover */
-
 .terminal { /* Terminal */
   display: flex;
   flex-direction: column;
@@ -284,8 +275,13 @@ button:-moz-focusring,[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[
   border-radius: 3px;
   box-sizing: border-box;}
 
+::-webkit-scrollbar {width: 10px;} /* width */
+/*::-webkit-scrollbar-track {background: #f1f1f1;}*/ /* Track */
+::-webkit-scrollbar-thumb {background: #888;} /* Handle */
+::-webkit-scrollbar-thumb:hover {background: #555;} /* Handle on hover */
+
 .output::-webkit-scrollbar,.sidebar-content::-webkit-scrollbar {width: 6px;}
-.output::-webkit-scrollbar-track {background: #f1f1f1;}
+/*.output::-webkit-scrollbar-track {background: #f1f1f1;}*/
 .output::-webkit-scrollbar-thumb {background: #000000;}
 .output::-webkit-scrollbar-thumb:hover {background: #555;}
 .input:focus {outline: none;}
@@ -317,8 +313,6 @@ button:-moz-focusring,[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[
   box-sizing: border-box;}
 
 .editable-cell:focus {border: 1px solid #ccc;}
-
-
 
 /* Styles done */
 

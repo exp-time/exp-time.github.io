@@ -12,7 +12,17 @@ function s_TooltipButton(element) {
   element.style["cursor"] = 'pointer';
   element.style["color"] = '#fff !important';
 }
-
+// element.style[''] = '';
+function s_displayCard(element) {
+  element.style['display'] = 'block';
+  element.style['float'] = 'left';
+  element.style['padding'] = '';
+  element.style['text-align'] = 'center';
+  element.style[''] = '';
+  element.style[''] = '';
+  element.style[''] = '';
+  element.style[''] = '';
+}
 
 
 
