@@ -183,7 +183,7 @@ button:-moz-focusring,[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[
 
 .w3-center{text-align:center!important}
 
-header.w3-theme {
+.w3-theme {
   overflow: hidden;     /* Hide overflow content outside the header */
   position: relative;}  /* Ensures proper calculation of overflow area */
 
