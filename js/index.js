@@ -38,8 +38,8 @@ function headerWithClose(id, title, theme) {
   return header.elem;
 }
 
-function createTooltipIcon(link, title, icon) {
-  const container = document.querySelector('.footer-container');
+function createTooltipIcon(link, title, icon, container) {
+  const container = document.querySelector(container);
   const tooltip = new Elem('div').setAttr({className: 'w3-tooltip'}).appendTo(container);
   tooltip.addChild({tag: 'span',attrs: {className: 'w3-text w3-theme-light',textContent: title}});
   const buttonAttributes = {
@@ -174,7 +174,7 @@ document.addEventListener('DOMContentLoaded', function() { // pagination + other
     createCard(contentId, infoId, card.title, card.iconClass, card.content, card.info_Title, card.info_Content);
   });
   clickablesData.forEach(function(item) {
-    createTooltipIcon(item.link, item.content, item.icon);
+    createTooltipIcon(item.link, item.content, item.icon, item.container);
   }); 
 
   const container = document.querySelector('.content');
