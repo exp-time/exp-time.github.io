@@ -139,13 +139,14 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
     ]);
     card.appendChild(paragraph);
   }
-  else if (content === 2){ // TODO HANDLE
+  else if (content === 2){ 
     paragraph = createMap()
     card.appendChild(paragraph);
   }
-  else if (content === 3){ // TODO HANDLE
+  else if (content === 3){ 
     paragraph = new Elem({tag: 'div', parent: card});
 
+    // TODO: ADD OTHER OPTIONS 
     new Elem({tag: 'label', attrs: {for: 'vehicleType', className: 'font-large',textContent: 'Choose a vehicle:'}, parent: paragraph.elem})
     const select = new Elem({
       tag: 'select', 
@@ -163,8 +164,7 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
     new Elem({tag: 'div', attrs: {id:"mapDataContainer", className: 'w3-padding'}, parent: paragraph.elem})
   }
   else { // TODO HANDLE
-    paragraph = createElementWithClass('p', 'font-large', content);
-    card.appendChild(paragraph);
+    new Elem({tag: 'p', attrs: {className: 'font-large'}, parent: card})
   }
   third.appendChild(card);
   container.appendChild(third);
