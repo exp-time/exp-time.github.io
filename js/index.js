@@ -103,12 +103,19 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
   }
   const third = createElementWithClass('div', 'w3-third');
   const card = createElementWithClass('div', 'w3-card w3-container');
-  const row = createElementWithClass('div', 'w3-row font-xlarge container-title flex-container');
-  const dummyButton = createElementWithClass('a', 'fa fa-info dummy-button w3-button');
-  const titleDiv = createElementWithClass('div', 'title', title);
-  const infoIcon = createElementWithClass('a', 'fa fa-info w3-button top-corner');
-  infoIcon.onclick = () => info_open(info_id);
+
+  const row = new Elem({tag:'div',attrs:{className: 'w3-row font-xlarge container-title flex-container'},
+    children: [
+      {tag:'a',attrs:{className: 'fa fa-info dummy-button w3-button'}},
+      {tag:'div',attrs:{className: 'title',textContent: title}},
+      {tag:'a',attrs:{className: 'fa fa-info w3-button top-corner', onclick: () => info_open(info_id)}}],
+  }); 
+ 
+
+  
   row.append(dummyButton, titleDiv, infoIcon);
+
+
   card.appendChild(row);
   if (iconClass != '') {
     const selectedIcon = createElementWithClass('i', iconClass + ' w3-margin font-mega w3-text-theme');
@@ -122,7 +129,7 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
     card.appendChild(createWebTerminal());
   }
   else if (content === 1){ // TODO: modify else..
-    let paragraph =  createEditableTable(["Name", "Age", "Job", "Location"], [
+    paragraph =  createEditableTable(["Name", "Age", "Job", "Location"], [
       ["John Doe", "28", "Developer", "New York"],
       ["Jane Doe", "34", "Designer", "San Francisco"],
       ["Jane Doe", "34", "Designer", "San Francisco"],
@@ -189,11 +196,10 @@ document.addEventListener('DOMContentLoaded', function() { // pagination + other
 
   initializeMap()
 
-  const container = document.querySelector('.content');
   const sections = container.querySelectorAll('.w3-third');
   let currentPage = 0;
-  const paginationContainer = createElementWithClass('div', 'pagination')
-  container.appendChild(paginationContainer);
+
+  new Elem({tag: 'div', attrs: {className: 'pagination'}, parent: document.querySelector('.content')})
 
   function getCurrentItemsPerPage() {
       const width = window.innerWidth;
