@@ -156,9 +156,12 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
       attrs:{
         name: 'vehicle',
         id: 'vehicleType'},
+        onchange: function() {
+          console.log('You selected: ' + this.value);
+      },
       children: [
-      { tag: 'option', attrs: { value: 'car', textContent: 'Car', "onchange": () => console.log('Car selected') } },
-      { tag: 'option', attrs: { value: 'truck', textContent: 'Truck', "onchange": () => console.log('Truck selected') } }],
+      { tag: 'option', attrs: { value: 'car', textContent: 'Car' } },
+      { tag: 'option', attrs: { value: 'truck', textContent: 'Truck'} }],
       parent: paragraph.elem
     })
     // Coords:
