@@ -1,13 +1,7 @@
 let isString = value => typeof value === 'string';
 
-function info_open(id) {
-  var x = document.getElementById(id);
-  x.style.display = "block";
-}
-
-function info_close(id) {                                   // Closing modals
-  document.getElementById(id).style.display = "none";
-}
+function info_open(id) {document.getElementById(id).style.display = "block"}
+function info_close(id) {document.getElementById(id).style.display = "none"}
 
 function closeElem(event, id, elem) {                      // Close if click outside of modal
   if (event.target.classList.contains(elem)) {             // Check if the click was directly on the modal background
@@ -185,18 +179,15 @@ document.addEventListener('DOMContentLoaded', function() { // pagination + other
   let paginationContainer = new Elem({tag: 'div', attrs: {className: 'pagination'}, parent: container}).elem
 
   function showPage(page) {
-      const itemsPerPage = getCurrentItemsPerPage(window.innerWidth);
-      const startIndex = page * itemsPerPage;
-      const endIndex = startIndex + itemsPerPage;
-      sections.forEach((section, index) => {
-          section.style.display = (index >= startIndex && index < endIndex) ? 'block' : 'none';
-      });
+    const itemsPerPage = getCurrentItemsPerPage(window.innerWidth);
+    const startIndex = page * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    sections.forEach((section, index) => {
+      section.style.display = (index >= startIndex && index < endIndex) ? 'block' : 'none';
+    });
   }
 
-  function updateActiveButtonStates() {
-    const pageButtons = paginationContainer.querySelectorAll('button');
-    pageButtons.forEach((button, index) => {button.className = (index === currentPage) ? 'active' : ''});
-  }
+
 
   function updatePageButtons() {
     while (paginationContainer.firstChild) {
@@ -228,4 +219,9 @@ function getCurrentItemsPerPage(width) {
   if (width < 1100) {return 2}
   else if (width >= 1100 && width < 1650) {return 4} 
   else {return 6}
+}
+
+function updateActiveButtonStates() {
+  const pageButtons = paginationContainer.querySelectorAll('button');
+  pageButtons.forEach((button, index) => {button.className = (index === currentPage) ? 'active' : ''});
 }
