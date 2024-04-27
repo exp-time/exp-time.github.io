@@ -24,7 +24,7 @@ function makeDocumentModal(id, content) {
 }
 
 function headerWithClose(id, title, theme) {
-  const header = new Elem('header').setAttr({className: `w3-theme-l1 ${theme}`});
+  const header = new Elem('header', {className: `w3-theme-l1 ${theme}`});
   header.addChild({tag: 'p', attrs: {textContent: title}});
   const closeButton = header.addChild({
       tag: 'div',
