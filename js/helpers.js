@@ -3,8 +3,7 @@ class Elem {
     const { tag = 'div', attrs = {}, children = [], parent = null } = options;
     if (options instanceof Element) {
       this.elem = options; // Assume it's a DOM element already
-    } 
-    else {
+    } else {
       this.elem = document.createElement(tag);
       this.setAttr(attrs);
       this.addChildren(children);
