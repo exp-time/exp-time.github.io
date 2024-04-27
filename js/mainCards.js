@@ -14,17 +14,17 @@ const cardData = [
     info_Content:"Law inexpedient noble reason abstract revaluation war salvation\n snare burying merciful love inexpedient strong.Inexpedient\n prejudice ideal victorious deceptions good holiest.\n Faithful philosophy endless fearful enlightenment."
   },
   {
-    title: "Artificial Intelligence",
-    iconClass: "fa fa-cog",
-    content: "AI methods in support of people. Useful AI.",
-    info_Title: "third_info", 
+    title: "Networks",
+    iconClass: "fa fa-code-fork",
+    content: "Network analysis",
+    info_Title: "seventh_info", 
     info_Content:"Law inexpedient noble reason abstract revaluation war salvation\n snare burying merciful love inexpedient strong.Inexpedient\n prejudice ideal victorious deceptions good holiest.\n Faithful philosophy endless fearful enlightenment."
   },
   {
-    title: "Simple UI <-> Advanced functionality",
-    iconClass: "fa fa-check-square",
-    content: "TODO TEST",
-    info_Title: "nineth_info", 
+    title: "Analytics",
+    iconClass: "fa fa-bar-chart",
+    content: "Combine API's with analytics.",
+    info_Title: "sixth_info", 
     info_Content:"Law inexpedient noble reason abstract revaluation war salvation\n snare burying merciful love inexpedient strong.Inexpedient\n prejudice ideal victorious deceptions good holiest.\n Faithful philosophy endless fearful enlightenment."
   },
   {
@@ -42,17 +42,17 @@ const cardData = [
     info_Content:"Law inexpedient noble reason abstract revaluation war salvation\n snare burying merciful love inexpedient strong.Inexpedient\n prejudice ideal victorious deceptions good holiest.\n Faithful philosophy endless fearful enlightenment."
   },
   {
-    title: "Networks",
-    iconClass: "fa fa-code-fork",
-    content: "Network analysis",
-    info_Title: "seventh_info", 
+    title: "Artificial Intelligence",
+    iconClass: "fa fa-cog",
+    content: "AI methods in support of people. Useful AI.",
+    info_Title: "third_info", 
     info_Content:"Law inexpedient noble reason abstract revaluation war salvation\n snare burying merciful love inexpedient strong.Inexpedient\n prejudice ideal victorious deceptions good holiest.\n Faithful philosophy endless fearful enlightenment."
   },
   {
-    title: "Analytics",
-    iconClass: "fa fa-bar-chart",
-    content: "Combine API's with analytics.",
-    info_Title: "sixth_info", 
+    title: "Simple UI <-> Advanced functionality",
+    iconClass: "fa fa-check-square",
+    content: "TODO TEST",
+    info_Title: "nineth_info", 
     info_Content:"Law inexpedient noble reason abstract revaluation war salvation\n snare burying merciful love inexpedient strong.Inexpedient\n prejudice ideal victorious deceptions good holiest.\n Faithful philosophy endless fearful enlightenment."
   },
   {
