@@ -109,14 +109,10 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
       {tag:'a',attrs:{className: 'fa fa-info dummy-button w3-button'}},
       {tag:'div',attrs:{className: 'title',textContent: title}},
       {tag:'a',attrs:{className: 'fa fa-info w3-button top-corner', onclick: () => info_open(info_id)}}],
+    parent: card
   }); 
  
-
   
-  row.append(dummyButton, titleDiv, infoIcon);
-
-
-  card.appendChild(row);
   if (iconClass != '') {
     const selectedIcon = createElementWithClass('i', iconClass + ' w3-margin font-mega w3-text-theme');
     card.appendChild(selectedIcon)
