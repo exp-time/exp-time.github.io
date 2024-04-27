@@ -197,13 +197,10 @@ button:-moz-focusring,[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[
 }@keyframes animateleft{
   from{left:-300px;opacity:0} to{left:0;opacity:1}}
 
-
-
 .flex-container {display: flex;justify-content: space-between;align-items: center;position: relative;}
 .title {flex-grow: 1;text-align: center;}
 
 .padding-top-bottom{padding: 2px 0px!important;} /* top and bottom | left and right */
-
 
 .terminal { /* Terminal */
   display: flex;
