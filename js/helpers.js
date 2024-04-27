@@ -2,7 +2,7 @@ class Elem {
   constructor(tag, attrs = {}, children = [], parent={}) {
       this.elem = document.createElement(tag);
       this.setAttr(attrs);
-      if (children != []) {this.addChildren(children)}; // Automatically handle children during initialization
+      if (children != []) {this.addChildren(children)};
       if (parent != {}) {this.appendTo(parent)}
   }
 
