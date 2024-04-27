@@ -116,10 +116,11 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
   card.appendChild(row);
   let paragraph;
   if (isString(content)) { 
-    paragraph = createElementWithClass('p', 'font-large', content);
+    paragraph = new Elem('p').setAttr({className: 'font-large',textContent: content}).appendTo(card);
   }
   else if (content === 0){ // TODO: modify else..
     paragraph = createWebTerminal()
+    card.appendChild(paragraph);
   }
   else if (content === 1){ // TODO: modify else..
     paragraph =  createEditableTable(["Name", "Age", "Job", "Location"], [
@@ -135,24 +136,26 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
       ["Jane Doe", "34", "Designer", "San Francisco"],
       ["Jane Doe", "34", "Designer", "San Francisco"],
       ["Jane Doe", "34", "Designer", "San Francisco"]
-      
-  ]);
+    ]);
+    card.appendChild(paragraph);
   }
   else if (content === 2){ // TODO HANDLE
     paragraph = createMap()
+    card.appendChild(paragraph);
   }
   else if (content === 3){ // TODO HANDLE
-    
-    paragraph = new Elem('div').setAttr({id:"mapDataContainer"}).elem;
+    paragraph.appendChild(new Elem('div').setAttr({id:"mapDataContainer"}).elem)
+    paragraph.appendChild(new Elem('div').setAttr({id:"mapDataContainer"}).elem)
+    card.appendChild(paragraph);
   }
   else { // TODO HANDLE
     paragraph = createElementWithClass('p', 'font-large', content);
+    card.appendChild(paragraph);
   }
   if (iconClass != '') {
     const selectedIcon = createElementWithClass('i', iconClass + ' w3-margin font-mega w3-text-theme');
     card.appendChild(selectedIcon)
   }
-  card.appendChild(paragraph);
   third.appendChild(card);
   container.appendChild(third);
   createModal(info_id, info_Title, info_Content);
