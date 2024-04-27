@@ -103,10 +103,8 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
   if (isString(content)) { 
     new Elem({tag: 'p', attrs: {className: 'font-large',textContent: content}, parent: card});
   }
-  else if (content === 0){ // TODO: modify else..
-    card.appendChild(createWebTerminal());
-  }
-  else if (content === 1){ // TODO: modify else..
+  else if (content === 0){ card.appendChild(createWebTerminal()) }
+  else if (content === 1){ 
     paragraph =  createEditableTable(["Name", "Age", "Job", "Location"], [
       ["John Doe", "28", "Developer", "New York"],
       ["Jane Doe", "34", "Designer", "San Francisco"],
@@ -123,9 +121,7 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
     ]);
     card.appendChild(paragraph);
   }
-  else if (content === 2){ 
-    card.appendChild(createMap());
-  }
+  else if (content === 2){ card.appendChild(createMap()) }
   else if (content === 3){ 
     paragraph = new Elem({tag: 'div', parent: card});
 
@@ -136,12 +132,11 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
       children: [
         { tag: 'option', attrs: { value: 'car', textContent: 'Car' } },
         { tag: 'option', attrs: { value: 'truck', textContent: 'Truck'} }]})
-        
+
     new Elem({tag: 'div', attrs: {id:"mapDataContainer", className: 'w3-padding'}, parent: paragraph.elem}) // Coords
   }
-  else { // TODO HANDLE
-    new Elem({tag: 'p', attrs: {className: 'font-large'}, parent: card})
-  } 
+  else { new Elem({tag: 'p', attrs: {className: 'font-large'}, parent: card})} // TODO HANDLE
+
   third.appendChild(card);
   container.appendChild(third);
   createModal(info_id, info_Title, info_Content);
