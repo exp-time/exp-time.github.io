@@ -188,22 +188,21 @@ document.addEventListener('DOMContentLoaded', function() { // pagination + other
   }
 
   function updatePageButtons() {
-    while (paginationContainer.firstChild) {
-        paginationContainer.removeChild(paginationContainer.firstChild);
-    }
+    while (paginationContainer.firstChild) {  // Cant we remove all of these at once?
+      paginationContainer.removeChild(paginationContainer.firstChild)}
     const itemsPerPage = getCurrentItemsPerPage(window.innerWidth);
     const totalPages = Math.ceil(sections.length / itemsPerPage);
     if (currentPage >= totalPages) {                // Check if the current page is out of range
-        currentPage = Math.max(0, totalPages - 1);  // Reset to the last page if out of range
+      currentPage = Math.max(0, totalPages - 1);  // Reset to the last page if out of range
     }
     for (let i = 0; i < totalPages; i++) {
-        const pageButton = document.createElement('button');
-        pageButton.textContent = i + 1;
-        pageButton.addEventListener('click', function() {
-            currentPage = i;
-            showPage(currentPage);
-            updateActiveButtonStates(paginationContainer,currentPage);
-        });
+      const pageButton = document.createElement('button');
+      pageButton.textContent = i + 1;
+      pageButton.addEventListener('click', function() {
+        currentPage = i;
+        showPage(currentPage);
+        updateActiveButtonStates(paginationContainer,currentPage);
+      });
         paginationContainer.appendChild(pageButton);
     }
     showPage(currentPage);            // Refresh view to reflect potentially new currentPage
