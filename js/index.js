@@ -142,7 +142,7 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
     // TODO HANDLE
     paragraph = createMap()
   }
-  else if (content === 2){
+  else if (content === 3){
     // TODO HANDLE
     paragraph = displayMapData()
   }
