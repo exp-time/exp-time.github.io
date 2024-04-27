@@ -165,9 +165,7 @@ document.addEventListener('DOMContentLoaded', function() { // pagination + other
       section.style.display = (index >= startIndex && index < endIndex) ? 'block' : 'none';
     });
   }
-     /* REMOVE */
-     document.getElementById('unfinished_modal').style.display='block'
-     /* REMOVE */
+
   function updatePageButtons() {
     while (paginationContainer.firstChild) {  // Cant we remove all of these at once?
       paginationContainer.removeChild(paginationContainer.firstChild)}
@@ -191,6 +189,10 @@ document.addEventListener('DOMContentLoaded', function() { // pagination + other
   }
   window.addEventListener('resize', function() { updatePageButtons() }); 
   updatePageButtons();
+  
+  /* REMOVE */
+  document.getElementById('unfinished_modal').style.display='block'
+  /* REMOVE */
 });
 
 function getCurrentItemsPerPage(width) {  // mod and max.. Every 550px or so we need a new column. until then we need padding..
