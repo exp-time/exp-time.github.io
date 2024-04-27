@@ -158,7 +158,6 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
         id: 'vehicleType',
         onchange: function() {
           console.log('You selected: ' + this.value)}},
-      className: 'w3-padding',
       children: [
       { tag: 'option', attrs: { value: 'car', textContent: 'Car' } },
       { tag: 'option', attrs: { value: 'truck', textContent: 'Truck'} }],
