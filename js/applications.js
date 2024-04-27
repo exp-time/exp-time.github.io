@@ -84,8 +84,6 @@ function createMap() {
 }
 
 let markers = [];
-let greenIcon
-let redIcon
 
 function initializeMap() {
   if (typeof L !== 'undefined') {
@@ -97,24 +95,6 @@ function initializeMap() {
     map.on('click', function(e) { // Event listener for map clicks
       addMarker(e.latlng, map);
     });
-    // Define custom icons
-  greenIcon = new L.Icon({
-    iconUrl: 'https://cdn-icons-png.flaticon.com/512/3895/3895608.png', // Replace with your green icon URL
-    iconSize: [25, 41], // Size of the icon
-    iconAnchor: [12, 41], // Point of the icon which will correspond to marker's location
-    popupAnchor: [1, -34], // Point from which the popup should open relative to the iconAnchor
-    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
-    shadowSize: [41, 41]
-  });
-
-  redIcon = new L.Icon({
-    iconUrl: 'https://cdn-icons-png.flaticon.com/512/3895/3895614.png', // Replace with your red icon URL
-    iconSize: [25, 41],
-    iconAnchor: [12, 41],
-    popupAnchor: [1, -34],
-    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
-    shadowSize: [41, 41]
-  });
 
   }else {console.error('Leaflet library is not loaded.')}
 }
@@ -132,7 +112,8 @@ function addMarker(latlng, map) {
 
 function updateDisplay() {
   const mapDataContainer = document.getElementById('mapDataContainer');
-  if (mapDataContainer.innerHTML) {mapDataContainer.innerHTML = ''}
+  
+  mapDataContainer.innerHTML = ''; // Clear existing data
   mapDataContainer.appendChild(displayMapData()); // Append new data
 }
 
