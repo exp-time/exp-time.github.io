@@ -77,15 +77,22 @@ function adjustDynamics() {
 }
 
 const minFonts = {
-  'fontSmall': 10,
-  'fontMedium': 12,
-  'fontLarge': 14,
-  'fontXlarge': 16,
-  'fontXxlarge': 20,
-  'fontXxxlarge': 24,
-  'fontJumbo': 28,
-  'fontMega': 36
+  'fontSmall': [10, 0.5],
+  'fontMedium': [12, 0.75],
+  'fontLarge': [14, 1.0],
+  'fontXlarge': [16, 1.25],
+  'fontXxlarge': [20, 1.75],
+  'fontXxxlarge': [24, 2.5],
+  'fontJumbo': [28, 3.5],
+  'fontMega': [36, 5.5],
 };
+
+function getFontSize(key) {
+  const viewportWidth = window.innerWidth;
+  const [fixedSize, vwSize] = minFonts[key];
+  const vwInPixels = vwSize * viewportWidth / 100;
+  return Math.max(fixedSize, vwInPixels);
+}
 
 // element.style[''] = '';
 
