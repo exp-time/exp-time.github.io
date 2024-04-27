@@ -83,6 +83,8 @@ function createMap() {
   return map.elem
 }
 
+let markers = [];
+
 function initializeMap() {
   if (typeof L !== 'undefined') {
     const map = L.map('map').setView([52.52, 13.40], 6); // Sets view to coordinates (latitude, longitude) and a zoom level
@@ -90,15 +92,19 @@ function initializeMap() {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
     
-    function addMarker(latlng) { // Function to add a marker at a given location
-      L.marker([latlng.lat, latlng.lng]).addTo(map)
-      .bindPopup("You clicked at latitude: " + latlng.lat.toFixed(5) + ", longitude: " + latlng.lng.toFixed(5))
-      .openPopup();
-    }
-
     map.on('click', function(e) { // Event listener for map clicks
-      addMarker(e.latlng);
+      addMarker(e.latlng, map);
     });
 
   }else {console.error('Leaflet library is not loaded.')}
+}
+
+function addMarker(latlng, map) {
+  if (markers.length >= 2) {
+    const oldestMarker = markers.shift(); // Remove the oldest marker from the array
+    map.removeLayer(oldestMarker); // Remove the oldest marker from the map
+  }
+
+  const marker = L.marker(latlng).addTo(map);
+  markers.push(marker); // Add the new marker to the array
 }
