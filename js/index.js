@@ -140,7 +140,7 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
   }
   else if (content === 2){
     // TODO HANDLE
-    paragraph = createMap()
+    paragraph = createElementWithClass('p', 'font-large', content);//createMap()
   }
   else {
     // TODO HANDLE
@@ -150,8 +150,6 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
     const selectedIcon = createElementWithClass('i', iconClass + ' w3-margin font-mega w3-text-theme');
     card.appendChild(selectedIcon)
   }
-  console.log(card)
-  console.log(paragraph)
   card.appendChild(paragraph);
   third.appendChild(card);
   container.appendChild(third);
