@@ -138,9 +138,7 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
 }
 
 document.addEventListener('DOMContentLoaded', function() { // pagination + others
-     /* REMOVE */
-  document.getElementById('unfinished_modal').style.display='block'
-     /* REMOVE */
+
 
   let container = document.querySelector('.content')
 
@@ -167,7 +165,9 @@ document.addEventListener('DOMContentLoaded', function() { // pagination + other
       section.style.display = (index >= startIndex && index < endIndex) ? 'block' : 'none';
     });
   }
-
+     /* REMOVE */
+     document.getElementById('unfinished_modal').style.display='block'
+     /* REMOVE */
   function updatePageButtons() {
     while (paginationContainer.firstChild) {  // Cant we remove all of these at once?
       paginationContainer.removeChild(paginationContainer.firstChild)}
