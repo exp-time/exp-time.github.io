@@ -104,9 +104,15 @@ function addMarker(latlng, map) {
     const oldestMarker = markers.shift(); // Remove the oldest marker from the array
     map.removeLayer(oldestMarker); // Remove the oldest marker from the map
   }
-
   const marker = L.marker(latlng).addTo(map);
   markers.push(marker); // Add the new marker to the array
+  updateDisplay(); // Update the display of coordinates
+}
+
+function updateDisplay() {
+  const mapDataContainer = document.getElementById('mapDataContainer');
+  mapDataContainer.innerHTML = ''; // Clear existing data
+  mapDataContainer.appendChild(displayMapData()); // Append new data
 }
 
 function displayMapData() {
@@ -117,6 +123,5 @@ function displayMapData() {
       p.textContent = `Marker ${index + 1}: Latitude = ${coords.lat.toFixed(2)}, Longitude = ${coords.lng.toFixed(2)}`; // Set the text content of the paragraph
       container.appendChild(p); // Append the paragraph to the container
   });
-
   return container; // Return the container with all paragraphs
 }

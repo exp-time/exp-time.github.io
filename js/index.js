@@ -138,16 +138,14 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
       
   ]);
   }
-  else if (content === 2){
-    // TODO HANDLE
+  else if (content === 2){ // TODO HANDLE
+    
     paragraph = createMap()
   }
-  else if (content === 3){
-    // TODO HANDLE
-    paragraph = displayMapData()
+  else if (content === 3){ // TODO HANDLE
+    paragraph = createElementWithClass('div', 'mapDataContainer'); 
   }
-  else {
-    // TODO HANDLE
+  else { // TODO HANDLE
     paragraph = createElementWithClass('p', 'font-large', content);
   }
   if (iconClass != '') {
