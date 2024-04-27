@@ -1,9 +1,9 @@
-function s_Sidebar(element) {   // .w3-sidebar
+function s_sidebar(element) {   // .w3-sidebar
   element.style["width"] = '35%';
   element.style["top"] = '5%';
 }
 
-function s_Tooltip(element) { // .w3-tooltip
+function s_tooltip(element) { // .w3-tooltip
   element.style["position"] = 'relative';
   element.style["font-size"] = fontMedium;  // Create dynamic fonts
 
