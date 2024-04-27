@@ -64,10 +64,6 @@ function createModal(id, title, content, footerContent) {
 
 function createCard(id, info_id, title, iconClass, content, info_Title, info_Content) { // Create main content cards
   const container = document.querySelector('.content');
-  if (!container) {
-      console.error('Failed to create card: container not found.');
-      return;
-  }
   const third = new Elem({tag: 'div', attrs: {className: 'w3-third'}}).elem;
   const card = new Elem({tag: 'div', attrs: {className: 'w3-card w3-container'}}).elem;
   const row = new Elem({tag:'div',attrs:{className: 'w3-row font-xlarge container-title flex-container'},
