@@ -112,11 +112,8 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
     parent: card
   }); 
  
-  
-  if (iconClass != '') {
-    const selectedIcon = createElementWithClass('i', iconClass + ' w3-margin font-mega w3-text-theme');
-    card.appendChild(selectedIcon)
-  }
+  if (iconClass != '') {new Elem({tag:'i',attrs:{className: iconClass + ' w3-margin font-mega w3-text-theme'},parent: card})}
+
   let paragraph;
   if (isString(content)) { 
     new Elem({tag: 'p', attrs: {className: 'font-large',textContent: content}, parent: card});
