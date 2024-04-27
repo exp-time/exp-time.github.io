@@ -29,23 +29,19 @@ function headerWithClose(id, title, theme) {
   const closeButton = header.addChild({
       tag: 'div',
       attrs: {className: 'w3-button display-topright'},
-      children: [{  
-          tag: 'i',
-          attrs: {className: 'fa fa-remove'}
-      }]
+      children: [{tag: 'i', attrs: {className: 'fa fa-remove'}}]
   });
   closeButton.elem.onmousedown = function(event) {info_close(id)};
   return header.elem;
 }
 
 function createTooltipIcon(link, title, icon, target) {
-  const container = document.querySelector(target);
-  const tooltip = new Elem({tag: 'div', attrs:{className: 'w3-tooltip'}, parent: container});
-  tooltip.addChild({tag: 'span',attrs: {className: 'w3-text w3-theme-light',textContent: title}});
-  const buttonAttributes = {
-      className: 'w3-button font-xxxlarge fa ' + icon,
-      onclick: link ? () => openInNewTab(link) : () => window.scrollTo({top: 0, behavior: 'smooth'})};
-  tooltip.addChild({tag: 'div',attrs: buttonAttributes});
+  const tooltip = new Elem({tag: 'div', attrs:{className: 'w3-tooltip'}, parent: document.querySelector(target), 
+    children: [
+      {tag: 'span', attrs: {className: 'w3-text w3-theme-light',textContent: title}},
+      {tag: 'div', attrs:{className: 'w3-button font-xxxlarge fa ' + icon,
+        onclick: link ? () => openInNewTab(link) : () => window.scrollTo({top: 0, behavior: 'smooth'})}}
+    ]});
 }
 
 function createSidebar(id, title, content) { // Sidebar popups
