@@ -148,10 +148,12 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
   ]);
   }
   else if (content === 2){
-
+    // TODO HANDLE
+    paragraph = ""
   }
   else {
     // TODO HANDLE
+    paragraph = ""
   }
   if (iconClass != '') {
     const selectedIcon = createElementWithClass('i', iconClass + ' w3-margin font-mega w3-text-theme');
