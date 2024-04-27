@@ -16,7 +16,7 @@ function closeElem(event, id, elem) {                      // Close if click out
 }
 
 function makeDocumentModal(id, content) {
-  const modal = new Elem('div', {className: 'w3-modal',id:id});
+  const modal = new Elem({tag: 'div', attrs: {className: 'w3-modal',id:id}});
   if (content instanceof Elem) {content.appendTo(modal.elem)}
   else { modal.elem.appendChild(content)}
   modal.elem.onmousedown = function(event) {closeElem(event, id, 'w3-modal')};
@@ -24,7 +24,7 @@ function makeDocumentModal(id, content) {
 }
 
 function headerWithClose(id, title, theme) {
-  const header = new Elem('header', {className: `w3-theme-l1 ${theme}`});
+  const header = new Elem({tag: 'header', attrs:{className: `w3-theme-l1 ${theme}`}});
   header.addChild({tag: 'p', attrs: {textContent: title}});
   const closeButton = header.addChild({
       tag: 'div',
@@ -40,7 +40,7 @@ function headerWithClose(id, title, theme) {
 
 function createTooltipIcon(link, title, icon, target) {
   const container = document.querySelector(target);
-  const tooltip = new Elem('div').setAttr({className: 'w3-tooltip'}).appendTo(container);
+  const tooltip = new Elem({tag: 'div', attrs:{className: 'w3-tooltip'}, parent: container});
   tooltip.addChild({tag: 'span',attrs: {className: 'w3-text w3-theme-light',textContent: title}});
   const buttonAttributes = {
       className: 'w3-button font-xxxlarge fa ' + icon,
@@ -120,7 +120,7 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
   }
   let paragraph;
   if (isString(content)) { 
-    paragraph = new Elem('p', {className: 'font-large',textContent: content}, [], card);
+    paragraph = new Elem({tag: 'p', attrs: {className: 'font-large',textContent: content}, parent: card});
   }
   else if (content === 0){ // TODO: modify else..
     paragraph = createWebTerminal()
@@ -148,23 +148,21 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
     card.appendChild(paragraph);
   }
   else if (content === 3){ // TODO HANDLE
-    paragraph = new Elem('div').appendTo(card);
+    paragraph = new Elem({tag: 'div', parent: card});
 
-    new Elem('label', {for: 'vehicleType', className: 'font-large',textContent: 'Choose a vehicle:'}, [], paragraph.elem)
-    const select = new Elem('select', {
-      name: 'vehicle',
-      id: 'vehicleType'
-    }, [
-      { tag: 'option', attrs: { value: 'car', textContent: 'Car' } },
-      { tag: 'option', attrs: { value: 'truck', textContent: 'Truck' } }
-    ]).appendTo(paragraph.elem).elem;
-
-    select.addEventListener('change', function() {
-      console.log('You selected: ' + this.value);
-    });
-
+    new Elem({tag: 'label', attrs: {for: 'vehicleType', className: 'font-large',textContent: 'Choose a vehicle:'}, parent: paragraph.elem})
+    const select = new Elem({
+      tag: 'select', 
+      attrs:{
+        name: 'vehicle',
+        id: 'vehicleType'},
+      children: [
+      { tag: 'option', attrs: { value: 'car', textContent: 'Car', onchange: () => console.log('Car selected') } },
+      { tag: 'option', attrs: { value: 'truck', textContent: 'Truck', onchange: () => console.log('Truck selected') } }],
+      parent: paragraph.elem
+    })
     // Coords:
-    new Elem('div', {id:"mapDataContainer"}, [], paragraph.elem)
+    new Elem({tag: 'div', attrs: {id:"mapDataContainer"}, parent: paragraph.elem})
   }
   else { // TODO HANDLE
     paragraph = createElementWithClass('p', 'font-large', content);

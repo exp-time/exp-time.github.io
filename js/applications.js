@@ -1,6 +1,6 @@
 
 function createWebTerminal() { // Web Terminal
-  const terminal = new Elem('div').setAttr({id: 'terminal',className: 'terminal'});
+  const terminal = new Elem({tag: 'div', attrs: {id: 'terminal',className: 'terminal'}});
   terminal.addChild({tag: 'div', attrs: {id: 'output',className: 'output'}});
   terminal.addChild({tag: 'input',
       attrs: {type: 'text', id: 'input', className: 'input', placeholder: 'Type command...'}});
@@ -43,7 +43,7 @@ function handleCommand(command) { // Terminal commands
 
 // EXCEL
 function createEditableTable(headers, initialRowsData) {
-  const tableContainer = new Elem('div', {id: 'table-container',className: 'table-container'});
+  const tableContainer = new Elem({tag: 'div', attrs: {id: 'table-container',className: 'table-container'}});
   const table = tableContainer.addChild({tag: 'table', attrs: {id: 'data-table'}});
   const thead = table.addChild({tag: 'thead'});
   const headerRow = thead.addChild({tag: 'tr'});
@@ -79,7 +79,7 @@ function saveCellData(inputElement) {
 
 // MAP 
 function createMap() {
-  const map = new Elem('div').setAttr({id: 'map',className: 'map'});
+  const map = new Elem({tag: 'div', attrs:{id: 'map',className: 'map'}});
   return map.elem
 }
 

@@ -1,34 +1,39 @@
 class Elem {
-  constructor(tag, attrs = {}, children = [], parent = null) {
+  constructor(options = {}) {
+    const { tag = 'div', attrs = {}, children = [], parent = null } = options;
     this.elem = document.createElement(tag);
     this.setAttr(attrs);
     this.addChildren(children);
     if (parent) {
-      this.appendTo(parent);
+        this.appendTo(parent);
     }
   }
 
   setAttr(attributes) {
-    Object.entries(attributes).forEach(([key, value]) => this.elem[key] = value);
+    for (const attr in attributes) {
+      if (attr.startsWith('on') && typeof attributes[attr] === 'function') {
+        this.elem.addEventListener(attr.substring(2), attributes[attr]);
+      } else {
+        this.elem[attr] = attributes[attr];
+      }
+    }
     return this;
   }
 
-  addChild(childSpec) {
-    const child = new Elem(childSpec.tag, childSpec.attrs, childSpec.children || []);
+  appendTo(parent) {
+    parent.appendChild(this.elem);
+    return this;
+  }
+
+  addChild(childSpec, returnParent = false) {
+    const child = new Elem(childSpec);
     this.elem.appendChild(child.elem);
-    return child;  // Control whether to return the parent or the child
+    return returnParent ? this : child;
   }
 
   addChildren(childrenSpecs) {
     childrenSpecs.forEach(spec => this.addChild(spec));
     return this;
-  }
-
-  appendTo(parent) {
-    if (parent instanceof HTMLElement) {
-      parent.appendChild(this.elem);
-      return this;
-    }
   }
 }
 
