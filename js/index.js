@@ -38,8 +38,8 @@ function headerWithClose(id, title, theme) {
   return header.elem;
 }
 
-function createTooltipIcon(link, title, icon, container) {
-  const container = document.querySelector(container);
+function createTooltipIcon(link, title, icon, target) {
+  const container = document.querySelector(target);
   const tooltip = new Elem('div').setAttr({className: 'w3-tooltip'}).appendTo(container);
   tooltip.addChild({tag: 'span',attrs: {className: 'w3-text w3-theme-light',textContent: title}});
   const buttonAttributes = {
