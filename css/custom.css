@@ -281,6 +281,7 @@ button:-moz-focusring,[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[
 /* Styles done */
 
 .w3-tooltip {position: relative;font-size:12px;}
+.w3-tooltip:hover .w3-text{display:block;}
 .w3-sidebar{width: 35%; top:5%;}
 
 .w3-button{
@@ -314,4 +315,3 @@ button:-moz-focusring,[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[
   white-space: nowrap;
   padding: 2px 4px; } /* top and bottom | left and right */
     
-  .w3-tooltip:hover .w3-text{display:block;}

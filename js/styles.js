@@ -19,7 +19,7 @@ function s_tooltipText(element) {
   element.style['position'] = 'absolute';
   element.style['bottom'] = '100%';
   element.style['left'] = '50%';
-  element.style['transform'] = 'translateX(-50%)';
+  element.style['transform'] = 'translateX(-55%)';
   element.style['white-space'] = 'nowrap';
   element.style['padding'] = '2px 4px'; // make dynamic
 }
@@ -37,7 +37,6 @@ function s_displayCard(element) { // Main cards!
   element.style['flex-grow'] = '0';         // set flex-grow to 0 default
   element.style[''] = '';
 }
-
 
 function s_button(element) { // w3-button
   element.style["border"] = 'none';
