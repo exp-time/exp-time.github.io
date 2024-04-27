@@ -145,11 +145,7 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
   }
   else if (content === 3){ // TODO HANDLE
     paragraph = new Elem('div').appendTo(card);
-    /*
-    const options = [
-      { value: 'car', text: 'Car' },
-      { value: 'truck', text: 'Truck' }
-    ];
+
     let childrenSpecs = 
     new Elem('label', {for: 'vehicleType', className: 'font-large',textContent: 'Choose a vehicle:'}, "", paragraph.elem)
 
@@ -160,10 +156,12 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
       { tag: 'option', attrs: { value: 'car', textContent: 'Car' } },
       { tag: 'option', attrs: { value: 'truck', textContent: 'Truck' } }
     ]).appendTo(paragraph.elem).elem;
+    
+    select.addEventListener('change', function() {
+      console.log('You selected: ' + this.value);
+    });
     // Coords:
-    */
     new Elem('div', {id:"mapDataContainer"}).appendTo(paragraph.elem)
-
   }
   else { // TODO HANDLE
     paragraph = createElementWithClass('p', 'font-large', content);
