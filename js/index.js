@@ -139,10 +139,10 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
   ]);
   }
   else if (content === 2){ // TODO HANDLE
-    
     paragraph = createMap()
   }
   else if (content === 3){ // TODO HANDLE
+    
     paragraph = new Elem('div').setAttr({id:"mapDataContainer"}).elem;
   }
   else { // TODO HANDLE
