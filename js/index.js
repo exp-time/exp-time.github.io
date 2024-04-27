@@ -16,7 +16,7 @@ function closeElem(event, id, elem) {                      // Close if click out
 }
 
 function makeDocumentModal(id, content) {
-  const modal = new Elem({tag: 'div', attrs: {className: 'w3-modal',id:id, onmousedown: function(event) {closeElem(event, id, 'w3-modal')}}, children: [content]}).elem;
+  const modal = new Elem({tag: 'div', attrs: {className: 'w3-modal',id:id, onmousedown: function(event) {closeElem(event, id, 'w3-modal')}}, children: [{content}]}).elem;
   //modal.appendChild(content)
   modal.appendTo(document.body);
 }
