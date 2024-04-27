@@ -16,7 +16,7 @@ function closeElem(event, id, elem) {                      // Close if click out
 }
 
 function makeDocumentModal(id, content) {
-  const modal = new Elem('div').setAttr({className: 'w3-modal',id:id});
+  const modal = new Elem('div', {className: 'w3-modal',id:id});
   if (content instanceof Elem) {content.appendTo(modal.elem)}
   else { modal.elem.appendChild(content)}
   modal.elem.onmousedown = function(event) {closeElem(event, id, 'w3-modal')};
@@ -145,7 +145,24 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
   }
   else if (content === 3){ // TODO HANDLE
     paragraph = new Elem('div').appendTo(card);
-    let map = new Elem('div').setAttr({id:"mapDataContainer"}).appendTo(paragraph.elem)
+
+    const options = [
+      { value: 'car', text: 'Car' },
+      { value: 'truck', text: 'Truck' }
+    ];
+    let childrenSpecs = 
+    new Elem('label').setAttr({for: 'vehicleType', className: 'font-large',textContent: 'Choose a vehicle:'}).appendTo(paragraph.elem)
+
+    const select = new Elem('select', {
+      name: 'vehicle',
+      id: 'vehicleType'
+    }, [
+      { tag: 'option', attrs: { value: 'car', textContent: 'Car' } },
+      { tag: 'option', attrs: { value: 'truck', textContent: 'Truck' } }
+    ]).appendTo(parent).elem;
+    // Coords:
+    new Elem('div').setAttr({id:"mapDataContainer"}).appendTo(paragraph.elem)
+
   }
   else { // TODO HANDLE
     paragraph = createElementWithClass('p', 'font-large', content);
