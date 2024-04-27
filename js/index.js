@@ -151,7 +151,7 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
       { value: 'truck', text: 'Truck' }
     ];
     let childrenSpecs = 
-    new Elem('label').setAttr({for: 'vehicleType', className: 'font-large',textContent: 'Choose a vehicle:'}).appendTo(paragraph.elem)
+    new Elem('label', {for: 'vehicleType', className: 'font-large',textContent: 'Choose a vehicle:'}, "", paragraph.elem)
 
     const select = new Elem('select', {
       name: 'vehicle',
