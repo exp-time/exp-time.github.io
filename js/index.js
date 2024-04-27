@@ -14,8 +14,8 @@ function makeDocumentModal(id, content) {
     children: [content], parent: document.body}).elem;
 }
 
-function headerWithClose(id, title, theme) {
-  return new Elem({tag:'header',attrs:{className:`w3-theme-l1 ${theme}`},children:[
+function headerWithClose(id, title, style) {
+  return new Elem({tag:'header',attrs:{className:`w3-theme-l1 ${style}`},children:[
     {tag:'p',attrs:{textContent:title}},
     {tag:'div',attrs:{className:'w3-button display-topright',onclick:()=>info_close(id)},children:[
       {tag:'i',attrs:{className:'fa fa-remove'}}]}]}).elem;
@@ -43,16 +43,17 @@ function createSidebar(id, title, content) { // Sidebar popups
 }
 
 function createModal(id, title, content, footerContent) {  
-  const modalContent = createElementWithClass('div', 'w3-modal-content w3-card-4 modal-animate-top');
+  const modalContent = new Elem({tag: 'div', attrs: {className: 'w3-modal-content w3-card-4 modal-animate-top'}}).elem;
   const header = headerWithClose(id, title, "modal-header font-xlarge")
-  const body = createElementWithClass('div', 'w3-padding');
-  const bodyText = createElementWithClass('p', 'font-large', content);
-  body.appendChild(bodyText);
+  const body = new Elem({tag: 'div', attrs: {className: 'w3-padding'}, children:[
+    {tag: 'p', attrs: {className:'font-large',textContent:content}}]}).elem;
+
   modalContent.append(header, body);
   if (footerContent && footerContent != ""){
-    const footer = createElementWithClass('footer', 'w3-theme-l1 modal-footer font-medium');
+    const footer = new Elem({tag: 'footer', attrs: {className: 'w3-theme-l1 modal-footer font-medium'}}).elem;
     if (typeof footerContent === 'object' && !(footerContent instanceof Array)) {
       for (const key in footerContent) { // If footerContent is an object (not an array), handle as key-value pairs for links
+
         const link = createElementWithClass('a', 'w3-button padding-top-bottom', key)
         link.onclick = () => openInNewTab(footerContent[key]);
         const item = createElementWithClass('p', 'font-medium', '');
@@ -130,18 +131,12 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
 
     // TODO: ADD OTHER OPTIONS 
     new Elem({tag: 'label', attrs: {for: 'vehicleType', className: 'font-large',textContent: 'Choose a vehicle:'}, parent: paragraph.elem})
-    const select = new Elem({
-      tag: 'select', 
-      attrs:{
-        name: 'vehicle',
-        id: 'vehicleType',
-        onchange: function() {
-          console.log('You selected: ' + this.value)}},
+    const select = new Elem({tag: 'select',parent: paragraph.elem,
+      attrs:{name: 'vehicle',id: 'vehicleType',onchange: function() {console.log('You selected: ' + this.value)}},
       children: [
-      { tag: 'option', attrs: { value: 'car', textContent: 'Car' } },
-      { tag: 'option', attrs: { value: 'truck', textContent: 'Truck'} }],
-      parent: paragraph.elem
-    })
+        { tag: 'option', attrs: { value: 'car', textContent: 'Car' } },
+        { tag: 'option', attrs: { value: 'truck', textContent: 'Truck'} }]})
+        
     new Elem({tag: 'div', attrs: {id:"mapDataContainer", className: 'w3-padding'}, parent: paragraph.elem}) // Coords
   }
   else { // TODO HANDLE
@@ -153,24 +148,20 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
 }
 
 document.addEventListener('DOMContentLoaded', function() { // pagination + others
+     /* REMOVE */
+     document.getElementById('unfinished_modal').style.display='block'
+     /* REMOVE */
+
   let container = document.querySelector('.content')
-  modalData.forEach(function(modal) {
-    createModal(modal.id, modal.title, modal.content, modal.footerContent);
-  });
-    /* REMOVE */
-  document.getElementById('unfinished_modal').style.display='block'
-    /* REMOVE */
-  sideBarData.forEach(function(item) {
-    createSidebar(item.id, item.title, item.content);
-  }); 
-  cardData.forEach(function(card, index) {
-    const contentId = `content-area${index + 1}`;
-    const infoId = `info${index + 1}`;
-    createCard(contentId, infoId, card.title, card.iconClass, card.content, card.info_Title, card.info_Content);
-  });
-  clickablesData.forEach(function(item) {
-    createTooltipIcon(item.link, item.content, item.icon, item.container);
-  }); 
+
+  modalData.forEach(function(modal) {createModal(modal.id, modal.title, modal.content, modal.footerContent)});
+
+  sideBarData.forEach(function(item) {createSidebar(item.id, item.title, item.content)}); 
+
+  cardData.forEach(function(card, index) { createCard(`content-area${index + 1}`, `info${index + 1}`,
+    card.title, card.iconClass, card.content, card.info_Title, card.info_Content)});
+
+  clickablesData.forEach(function(item) {createTooltipIcon(item.link, item.content, item.icon, item.container)}); 
 
   initializeMap()
 
