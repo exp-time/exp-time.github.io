@@ -193,7 +193,7 @@ document.addEventListener('DOMContentLoaded', function() { // pagination + other
     const itemsPerPage = getCurrentItemsPerPage(window.innerWidth);
     const totalPages = Math.ceil(sections.length / itemsPerPage);
     if (currentPage >= totalPages) {                // Check if the current page is out of range
-      currentPage = Math.max(0, totalPages - 1);  // Reset to the last page if out of range
+      currentPage = Math.max(0, totalPages - 1);    // Reset to the last page if out of range
     }
     for (let i = 0; i < totalPages; i++) {
       const pageButton = document.createElement('button');
@@ -212,7 +212,7 @@ document.addEventListener('DOMContentLoaded', function() { // pagination + other
   updatePageButtons();
 });
 
-function getCurrentItemsPerPage(width) {
+function getCurrentItemsPerPage(width) {  // mod and max 6....
   if (width < 1100) {return 2}
   else if (width >= 1100 && width < 1650) {return 4} 
   else {return 6}
