@@ -1,6 +1,6 @@
 class Elem {
   constructor(tag, attrs = {}, children = [], parent = {}) {
-    this = document.createElement(tag);
+    this.elem = document.createElement(tag);
     this.setAttr(attrs);
     this.addChildren(children);
     this.appendTo(parent);
