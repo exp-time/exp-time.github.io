@@ -36,7 +36,7 @@ function createSidebar(id, title, content) { // Sidebar popups
     children: [ headerWithClose(id, title, "sidebar-header font-large") ]}).elem;
   const sidebarContent = new Elem({tag: 'div', attrs: {className: 'sidebar-content font-medium w3-bar-block'}}).elem;
   
-  sidebar.appendChild(header);
+  //sidebar.appendChild(header);
   for (const key in content) {
     new Elem({tag:'div',attrs: {className:'w3-bar-item w3-button',textContent:key, onclick: () => openInNewTab(content[key])}, parent: sidebarContent});
   }
