@@ -1,7 +1,7 @@
 class Elem {
   constructor(options = {}) {
     const { tag = 'div', attrs = {}, children = [], parent = null } = options;
-    if (options instanceof Element) {
+    if (options instanceof Element) { // FIX to iterate each child!=!=")=")=
       this.elem = options; // Assume it's a DOM element already
     } else {
       this.elem = document.createElement(tag);
