@@ -120,7 +120,7 @@ function displayMapData() {
   markers.forEach((marker, index) => {// Iterate through all markers and create a paragraph for each
       const coords = marker.getLatLng(); // Get the latitude and longitude of the marker
       const p = document.createElement('p'); // Create a new paragraph element
-      p.textContent = `Marker ${index + 1}: Latitude = ${coords.lat.toFixed(2)}, Longitude = ${coords.lng.toFixed(2)}`; // Set the text content of the paragraph
+      p.textContent = `Marker ${index + 1}: Lat: ${coords.lat.toFixed(2)}, Lon: ${coords.lng.toFixed(2)}`; // Set the text content of the paragraph
       container.appendChild(p); // Append the paragraph to the container
   });
   return container; // Return the container with all paragraphs
