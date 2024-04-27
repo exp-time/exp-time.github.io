@@ -43,7 +43,7 @@ function handleCommand(command) { // Terminal commands
 
 /*const tableContainer = new Elem({tag: 'div', attrs: {id: 'table-container',className: 'table-container'}, 
     children: [{tag: 'table', attrs: {id: 'data-table'},children: [{tag: 'thead'}]}]});
-    */ 
+*/ 
 // EXCEL
 function createEditableTable(headers, initialRowsData) {
   const tableContainer = new Elem({tag: 'div', attrs: {id: 'table-container',className: 'table-container'}});
