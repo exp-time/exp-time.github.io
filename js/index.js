@@ -116,7 +116,7 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
   card.appendChild(row);
   let paragraph;
   if (isString(content)) { 
-    paragraph = new Elem('p').setAttr({className: 'font-large',textContent: content}).appendTo(card);
+    paragraph = new Elem('p', {className: 'font-large',textContent: content}, [], card);
   }
   else if (content === 0){ // TODO: modify else..
     paragraph = createWebTerminal()
@@ -146,8 +146,7 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
   else if (content === 3){ // TODO HANDLE
     paragraph = new Elem('div').appendTo(card);
 
-    let childrenSpecs = new Elem('label', {for: 'vehicleType', className: 'font-large',textContent: 'Choose a vehicle:'}, [], paragraph.elem)
-
+    new Elem('label', {for: 'vehicleType', className: 'font-large',textContent: 'Choose a vehicle:'}, [], paragraph.elem)
     const select = new Elem('select', {
       name: 'vehicle',
       id: 'vehicleType'
@@ -155,11 +154,13 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
       { tag: 'option', attrs: { value: 'car', textContent: 'Car' } },
       { tag: 'option', attrs: { value: 'truck', textContent: 'Truck' } }
     ]).appendTo(paragraph.elem).elem;
+
     select.addEventListener('change', function() {
       console.log('You selected: ' + this.value);
     });
+
     // Coords:
-    new Elem('div', {id:"mapDataContainer"}).appendTo(paragraph.elem)
+    new Elem('div', {id:"mapDataContainer"}, [], paragraph.elem)
   }
   else { // TODO HANDLE
     paragraph = createElementWithClass('p', 'font-large', content);
