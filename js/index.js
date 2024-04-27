@@ -151,7 +151,6 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
     card.appendChild(selectedIcon)
   }
   card.appendChild(paragraph);
-  if (content === 2){ initializeMap() }
   third.appendChild(card);
   container.appendChild(third);
   createModal(info_id, info_Title, info_Content);
@@ -175,6 +174,8 @@ document.addEventListener('DOMContentLoaded', function() { // pagination + other
   clickablesData.forEach(function(item) {
     createTooltipIcon(item.link, item.content, item.icon, item.container);
   }); 
+
+  initializeMap()
 
   const container = document.querySelector('.content');
   const sections = container.querySelectorAll('.w3-third');
