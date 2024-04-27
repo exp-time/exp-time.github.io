@@ -53,10 +53,8 @@ function createModal(id, title, content, footerContent) {
     const footer = new Elem({tag: 'footer', attrs: {className: 'w3-theme-l1 modal-footer font-medium'}}).elem;
     if (typeof footerContent === 'object' && !(footerContent instanceof Array)) {
       for (const key in footerContent) { // If footerContent is an object (not an array), handle as key-value pairs for links
-
-        const link = createElementWithClass('a', 'w3-button padding-top-bottom', key)
-        link.onclick = () => openInNewTab(footerContent[key]);
-        const item = createElementWithClass('p', 'font-medium', '');
+        const link = new Elem({tag:'a',attrs:{className:'w3-button padding-top-bottom',textContent: key, onclick: () => openInNewTab(footerContent[key])}}).elem;
+        const item = new Elem({tag: 'p', attrs: {className: 'font-medium'}}).elem;
         item.appendChild(link);
         footer.appendChild(item);
       }
@@ -198,7 +196,8 @@ document.addEventListener('DOMContentLoaded', function() { // pagination + other
   updatePageButtons();
 });
 
-function getCurrentItemsPerPage(width) {  // mod and max 6....
+function getCurrentItemsPerPage(width) {  // mod and max.. Every 550px or so we need a new column. until then we need padding..
+  //return Math.min(6, ); Math.round()
   if (width < 1100) {return 2}
   else if (width >= 1100 && width < 1650) {return 4} 
   else {return 6}
