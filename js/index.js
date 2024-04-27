@@ -17,9 +17,9 @@ function closeElem(event, id, elem) {                      // Close if click out
 
 function makeDocumentModal(id, content) {
   const modal = new Elem('div', {className: 'w3-modal',id:id});
-  if (content instanceof Elem) {content.appendTo(modal.elem)}
-  else { modal.elem.appendChild(content)}
-  modal.elem.onmousedown = function(event) {closeElem(event, id, 'w3-modal')};
+  if (content instanceof Elem) {content.appendTo(modal)}
+  else { modal.appendChild(content)}
+  modal.onmousedown = function(event) {closeElem(event, id, 'w3-modal')};
   modal.appendTo(document.body);
 }
 
@@ -34,8 +34,8 @@ function headerWithClose(id, title, theme) {
           attrs: {className: 'fa fa-remove'}
       }]
   });
-  closeButton.elem.onmousedown = function(event) {info_close(id)};
-  return header.elem;
+  closeButton.onmousedown = function(event) {info_close(id)};
+  return header;
 }
 
 function createTooltipIcon(link, title, icon, target) {
@@ -147,7 +147,7 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
     paragraph = new Elem('div').appendTo(card);
 
     let childrenSpecs = 
-    new Elem('label', {for: 'vehicleType', className: 'font-large',textContent: 'Choose a vehicle:'}, "", paragraph.elem)
+    new Elem('label', {for: 'vehicleType', className: 'font-large',textContent: 'Choose a vehicle:'}, "", paragraph)
 
     const select = new Elem('select', {
       name: 'vehicle',
@@ -155,13 +155,13 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
     }, [
       { tag: 'option', attrs: { value: 'car', textContent: 'Car' } },
       { tag: 'option', attrs: { value: 'truck', textContent: 'Truck' } }
-    ]).appendTo(paragraph.elem).elem;
-    
+    ]).appendTo(paragraph);
+
     select.addEventListener('change', function() {
       console.log('You selected: ' + this.value);
     });
     // Coords:
-    new Elem('div', {id:"mapDataContainer"}).appendTo(paragraph.elem)
+    new Elem('div', {id:"mapDataContainer"}).appendTo(paragraph)
   }
   else { // TODO HANDLE
     paragraph = createElementWithClass('p', 'font-large', content);

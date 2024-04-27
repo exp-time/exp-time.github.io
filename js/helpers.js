@@ -1,19 +1,19 @@
 class Elem {
   constructor(tag, attrs = {}, children = [], parent = {}) {
-      this.elem = document.createElement(tag);
+      this = document.createElement(tag);
       this.setAttr(attrs);
       this.addChildren(children);
       this.appendTo(parent);
   }
 
   setAttr(attributes) {
-      Object.entries(attributes).forEach(([key, value]) => this.elem[key] = value);
+      Object.entries(attributes).forEach(([key, value]) => this[key] = value);
       return this;
   }
 
   addChild(childSpec, returnParent = false) {
       const child = new Elem(childSpec.tag, childSpec.attrs, childSpec.children || []);
-      this.elem.appendChild(child.elem);
+      this.appendChild(child);
       return returnParent ? this : child;  // Control whether to return the parent or the child
   }
 
@@ -25,10 +25,6 @@ class Elem {
   appendTo(parent) {
     if (parent instanceof HTMLElement) {
       parent.appendChild(this);
-      return this;
-    }
-    else if (parent.elem instanceof HTMLElement) {
-      parent.appendChild(this.elem);
       return this;
     }
     else {console.log("something broke!")}
