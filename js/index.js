@@ -11,8 +11,8 @@ function closeElem(event, id, elem) {                      // Close if click out
 }
 
 function makeDocumentModal(id, content) {
-  new Elem({tag: 'div', attrs: {className: 'w3-modal',id:id, onmousedown: function(event) {closeElem(event, id, 'w3-modal')}}, 
-    children: [content], parent: document.body});
+  new Elem({tag: 'div', attrs: {className: 'w3-modal',id:id, onmousedown: function(event) {
+    closeElem(event, id, 'w3-modal')}},children:[content],parent:document.body});
 }
 
 function headerWithClose(id, title, style) {
@@ -23,8 +23,7 @@ function headerWithClose(id, title, style) {
 }
 
 function createTooltipIcon(link, title, icon, target) {
-  new Elem({tag: 'div', attrs:{className: 'w3-tooltip'}, 
-    children: [
+  new Elem({tag: 'div', attrs:{className: 'w3-tooltip'},children: [
       {tag: 'span', attrs: {className: 'w3-text w3-theme-light',textContent: title}},
       {tag: 'div', attrs:{className: 'w3-button font-xxxlarge fa ' + icon,
         onclick: link ? () => openInNewTab(link) : () => window.scrollTo({top: 0, behavior: 'smooth'})}}], 
@@ -32,9 +31,11 @@ function createTooltipIcon(link, title, icon, target) {
 }
 
 function createSidebar(id, title, content) { // Sidebar popups
-  const sidebar = new Elem({tag: 'div', attrs: {className: 'w3-sidebar w3-card w3-animate-left w3-center'}}).elem;
-  const sidebarContent = new Elem({tag: 'div', attrs: {className: 'sidebar-content font-medium w3-bar-block'}}).elem;
   const header = headerWithClose(id, title, "sidebar-header font-large")
+  const sidebar = new Elem({tag: 'div', attrs: {className: 'w3-sidebar w3-card w3-animate-left w3-center'},
+    children: [ headerWithClose(id, title, "sidebar-header font-large") ]}).elem;
+  const sidebarContent = new Elem({tag: 'div', attrs: {className: 'sidebar-content font-medium w3-bar-block'}}).elem;
+  
   sidebar.appendChild(header);
   for (const key in content) {
     new Elem({tag:'div',attrs: {className:'w3-bar-item w3-button',textContent:key, onclick: () => openInNewTab(content[key])}, parent: sidebarContent});
@@ -43,8 +44,6 @@ function createSidebar(id, title, content) { // Sidebar popups
   makeDocumentModal(id, sidebar)
 }
 
-
-// FOOTER BROKEN!!!!!!!!!!!!!!!!!!!!!
 function createModal(id, title, content, footerContent) {  
   const modalContent = new Elem({tag: 'div', attrs: {className: 'w3-modal-content w3-card-4 modal-animate-top'}}).elem;
   const body = new Elem({tag: 'div', attrs: {className: 'w3-padding'}, children:[
