@@ -57,7 +57,6 @@ function createModal(id, title, content, footerContent) {
         const item = new Elem({tag: 'p', attrs: {className: 'font-medium'}, children:[
           {tag:'a',attrs:{className:'w3-button padding-top-bottom',textContent: key, onclick: () => openInNewTab(footerContent[key])}
           ,parent: footer}]}).elem;
-        footer.appendChild(item);
       }
       } else {new Elem({tag: 'p', attrs: {className: 'font-medium', textContent:footerContent}, parent:footer})} 
     modalContent.appendChild(footer);
