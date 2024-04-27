@@ -155,9 +155,9 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
       tag: 'select', 
       attrs:{
         name: 'vehicle',
-        id: 'vehicleType'},
+        id: 'vehicleType',
         onchange: function() {
-          console.log('You selected: ' + this.value)},
+          console.log('You selected: ' + this.value)}},
       children: [
       { tag: 'option', attrs: { value: 'car', textContent: 'Car' } },
       { tag: 'option', attrs: { value: 'truck', textContent: 'Truck'} }],
