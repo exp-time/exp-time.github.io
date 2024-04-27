@@ -98,19 +98,39 @@ function initializeMap() {
 
   }else {console.error('Leaflet library is not loaded.')}
 }
+// Define custom icons
+const greenIcon = new L.Icon({
+  iconUrl: 'https://cdn-icons-png.flaticon.com/512/3895/3895608.png', // Replace with your green icon URL
+  iconSize: [25, 41], // Size of the icon
+  iconAnchor: [12, 41], // Point of the icon which will correspond to marker's location
+  popupAnchor: [1, -34], // Point from which the popup should open relative to the iconAnchor
+  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+  shadowSize: [41, 41]
+});
+
+const redIcon = new L.Icon({
+  iconUrl: 'https://cdn-icons-png.flaticon.com/512/3895/3895614.png', // Replace with your red icon URL
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+  shadowSize: [41, 41]
+});
 
 function addMarker(latlng, map) {
   if (markers.length >= 2) {
     const oldestMarker = markers.shift(); // Remove the oldest marker from the array
     map.removeLayer(oldestMarker); // Remove the oldest marker from the map
   }
-  const marker = L.marker(latlng).addTo(map);
+  const icon = markers.length === 0 ? greenIcon : redIcon; // Choose the icon based on the number of markers currently on the map
+  const marker = L.marker(latlng, { icon: icon }).addTo(map);
   markers.push(marker); // Add the new marker to the array
   updateDisplay(); // Update the display of coordinates
 }
 
 function updateDisplay() {
   const mapDataContainer = document.getElementById('mapDataContainer');
+  
   mapDataContainer.innerHTML = ''; // Clear existing data
   mapDataContainer.appendChild(displayMapData()); // Append new data
 }
