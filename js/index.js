@@ -146,8 +146,7 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
   else if (content === 3){ // TODO HANDLE
     paragraph = new Elem('div').appendTo(card);
 
-    let childrenSpecs = 
-    new Elem('label', {for: 'vehicleType', className: 'font-large',textContent: 'Choose a vehicle:'}, "", paragraph.elem)
+    let childrenSpecs = new Elem('label', {for: 'vehicleType', className: 'font-large',textContent: 'Choose a vehicle:'}, [], paragraph.elem)
 
     const select = new Elem('select', {
       name: 'vehicle',
