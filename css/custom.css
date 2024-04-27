@@ -30,7 +30,7 @@ button:-moz-focusring,[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[
   position: relative; 
   font-weight:400;}
 
-.sidebar-btns{padding:0.25% 0.5%;top:0.5%;left:0;margin-top:0;} /* top and bottom | left and right */
+.sidebar-btns{z-index: 101;padding:0.25% 0.5%;top:0.5%;left:0;margin-top:0;} /* top and bottom | left and right */
 
 .sub-title {margin:2em 0;}
 
@@ -151,6 +151,7 @@ button:-moz-focusring,[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[
 .w3-modal{
   display:none;
   position:fixed;
+  z-index: 101;
   left:0;
   top:0;
   width:100%;
@@ -209,6 +210,7 @@ button:-moz-focusring,[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[
 .map { /* MAP */
   display: flex;
   flex-direction: column;
+  z-index: 100;
   justify-content: space-between;
   align-items: stretch;
   padding: 0.5em;
