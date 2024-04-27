@@ -1,9 +1,26 @@
 class Elem {
   constructor(tag, attrs = {}, children = [], parent = {}) {
-      this = document.createElement(tag);
-      this.setAttr(attrs);
-      this.addChildren(children);
-      this.appendTo(parent);
+    this = document.createElement(tag);
+    this.setAttr(attrs);
+    this.addChildren(children);
+    this.appendTo(parent);
+    return new Proxy(this, {
+      get(target, property, receiver) {
+        if (property in target) {
+          return target[property];
+        } else {
+          return target.elem[property];
+        }
+      },
+      set(target, property, value, receiver) {
+        if (property in target) {
+          target[property] = value;
+        } else {
+          target.elem[property] = value;
+        }
+        return true;
+      }
+    });
   }
 
   setAttr(attributes) {
