@@ -4,7 +4,7 @@ function createWebTerminal() { // Web Terminal
   terminal.addChild({tag: 'div', attrs: {id: 'output',className: 'output'}});
   terminal.addChild({tag: 'input',
       attrs: {type: 'text', id: 'input', className: 'input', placeholder: 'Type command...'}});
-  return terminal;
+  return terminal.elem;
 }
 
 document.addEventListener('DOMContentLoaded', function() { // TERMINAL
@@ -68,7 +68,7 @@ function createEditableTable(headers, initialRowsData) {
   });
 
   tableContainer.appendTo(document.body);
-  return tableContainer;
+  return tableContainer.elem;
 }
 
 function saveCellData(inputElement) {
@@ -80,7 +80,7 @@ function saveCellData(inputElement) {
 // MAP 
 function createMap() {
   const map = new Elem('div').setAttr({id: 'map',className: 'map'});
-  return map
+  return map.elem
 }
 
 let markers = [];
