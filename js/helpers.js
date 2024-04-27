@@ -30,12 +30,12 @@ class Elem {
 
   addChild(childSpec, returnParent = false) {
       const child = new Elem(childSpec.tag, childSpec.attrs, childSpec.children || []);
-      this.appendChild(child);
+      this.elem.appendChild(child);
       return returnParent ? this : child;  // Control whether to return the parent or the child
   }
 
   addChildren(childrenSpecs) {
-      childrenSpecs.forEach(spec => this.addChild(spec));
+      childrenSpecs.forEach(spec => this.elem.addChild(spec));
       return this;
   }
 
