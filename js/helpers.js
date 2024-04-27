@@ -23,8 +23,10 @@ class Elem {
   }
 
   appendTo(parent) {
-    parent.appendChild(this.elem);
-    return this;
+    if (parent != {}) {
+      parent.appendChild(this.elem);
+      return this;
+    }
   }
 }
 
