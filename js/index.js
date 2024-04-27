@@ -145,7 +145,7 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
   }
   else if (content === 3){ // TODO HANDLE
     paragraph = new Elem('div').appendTo(card);
-
+    /*
     const options = [
       { value: 'car', text: 'Car' },
       { value: 'truck', text: 'Truck' }
@@ -161,6 +161,7 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
       { tag: 'option', attrs: { value: 'truck', textContent: 'Truck' } }
     ]).appendTo(paragraph.elem).elem;
     // Coords:
+    */
     new Elem('div', {id:"mapDataContainer"}).appendTo(paragraph.elem)
 
   }
