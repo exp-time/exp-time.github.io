@@ -157,12 +157,17 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
         name: 'vehicle',
         id: 'vehicleType'},
       children: [
-      { tag: 'option', attrs: { value: 'car', textContent: 'Car', onchange: () => console.log('Car selected') } },
-      { tag: 'option', attrs: { value: 'truck', textContent: 'Truck', onchange: () => console.log('Truck selected') } }],
+      { tag: 'option', attrs: { value: 'car', textContent: 'Car', "onchange": () => console.log('Car selected') } },
+      { tag: 'option', attrs: { value: 'truck', textContent: 'Truck', "onchange": () => console.log('Truck selected') } }],
       parent: paragraph.elem
     })
+
+    select.addEventListener('change', function() {
+      console.log('You selected: ' + this.value);
+    });
+
     // Coords:
-    new Elem({tag: 'div', attrs: {id:"mapDataContainer"}, parent: paragraph.elem})
+    new Elem('div', {id:"mapDataContainer"}, [], paragraph.elem)
   }
   else { // TODO HANDLE
     paragraph = createElementWithClass('p', 'font-large', content);
