@@ -144,9 +144,8 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
     card.appendChild(paragraph);
   }
   else if (content === 3){ // TODO HANDLE
-    paragraph.appendChild(new Elem('div').setAttr({id:"mapDataContainer"}).elem)
-    paragraph.appendChild(new Elem('div').setAttr({id:"mapDataContainer"}).elem)
-    card.appendChild(paragraph);
+    paragraph = new Elem('div').appendTo(card);
+    new Elem('div').setAttr({id:"mapDataContainer"}).appendTo(paragraph)
   }
   else { // TODO HANDLE
     paragraph = createElementWithClass('p', 'font-large', content);
