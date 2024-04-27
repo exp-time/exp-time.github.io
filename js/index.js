@@ -114,6 +114,10 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
   infoIcon.onclick = () => info_open(info_id);
   row.append(dummyButton, titleDiv, infoIcon);
   card.appendChild(row);
+  if (iconClass != '') {
+    const selectedIcon = createElementWithClass('i', iconClass + ' w3-margin font-mega w3-text-theme');
+    card.appendChild(selectedIcon)
+  }
   let paragraph;
   if (isString(content)) { 
     paragraph = new Elem('p', {className: 'font-large',textContent: content}, [], card);
@@ -165,10 +169,6 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
   else { // TODO HANDLE
     paragraph = createElementWithClass('p', 'font-large', content);
     card.appendChild(paragraph);
-  }
-  if (iconClass != '') {
-    const selectedIcon = createElementWithClass('i', iconClass + ' w3-margin font-mega w3-text-theme');
-    card.appendChild(selectedIcon)
   }
   third.appendChild(card);
   container.appendChild(third);
