@@ -58,10 +58,7 @@ function createModal(id, title, content, footerContent) {
           ]}).elem;
         footer.appendChild(item);
       }
-      } else { // Handle as plain text
-        const footerP = createElementWithClass('p', 'font-medium', footerContent); 
-        footer.appendChild(footerP);
-      }
+      } else {new Elem({tag: 'p', attrs: {className: 'font-medium', textContent:footerContent}, parent:footerP})} // Handle as plain text
     modalContent.appendChild(footer);
   }
   makeDocumentModal(id, modalContent)
