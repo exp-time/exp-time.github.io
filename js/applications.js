@@ -104,15 +104,13 @@ function addMarker(latlng, map) {
     const oldestMarker = markers.shift(); // Remove the oldest marker from the array
     map.removeLayer(oldestMarker); // Remove the oldest marker from the map
   }
-  const icon = markers.length === 0 ? greenIcon : redIcon; // Choose the icon based on the number of markers currently on the map
-  const marker = L.marker(latlng, { icon: icon }).addTo(map);
+  const marker = L.marker(latlng).addTo(map);
   markers.push(marker); // Add the new marker to the array
   updateDisplay(); // Update the display of coordinates
 }
 
 function updateDisplay() {
   const mapDataContainer = document.getElementById('mapDataContainer');
-  
   mapDataContainer.innerHTML = ''; // Clear existing data
   mapDataContainer.appendChild(displayMapData()); // Append new data
 }
