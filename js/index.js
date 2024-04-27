@@ -45,7 +45,7 @@ function createSidebar(id, title, content) { // Sidebar popups
   const header = headerWithClose(id, title, "sidebar-header font-large")
   sidebar.appendChild(header);
   for (const key in content) {
-    new Elem({tag:'div',attrs: {className:'w3-bar-item w3-button',textContent:key, onclick = () => openInNewTab(content[key])}, parent: sidebarContent});
+    new Elem({tag:'div',attrs: {className:'w3-bar-item w3-button',textContent:key, onclick: () => openInNewTab(content[key])}, parent: sidebarContent});
   }
   sidebar.appendChild(sidebarContent)
   makeDocumentModal(id, sidebar)
