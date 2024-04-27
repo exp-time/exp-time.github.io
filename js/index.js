@@ -169,6 +169,7 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
 }
 
 document.addEventListener('DOMContentLoaded', function() { // pagination + others
+  let container = document.querySelector('.content')
   modalData.forEach(function(modal) {
     createModal(modal.id, modal.title, modal.content, modal.footerContent);
   });
@@ -192,7 +193,7 @@ document.addEventListener('DOMContentLoaded', function() { // pagination + other
   const sections = container.querySelectorAll('.w3-third');
   let currentPage = 0;
 
-  new Elem({tag: 'div', attrs: {className: 'pagination'}, parent: document.querySelector('.content')})
+  new Elem({tag: 'div', attrs: {className: 'pagination'}, parent: container})
 
   function getCurrentItemsPerPage() {
       const width = window.innerWidth;
