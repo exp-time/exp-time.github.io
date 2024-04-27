@@ -24,14 +24,9 @@ class Elem {
 
   appendTo(parent) {
     if (parent instanceof HTMLElement) {
-      parent.appendChild(this);
-      return this;
-    }
-    else if (parent.elem instanceof HTMLElement) {
       parent.appendChild(this.elem);
       return this;
     }
-    else {console.log("something broke!")}
   }
 }
 
