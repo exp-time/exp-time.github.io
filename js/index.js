@@ -116,14 +116,13 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
   }
   let paragraph;
   if (isString(content)) { 
-    paragraph = new Elem({tag: 'p', attrs: {className: 'font-large',textContent: content}, parent: card});
+    new Elem({tag: 'p', attrs: {className: 'font-large',textContent: content}, parent: card});
   }
   else if (content === 0){ // TODO: modify else..
-    paragraph = createWebTerminal()
-    card.appendChild(paragraph);
+    card.appendChild(createWebTerminal());
   }
   else if (content === 1){ // TODO: modify else..
-    paragraph =  createEditableTable(["Name", "Age", "Job", "Location"], [
+    let paragraph =  createEditableTable(["Name", "Age", "Job", "Location"], [
       ["John Doe", "28", "Developer", "New York"],
       ["Jane Doe", "34", "Designer", "San Francisco"],
       ["Jane Doe", "34", "Designer", "San Francisco"],
@@ -140,8 +139,7 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
     card.appendChild(paragraph);
   }
   else if (content === 2){ 
-    paragraph = createMap()
-    card.appendChild(paragraph);
+    card.appendChild(createMap());
   }
   else if (content === 3){ 
     paragraph = new Elem({tag: 'div', parent: card});
@@ -160,12 +158,11 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
       { tag: 'option', attrs: { value: 'truck', textContent: 'Truck'} }],
       parent: paragraph.elem
     })
-    // Coords:
-    new Elem({tag: 'div', attrs: {id:"mapDataContainer", className: 'w3-padding'}, parent: paragraph.elem})
+    new Elem({tag: 'div', attrs: {id:"mapDataContainer", className: 'w3-padding'}, parent: paragraph.elem}) // Coords
   }
   else { // TODO HANDLE
     new Elem({tag: 'p', attrs: {className: 'font-large'}, parent: card})
-  }
+  } 
   third.appendChild(card);
   container.appendChild(third);
   createModal(info_id, info_Title, info_Content);
