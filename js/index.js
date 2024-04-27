@@ -140,7 +140,7 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
   }
   else if (content === 2){
     // TODO HANDLE
-    paragraph = createElementWithClass('p', 'font-large', content);
+    paragraph = createMap()
   }
   else {
     // TODO HANDLE

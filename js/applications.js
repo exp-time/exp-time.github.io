@@ -41,6 +41,7 @@ function handleCommand(command) { // Terminal commands
   }
 }
 
+// EXCEL
 function createEditableTable(headers, initialRowsData) {
   const tableContainer = new Elem('div', {id: 'table-container',className: 'table-container'});
   const table = tableContainer.addChild({tag: 'table', attrs: {id: 'data-table'}});
@@ -74,3 +75,19 @@ function saveCellData(inputElement) {
   console.log('Data changed in cell:', inputElement.value);
   // Additional logic to save or process new cell data
 }
+
+
+// MAP 
+
+function createMap() {
+  const map = new Elem('div').setAttr({id: 'map',className: 'map'});
+  if (typeof L !== 'undefined') {
+    const map = L.map('map').setView([51.505, -0.09], 13); // Sets view to coordinates (latitude, longitude) and a zoom level
+    // Add OpenStreetMap tiles to the map
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+    } else {console.error('Leaflet library is not loaded.')}
+  return map.elem
+}
+

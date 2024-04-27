@@ -205,6 +205,20 @@ button:-moz-focusring,[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[
 
 .padding-top-bottom{padding: 2px 0px!important;} /* top and bottom | left and right */
 
+
+.map { /* MAP */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  padding: 0.5em;
+  margin: 1.0em;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  height: 420px;
+  max-height: 420px;
+  box-sizing: border-box;}
+
+
 .terminal { /* Terminal */
   display: flex;
   flex-direction: column;
