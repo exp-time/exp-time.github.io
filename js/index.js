@@ -24,14 +24,11 @@ function makeDocumentModal(id, content) {
 }
 
 function headerWithClose(id, title, theme) {
-  const header = new Elem({tag: 'header', attrs:{className: `w3-theme-l1 ${theme}`}});
-  header.addChild({tag: 'p', attrs: {textContent: title}});
-  const closeButton = header.addChild({
-      tag: 'div',
-      attrs: {className: 'w3-button display-topright'},
-      children: [{tag: 'i', attrs: {className: 'fa fa-remove'}}]
-  });
-  closeButton.elem.onmousedown = function(event) {info_close(id)};
+  const header = new Elem({tag: 'header', attrs:{className: `w3-theme-l1 ${theme}`}, children: [
+    {tag:'p',attrs:{textContent: title}},
+    {tag:'div',attrs:{className: 'w3-button display-topright'},children: [
+      {tag: 'i', attrs: {className: 'fa fa-remove', onclick: () => info_close(id)}}]},
+  ]});
   return header.elem;
 }
 
