@@ -40,8 +40,8 @@ function createTooltipIcon(link, title, icon, target) {
 }
 
 function createSidebar(id, title, content) { // Sidebar popups
-  const sidebar = createElementWithClass('div', 'w3-sidebar w3-card w3-animate-left w3-center');
-  const sidebarContent = createElementWithClass('div', 'sidebar-content font-medium w3-bar-block')
+  const sidebar = new Elem({tag: 'div', attrs: {className: 'w3-sidebar w3-card w3-animate-left w3-center'}}).elem;
+  const sidebarContent = new Elem({tag: 'div', attrs: {className: 'sidebar-content font-medium w3-bar-block'}}).elem;
   const header = headerWithClose(id, title, "sidebar-header font-large")
   sidebar.appendChild(header);
   for (const key in content) {
@@ -187,22 +187,10 @@ document.addEventListener('DOMContentLoaded', function() { // pagination + other
 
   const sections = container.querySelectorAll('.w3-third');
   let currentPage = 0;
-
   let paginationContainer = new Elem({tag: 'div', attrs: {className: 'pagination'}, parent: container}).elem
 
-  function getCurrentItemsPerPage() {
-      const width = window.innerWidth;
-      if (width < 1100) {
-          return 2;
-      } else if (width >= 1100 && width < 1650) {
-          return 4;
-      } else {
-          return 6;
-      }
-  }
-
   function showPage(page) {
-      const itemsPerPage = getCurrentItemsPerPage();
+      const itemsPerPage = getCurrentItemsPerPage(window.innerWidth);
       const startIndex = page * itemsPerPage;
       const endIndex = startIndex + itemsPerPage;
       sections.forEach((section, index) => {
@@ -212,16 +200,14 @@ document.addEventListener('DOMContentLoaded', function() { // pagination + other
 
   function updateActiveButtonStates() {
     const pageButtons = paginationContainer.querySelectorAll('button');
-    pageButtons.forEach((button, index) => {
-        button.className = (index === currentPage) ? 'active' : '';
-    });
+    pageButtons.forEach((button, index) => {button.className = (index === currentPage) ? 'active' : ''});
   }
 
   function updatePageButtons() {
     while (paginationContainer.firstChild) {
         paginationContainer.removeChild(paginationContainer.firstChild);
     }
-    const itemsPerPage = getCurrentItemsPerPage();
+    const itemsPerPage = getCurrentItemsPerPage(window.innerWidth);
     const totalPages = Math.ceil(sections.length / itemsPerPage);
     if (currentPage >= totalPages) {                // Check if the current page is out of range
         currentPage = Math.max(0, totalPages - 1);  // Reset to the last page if out of range
@@ -242,3 +228,9 @@ document.addEventListener('DOMContentLoaded', function() { // pagination + other
   window.addEventListener('resize', function() { updatePageButtons() }); 
   updatePageButtons();
 });
+
+function getCurrentItemsPerPage(width) {
+  if (width < 1100) {return 2}
+  else if (width >= 1100 && width < 1650) {return 4} 
+  else {return 6}
+}
