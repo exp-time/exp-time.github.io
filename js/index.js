@@ -159,9 +159,9 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
     }, [
       { tag: 'option', attrs: { value: 'car', textContent: 'Car' } },
       { tag: 'option', attrs: { value: 'truck', textContent: 'Truck' } }
-    ]).appendTo(parent).elem;
+    ]).appendTo(paragraph.elem).elem;
     // Coords:
-    new Elem('div').setAttr({id:"mapDataContainer"}).appendTo(paragraph.elem)
+    new Elem('div', {id:"mapDataContainer"}).appendTo(paragraph.elem)
 
   }
   else { // TODO HANDLE

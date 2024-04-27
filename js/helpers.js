@@ -1,17 +1,13 @@
 class Elem {
-  constructor(tag, attrs = {}, children = []) {
+  constructor(tag, attrs = {}, children = [], parent={}) {
       this.elem = document.createElement(tag);
       this.setAttr(attrs);
       this.addChildren(children); // Automatically handle children during initialization
+      if (parent != {}) {this.appendTo(parent)}
   }
 
   setAttr(attributes) {
       Object.entries(attributes).forEach(([key, value]) => this.elem[key] = value);
-      return this;
-  }
-
-  appendTo(parent) {
-      parent.appendChild(this.elem);
       return this;
   }
 
@@ -24,6 +20,11 @@ class Elem {
   addChildren(childrenSpecs) {
       childrenSpecs.forEach(spec => this.addChild(spec));
       return this;
+  }
+
+  appendTo(parent) {
+    parent.appendChild(this.elem);
+    return this;
   }
 }
 
