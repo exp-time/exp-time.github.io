@@ -31,25 +31,22 @@ function createTooltipIcon(link, title, icon, target) {
 }
 
 function createSidebar(id, title, content) { // Sidebar popups
-  const header = headerWithClose(id, title, "sidebar-header font-large")
   const sidebar = new Elem({tag: 'div', attrs: {className: 'w3-sidebar w3-card w3-animate-left w3-center'},
     children: [ headerWithClose(id, title, "sidebar-header font-large") ]}).elem;
   const sidebarContent = new Elem({tag: 'div', attrs: {className: 'sidebar-content font-medium w3-bar-block'}}).elem;
-  
-  //sidebar.appendChild(header);
   for (const key in content) {
-    new Elem({tag:'div',attrs: {className:'w3-bar-item w3-button',textContent:key, onclick: () => openInNewTab(content[key])}, parent: sidebarContent});
+    new Elem({tag:'div',attrs: {className:'w3-bar-item w3-button',textContent:key, 
+    onclick: () => openInNewTab(content[key])}, parent: sidebarContent});
   }
   sidebar.appendChild(sidebarContent)
   makeDocumentModal(id, sidebar)
 }
 
-function createModal(id, title, content, footerContent) {  
-  const modalContent = new Elem({tag: 'div', attrs: {className: 'w3-modal-content w3-card-4 modal-animate-top'}}).elem;
-  const body = new Elem({tag: 'div', attrs: {className: 'w3-padding'}, children:[
-    {tag: 'p', attrs: {className:'font-large',textContent:content}}]}).elem;
-  const header = headerWithClose(id, title, "modal-header font-xlarge")
-  modalContent.append(header, body);
+function createModal(id, title, content, footerContent) {
+  const modalContent = new Elem({tag:'div',attrs:{className: 'w3-modal-content w3-card-4 modal-animate-top'},
+    children: [{tag: 'div', attrs: {className: 'w3-padding'}, children:[
+      {tag: 'p', attrs: {className:'font-large',textContent:content}}]}, 
+      headerWithClose(id, title, "modal-header font-xlarge")]}).elem;
   if (footerContent && footerContent != ""){
     const footer = new Elem({tag: 'footer', attrs: {className: 'w3-theme-l1 modal-footer font-medium'}}).elem;
     if (typeof footerContent === 'object' && !(footerContent instanceof Array)) {
