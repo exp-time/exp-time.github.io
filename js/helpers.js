@@ -1,5 +1,5 @@
 class Elem {
-  constructor(tag, attrs = {}, children = [], parent={}) {
+  constructor(tag, attrs = {}, children = [], parent = {}) {
       this.elem = document.createElement(tag);
       this.setAttr(attrs);
       this.addChildren(children);
@@ -23,7 +23,7 @@ class Elem {
   }
 
   appendTo(parent) {
-    if (parent != {}) {
+    if (parent instanceof HTMLElement) {
       parent.appendChild(this.elem);
       return this;
     }
