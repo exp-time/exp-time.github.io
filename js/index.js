@@ -193,7 +193,7 @@ document.addEventListener('DOMContentLoaded', function() { // pagination + other
   const sections = container.querySelectorAll('.w3-third');
   let currentPage = 0;
 
-  new Elem({tag: 'div', attrs: {className: 'pagination'}, parent: container})
+  let paginationContainer = new Elem({tag: 'div', attrs: {className: 'pagination'}, parent: container}).elem
 
   function getCurrentItemsPerPage() {
       const width = window.innerWidth;
