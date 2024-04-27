@@ -147,6 +147,9 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
       
   ]);
   }
+  else if (content === 2){
+
+  }
   else {
     // TODO HANDLE
   }
