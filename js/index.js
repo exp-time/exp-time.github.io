@@ -187,8 +187,6 @@ document.addEventListener('DOMContentLoaded', function() { // pagination + other
     });
   }
 
-
-
   function updatePageButtons() {
     while (paginationContainer.firstChild) {
         paginationContainer.removeChild(paginationContainer.firstChild);
