@@ -167,10 +167,8 @@ button:-moz-focusring,[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[
 
 .w3-center{text-align:center!important}
 
-.w3-theme {
-  overflow: hidden;     /* Hide overflow content outside the header */
-  position: relative;}  /* Ensures proper calculation of overflow area */
-
+.w3-theme {overflow: hidden;position: relative;} /* Hide overflow content outside the header for animation */
+    
 .w3-bar-block .w3-bar-item{
   width:100%;
   display:block;

@@ -1,4 +1,4 @@
-function s_sidebar(element) {   // .w3-sidebar
+function s_sideBar(element) {   // .w3-sidebar
   element.style["width"] = '35%';
   element.style["top"] = '5%';
 }
@@ -14,7 +14,7 @@ function s_tooltip(element) { // .w3-tooltip
     element.style["display"] = 'none'});
 }
 
-function s_tooltip_Text(element) {   // .w3-sidebar
+function s_tooltipText(element) {   
   element.style['display'] = 'none';
   element.style['position'] = 'absolute';
   element.style['bottom'] = '100%';
@@ -70,13 +70,7 @@ function s_noSelect(element) {
   element.style.userSelect = 'none';
 }
 
-// Function to adjust dynamic sizing 
-function adjustDynamics() {
-  const width = window.innerWidth;
-
-}
-
-const minFonts = {
+const fontsSize = {
   'fontSmall': [10, 0.5],
   'fontMedium': [12, 0.75],
   'fontLarge': [14, 1.0],
@@ -92,6 +86,13 @@ function getFontSize(key) {
   const [fixedSize, vwSize] = minFonts[key];
   const vwInPixels = vwSize * viewportWidth / 100;
   return Math.max(fixedSize, vwInPixels);
+}
+
+
+// Function to adjust dynamic sizing 
+function adjustDynamics() {
+  const width = window.innerWidth;
+
 }
 
 // element.style[''] = '';
