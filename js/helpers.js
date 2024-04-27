@@ -1,11 +1,16 @@
 class Elem {
   constructor(options = {}) {
     const { tag = 'div', attrs = {}, children = [], parent = null } = options;
-    this.elem = document.createElement(tag);
-    this.setAttr(attrs);
-    this.addChildren(children);
-    if (parent) {
+    if (options instanceof Element) {
+      this.elem = options; // Assume it's a DOM element already
+    } 
+    else {
+      this.elem = document.createElement(tag);
+      this.setAttr(attrs);
+      this.addChildren(children);
+      if (parent) {
         this.appendTo(parent);
+      }
     }
   }
 
@@ -26,8 +31,17 @@ class Elem {
   }
 
   addChild(childSpec, returnParent = false) {
-    const child = new Elem(childSpec);
-    this.elem.appendChild(child.elem);
+    let child;
+    if (childSpec instanceof Element) {
+      child = { elem: childSpec }; // Wrap the DOM element in an object to fit the existing structure
+      this.elem.appendChild(childSpec);
+    } else if (childSpec instanceof Elem) {
+      child = childSpec;
+      this.elem.appendChild(childSpec.elem);
+    } else {
+      child = new Elem(childSpec);
+      this.elem.appendChild(child.elem);
+    }
     return returnParent ? this : child;
   }
 
