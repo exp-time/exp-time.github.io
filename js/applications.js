@@ -89,5 +89,16 @@ function initializeMap() {
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { // Add OpenStreetMap tiles to the map
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
-  } else {console.error('Leaflet library is not loaded.')}
+    
+    function addMarker(latlng) { // Function to add a marker at a given location
+      L.marker([latlng.lat, latlng.lng]).addTo(map)
+      .bindPopup("You clicked at latitude: " + latlng.lat.toFixed(5) + ", longitude: " + latlng.lng.toFixed(5))
+      .openPopup();
+    }
+
+    map.on('click', function(e) { // Event listener for map clicks
+      addMarker(e.latlng);
+    });
+
+  }else {console.error('Leaflet library is not loaded.')}
 }
