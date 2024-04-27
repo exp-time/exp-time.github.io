@@ -143,7 +143,7 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
     paragraph = createMap()
   }
   else if (content === 3){ // TODO HANDLE
-    paragraph = createElementWithClass('div', 'mapDataContainer', " "); 
+    paragraph = new Elem('div').setAttr({id:"mapDataContainer"}).elem;
   }
   else { // TODO HANDLE
     paragraph = createElementWithClass('p', 'font-large', content);
