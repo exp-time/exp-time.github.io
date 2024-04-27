@@ -159,6 +159,7 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
     const selectedIcon = createElementWithClass('i', iconClass + ' w3-margin font-mega w3-text-theme');
     card.appendChild(selectedIcon)
   }
+  console.log(card)
   card.appendChild(paragraph);
   third.appendChild(card);
   container.appendChild(third);
