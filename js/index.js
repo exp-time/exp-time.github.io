@@ -164,7 +164,7 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
       parent: paragraph.elem
     })
     // Coords:
-    new Elem({tag: 'div', attrs: {id:"mapDataContainer"}, parent: paragraph.elem})
+    new Elem({tag: 'div', attrs: {id:"mapDataContainer", className: 'w3-padding'}, parent: paragraph.elem})
   }
   else { // TODO HANDLE
     paragraph = createElementWithClass('p', 'font-large', content);
