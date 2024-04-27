@@ -161,11 +161,6 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
       { tag: 'option', attrs: { value: 'truck', textContent: 'Truck', "onchange": () => console.log('Truck selected') } }],
       parent: paragraph.elem
     })
-
-    select.addEventListener('change', function() {
-      console.log('You selected: ' + this.value);
-    });
-
     // Coords:
     new Elem('div', {id:"mapDataContainer"}, [], paragraph.elem)
   }
