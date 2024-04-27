@@ -41,7 +41,7 @@ class Elem {
 
   appendTo(parent) {
     if (parent instanceof HTMLElement) {
-      parent.appendChild(this);
+      parent.appendChild(this.elem);
       return this;
     }
     else {console.log("something broke!")}
