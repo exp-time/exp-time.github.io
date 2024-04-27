@@ -44,9 +44,10 @@ function createSidebar(id, title, content) { // Sidebar popups
 
 function createModal(id, title, content, footerContent) {
   const modalContent = new Elem({tag:'div',attrs:{className: 'w3-modal-content w3-card-4 modal-animate-top'},
-    children: [{tag: 'div', attrs: {className: 'w3-padding'}, children:[
-      {tag: 'p', attrs: {className:'font-large',textContent:content}}]}, 
-      headerWithClose(id, title, "modal-header font-xlarge")]}).elem;
+    children: [headerWithClose(id, title, "modal-header font-xlarge"),
+      {tag: 'div', attrs: {className: 'w3-padding'}, children:[
+        {tag: 'p', attrs: {className:'font-large',textContent:content}}]}]}).elem;
+
   if (footerContent && footerContent != ""){
     const footer = new Elem({tag: 'footer', attrs: {className: 'w3-theme-l1 modal-footer font-medium'}}).elem;
     if (typeof footerContent === 'object' && !(footerContent instanceof Array)) {
