@@ -82,6 +82,13 @@ const cardData = [
     content: "D-Wave ocean, WasmCloud, Docker, Xlwings, Anaconda, Cuda-Q",
     info_Title: "twelvth_info", 
     info_Content:"Law inexpedient noble reason abstract revaluation war salvation\n snare burying merciful love inexpedient strong.Inexpedient\n prejudice ideal victorious deceptions good holiest.\n Faithful philosophy endless fearful enlightenment."
+  },
+  {
+    title: "Map",
+    iconClass: "",
+    content: 2,
+    info_Title: "twelvth_info", 
+    info_Content:"Law inexpedient noble reason abstract revaluation war salvation\n snare burying merciful love inexpedient strong.Inexpedient\n prejudice ideal victorious deceptions good holiest.\n Faithful philosophy endless fearful enlightenment."
   }
 ];
 

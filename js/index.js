@@ -5,12 +5,12 @@ function info_open(id) {
   x.style.display = "block";
 }
 
-function info_close(id) {                             // Closing modals
+function info_close(id) {                                   // Closing modals
   document.getElementById(id).style.display = "none";
 }
 
 function closeElem(event, id, elem) {                      // Close if click outside of modal
-  if (event.target.classList.contains(elem)) {  // Check if the click was directly on the modal background
+  if (event.target.classList.contains(elem)) {             // Check if the click was directly on the modal background
       document.getElementById(id).style.display = 'none';
   }
 }
