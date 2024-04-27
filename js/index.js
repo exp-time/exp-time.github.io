@@ -2,6 +2,7 @@ let isString = value => typeof value === 'string';
 
 function info_open(id) {document.getElementById(id).style.display = "block"}
 function info_close(id) {document.getElementById(id).style.display = "none"}
+function openInNewTab(url) {window.open(url, '_blank').focus()}
 
 function closeElem(event, id, elem) {                      // Close if click outside of modal
   if (event.target.classList.contains(elem)) {             // Check if the click was directly on the modal background
@@ -64,16 +65,7 @@ function createModal(id, title, content, footerContent) {
   makeDocumentModal(id, modalContent)
 }
 
-function openInNewTab(url) {
-  window.open(url, '_blank').focus();
-}
 
-function createElementWithClass(tag, className, textContent = '') {
-  const element = document.createElement(tag);
-  element.className = className;
-  if (textContent) element.textContent = textContent;
-  return element;
-}
 
 function createCard(id, info_id, title, iconClass, content, info_Title, info_Content) { // Create main content cards
   const container = document.querySelector('.content');
@@ -81,8 +73,8 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
       console.error('Failed to create card: container not found.');
       return;
   }
-  const third = createElementWithClass('div', 'w3-third');
-  const card = createElementWithClass('div', 'w3-card w3-container');
+  const third = new Elem({tag: 'div', attrs: {className: 'w3-third'}}).elem;
+  const card = new Elem({tag: 'div', attrs: {className: 'w3-card w3-container'}}).elem;
 
   const row = new Elem({tag:'div',attrs:{className: 'w3-row font-xlarge container-title flex-container'},
     children: [
@@ -138,8 +130,6 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
 }
 
 document.addEventListener('DOMContentLoaded', function() { // pagination + others
-
-
   let container = document.querySelector('.content')
 
   modalData.forEach(function(modal) {createModal(modal.id, modal.title, modal.content, modal.footerContent)});
@@ -189,7 +179,7 @@ document.addEventListener('DOMContentLoaded', function() { // pagination + other
   }
   window.addEventListener('resize', function() { updatePageButtons() }); 
   updatePageButtons();
-  
+
   /* REMOVE */
   document.getElementById('unfinished_modal').style.display='block'
   /* REMOVE */
