@@ -140,7 +140,7 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
   }
   else if (content === 2){
     // TODO HANDLE
-    paragraph = createElementWithClass('p', 'font-large', content);//createMap()
+    paragraph = createMap()
   }
   else {
     // TODO HANDLE
@@ -151,6 +151,7 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
     card.appendChild(selectedIcon)
   }
   card.appendChild(paragraph);
+  if (content === 2){ initializeMap() }
   third.appendChild(card);
   container.appendChild(third);
   createModal(info_id, info_Title, info_Content);

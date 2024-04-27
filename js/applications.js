@@ -78,16 +78,16 @@ function saveCellData(inputElement) {
 
 
 // MAP 
-
 function createMap() {
   const map = new Elem('div').setAttr({id: 'map',className: 'map'});
-  if (typeof L !== 'undefined') {
-    const map = L.map('map').setView([51.505, -0.09], 13); // Sets view to coordinates (latitude, longitude) and a zoom level
-    // Add OpenStreetMap tiles to the map
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(map);
-    } else {console.error('Leaflet library is not loaded.')}
   return map.elem
 }
 
+function initializeMap() {
+  if (typeof L !== 'undefined') {
+    const map = L.map('map').setView([51.505, -0.09], 13); // Sets view to coordinates (latitude, longitude) and a zoom level
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { // Add OpenStreetMap tiles to the map
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+  } else {console.error('Leaflet library is not loaded.')}
+}
