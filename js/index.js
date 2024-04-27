@@ -53,11 +53,9 @@ function createModal(id, title, content, footerContent) {
     const footer = new Elem({tag: 'footer', attrs: {className: 'w3-theme-l1 modal-footer font-medium'}}).elem;
     if (typeof footerContent === 'object' && !(footerContent instanceof Array)) {
       for (const key in footerContent) { // If footerContent is an object (not an array), handle as key-value pairs for links
-        const link = new Elem().elem;
         const item = new Elem({tag: 'p', attrs: {className: 'font-medium'}, children:[
           {tag:'a',attrs:{className:'w3-button padding-top-bottom',textContent: key, onclick: () => openInNewTab(footerContent[key])}},
           ]}).elem;
-        item.appendChild(link);
         footer.appendChild(item);
       }
       } else { // Handle as plain text
