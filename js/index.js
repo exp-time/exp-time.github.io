@@ -160,6 +160,7 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
     card.appendChild(selectedIcon)
   }
   console.log(card)
+  console.log(paragraph)
   card.appendChild(paragraph);
   third.appendChild(card);
   container.appendChild(third);
