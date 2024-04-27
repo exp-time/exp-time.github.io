@@ -43,11 +43,12 @@ function createSidebar(id, title, content) { // Sidebar popups
   makeDocumentModal(id, sidebar)
 }
 
+
+// FOOTER BROKEN!!!!!!!!!!!!!!!!!!!!!
 function createModal(id, title, content, footerContent) {  
   const modalContent = new Elem({tag: 'div', attrs: {className: 'w3-modal-content w3-card-4 modal-animate-top'}}).elem;
   const body = new Elem({tag: 'div', attrs: {className: 'w3-padding'}, children:[
     {tag: 'p', attrs: {className:'font-large',textContent:content}}]}).elem;
-
   const header = headerWithClose(id, title, "modal-header font-xlarge")
   modalContent.append(header, body);
   if (footerContent && footerContent != ""){
@@ -63,8 +64,6 @@ function createModal(id, title, content, footerContent) {
   }
   makeDocumentModal(id, modalContent)
 }
-
-
 
 function createCard(id, info_id, title, iconClass, content, info_Title, info_Content) { // Create main content cards
   const container = document.querySelector('.content');
