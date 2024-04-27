@@ -85,7 +85,7 @@ function createMap() {
 
 function initializeMap() {
   if (typeof L !== 'undefined') {
-    const map = L.map('map').setView([51.505, -0.09], 13); // Sets view to coordinates (latitude, longitude) and a zoom level
+    const map = L.map('map').setView([52.52, 13.40], 10); // Sets view to coordinates (latitude, longitude) and a zoom level
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { // Add OpenStreetMap tiles to the map
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
