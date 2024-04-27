@@ -45,21 +45,21 @@ function createSidebar(id, title, content) { // Sidebar popups
 
 function createModal(id, title, content, footerContent) {  
   const modalContent = new Elem({tag: 'div', attrs: {className: 'w3-modal-content w3-card-4 modal-animate-top'}}).elem;
-  const header = headerWithClose(id, title, "modal-header font-xlarge")
   const body = new Elem({tag: 'div', attrs: {className: 'w3-padding'}, children:[
     {tag: 'p', attrs: {className:'font-large',textContent:content}}]}).elem;
 
+  const header = headerWithClose(id, title, "modal-header font-xlarge")
   modalContent.append(header, body);
   if (footerContent && footerContent != ""){
     const footer = new Elem({tag: 'footer', attrs: {className: 'w3-theme-l1 modal-footer font-medium'}}).elem;
     if (typeof footerContent === 'object' && !(footerContent instanceof Array)) {
       for (const key in footerContent) { // If footerContent is an object (not an array), handle as key-value pairs for links
         const item = new Elem({tag: 'p', attrs: {className: 'font-medium'}, children:[
-          {tag:'a',attrs:{className:'w3-button padding-top-bottom',textContent: key, onclick: () => openInNewTab(footerContent[key])}},
-          ]}).elem;
+          {tag:'a',attrs:{className:'w3-button padding-top-bottom',textContent: key, onclick: () => openInNewTab(footerContent[key])}
+          ,parent: footer}]}).elem;
         footer.appendChild(item);
       }
-      } else {new Elem({tag: 'p', attrs: {className: 'font-medium', textContent:footerContent}, parent:footerP})} // Handle as plain text
+      } else {new Elem({tag: 'p', attrs: {className: 'font-medium', textContent:footerContent}, parent:footer})} 
     modalContent.appendChild(footer);
   }
   makeDocumentModal(id, modalContent)
