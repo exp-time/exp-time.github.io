@@ -202,12 +202,12 @@ document.addEventListener('DOMContentLoaded', function() { // pagination + other
         pageButton.addEventListener('click', function() {
             currentPage = i;
             showPage(currentPage);
-            updateActiveButtonStates(paginationContainer);
+            updateActiveButtonStates(paginationContainer,currentPage);
         });
         paginationContainer.appendChild(pageButton);
     }
     showPage(currentPage);            // Refresh view to reflect potentially new currentPage
-    updateActiveButtonStates(paginationContainer);       // Refresh button states
+    updateActiveButtonStates(paginationContainer,currentPage);       // Refresh button states
   }
   window.addEventListener('resize', function() { updatePageButtons() }); 
   updatePageButtons();
@@ -219,7 +219,7 @@ function getCurrentItemsPerPage(width) {
   else {return 6}
 }
 
-function updateActiveButtonStates(paginationContainer) {
-  const pageButtons = paginationContainer.querySelectorAll('button');
-  pageButtons.forEach((button, index) => {button.className = (index === currentPage) ? 'active' : ''});
+function updateActiveButtonStates(buttonContainer, currentPage) {
+  const buttons = buttonContainer.querySelectorAll('button');
+  buttons.forEach((button, index) => {button.className = (index === currentPage) ? 'active' : ''});
 }
