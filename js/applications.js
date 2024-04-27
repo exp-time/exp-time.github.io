@@ -133,7 +133,6 @@ function addMarker(latlng, map) {
 function updateDisplay() {
   const mapDataContainer = document.getElementById('mapDataContainer');
   if (mapDataContainer.innerHTML) {mapDataContainer.innerHTML = ''}
-   // Clear existing data
   mapDataContainer.appendChild(displayMapData()); // Append new data
 }
 
