@@ -32,6 +32,7 @@ input.no-spinners[type=number] {appearance: textfield;}
   display: flex;
   flex-direction: column;
   width: 100%;
+  padding: 5px;
 }
 
 .main-title, .sub-title {
