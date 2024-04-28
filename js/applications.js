@@ -93,7 +93,17 @@ function createMap() {
 function createMapData() {
   return new Elem({tag: 'div',attrs: {className: 'map-data-listing'},children: [
     {tag: 'div', attrs: {className: 'input-group'}, children: [
-      {tag: 'label', attrs: {for: 'vehicleType', className: 'font-large', textContent: 'Choose a vehicle:'}},
+      {tag: 'label', attrs: {for: 'routingType', className: 'font-large', textContent: 'Routing service:'}},
+      {tag: 'select', attrs: {name: 'routing', id: 'routingType', className: 'no-spinners pointer-cursor'}, children: [
+          {tag: 'option', attrs: {value: 'OpenRouteService', textContent: 'OpenRouteService'}},
+          {tag: 'option', attrs: {value: 'Azure', textContent: 'Azure Maps (MS)'}},
+          {tag: 'option', attrs: {value: 'Google', textContent: 'Google Maps'}},
+          {tag: 'option', attrs: {value: 'GraphHopper', textContent: 'GraphHopper'}},
+          {tag: 'option', attrs: {value: 'Mapbox', textContent: 'Mapbox'}}
+      ]}
+    ]},
+    {tag: 'div', attrs: {className: 'input-group'}, children: [
+      {tag: 'label', attrs: {for: 'vehicleType', className: 'font-large', textContent: 'Vehicle:'}},
       {tag: 'select', attrs: {name: 'vehicle', id: 'vehicleType', className: 'no-spinners pointer-cursor'}, children: [
           {tag: 'option', attrs: {value: 'car', textContent: 'Car'}},
           {tag: 'option', attrs: {value: 'truck', textContent: 'Truck'}}
