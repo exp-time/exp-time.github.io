@@ -28,6 +28,12 @@ input.no-spinners[type=number] {appearance: textfield;}
 .container-title {padding: 0.5em;} 
 .container-title a {flex-grow: 0!important;}
 
+.map-data-listing {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
 .main-title, .sub-title {
   position: relative; 
   font-weight:400;}
