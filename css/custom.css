@@ -61,6 +61,7 @@ button:-moz-focusring,[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[
 .no-spinners {
   margin: 5px;
   appearance: textfield;
+  width: 200px;
 }
 /* For Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
