@@ -82,7 +82,7 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
       children: [
         {tag: 'div', attrs: {className: 'input-group'}, children: [
           {tag: 'label', attrs: {for: 'vehicleType', className: 'font-large', textContent: 'Choose a vehicle:'}},
-          {tag: 'select', attrs: {name: 'vehicle', id: 'vehicleType', className: 'no-spinners'}, children: [
+          {tag: 'select', attrs: {name: 'vehicle', id: 'vehicleType', className: 'no-spinners pointer-cursor'}, children: [
               {tag: 'option', attrs: {value: 'car', textContent: 'Car'}},
               {tag: 'option', attrs: {value: 'truck', textContent: 'Truck'}}
           ]}
