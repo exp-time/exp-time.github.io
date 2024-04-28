@@ -75,11 +75,7 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
   else if (content === 1){ card.appendChild(createEditableTable()) }
   else if (content === 2){ card.appendChild(createMap()) }
   else if (content === 3){ 
-    new Elem({
-      tag: 'div',
-      attrs: {className: 'map-data-listing'},
-      parent: card,
-      children: [
+    new Elem({tag: 'div',attrs: {className: 'map-data-listing'},parent: card,children: [
         {tag: 'div', attrs: {className: 'input-group'}, children: [
           {tag: 'label', attrs: {for: 'vehicleType', className: 'font-large', textContent: 'Choose a vehicle:'}},
           {tag: 'select', attrs: {name: 'vehicle', id: 'vehicleType', className: 'no-spinners pointer-cursor'}, children: [
