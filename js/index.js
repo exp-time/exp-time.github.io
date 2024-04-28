@@ -85,8 +85,6 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
       {tag: 'div', attrs: {id:"mapDataContainer", className: 'w3-padding'}}]});
   } else { new Elem({tag: 'p', attrs: {className: 'font-large'}, parent: card})} 
 
-  //third.appendChild(card);
-  //container.appendChild(third);
   createModal(info_id, info_Title, info_Content);
 }
 
