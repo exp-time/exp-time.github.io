@@ -39,6 +39,19 @@ function createSidebar(id, title, content) { // Sidebar popups
   makeDocumentModal(id, sidebar)
 }
 
+function createFooter(content) {
+  const footer = new Elem({tag: 'footer', attrs: {className: 'w3-theme-l1 modal-footer font-medium'}}).elem;
+  if (typeof content === 'object' && !(content instanceof Array)) {
+    for (const key in content) { // If footerContent is an object (not an array), handle as key-value pairs for links
+      new Elem({tag: 'p', attrs: {className: 'font-medium'}, children:[
+        {tag:'a',attrs:{className:'w3-button padding-top-bottom',textContent: key,
+          onclick: () => openInNewTab(footerContent[key])}}], parent: footer});
+    }
+  } 
+  else {new Elem({tag: 'p', attrs: {className: 'font-medium', textContent:footerContent}, parent:footer})} 
+  return footer
+}
+
 function createModal(id, title, content, footerContent) {
   const modalContent = new Elem({tag:'div',attrs:{className: 'w3-modal-content w3-card-4 modal-animate-top'},
     children: [headerWithClose(id, title, "modal-header font-xlarge"),
@@ -46,15 +59,7 @@ function createModal(id, title, content, footerContent) {
         {tag: 'p', attrs: {className:'font-large',textContent:content}}]}]}).elem;
 
   if (footerContent && footerContent != ""){
-    const footer = new Elem({tag: 'footer', attrs: {className: 'w3-theme-l1 modal-footer font-medium'}}).elem;
-    if (typeof footerContent === 'object' && !(footerContent instanceof Array)) {
-      for (const key in footerContent) { // If footerContent is an object (not an array), handle as key-value pairs for links
-        new Elem({tag: 'p', attrs: {className: 'font-medium'}, children:[
-          {tag:'a',attrs:{className:'w3-button padding-top-bottom',textContent: key,
-           onclick: () => openInNewTab(footerContent[key])}}], parent: footer});
-      }
-    } else {new Elem({tag: 'p', attrs: {className: 'font-medium', textContent:footerContent}, parent:footer})} 
-    modalContent.appendChild(footer);
+    modalContent.appendChild(createFooter(footerContent)); 
   }
   makeDocumentModal(id, modalContent)
 }
