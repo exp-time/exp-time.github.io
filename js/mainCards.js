@@ -36,14 +36,16 @@ const cardData = [
     iconClass: "",
     content: 2,
     info_Title: "Map display", 
-    info_Content:"Test out the routing services by clicking the map in two places. "
+    info_Content:"Test out the routing services by clicking the map in two places. ",
+    info_footerContent: "",
   },
   {
     title: "Map Data",
     iconClass: "",
     content: 3,
     info_Title: "Routing", 
-    info_Content:"Currently not functional. Routing services as placeholders."
+    info_Content:"Currently not functional. Routing services as placeholders.",
+    info_footerContent: "",
   },
   {
     title: "Artificial Intelligence",
