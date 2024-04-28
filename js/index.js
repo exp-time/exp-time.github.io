@@ -66,12 +66,11 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
   const container = document.querySelector('.content');
   const third = new Elem({tag: 'div', attrs: {className: 'w3-third'}}).elem;
   const card = new Elem({tag: 'div', attrs: {className: 'w3-card w3-container'}}).elem;
-  const row = new Elem({tag:'div',attrs:{className: 'w3-row font-xlarge container-title flex-container'},
+  const row = new Elem({tag:'div',attrs:{className: 'w3-row font-xlarge container-title flex-container'},parent: card,
     children: [
       {tag:'a',attrs:{className: 'fa fa-info dummy-button w3-button'}},
-      {tag:'div',attrs:{className: 'title',textContent: title}},
+      {tag:'div',attrs:{className: 'title',textContent: title}}, 
       {tag:'a',attrs:{className: 'fa fa-info w3-button top-corner', onclick: () => info_open(info_id)}}],
-    parent: card
   }); 
  
   if (iconClass != '') {new Elem({tag:'i',attrs:{className: iconClass + ' w3-margin font-mega w3-text-theme'},parent: card})}
