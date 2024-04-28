@@ -77,8 +77,14 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
   else if (content === 3){ new Elem({tag:'div',parent:card,children: [
       {tag:'label',attrs:{for:'vehicleType',className:'font-large',textContent:'Choose a vehicle:'}},
       {tag:'select',attrs:{name:'vehicle',id:'vehicleType'},children: [
-          { tag: 'option', attrs: { value: 'car', textContent: 'Car' } },
-          { tag: 'option', attrs: { value: 'truck', textContent: 'Truck'}}]},
+        { tag: 'option', attrs: { value: 'car', textContent: 'Car' } },
+        { tag: 'option', attrs: { value: 'truck', textContent: 'Truck'}}]},
+      {tag: 'label', attrs: {for: 'vehicleWeight', className: 'font-large', textContent: 'Enter vehicle weight (kg):'}},
+      {tag: 'input', attrs: {type: 'number', id: 'vehicleWeight', name: 'weight', className: 'input-field', placeholder: 'Weight in kg'}},
+      {tag: 'label', attrs: {for: 'vehicleDimensions', className: 'font-large', textContent: 'Dimensions (L x W x H):'}},
+      {tag: 'input', attrs: {type: 'text', id: 'vehicleLength', name: 'length', className: 'input-field', placeholder: 'Length (m)'}},
+      {tag: 'input', attrs: {type: 'text', id: 'vehicleWidth', name: 'width', className: 'input-field', placeholder: 'Width (m)'}},
+      {tag: 'input', attrs: {type: 'text', id: 'vehicleHeight', name: 'height', className: 'input-field', placeholder: 'Height (m)'}},
       {tag: 'div', attrs: {id:"mapDataContainer", className: 'w3-padding'}}]});
   } else { new Elem({tag: 'p', attrs: {className: 'font-large'}, parent: card})} 
 
