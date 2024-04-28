@@ -72,31 +72,23 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
       {tag:'div',attrs:{className: 'title',textContent: title}}, 
       {tag:'a',attrs:{className: 'fa fa-info w3-button top-corner', onclick: () => info_open(info_id)}}],
   }); 
- 
   if (iconClass != '') {new Elem({tag:'i',attrs:{className: iconClass + ' w3-margin font-mega w3-text-theme'},parent: card})}
-
   let paragraph;
-  if (isString(content)) { 
-    new Elem({tag: 'p', attrs: {className: 'font-large',textContent: content}, parent: card});
-  }
+  if (isString(content)) { new Elem({tag: 'p', attrs: {className: 'font-large',textContent: content}, parent: card}) }
   else if (content === 0){ card.appendChild(createWebTerminal()) }
-  else if (content === 1){ 
-    paragraph =  createEditableTable();
-    card.appendChild(paragraph);
-  }
+  else if (content === 1){ card.appendChild(createEditableTable()) }
   else if (content === 2){ card.appendChild(createMap()) }
-  else if (content === 3){ 
-    paragraph = new Elem({tag: 'div', parent: card});
-    // TODO: ADD OTHER OPTIONS 
-    new Elem({tag: 'label', attrs: {for: 'vehicleType', className: 'font-large',textContent: 'Choose a vehicle:'}, parent: paragraph.elem})
-    const select = new Elem({tag: 'select',parent: paragraph.elem,
-      attrs:{name: 'vehicle',id: 'vehicleType',onchange: function() {console.log('You selected: ' + this.value)}},
-      children: [
-        { tag: 'option', attrs: { value: 'car', textContent: 'Car' } },
-        { tag: 'option', attrs: { value: 'truck', textContent: 'Truck'} }]})
-    new Elem({tag: 'div', attrs: {id:"mapDataContainer", className: 'w3-padding'}, parent: paragraph.elem}) // Coords
-  }
-  else { new Elem({tag: 'p', attrs: {className: 'font-large'}, parent: card})} // TODO HANDLE
+  else if (content === 3){ // TODO: ADD OTHER OPTIONS 
+    paragraph = new Elem({tag: 'div', parent: card, children: [
+      {tag: 'label',attrs: {for: 'vehicleType', className: 'font-large',textContent: 'Choose a vehicle:'}, parent: paragraph.elem},
+      {tag: 'select',attrs:{name: 'vehicle',id: 'vehicleType',onchange: function() {
+        console.log('You selected: '+this.value)}}, parent: paragraph.elem, children: [
+          { tag: 'option', attrs: { value: 'car', textContent: 'Car' } },
+          { tag: 'option', attrs: { value: 'truck', textContent: 'Truck'} }]},
+      {tag: 'div', attrs: {id:"mapDataContainer", className: 'w3-padding'}, parent: paragraph.elem}
+    ]});
+    
+  } else { new Elem({tag: 'p', attrs: {className: 'font-large'}, parent: card})} 
 
   third.appendChild(card);
   container.appendChild(third);
