@@ -74,18 +74,36 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
   else if (content === 0){ card.appendChild(createWebTerminal()) }
   else if (content === 1){ card.appendChild(createEditableTable()) }
   else if (content === 2){ card.appendChild(createMap()) }
-  else if (content === 3){ new Elem({tag:'div', attrs:{className:'map-data-listing'},parent:card, children:[
-      {tag:'label',attrs:{for:'vehicleType',className:'font-large',textContent:'Choose a vehicle:'}},
-      {tag:'select',attrs:{name:'vehicle',id:'vehicleType'},children: [
-        { tag: 'option', attrs: { value: 'car', textContent: 'Car' } },
-        { tag: 'option', attrs: { value: 'truck', textContent: 'Truck'}}]},
-      {tag: 'label', attrs: {for: 'vehicleWeight', className: 'font-large', textContent: 'Enter vehicle weight (kg):'}},
-      {tag: 'input', attrs: {type: 'number', id: 'vehicleWeight', name: 'weight', className: 'no-spinners', placeholder: 'Weight in kg'}},
-      {tag: 'label', attrs: {for: 'vehicleDimensions', className: 'font-large', textContent: 'Dimensions (L x W x H):'}},
-      {tag: 'input', attrs: {type: 'number', id: 'vehicleLength', name: 'length', className: 'no-spinners', placeholder: 'Length (m)'}},
-      {tag: 'input', attrs: {type: 'number', id: 'vehicleWidth', name: 'width', className: 'no-spinners', placeholder: 'Width (m)'}},
-      {tag: 'input', attrs: {type: 'number', id: 'vehicleHeight', name: 'height', className: 'no-spinners', placeholder: 'Height (m)'}},
-      {tag: 'div', attrs: {id:"mapDataContainer", className: 'w3-padding'}}]});
+  else if (content === 3){ 
+    new Elem({
+      tag: 'div',
+      attrs: {className: 'map-data-listing'},
+      parent: card,
+      children: [
+        {tag: 'label', attrs: {for: 'vehicleType', className: 'font-large flex-item', textContent: 'Choose a vehicle:'}},
+        {tag: 'select', attrs: {name: 'vehicle', id: 'vehicleType', className: 'flex-item'}, children: [
+          {tag: 'option', attrs: {value: 'car', textContent: 'Car'}},
+          {tag: 'option', attrs: {value: 'truck', textContent: 'Truck'}}
+        ]},
+        {tag: 'div', attrs: {className: 'input-group'}, children: [
+          {tag: 'label', attrs: {for: 'vehicleWeight', className: 'font-large', textContent: 'Weight (kg):'}},
+          {tag: 'input', attrs: {type: 'number', id: 'vehicleWeight', name: 'weight', className: 'no-spinners', placeholder: 'Enter weight'}}
+        ]},
+        {tag: 'div', attrs: {className: 'input-group'}, children: [
+          {tag: 'label', attrs: {for: 'vehicleLength', className: 'font-large', textContent: 'Length (m):'}},
+          {tag: 'input', attrs: {type: 'number', id: 'vehicleLength', name: 'length', className: 'no-spinners', placeholder: 'Enter length'}}
+        ]},
+        {tag: 'div', attrs: {className: 'input-group'}, children: [
+          {tag: 'label', attrs: {for: 'vehicleWidth', className: 'font-large', textContent: 'Width (m):'}},
+          {tag: 'input', attrs: {type: 'number', id: 'vehicleWidth', name: 'width', className: 'no-spinners', placeholder: 'Enter width'}}
+        ]},
+        {tag: 'div', attrs: {className: 'input-group'}, children: [
+          {tag: 'label', attrs: {for: 'vehicleHeight', className: 'font-large', textContent: 'Height (m):'}},
+          {tag: 'input', attrs: {type: 'number', id: 'vehicleHeight', name: 'height', className: 'no-spinners', placeholder: 'Enter height'}}
+        ]},
+        {tag: 'div', attrs: {id: "mapDataContainer", className: 'w3-padding'}}
+      ]
+    });
   } else { new Elem({tag: 'p', attrs: {className: 'font-large'}, parent: card})} 
 
   createModal(info_id, info_Title, info_Content);
