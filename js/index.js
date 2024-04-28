@@ -73,7 +73,7 @@ function cardTitleRow(title, info_id, card) {
   }); 
 }
 
-function createCard(id, info_id, title, iconClass, content, info_Title, info_Content) { // Create main content cards
+function createCard(id, info_id, title, iconClass, content, info_Title, info_Content, info_footerContent) { // Create main content cards
   const container = document.querySelector('.content');
   const third = new Elem({tag: 'div', attrs: {className: 'w3-third'}, parent:container}).elem;
   const card = new Elem({tag: 'div', attrs: {className: 'w3-card w3-container'}, parent:third, children: [
@@ -85,7 +85,7 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
   else if (content === 2){ card.appendChild(createMap()) }
   else if (content === 3){ card.appendChild(createMapData()) }
   else { new Elem({tag: 'p', attrs: {className: 'font-large'}, parent: card}) } 
-  createModal(info_id, info_Title, info_Content);
+  createModal(info_id, info_Title, info_Content, info_footerContent);
 }
 
 document.addEventListener('DOMContentLoaded', function() { // pagination + others
@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function() { // pagination + other
   sideBarData.forEach(function(item) {createSidebar(item.id, item.title, item.content)}); 
 
   cardData.forEach(function(card, index) { createCard(`content-area${index + 1}`, `info${index + 1}`,
-    card.title, card.iconClass, card.content, card.info_Title, card.info_Content)});
+    card.title, card.iconClass, card.content, card.info_Title, card.info_Content, card.info_footerContent)});
 
   clickablesData.forEach(function(item) {createTooltipIcon(item.link, item.content, item.icon, item.container)}); 
 
