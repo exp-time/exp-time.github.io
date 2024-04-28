@@ -64,8 +64,8 @@ function createModal(id, title, content, footerContent) {
 
 function createCard(id, info_id, title, iconClass, content, info_Title, info_Content) { // Create main content cards
   const container = document.querySelector('.content');
-  const third = new Elem({tag: 'div', attrs: {className: 'w3-third'}}).elem;
-  const card = new Elem({tag: 'div', attrs: {className: 'w3-card w3-container'}}).elem;
+  const third = new Elem({tag: 'div', attrs: {className: 'w3-third'}, parent:container}).elem;
+  const card = new Elem({tag: 'div', attrs: {className: 'w3-card w3-container'}, parent:third}).elem;
   const row = new Elem({tag:'div',attrs:{className: 'w3-row font-xlarge container-title flex-container'},parent: card,
     children: [
       {tag:'a',attrs:{className: 'fa fa-info dummy-button w3-button'}},
@@ -85,8 +85,8 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
       {tag: 'div', attrs: {id:"mapDataContainer", className: 'w3-padding'}}]});
   } else { new Elem({tag: 'p', attrs: {className: 'font-large'}, parent: card})} 
 
-  third.appendChild(card);
-  container.appendChild(third);
+  //third.appendChild(card);
+  //container.appendChild(third);
   createModal(info_id, info_Title, info_Content);
 }
 
