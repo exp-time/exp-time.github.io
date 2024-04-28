@@ -41,10 +41,6 @@ function handleCommand(command) { // Terminal commands
   }
 }
 
-/*const tableContainer = new Elem({tag: 'div', attrs: {id: 'table-container',className: 'table-container'}, 
-    children: [{tag: 'table', attrs: {id: 'data-table'},children: [{tag: 'thead'}]}]});
-*/ 
-
 defaultHeader = ["Name", "Age", "Job", "Location"], 
 
 defaultRows = [
@@ -87,7 +83,7 @@ function createEditableTable(headers = defaultHeader, initialRowsData = defaultR
       });
   });
 
-  tableContainer.appendTo(document.body);
+  //tableContainer.appendTo(document.body);
   return tableContainer.elem;
 }
 
