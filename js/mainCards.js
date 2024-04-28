@@ -31,8 +31,8 @@ const cardData = [
     title: "Map",
     iconClass: "",
     content: 2,
-    info_Title: "thirteenth_info", 
-    info_Content:"Law inexpedient noble reason abstract revaluation war salvation\n snare burying merciful love inexpedient strong.Inexpedient\n prejudice ideal victorious deceptions good holiest.\n Faithful philosophy endless fearful enlightenment."
+    info_Title: "Routing", 
+    info_Content:"Test out the routing services by clicking the map in two places. "
   },
   {
     title: "Map Data",
