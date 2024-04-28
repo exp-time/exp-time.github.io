@@ -29,8 +29,8 @@ function createTooltipIcon(link, title, icon, target) {
 }
 
 function createSidebar(id, title, content, buttonIcon, target) { // Sidebar popups
-  const sideButton = new Elem({tag: 'div', attrs: {className: 'font-xxxlarge w3-button fa ' + buttonIcon}
-    ,parent: document.querySelector(target)})
+  const sideButton = new Elem({tag: 'div', attrs: {className: 'font-xxxlarge w3-button fa ' + buttonIcon, 
+    onclick: () => info_open(id)},parent: document.querySelector(target)})
   const sidebar = new Elem({tag: 'div', attrs: {className: 'w3-sidebar w3-card w3-animate-left w3-center'},
     children: [ headerWithClose(id, title, "sidebar-header font-large") ]}).elem;
   const sidebarContent = new Elem({tag:'div',attrs:{className:'sidebar-content font-medium w3-bar-block'},parent:sidebar}).elem;
