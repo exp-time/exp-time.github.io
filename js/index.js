@@ -82,20 +82,7 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
   }
   else if (content === 0){ card.appendChild(createWebTerminal()) }
   else if (content === 1){ 
-    paragraph =  createEditableTable(["Name", "Age", "Job", "Location"], [
-      ["John Doe", "28", "Developer", "New York"],
-      ["Jane Doe", "34", "Designer", "San Francisco"],
-      ["Jane Doe", "34", "Designer", "San Francisco"],
-      ["Jane Doe", "34", "Designer", "San Francisco"],
-      ["Jane Doe", "34", "Designer", "San Francisco"],
-      ["Jane Doe", "34", "Designer", "San Francisco"],
-      ["Jane Doe", "34", "Designer", "San Francisco"],
-      ["Jane Doe", "34", "Designer", "San Francisco"],
-      ["Jane Doe", "34", "Designer", "San Francisco"],
-      ["Jane Doe", "34", "Designer", "San Francisco"],
-      ["Jane Doe", "34", "Designer", "San Francisco"],
-      ["Jane Doe", "34", "Designer", "San Francisco"]
-    ]);
+    paragraph =  createEditableTable();
     card.appendChild(paragraph);
   }
   else if (content === 2){ card.appendChild(createMap()) }

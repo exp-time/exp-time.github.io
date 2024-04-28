@@ -44,8 +44,25 @@ function handleCommand(command) { // Terminal commands
 /*const tableContainer = new Elem({tag: 'div', attrs: {id: 'table-container',className: 'table-container'}, 
     children: [{tag: 'table', attrs: {id: 'data-table'},children: [{tag: 'thead'}]}]});
 */ 
+
+defaultHeader = ["Name", "Age", "Job", "Location"], 
+
+defaultRows = [
+  ["John Doe", "28", "Developer", "New York"],
+  ["Jane Doe", "34", "Designer", "San Francisco"],
+  ["Jane Doe", "34", "Designer", "San Francisco"],
+  ["Jane Doe", "34", "Designer", "San Francisco"],
+  ["Jane Doe", "34", "Designer", "San Francisco"],
+  ["Jane Doe", "34", "Designer", "San Francisco"],
+  ["Jane Doe", "34", "Designer", "San Francisco"],
+  ["Jane Doe", "34", "Designer", "San Francisco"],
+  ["Jane Doe", "34", "Designer", "San Francisco"],
+  ["Jane Doe", "34", "Designer", "San Francisco"],
+  ["Jane Doe", "34", "Designer", "San Francisco"],
+  ["Jane Doe", "34", "Designer", "San Francisco"]
+]
 // EXCEL
-function createEditableTable(headers, initialRowsData) {
+function createEditableTable(headers = defaultHeader, initialRowsData = defaultRows) {
   const tableContainer = new Elem({tag: 'div', attrs: {id: 'table-container',className: 'table-container'}});
   const table = tableContainer.addChild({tag: 'table', attrs: {id: 'data-table'}});
   const thead = table.addChild({tag: 'thead'});
