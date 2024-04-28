@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function() { // pagination + other
   }
 
   function updatePageButtons() {
-    while (paginationContainer.firstChild) {  // Cant we remove all of these at once?
+    while (paginationContainer.firstChild) {        // Cant we remove all of these at once?
       paginationContainer.removeChild(paginationContainer.firstChild)}
     const itemsPerPage = getCurrentItemsPerPage(window.innerWidth);
     const totalPages = Math.ceil(sections.length / itemsPerPage);
