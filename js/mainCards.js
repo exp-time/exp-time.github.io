@@ -45,7 +45,7 @@ const cardData = [
     content: 3,
     info_Title: "Routing", 
     info_Content:"Currently not functional. Routing services as placeholders.",
-    info_footerContent: "",
+    info_footerContent: {"[1] wikipedia/EXPTIME": "https://en.wikipedia.org/wiki/EXPTIME", "[2] wikipedia/EXPTIME": "https://en.wikipedia.org/wiki/EXPTIME"},
   },
   {
     title: "Artificial Intelligence",
