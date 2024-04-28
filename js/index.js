@@ -59,16 +59,21 @@ function createModal(id, title, content, footerContent) {
   makeDocumentModal(id, modalContent)
 }
 
+function cardTitleRow(title, info_id, card) {
+  return new Elem({tag:'div',attrs:{className: 'w3-row font-xlarge container-title flex-container'},
+  children: [
+    {tag:'a',attrs:{className: 'fa fa-info dummy-button w3-button'}},
+    {tag:'div',attrs:{className: 'title',textContent: title}}, 
+    {tag:'a',attrs:{className: 'fa fa-info w3-button top-corner', onclick: () => info_open(info_id)}}],
+  }); 
+}
+
 function createCard(id, info_id, title, iconClass, content, info_Title, info_Content) { // Create main content cards
   const container = document.querySelector('.content');
   const third = new Elem({tag: 'div', attrs: {className: 'w3-third'}, parent:container}).elem;
-  const card = new Elem({tag: 'div', attrs: {className: 'w3-card w3-container'}, parent:third}).elem;
-  const row = new Elem({tag:'div',attrs:{className: 'w3-row font-xlarge container-title flex-container'},parent: card,
-    children: [
-      {tag:'a',attrs:{className: 'fa fa-info dummy-button w3-button'}},
-      {tag:'div',attrs:{className: 'title',textContent: title}}, 
-      {tag:'a',attrs:{className: 'fa fa-info w3-button top-corner', onclick: () => info_open(info_id)}}],
-  }); 
+  const card = new Elem({tag: 'div', attrs: {className: 'w3-card w3-container'}, parent:third, children: [
+    cardTitleRow(title, info_id)]}).elem;
+  
   if (iconClass != '') {new Elem({tag:'i',attrs:{className: iconClass + ' w3-margin font-mega w3-text-theme'},parent: card})}
   if (isString(content)) { new Elem({tag: 'p', attrs: {className: 'font-large',textContent: content}, parent: card}) }
   else if (content === 0){ card.appendChild(createWebTerminal()) }
