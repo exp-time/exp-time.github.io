@@ -87,8 +87,36 @@ function saveCellData(inputElement) {
 
 // MAP 
 function createMap() {
-  const map = new Elem({tag: 'div', attrs:{id: 'map',className: 'map'}});
-  return map.elem
+  return new Elem({tag: 'div', attrs:{id: 'map',className: 'map'}}).elem;
+}
+
+function createMapData() {
+  return new Elem({tag: 'div',attrs: {className: 'map-data-listing'},children: [
+    {tag: 'div', attrs: {className: 'input-group'}, children: [
+      {tag: 'label', attrs: {for: 'vehicleType', className: 'font-large', textContent: 'Choose a vehicle:'}},
+      {tag: 'select', attrs: {name: 'vehicle', id: 'vehicleType', className: 'no-spinners pointer-cursor'}, children: [
+          {tag: 'option', attrs: {value: 'car', textContent: 'Car'}},
+          {tag: 'option', attrs: {value: 'truck', textContent: 'Truck'}}
+      ]}
+    ]},
+    {tag: 'div', attrs: {className: 'input-group'}, children: [
+      {tag: 'label', attrs: {for: 'vehicleWeight', className: 'font-large', textContent: 'Weight (kg):'}},
+      {tag: 'input', attrs: {type: 'number', id: 'vehicleWeight', name: 'weight', className: 'no-spinners', placeholder: 'Enter weight'}}
+    ]},
+    {tag: 'div', attrs: {className: 'input-group'}, children: [
+      {tag: 'label', attrs: {for: 'vehicleLength', className: 'font-large', textContent: 'Length (m):'}},
+      {tag: 'input', attrs: {type: 'number', id: 'vehicleLength', name: 'length', className: 'no-spinners', placeholder: 'Enter length'}}
+    ]},
+    {tag: 'div', attrs: {className: 'input-group'}, children: [
+      {tag: 'label', attrs: {for: 'vehicleWidth', className: 'font-large', textContent: 'Width (m):'}},
+      {tag: 'input', attrs: {type: 'number', id: 'vehicleWidth', name: 'width', className: 'no-spinners', placeholder: 'Enter width'}}
+    ]},
+    {tag: 'div', attrs: {className: 'input-group'}, children: [
+      {tag: 'label', attrs: {for: 'vehicleHeight', className: 'font-large', textContent: 'Height (m):'}},
+      {tag: 'input', attrs: {type: 'number', id: 'vehicleHeight', name: 'height', className: 'no-spinners', placeholder: 'Enter height'}}
+    ]},
+    {tag: 'div', attrs: {id: "mapDataContainer", className: 'w3-padding'}}
+  ]}).elem;
 }
 
 let markers = [];
