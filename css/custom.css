@@ -46,8 +46,8 @@ button:-moz-focusring,[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[
 }
 .input-group select {
   flex-grow: 1; 
-  padding: 8px; 
 }
+
 .input-group label {
   flex-basis: 30%;
   text-align: right;
