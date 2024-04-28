@@ -73,15 +73,13 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
   const third = new Elem({tag: 'div', attrs: {className: 'w3-third'}, parent:container}).elem;
   const card = new Elem({tag: 'div', attrs: {className: 'w3-card w3-container'}, parent:third, children: [
     cardTitleRow(title, info_id)]}).elem;
-  
   if (iconClass != '') {new Elem({tag:'i',attrs:{className: iconClass + ' w3-margin font-mega w3-text-theme'},parent: card})}
   if (isString(content)) { new Elem({tag: 'p', attrs: {className: 'font-large',textContent: content}, parent: card}) }
   else if (content === 0){ card.appendChild(createWebTerminal()) }
   else if (content === 1){ card.appendChild(createEditableTable()) }
   else if (content === 2){ card.appendChild(createMap()) }
-  else if (content === 3){ card.appendChild(createMapData())}
-  else { new Elem({tag: 'p', attrs: {className: 'font-large'}, parent: card})} 
-
+  else if (content === 3){ card.appendChild(createMapData()) }
+  else { new Elem({tag: 'p', attrs: {className: 'font-large'}, parent: card}) } 
   createModal(info_id, info_Title, info_Content);
 }
 
