@@ -96,7 +96,7 @@ function createMapData() {
       {tag: 'label', attrs: {for: 'routingType', className: 'font-large', textContent: 'Routing service:'}},
       {tag: 'select', attrs: {name: 'routing', id: 'routingType', className: 'no-spinners pointer-cursor'}, children: [
           {tag: 'option', attrs: {value: 'OpenRouteService', textContent: 'OpenRouteService'}},
-          {tag: 'option', attrs: {value: 'Azure', textContent: 'Azure Maps (MS)'}},
+          {tag: 'option', attrs: {value: 'Azure', textContent: 'Azure Maps'}},
           {tag: 'option', attrs: {value: 'Google', textContent: 'Google Maps'}},
           {tag: 'option', attrs: {value: 'GraphHopper', textContent: 'GraphHopper'}},
           {tag: 'option', attrs: {value: 'Mapbox', textContent: 'Mapbox'}}
