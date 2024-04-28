@@ -74,7 +74,7 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
   else if (content === 0){ card.appendChild(createWebTerminal()) }
   else if (content === 1){ card.appendChild(createEditableTable()) }
   else if (content === 2){ card.appendChild(createMap()) }
-  else if (content === 3){ new Elem({tag:'div',parent:card,children: [
+  else if (content === 3){ new Elem({tag:'div',parent:card,children:[
       {tag:'label',attrs:{for:'vehicleType',className:'font-large',textContent:'Choose a vehicle:'}},
       {tag:'select',attrs:{name:'vehicle',id:'vehicleType'},children: [
         { tag: 'option', attrs: { value: 'car', textContent: 'Car' } },
