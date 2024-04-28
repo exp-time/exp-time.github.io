@@ -28,7 +28,9 @@ function createTooltipIcon(link, title, icon, target) {
     parent: document.querySelector(target)});
 }
 
-function createSidebar(id, title, content) { // Sidebar popups
+function createSidebar(id, title, content, buttonIcon, target) { // Sidebar popups
+  const sideButton = new Elem({tag: 'div', attrs: {className: 'font-xxxlarge w3-button fa ' + buttonIcon}
+    ,parent: document.querySelector(target)})
   const sidebar = new Elem({tag: 'div', attrs: {className: 'w3-sidebar w3-card w3-animate-left w3-center'},
     children: [ headerWithClose(id, title, "sidebar-header font-large") ]}).elem;
   const sidebarContent = new Elem({tag:'div',attrs:{className:'sidebar-content font-medium w3-bar-block'},parent:sidebar}).elem;
@@ -87,12 +89,12 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
 
 document.addEventListener('DOMContentLoaded', function() { // pagination + others
   modalData.forEach(function(modal) {createModal(modal.id, modal.title, modal.content, modal.footerContent)});
-  sideBarData.forEach(function(item) {createSidebar(item.id, item.title, item.content)}); 
+  sideBarData.forEach(function(item) {createSidebar(item.id, item.title, item.content, item.button, item.container)}); 
   cardData.forEach(function(card, index) { createCard(`content-area${index + 1}`, `info${index + 1}`,
     card.title, card.iconClass, card.content, card.info_Title, card.info_Content, card.info_footerContent)});
   clickablesData.forEach(function(item) {createTooltipIcon(item.link, item.content, item.icon, item.container)}); 
   initializeMap()
-  
+
   let container = document.querySelector('.content')
   const sections = container.querySelectorAll('.w3-third');
   let currentPage = 0;

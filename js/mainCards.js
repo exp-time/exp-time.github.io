@@ -178,6 +178,8 @@ const sideBarData = [
       'Quantum Clustering (Unf.)': 'https://github.com/exp-time/Quantum-Clustering',
       'Quantum Example 2 (TODO)': '',
     },
+    button: 'fa-github',
+    container: '.sidebar-btns',
   },
   {
     id: 'DocsLinks',
@@ -192,6 +194,8 @@ const sideBarData = [
       'Docs ex.6 (TODO)': '',
       'Docs ex.7 (TODO)': '',
     },
+    button: 'fa-file-text',
+    container: '.sidebar-btns',
   },
 ];
 
