@@ -62,28 +62,20 @@ function createEditableTable(headers = defaultHeader, initialRowsData = defaultR
   const tableContainer = new Elem({tag: 'div', attrs: {id: 'table-container',className: 'table-container'}});
   const table = tableContainer.addChild({tag: 'table', attrs: {id: 'data-table'}});
   const thead = table.addChild({tag: 'thead'});
+
   const headerRow = thead.addChild({tag: 'tr'});
-  headers.forEach(header => {
-      headerRow.addChild({tag: 'th', attrs: {textContent: header}});
-  });
+  headers.forEach(header => {headerRow.addChild({tag: 'th', attrs: {textContent: header}})});
+
   const tbody = table.addChild({tag: 'tbody'});
   initialRowsData.forEach(rowData => {
-      const row = tbody.addChild({tag: 'tr'});
-      rowData.forEach(cellData => {
-          const cell = row.addChild({tag: 'td'});
-          cell.addChild({
-              tag: 'input',
-              attrs: {
-                  type: 'text',
-                  value: cellData,
-                  className: 'editable-cell',
-                  onchange: 'saveCellData(this)' // Optionally handle data change
-              }
-          });
+    const row = tbody.addChild({tag: 'tr'});
+    rowData.forEach(cellData => { // Optionally handle data change
+      const cell = row.addChild({tag: 'td'}); 
+      cell.addChild({tag: 'input', attrs: {type: 'text',value: cellData,
+        className: 'editable-cell', onchange: 'saveCellData(this)' }     
       });
+    });
   });
-
-  //tableContainer.appendTo(document.body);
   return tableContainer.elem;
 }
 
