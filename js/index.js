@@ -80,10 +80,12 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
       attrs: {className: 'map-data-listing'},
       parent: card,
       children: [
-        {tag: 'label', attrs: {for: 'vehicleType', className: 'font-large flex-item', textContent: 'Choose a vehicle:'}},
-        {tag: 'select', attrs: {name: 'vehicle', id: 'vehicleType', className: 'flex-item'}, children: [
-          {tag: 'option', attrs: {value: 'car', textContent: 'Car'}},
-          {tag: 'option', attrs: {value: 'truck', textContent: 'Truck'}}
+        {tag: 'div', attrs: {className: 'input-group'}, children: [
+          {tag: 'label', attrs: {for: 'vehicleType', className: 'font-large', textContent: 'Choose a vehicle:'}},
+          {tag: 'select', attrs: {name: 'vehicle', id: 'vehicleType', className: 'no-spinners'}, children: [
+              {tag: 'option', attrs: {value: 'car', textContent: 'Car'}},
+              {tag: 'option', attrs: {value: 'truck', textContent: 'Truck'}}
+          ]}
         ]},
         {tag: 'div', attrs: {className: 'input-group'}, children: [
           {tag: 'label', attrs: {for: 'vehicleWeight', className: 'font-large', textContent: 'Weight (kg):'}},
