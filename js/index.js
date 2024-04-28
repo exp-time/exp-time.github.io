@@ -86,7 +86,6 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
 }
 
 document.addEventListener('DOMContentLoaded', function() { // pagination + others
-  
 
   modalData.forEach(function(modal) {createModal(modal.id, modal.title, modal.content, modal.footerContent)});
 
@@ -98,14 +97,13 @@ document.addEventListener('DOMContentLoaded', function() { // pagination + other
   clickablesData.forEach(function(item) {createTooltipIcon(item.link, item.content, item.icon, item.container)}); 
 
   initializeMap()
-  
+
   let container = document.querySelector('.content')
   const sections = container.querySelectorAll('.w3-third');
   let currentPage = 0;
   let paginationContainer = new Elem({tag: 'div', attrs: {className: 'pagination'}, parent: container}).elem
 
-  function showPage(page) {
-    const itemsPerPage = getCurrentItemsPerPage(window.innerWidth);
+  function showPage(page, itemsPerPage) {
     const startIndex = page * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
     sections.forEach((section, index) => {
@@ -126,12 +124,12 @@ document.addEventListener('DOMContentLoaded', function() { // pagination + other
       pageButton.textContent = i + 1;
       pageButton.addEventListener('click', function() {
         currentPage = i;
-        showPage(currentPage);
+        showPage(currentPage, itemsPerPage);
         updateActiveButtonStates(paginationContainer,currentPage);
       });
         paginationContainer.appendChild(pageButton);
     }
-    showPage(currentPage);            // Refresh view to reflect potentially new currentPage
+    showPage(currentPage, itemsPerPage);            // Refresh view to reflect potentially new currentPage
     updateActiveButtonStates(paginationContainer,currentPage);       // Refresh button states
   }
   window.addEventListener('resize', function() { updatePageButtons() }); 
