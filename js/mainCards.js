@@ -45,7 +45,13 @@ const cardData = [
     content: 3,
     info_Title: "Routing", 
     info_Content:"Currently not functional. Routing services as placeholders.",
-    info_footerContent: {"[1] wikipedia/EXPTIME": "https://en.wikipedia.org/wiki/EXPTIME", "[2] wikipedia/EXPTIME": "https://en.wikipedia.org/wiki/EXPTIME"},
+    info_footerContent: {
+     "[1] openRouteService": "https://openrouteservice.org/",
+     "[2] Azure Routing": "https://learn.microsoft.com/en-us/rest/api/maps/route?view=rest-maps-2023-06-01",
+     "[3] Google Routing": "https://developers.google.com/maps/documentation/routes",
+     "[4] GraphHopper": "https://www.graphhopper.com/",
+     "[5] MapBox": "https://www.mapbox.com/",
+    },
   },
   {
     title: "Artificial Intelligence",
