@@ -44,18 +44,12 @@ button:-moz-focusring,[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[
   align-items: center;
   margin-top: 10px;
 }
-.input-group select {
-  flex-grow: 1; 
-}
 
 .input-group label {
   flex-basis: 30%;
   text-align: right;
   margin-right: 10px;
-}
-
-.input-group input {
-  flex-grow: 1;
+  flex-grow: 0;
 }
 
 .no-spinners {
