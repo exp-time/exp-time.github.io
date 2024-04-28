@@ -48,7 +48,7 @@ function createFooter(content) {
           onclick: () => openInNewTab(footerContent[key])}}], parent: footer});
     }
   } 
-  else {new Elem({tag: 'p', attrs: {className: 'font-medium', textContent:footerContent}, parent:footer})} 
+  else { new Elem({tag:'p',attrs:{className: 'font-medium', textContent:footerContent}, parent:footer}) } 
   return footer
 }
 
@@ -57,7 +57,6 @@ function createModal(id, title, content, footerContent) {
     children: [headerWithClose(id, title, "modal-header font-xlarge"),
       {tag: 'div', attrs: {className: 'w3-padding'}, children:[
         {tag: 'p', attrs: {className:'font-large',textContent:content}}]}]}).elem;
-
   if (footerContent && footerContent != ""){ modalContent.appendChild(createFooter(footerContent)) }
   makeDocumentModal(id, modalContent)
 }
@@ -92,8 +91,8 @@ document.addEventListener('DOMContentLoaded', function() { // pagination + other
   cardData.forEach(function(card, index) { createCard(`content-area${index + 1}`, `info${index + 1}`,
     card.title, card.iconClass, card.content, card.info_Title, card.info_Content, card.info_footerContent)});
   clickablesData.forEach(function(item) {createTooltipIcon(item.link, item.content, item.icon, item.container)}); 
-
   initializeMap()
+  
   let container = document.querySelector('.content')
   const sections = container.querySelectorAll('.w3-third');
   let currentPage = 0;
