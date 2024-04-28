@@ -4,10 +4,8 @@ function info_open(id) {document.getElementById(id).style.display = "block"}
 function info_close(id) {document.getElementById(id).style.display = "none"}
 function openInNewTab(url) {window.open(url, '_blank').focus()}
 
-function closeElem(event, id, elem) {                      // Close if click outside of modal
-  if (event.target.classList.contains(elem)) {             // Check if the click was directly on the modal background
-      document.getElementById(id).style.display = 'none';
-  }
+function closeElem(event, id, elem) { // Close if click outside of modal                     
+  if (event.target.classList.contains(elem)) { document.getElementById(id).style.display = 'none'}
 }
 
 function makeDocumentModal(id, content) {
@@ -33,12 +31,11 @@ function createTooltipIcon(link, title, icon, target) {
 function createSidebar(id, title, content) { // Sidebar popups
   const sidebar = new Elem({tag: 'div', attrs: {className: 'w3-sidebar w3-card w3-animate-left w3-center'},
     children: [ headerWithClose(id, title, "sidebar-header font-large") ]}).elem;
-  const sidebarContent = new Elem({tag: 'div', attrs: {className: 'sidebar-content font-medium w3-bar-block'}}).elem;
+  const sidebarContent = new Elem({tag:'div',attrs:{className:'sidebar-content font-medium w3-bar-block'},parent:sidebar}).elem;
   for (const key in content) {
     new Elem({tag:'div',attrs: {className:'w3-bar-item w3-button',textContent:key, 
     onclick: () => openInNewTab(content[key])}, parent: sidebarContent});
   }
-  sidebar.appendChild(sidebarContent)
   makeDocumentModal(id, sidebar)
 }
 
