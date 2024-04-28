@@ -31,15 +31,15 @@ const cardData = [
     title: "Map",
     iconClass: "",
     content: 2,
-    info_Title: "Routing", 
+    info_Title: "Map display", 
     info_Content:"Test out the routing services by clicking the map in two places. "
   },
   {
     title: "Map Data",
     iconClass: "",
     content: 3,
-    info_Title: "fourteenth_info", 
-    info_Content:"Law inexpedient noble reason abstract revaluation war salvation\n snare burying merciful love inexpedient strong.Inexpedient\n prejudice ideal victorious deceptions good holiest.\n Faithful philosophy endless fearful enlightenment."
+    info_Title: "Routing", 
+    info_Content:"Currently not functional. Routing services as placeholders."
   },
   {
     title: "Artificial Intelligence",
