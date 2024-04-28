@@ -43,7 +43,6 @@ button:-moz-focusring,[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[
   flex-direction: row;
   align-items: center;
   margin-top: 10px;
-  width: 300px;
 }
 .input-group select {
   flex-grow: 1; 
@@ -62,6 +61,7 @@ button:-moz-focusring,[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[
 .no-spinners {
   margin: 5px;
   appearance: textfield;
+  width: 300px !important;
 }
 /* For Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
