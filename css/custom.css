@@ -62,7 +62,18 @@ button:-moz-focusring,[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[
   margin: 5px;
   appearance: textfield;
 }
+/* For Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
+/* For Firefox and standard usage */
+input[type=number] {
+  -moz-appearance: textfield; /* Older versions of Firefox */
+  appearance: textfield; /* Standard property for modern browsers */
+}
 .main-title, .sub-title {
   position: relative; 
   font-weight:400;}
