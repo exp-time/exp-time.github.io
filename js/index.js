@@ -140,8 +140,7 @@ document.addEventListener('DOMContentLoaded', function() { // pagination + other
   /* REMOVE */
 });
 
-function getCurrentItemsPerPage(width) {  // mod and max.. Every 550px or so we need a new column. until then we need padding..
-  //return Math.min(6, ); Math.round()
+function getCurrentItemsPerPage(width) {
   if (width < 1100) {return 2}
   else if (width >= 1100 && width < 1650) {return 4} 
   else {return 6}
