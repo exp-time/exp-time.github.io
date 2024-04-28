@@ -74,9 +74,8 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
   else if (content === 0){ card.appendChild(createWebTerminal()) }
   else if (content === 1){ card.appendChild(createEditableTable()) }
   else if (content === 2){ card.appendChild(createMap()) }
-  else if (content === 3){ card.appendChild(createMapData())
-    
-  } else { new Elem({tag: 'p', attrs: {className: 'font-large'}, parent: card})} 
+  else if (content === 3){ card.appendChild(createMapData())}
+  else { new Elem({tag: 'p', attrs: {className: 'font-large'}, parent: card})} 
 
   createModal(info_id, info_Title, info_Content);
 }
