@@ -58,9 +58,7 @@ function createModal(id, title, content, footerContent) {
       {tag: 'div', attrs: {className: 'w3-padding'}, children:[
         {tag: 'p', attrs: {className:'font-large',textContent:content}}]}]}).elem;
 
-  if (footerContent && footerContent != ""){
-    modalContent.appendChild(createFooter(footerContent)); 
-  }
+  if (footerContent && footerContent != ""){ modalContent.appendChild(createFooter(footerContent)) }
   makeDocumentModal(id, modalContent)
 }
 
@@ -89,18 +87,13 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
 }
 
 document.addEventListener('DOMContentLoaded', function() { // pagination + others
-
   modalData.forEach(function(modal) {createModal(modal.id, modal.title, modal.content, modal.footerContent)});
-
   sideBarData.forEach(function(item) {createSidebar(item.id, item.title, item.content)}); 
-
   cardData.forEach(function(card, index) { createCard(`content-area${index + 1}`, `info${index + 1}`,
     card.title, card.iconClass, card.content, card.info_Title, card.info_Content, card.info_footerContent)});
-
   clickablesData.forEach(function(item) {createTooltipIcon(item.link, item.content, item.icon, item.container)}); 
 
   initializeMap()
-
   let container = document.querySelector('.content')
   const sections = container.querySelectorAll('.w3-third');
   let currentPage = 0;
