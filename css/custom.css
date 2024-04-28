@@ -43,6 +43,7 @@ button:-moz-focusring,[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[
   flex-direction: row;
   align-items: center;
   margin-top: 10px;
+  width: 300px;
 }
 .input-group select {
   flex-grow: 1; 
@@ -52,7 +53,6 @@ button:-moz-focusring,[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[
   flex-basis: 30%;
   text-align: right;
   margin-right: 10px;
-  width: 300px;
 }
 
 .input-group input {
