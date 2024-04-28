@@ -30,11 +30,17 @@ button:-moz-focusring,[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding: 5px;
+  margin: 5px;
 }
+
 .no-spinners {
   padding: 5px;
   appearance: textfield;
+}
+input.no-spinners::-webkit-outer-spin-button,
+input.no-spinners::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .main-title, .sub-title {
