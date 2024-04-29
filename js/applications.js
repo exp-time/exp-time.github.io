@@ -168,7 +168,8 @@ function updateDisplay(id, map) {
     new Elem({tag: 'p', parent: mapDataContainer, attrs:{textContent: coordText}}).elem;
   });
   if (id === "map-two" && markers[id].length >= 2) { 
-    var firstpolyline = new L.Polyline(markers[id], {
+    var latLngs = markers[id].map(marker => marker.getLatLng());
+    var firstpolyline = new L.Polyline(latLngs, {
       color: 'red',      // Line color
       weight: 4,         // Line weight in pixels
       opacity: 0.5,      // Line opacity
