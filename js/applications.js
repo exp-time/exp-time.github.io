@@ -183,6 +183,7 @@ function updateDisplay(id, map) {
     }); 
     polyline.addTo(map);
     polylines[id] = polyline;
+    updateIconsOnMap(id, map)
   }
 }
 
