@@ -151,7 +151,7 @@ function initializeMap(id) {
     map.on('click', function(e) { addMarker(e.latlng, map, id)}); // Event listener for map clicks
   }else {console.error('Leaflet library is not loaded.')}
 }
-// + id
+
 function addMarker(latlng, map, id) {
   if (markers[id].length >= 2) { map.removeLayer(markers[id].shift()) } // Remove the oldest marker from the array
   markers[id].push(L.marker(latlng).addTo(map));                    // Add the new marker to the array
@@ -167,4 +167,13 @@ function updateDisplay(id) {
     const coordText = `Marker ${index + 1}: Lat: ${coords.lat.toFixed(2)}, Lon: ${coords.lng.toFixed(2)}`;
     new Elem({tag: 'p', parent: mapDataContainer, attrs:{textContent: coordText}}).elem;
   });
+  if (id === "map-two") { 
+    var firstpolyline = new L.Polyline(pointList, {
+      color: 'red',      // Line color
+      weight: 4,         // Line weight in pixels
+      opacity: 0.5,      // Line opacity
+      smoothFactor: 1    // How smoothly the line curves
+    }); 
+    firstpolyline.addTo(map);
+  }
 }
