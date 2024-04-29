@@ -144,7 +144,7 @@ let markers = {};
 function initializeMap(id) {
   markers[id] = []
   if (typeof L !== 'undefined') {
-    const map = L.map(id).setView([52.52, 13.40], 6); // Sets view to coordinates (latitude, longitude) and a zoom level
+    const map = L.map(id).setView([52.52, 13.40], 5); // Sets view to coordinates (latitude, longitude) and a zoom level
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { // Add OpenStreetMap tiles to the map
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
@@ -154,7 +154,7 @@ function initializeMap(id) {
 
 function addMarker(latlng, map, id, markers) {
   if (markers.length >= 2) { map.removeLayer(markers.shift()) } // Remove the oldest marker from the array
-  markers.push(L.marker(latlng).addTo(map)); // Add the new marker to the array
+  markers.push(L.marker(latlng).addTo(map));                    // Add the new marker to the array
   if (id === "map-one") { updateDisplay('mapDataContainer', markers) }
   else { updateDisplay('mapWeatherDataContainer', markers) }
 }
