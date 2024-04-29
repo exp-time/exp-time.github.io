@@ -344,7 +344,7 @@ input[type=number] {
 .w3-tooltip:hover .w3-text{display:block;}
 .w3-sidebar{width: 35%; top:5%;}
 
-.w3-button{
+.w3-button,.w3-button-two{
   border:none;
   display:inline-block;
   padding:inherit;

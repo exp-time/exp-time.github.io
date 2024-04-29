@@ -23,13 +23,13 @@ function headerWithClose(id, title, style) {
 function createTooltipIcon(link, title, icon, target) {
   new Elem({tag: 'div', attrs:{className: 'w3-tooltip'},children: [
       {tag: 'span', attrs: {className: 'w3-text w3-theme-light',textContent: title}},
-      {tag: 'div', attrs:{className: 'w3-button font-xxxlarge fa ' + icon,
+      {tag: 'div', attrs:{className: 'w3-button-two font-xxxlarge fa ' + icon,
         onclick: link ? () => openInNewTab(link) : () => window.scrollTo({top: 0, behavior: 'smooth'})}}], 
     parent: document.querySelector(target)});
 }
 
 function createSidebar(id, title, content, buttonIcon, target) { // Sidebar popups
-  const sideButton = new Elem({tag: 'div', attrs: {className: 'font-xxxlarge w3-button fa ' + buttonIcon, 
+  const sideButton = new Elem({tag: 'div', attrs: {className: 'font-xxxlarge w3-button-two fa ' + buttonIcon, 
     onclick: () => info_open(id)},parent: document.querySelector(target)})
   const sidebar = new Elem({tag: 'div', attrs: {className: 'w3-sidebar w3-card w3-animate-left w3-center'},
     children: [ headerWithClose(id, title, "sidebar-header font-large") ]}).elem;
