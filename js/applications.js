@@ -156,10 +156,10 @@ function addMarker(latlng, map, id) {
   if (markers[id].length >= 2) { map.removeLayer(markers[id].shift()) } // Remove the oldest marker from the array
   markers[id].push(L.marker(latlng).addTo(map));                    // Add the new marker to the array
   if (id === "map-one") { updateDisplay(id) }
-  else { updateDisplay(id) }
+  else { updateDisplay(id, map) }
 }
 
-function updateDisplay(id) {
+function updateDisplay(id, map) {
   const mapDataContainer = document.getElementById("DataContainer" + id);
   mapDataContainer.innerHTML = ''; // Clear existing data
   markers[id].forEach((marker, index) => {// Iterate through all markers and create a paragraph for each
