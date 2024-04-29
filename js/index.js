@@ -83,7 +83,8 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
   else if (content === 1){ card.appendChild(createEditableTable()) }
   else if (content === 2){ card.appendChild(createMap('map-one')) }
   else if (content === 3){ card.appendChild(createMapData()) }
-  else if (content === 4){ card.appendChild(createMapData()) }
+  else if (content === 4){ card.appendChild(createMap('map-two'))}
+  else if (content === 5){ card.appendChild(createMapData()) }
   else { new Elem({tag: 'p', attrs: {className: 'font-large'}, parent: card}) } 
   createModal(info_id, info_Title, info_Content, info_footerContent);
 }
@@ -96,6 +97,7 @@ document.addEventListener('DOMContentLoaded', function() { // pagination + other
   clickablesData.forEach(function(item) {createTooltipIcon(item.link, item.content, item.icon, item.container)}); 
   
   initializeMap('map-one')
+  initializeMap('map-two')
 
   let container = document.querySelector('.content')
   const sections = container.querySelectorAll('.w3-third');
