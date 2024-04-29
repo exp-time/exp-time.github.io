@@ -216,10 +216,8 @@ function updateIconsOnMap(id, map) {
   }
 
   const lineLength = L.GeometryUtil.length(polylines[id]); // Length in meters
-  const distancePerIcon = speed * 1000 / 3600; // Convert speed to m/s and calculate distance per icon
-  const numberOfIcons = Math.floor(lineLength / distancePerIcon);
-  console.log(lineLength)
-  console.log(speed)
+  const numberOfIcons = Math.floor((lineLength / 1000) / speed);
+  console.log(numberOfIcons)
   // Clear previous icons
   if (iconMarkers) {
     iconMarkers.forEach(marker => map.removeLayer(marker));
