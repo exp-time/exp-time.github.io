@@ -159,6 +159,8 @@ function addMarker(latlng, map, id) {
   else { updateDisplay(id, map) }
 }
 
+let polylines = {};
+
 function updateDisplay(id, map) {
   const mapDataContainer = document.getElementById("DataContainer" + id);
   mapDataContainer.innerHTML = ''; // Clear existing data
@@ -167,6 +169,11 @@ function updateDisplay(id, map) {
     const coordText = `Marker ${index + 1}: Lat: ${coords.lat.toFixed(2)}, Lon: ${coords.lng.toFixed(2)}`;
     new Elem({tag: 'p', parent: mapDataContainer, attrs:{textContent: coordText}}).elem;
   });
+  if (polylines[id]) {
+    map.removeLayer(polylines[id]);
+    polylines[id] = null;
+  }
+  
   if (id === "map-two" && markers[id].length >= 2) { 
     var latLngs = markers[id].map(marker => marker.getLatLng());
     var firstpolyline = new L.Polyline(latLngs, {
