@@ -81,7 +81,7 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
   if (isString(content)) { new Elem({tag: 'p', attrs: {className: 'font-large',textContent: content}, parent: card}) }
   else if (content === 0){ card.appendChild(createWebTerminal()) }
   else if (content === 1){ card.appendChild(createEditableTable()) }
-  else if (content === 2){ card.appendChild(createMap()) }
+  else if (content === 2){ card.appendChild(createMap('map-one')) }
   else if (content === 3){ card.appendChild(createMapData()) }
   else if (content === 4){ card.appendChild(createMapData()) }
   else { new Elem({tag: 'p', attrs: {className: 'font-large'}, parent: card}) } 
@@ -94,7 +94,8 @@ document.addEventListener('DOMContentLoaded', function() { // pagination + other
   cardData.forEach(function(card, index) { createCard(`content-area${index + 1}`, `info${index + 1}`,
     card.title, card.iconClass, card.content, card.info_Title, card.info_Content, card.info_footerContent)});
   clickablesData.forEach(function(item) {createTooltipIcon(item.link, item.content, item.icon, item.container)}); 
-  initializeMap()
+  
+  initializeMap('map-one')
 
   let container = document.querySelector('.content')
   const sections = container.querySelectorAll('.w3-third');

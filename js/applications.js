@@ -86,8 +86,8 @@ function saveCellData(inputElement) {
 
 
 // MAP 
-function createMap() {
-  return new Elem({tag: 'div', attrs:{id: 'map',className: 'map'}}).elem;
+function createMap(id) {
+  return new Elem({tag: 'div', attrs:{id: id,className: 'map'}}).elem;
 }
 
 function createMapData() {
@@ -131,17 +131,13 @@ function createMapData() {
 
 let markers = [];
 
-function initializeMap() {
+function initializeMap(id) {
   if (typeof L !== 'undefined') {
-    const map = L.map('map').setView([52.52, 13.40], 6); // Sets view to coordinates (latitude, longitude) and a zoom level
+    const map = L.map(id).setView([52.52, 13.40], 6); // Sets view to coordinates (latitude, longitude) and a zoom level
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { // Add OpenStreetMap tiles to the map
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
-    
-    map.on('click', function(e) { // Event listener for map clicks
-      addMarker(e.latlng, map);
-    });
-
+    map.on('click', function(e) { addMarker(e.latlng, map)}); // Event listener for map clicks
   }else {console.error('Leaflet library is not loaded.')}
 }
 
