@@ -185,3 +185,58 @@ function updateDisplay(id, map) {
     polylines[id] = polyline;
   }
 }
+
+let iconsList = [];
+
+function fetchIcons() {
+  fetch('/list_icons.php')
+    .then(response => response.json())
+    .then(data => {
+      iconsList = data;
+      console.log('Icons loaded:', iconsList);
+    })
+    .catch(error => console.error('Error loading icons:', error));
+}
+
+function updateIconsOnMap(id, map) {
+  const speedInput = document.getElementById('vehicleSpeed');
+  const speed = parseInt(speedInput.value, 10); // Speed in km/h
+  if (isNaN(speed) || speed <= 0) {
+    console.error('Invalid speed value.');
+    return;
+  }
+
+  if (!iconsList.length) {
+    console.error('No icons available.');
+    return;
+  }
+
+  if (!polylines[id]) {
+    console.error('No polyline found for this map.');
+    return;
+  }
+
+  const lineLength = L.GeometryUtil.length(polylines[id]); // Length in meters
+  const numberOfIcons = Math.floor(lineLength * 1000 / distancePerIcon);
+
+  // Clear previous icons
+  if (window.iconMarkers) {
+    window.iconMarkers.forEach(marker => map.removeLayer(marker));
+    window.iconMarkers = [];
+  }
+
+  for (let i = 1; i <= numberOfIcons; i++) {
+    const position = i * (lineLength / numberOfIcons);
+    const point = L.GeometryUtil.interpolateOnLine(map, polylines[id].getLatLngs(), position / lineLength);
+    const iconIndex = Math.floor(Math.random() * iconsList.length);
+    const iconUrl = `img/weatherIcons/${iconsList[iconIndex]}`;
+    const icon = L.icon({
+      iconUrl: iconUrl,
+      iconSize: [30, 30]
+    });
+    const marker = L.marker(point.latLng, {icon: icon}).addTo(map);
+    window.iconMarkers.push(marker);
+  }
+}
+
+document.addEventListener('DOMContentLoaded', fetchIcons); // Load icons on page load
