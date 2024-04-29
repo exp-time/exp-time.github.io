@@ -225,10 +225,10 @@ function updateIconsOnMap(id, map) {
 
   for (let i = 1; i <= numberOfIcons; i++) {
     const position = i * (lineLength / numberOfIcons);
-    const point = L.GeometryUtil.interpolateOnLine(map, polylines[id].getLatLngs(), position / lineLength);
+    const point = new L.GeometryUtil.interpolateOnLine(map, polylines[id].getLatLngs(), position / lineLength);
     const iconIndex = Math.floor(Math.random() * iconsList.length);
     const iconUrl = `img/weatherIcons/${iconsList[iconIndex]}`;
-    const icon = L.icon({
+    const icon = new L.icon({
       iconUrl: iconUrl,
       iconSize: [30, 30]
     });
