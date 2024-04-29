@@ -148,7 +148,7 @@ function initializeMap(id) {
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { // Add OpenStreetMap tiles to the map
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
-    map.on('click', function(e) { addMarker(e.latlng, map, markers[id])}); // Event listener for map clicks
+    map.on('click', function(e) { addMarker(e.latlng, map, id, markers[id])}); // Event listener for map clicks
   }else {console.error('Leaflet library is not loaded.')}
 }
 
