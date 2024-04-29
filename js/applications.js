@@ -188,7 +188,7 @@ function updateDisplay(id, map) {
 }
 
 let iconsList = [];
-
+window.iconMarkers = [];
 function fetchIcons() { // Array of icon filenames
   fetch('img/weatherIcons/icons.json')
     .then(response => response.json())
