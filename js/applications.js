@@ -153,10 +153,7 @@ function initializeMap(id) {
 }
 
 function addMarker(latlng, map, id, markers) {
-  if (markers.length >= 2) {
-    const oldestMarker = markers.shift(); // Remove the oldest marker from the array
-    map.removeLayer(oldestMarker); 
-  }
+  if (markers.length >= 2) { map.removeLayer(markers.shift()) } // Remove the oldest marker from the array
   markers.push(L.marker(latlng).addTo(map)); // Add the new marker to the array
   if (id === "map-one") { updateDisplay('mapDataContainer', markers) }
   else { updateDisplay('mapWeatherDataContainer', markers) }
