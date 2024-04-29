@@ -159,12 +159,12 @@ function addMarker(latlng, map, id) {
     }
     const marker = L.marker(latlng).addTo(map);
     markers.push(marker); // Add the new marker to the array
-    updateDisplay(); // Update the display of coordinates
+    updateDisplay('mapDataContainer'); // Update the display of coordinates
   }
 }
 
-function updateDisplay() {
-  const mapDataContainer = document.getElementById('mapDataContainer');
+function updateDisplay(container) {
+  const mapDataContainer = document.getElementById(container);
   mapDataContainer.innerHTML = ''; // Clear existing data
   markers.forEach((marker, index) => {// Iterate through all markers and create a paragraph for each
     const coords = marker.getLatLng(); // Get the latitude and longitude of the marker
