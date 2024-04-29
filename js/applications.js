@@ -199,7 +199,7 @@ function fetchIcons() { // Array of icon filenames
 function updateIconsOnMap(id, map) {
   const speedInput = document.getElementById('vehicleSpeed');
   const speed = parseInt(speedInput.value, 10); // Speed in km/h
-  if (isNaN(speed) || speed <= 0) {
+  if (isNaN(speed) || speed <= 20) {
     console.error('Invalid speed value.');
     return;
   }
