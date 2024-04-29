@@ -140,6 +140,7 @@ function createWeatherMapData(id) {
 }
 
 let markers = {};
+let polylines = {};
 
 function initializeMap(id) {
   markers[id] = []
@@ -159,8 +160,6 @@ function addMarker(latlng, map, id) {
   else { updateDisplay(id, map) }
 }
 
-let polylines = {};
-
 function updateDisplay(id, map) {
   const mapDataContainer = document.getElementById("DataContainer" + id);
   mapDataContainer.innerHTML = ''; // Clear existing data
@@ -176,7 +175,7 @@ function updateDisplay(id, map) {
 
   if (id === "map-two" && markers[id].length >= 2) { 
     var latLngs = markers[id].map(marker => marker.getLatLng());
-    var firstpolyline = new L.Polyline(latLngs, {
+    var polyline = new L.Polyline(latLngs, {
       color: 'red',      // Line color
       weight: 4,         // Line weight in pixels
       opacity: 0.5,      // Line opacity
