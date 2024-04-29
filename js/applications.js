@@ -139,19 +139,20 @@ function createWeatherMapData() {
   ]}).elem;
 }
 
-let markers = [];
+let markers = {};
 
 function initializeMap(id) {
+  markers[id] = []
   if (typeof L !== 'undefined') {
     const map = L.map(id).setView([52.52, 13.40], 6); // Sets view to coordinates (latitude, longitude) and a zoom level
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { // Add OpenStreetMap tiles to the map
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
-    map.on('click', function(e) { addMarker(e.latlng, map, id)}); // Event listener for map clicks
+    map.on('click', function(e) { addMarker(e.latlng, map, markers[id])}); // Event listener for map clicks
   }else {console.error('Leaflet library is not loaded.')}
 }
 
-function addMarker(latlng, map, id) {
+function addMarker(latlng, map, id, markers) {
   if (id === "map-one") {
     if (markers.length >= 2) {
       const oldestMarker = markers.shift(); // Remove the oldest marker from the array
