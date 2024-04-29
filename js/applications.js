@@ -214,7 +214,7 @@ function updateIconsOnMap(id, map) {
     return;
   }
 
-  const lineLength = L.GeometryUtil.length(polylines[id]); // Length in meters
+  const lineLength = new L.GeometryUtil.length(polylines[id]); // Length in meters
   const numberOfIcons = Math.floor(lineLength * 1000 / distancePerIcon);
 
   // Clear previous icons
