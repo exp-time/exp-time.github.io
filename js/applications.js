@@ -232,7 +232,7 @@ function updateIconsOnMap(id, map) {
       iconUrl: iconUrl,
       iconSize: [30, 30]
     });
-    const marker = L.marker(point.latLng, {icon: icon}).addTo(map);
+    const marker = new L.marker(point.latLng, {icon: icon}).addTo(map);
     window.iconMarkers.push(marker);
   }
 }
