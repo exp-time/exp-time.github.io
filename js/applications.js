@@ -153,14 +153,17 @@ function initializeMap(id) {
 }
 
 function addMarker(latlng, map, id, markers) {
+  if (markers.length >= 2) {
+    const oldestMarker = markers.shift(); // Remove the oldest marker from the array
+    map.removeLayer(oldestMarker); // Remove the oldest marker from the map
+  }
+  const marker = L.marker(latlng).addTo(map);
+  markers.push(marker); // Add the new marker to the array
   if (id === "map-one") {
-    if (markers.length >= 2) {
-      const oldestMarker = markers.shift(); // Remove the oldest marker from the array
-      map.removeLayer(oldestMarker); // Remove the oldest marker from the map
-    }
-    const marker = L.marker(latlng).addTo(map);
-    markers.push(marker); // Add the new marker to the array
     updateDisplay('mapDataContainer', markers); // Update the display of coordinates
+  }
+  else {
+    updateDisplay('mapWeatherDataContainer', markers);
   }
 }
 
