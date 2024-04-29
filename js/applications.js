@@ -189,6 +189,7 @@ function updateDisplay(id, map) {
 
 let iconsList = [];
 let iconMarkers = [];
+
 function fetchIcons() { // Array of icon filenames
   fetch('img/weatherIcons/icons.json')
     .then(response => response.json())
@@ -215,8 +216,10 @@ function updateIconsOnMap(id, map) {
   }
 
   const lineLength = L.GeometryUtil.length(polylines[id]); // Length in meters
-  const numberOfIcons = Math.floor(lineLength * 1000 / speed);
-
+  const distancePerIcon = speed * 1000 / 3600; // Convert speed to m/s and calculate distance per icon
+  const numberOfIcons = Math.floor(lineLength / distancePerIcon);
+  console.log(lineLength)
+  console.log(speed)
   // Clear previous icons
   if (iconMarkers) {
     iconMarkers.forEach(marker => map.removeLayer(marker));
