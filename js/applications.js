@@ -191,7 +191,7 @@ let iconsList = [];
 function fetchIcons() { // Array of icon filenames
   fetch('img/weatherIcons/icons.json')
     .then(response => response.json())
-      .then(icons => {console.log(icons) })
+      .then(icons => {iconsList = icons; })
         .catch(error => console.error('Error loading icons:', error));
 }
 
