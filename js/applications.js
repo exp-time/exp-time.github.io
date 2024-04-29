@@ -164,9 +164,7 @@ function updateDisplay(container, markers) {
   mapDataContainer.innerHTML = ''; // Clear existing data
   markers.forEach((marker, index) => {// Iterate through all markers and create a paragraph for each
     const coords = marker.getLatLng(); // Get the latitude and longitude of the marker
-    console.log(coords)
-    const p = document.createElement('p'); // Create a new paragraph element
-    p.textContent = `Marker ${index + 1}: Lat: ${coords.lat.toFixed(2)}, Lon: ${coords.lng.toFixed(2)}`; // Set the text content of the paragraph
-    mapDataContainer.appendChild(p); // Append the paragraph to the container
+    const coordText = `Marker ${index + 1}: Lat: ${coords.lat.toFixed(2)}, Lon: ${coords.lng.toFixed(2)}`;
+    new Elem({tag: 'p', parent: mapDataContainer, attrs:{textContent: coordText}}).elem;
   });
 }
