@@ -84,7 +84,6 @@ function saveCellData(inputElement) {
   // Additional logic to save or process new cell data
 }
 
-
 // MAP 
 function createMap(id) {
   return new Elem({tag: 'div', attrs:{id: id,className: 'map'}}).elem;
@@ -217,7 +216,7 @@ function updateIconsOnMap(id, map) {
 
   const lineLength = L.GeometryUtil.length(polylines[id]); // Length in meters
   const numberOfIcons = Math.floor((lineLength / 1000) / speed);
-  console.log(numberOfIcons)
+
   // Clear previous icons
   if (iconMarkers) {
     iconMarkers.forEach(marker => map.removeLayer(marker));
