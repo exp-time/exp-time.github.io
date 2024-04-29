@@ -213,8 +213,8 @@ function updateIconsOnMap(id, map) {
     console.error('No polyline found for this map.');
     return;
   }
-
-  const lineLength = new L.GeometryUtil.length(polylines[id]); // Length in meters
+  console.log(polylines[id])
+  const lineLength = L.GeometryUtil.length(polylines[id]); // Length in meters
   const numberOfIcons = Math.floor(lineLength * 1000 / distancePerIcon);
 
   // Clear previous icons
@@ -225,14 +225,14 @@ function updateIconsOnMap(id, map) {
 
   for (let i = 1; i <= numberOfIcons; i++) {
     const position = i * (lineLength / numberOfIcons);
-    const point = new L.GeometryUtil.interpolateOnLine(map, polylines[id].getLatLngs(), position / lineLength);
+    const point = L.GeometryUtil.interpolateOnLine(map, polylines[id].getLatLngs(), position / lineLength);
     const iconIndex = Math.floor(Math.random() * iconsList.length);
     const iconUrl = `img/weatherIcons/${iconsList[iconIndex]}`;
-    const icon = new L.icon({
+    const icon = L.icon({
       iconUrl: iconUrl,
       iconSize: [30, 30]
     });
-    const marker = new L.marker(point.latLng, {icon: icon}).addTo(map);
+    const marker = L.marker(point.latLng, {icon: icon}).addTo(map);
     window.iconMarkers.push(marker);
   }
 }
