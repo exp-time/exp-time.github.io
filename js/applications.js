@@ -188,7 +188,7 @@ function updateDisplay(id, map) {
 }
 
 let iconsList = [];
-window.iconMarkers = [];
+let iconMarkers = [];
 function fetchIcons() { // Array of icon filenames
   fetch('img/weatherIcons/icons.json')
     .then(response => response.json())
@@ -218,9 +218,9 @@ function updateIconsOnMap(id, map) {
   const numberOfIcons = Math.floor(lineLength * 1000 / speed);
 
   // Clear previous icons
-  if (window.iconMarkers) {
-    window.iconMarkers.forEach(marker => map.removeLayer(marker));
-    window.iconMarkers = [];
+  if (iconMarkers) {
+    iconMarkers.forEach(marker => map.removeLayer(marker));
+    iconMarkers = [];
   }
 
   for (let i = 1; i <= numberOfIcons; i++) {
@@ -233,7 +233,7 @@ function updateIconsOnMap(id, map) {
       iconSize: [30, 30]
     });
     const marker = L.marker(point.latLng, {icon: icon}).addTo(map);
-    window.iconMarkers.push(marker);
+    iconMarkers.push(marker);
   }
 }
 
