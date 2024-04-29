@@ -215,7 +215,7 @@ function updateIconsOnMap(id, map) {
   }
 
   const lineLength = L.GeometryUtil.length(polylines[id]); // Length in meters
-  const numberOfIcons = Math.floor(lineLength * 1000 / distancePerIcon);
+  const numberOfIcons = Math.floor(lineLength * 1000 / speed);
 
   // Clear previous icons
   if (window.iconMarkers) {
