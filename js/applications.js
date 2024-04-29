@@ -155,16 +155,11 @@ function initializeMap(id) {
 function addMarker(latlng, map, id, markers) {
   if (markers.length >= 2) {
     const oldestMarker = markers.shift(); // Remove the oldest marker from the array
-    map.removeLayer(oldestMarker); // Remove the oldest marker from the map
+    map.removeLayer(oldestMarker); 
   }
-  const marker = L.marker(latlng).addTo(map);
-  markers.push(marker); // Add the new marker to the array
-  if (id === "map-one") {
-    updateDisplay('mapDataContainer', markers); // Update the display of coordinates
-  }
-  else {
-    updateDisplay('mapWeatherDataContainer', markers);
-  }
+  markers.push(L.marker(latlng).addTo(map)); // Add the new marker to the array
+  if (id === "map-one") { updateDisplay('mapDataContainer', markers) }
+  else { updateDisplay('mapWeatherDataContainer', markers) }
 }
 
 function updateDisplay(container, markers) {
