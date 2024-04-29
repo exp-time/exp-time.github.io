@@ -173,7 +173,7 @@ function updateDisplay(id, map) {
     map.removeLayer(polylines[id]);
     polylines[id] = null;
   }
-  
+
   if (id === "map-two" && markers[id].length >= 2) { 
     var latLngs = markers[id].map(marker => marker.getLatLng());
     var firstpolyline = new L.Polyline(latLngs, {
@@ -183,5 +183,6 @@ function updateDisplay(id, map) {
       smoothFactor: 1    // How smoothly the line curves
     }); 
     firstpolyline.addTo(map);
+    polylines[id] = polyline;
   }
 }
