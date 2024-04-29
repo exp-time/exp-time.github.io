@@ -129,6 +129,16 @@ function createMapData() {
   ]}).elem;
 }
 
+function createWeatherMapData() {
+  return new Elem({tag: 'div',attrs: {className: 'map-data-listing'},children: [
+    {tag: 'div', attrs: {className: 'input-group'}, children: [
+      {tag: 'label', attrs: {for: 'vehicleHeight', className: 'font-large', textContent: 'Speed (km/h):'}},
+      {tag: 'input', attrs: {type: 'number', id: 'vehicleSpeed', name: 'Speed', className: 'no-spinners', placeholder: 'Enter Speed'}}
+    ]},
+    {tag: 'div', attrs: {id: "mapWeatherDataContainer", className: 'w3-padding'}}
+  ]}).elem;
+}
+
 let markers = [];
 
 function initializeMap(id) {
@@ -137,18 +147,20 @@ function initializeMap(id) {
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { // Add OpenStreetMap tiles to the map
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
-    map.on('click', function(e) { addMarker(e.latlng, map)}); // Event listener for map clicks
+    map.on('click', function(e) { addMarker(e.latlng, map, id)}); // Event listener for map clicks
   }else {console.error('Leaflet library is not loaded.')}
 }
 
-function addMarker(latlng, map) {
-  if (markers.length >= 2) {
-    const oldestMarker = markers.shift(); // Remove the oldest marker from the array
-    map.removeLayer(oldestMarker); // Remove the oldest marker from the map
+function addMarker(latlng, map, id) {
+  if (id === "map-one") {
+    if (markers.length >= 2) {
+      const oldestMarker = markers.shift(); // Remove the oldest marker from the array
+      map.removeLayer(oldestMarker); // Remove the oldest marker from the map
+    }
+    const marker = L.marker(latlng).addTo(map);
+    markers.push(marker); // Add the new marker to the array
+    updateDisplay(); // Update the display of coordinates
   }
-  const marker = L.marker(latlng).addTo(map);
-  markers.push(marker); // Add the new marker to the array
-  updateDisplay(); // Update the display of coordinates
 }
 
 function updateDisplay() {
