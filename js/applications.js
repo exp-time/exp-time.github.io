@@ -181,7 +181,7 @@ function updateDisplay(id, map) {
       opacity: 0.5,      // Line opacity
       smoothFactor: 1    // How smoothly the line curves
     }); 
-    firstpolyline.addTo(map);
+    polyline.addTo(map);
     polylines[id] = polyline;
   }
 }
