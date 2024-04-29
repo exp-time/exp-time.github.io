@@ -358,6 +358,8 @@ input[type=number] {
 
 .w3-button:hover{color:#000!important;background-color:#ccc!important}
 
+.w3-button-two:hover{color:#616161!important}
+
 .w3-button,.title,.user-select-none,.pagination,.modal-header,.sidebar-header,.container-title{
   -webkit-touch-callout:none;
   -webkit-user-select:none;
