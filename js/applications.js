@@ -90,7 +90,7 @@ function createMap(id) {
   return new Elem({tag: 'div', attrs:{id: id,className: 'map'}}).elem;
 }
 
-function createMapData() {
+function createMapData(id) {
   return new Elem({tag: 'div',attrs: {className: 'map-data-listing'},children: [
     {tag: 'div', attrs: {className: 'input-group'}, children: [
       {tag: 'label', attrs: {for: 'routingType', className: 'font-large', textContent: 'Routing service:'}},
@@ -125,17 +125,17 @@ function createMapData() {
       {tag: 'label', attrs: {for: 'vehicleHeight', className: 'font-large', textContent: 'Height (m):'}},
       {tag: 'input', attrs: {type: 'number', id: 'vehicleHeight', name: 'height', className: 'no-spinners', placeholder: 'Enter height'}}
     ]},
-    {tag: 'div', attrs: {id: "mapDataContainer", className: 'w3-padding'}}
+    {tag: 'div', attrs: {id: "DataContainer" + id, className: 'w3-padding'}}
   ]}).elem;
 }
 
-function createWeatherMapData() {
+function createWeatherMapData(id) {
   return new Elem({tag: 'div',attrs: {className: 'map-data-listing'},children: [
     {tag: 'div', attrs: {className: 'input-group'}, children: [
       {tag: 'label', attrs: {for: 'vehicleHeight', className: 'font-large', textContent: 'Speed (km/h):'}},
       {tag: 'input', attrs: {type: 'number', id: 'vehicleSpeed', name: 'Speed', className: 'no-spinners', placeholder: 'Enter Speed'}}
     ]},
-    {tag: 'div', attrs: {id: "mapWeatherDataContainer", className: 'w3-padding'}}
+    {tag: 'div', attrs: {id: "DataContainer" + id, className: 'w3-padding'}}
   ]}).elem;
 }
 
@@ -148,21 +148,21 @@ function initializeMap(id) {
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { // Add OpenStreetMap tiles to the map
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
-    map.on('click', function(e) { addMarker(e.latlng, map, id, markers[id])}); // Event listener for map clicks
+    map.on('click', function(e) { addMarker(e.latlng, map, id)}); // Event listener for map clicks
   }else {console.error('Leaflet library is not loaded.')}
 }
-
-function addMarker(latlng, map, id, markers) {
-  if (markers.length >= 2) { map.removeLayer(markers.shift()) } // Remove the oldest marker from the array
-  markers.push(L.marker(latlng).addTo(map));                    // Add the new marker to the array
-  if (id === "map-one") { updateDisplay('mapDataContainer', markers) }
-  else { updateDisplay('mapWeatherDataContainer', markers) }
+// + id
+function addMarker(latlng, map, id) {
+  if (markers[id].length >= 2) { map.removeLayer(markers[id].shift()) } // Remove the oldest marker from the array
+  markers[id].push(L.marker(latlng).addTo(map));                    // Add the new marker to the array
+  if (id === "map-one") { updateDisplay(id) }
+  else { updateDisplay(id) }
 }
 
-function updateDisplay(container, markers) {
-  const mapDataContainer = document.getElementById(container);
+function updateDisplay(id) {
+  const mapDataContainer = document.getElementById("DataContainer" + id);
   mapDataContainer.innerHTML = ''; // Clear existing data
-  markers.forEach((marker, index) => {// Iterate through all markers and create a paragraph for each
+  markers[id].forEach((marker, index) => {// Iterate through all markers and create a paragraph for each
     const coords = marker.getLatLng(); // Get the latitude and longitude of the marker
     const coordText = `Marker ${index + 1}: Lat: ${coords.lat.toFixed(2)}, Lon: ${coords.lng.toFixed(2)}`;
     new Elem({tag: 'p', parent: mapDataContainer, attrs:{textContent: coordText}}).elem;
