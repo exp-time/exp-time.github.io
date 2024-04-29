@@ -167,8 +167,8 @@ function updateDisplay(id) {
     const coordText = `Marker ${index + 1}: Lat: ${coords.lat.toFixed(2)}, Lon: ${coords.lng.toFixed(2)}`;
     new Elem({tag: 'p', parent: mapDataContainer, attrs:{textContent: coordText}}).elem;
   });
-  if (id === "map-two") { 
-    var firstpolyline = new L.Polyline(pointList, {
+  if (id === "map-two" && markers[id].length >= 2) { 
+    var firstpolyline = new L.Polyline(markers[id], {
       color: 'red',      // Line color
       weight: 4,         // Line weight in pixels
       opacity: 0.5,      // Line opacity
