@@ -188,14 +188,11 @@ function updateDisplay(id, map) {
 
 let iconsList = [];
 
-function fetchIcons() {
-  fetch('/list_icons.php')
+function fetchIcons() { // Array of icon filenames
+  fetch('img/weatherIcons/icons.json')
     .then(response => response.json())
-    .then(data => {
-      iconsList = data;
-      console.log('Icons loaded:', iconsList);
-    })
-    .catch(error => console.error('Error loading icons:', error));
+      .then(icons => {console.log(icons) })
+        .catch(error => console.error('Error loading icons:', error));
 }
 
 function updateIconsOnMap(id, map) {
@@ -239,4 +236,4 @@ function updateIconsOnMap(id, map) {
   }
 }
 
-document.addEventListener('DOMContentLoaded', fetchIcons); // Load icons on page load
+document.addEventListener('DOMContentLoaded', fetchIcons()); // Load icons on page load
