@@ -138,7 +138,7 @@ const cardData = [
     info_footerContent: "",
   },
   {
-    title: "Weather (Demo, no API)",
+    title: "Weather: Enter Speed! (Demo, no API)",
     iconClass: "",
     content: 5,
     info_Title: "Weather on a line", 
