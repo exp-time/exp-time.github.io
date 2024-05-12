@@ -162,6 +162,8 @@ function initializeMap(id, maxCount) {
   }else {console.error('Leaflet library is not loaded.')}
 }
 
+// marker color https://stackoverflow.com/questions/23567203/leaflet-changing-marker-color
+
 function addMarker(latlng, map, id, maxCount) {
   if (markers[id].length >= maxCount) { map.removeLayer(markers[id].shift()) } // Remove the oldest marker from the array
   markers[id].push(L.marker(latlng).addTo(map));                        // Add the new marker to the array
