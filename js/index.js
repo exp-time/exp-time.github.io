@@ -96,8 +96,8 @@ document.addEventListener('DOMContentLoaded', function() { // pagination + other
     card.title, card.iconClass, card.content, card.info_Title, card.info_Content, card.info_footerContent)});
   clickablesData.forEach(function(item) {createTooltipIcon(item.link, item.content, item.icon, item.container)}); 
   
-  initializeMap('map-one')
-  initializeMap('map-two')
+  initializeMap('map-one', 6)
+  initializeMap('map-two', 2)
 
   let container = document.querySelector('.content')
   const sections = container.querySelectorAll('.w3-third');

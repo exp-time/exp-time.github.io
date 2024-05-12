@@ -151,20 +151,20 @@ function createWeatherMapData(id) {
 let markers = {};
 let polylines = {};
 
-function initializeMap(id) {
+function initializeMap(id, maxCount) {
   markers[id] = []
   if (typeof L !== 'undefined') {
     const map = L.map(id).setView([52.52, 13.40], 5); // Sets view to coordinates (latitude, longitude) and a zoom level
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { // Add OpenStreetMap tiles to the map
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
-    map.on('click', function(e) { addMarker(e.latlng, map, id)}); // Event listener for map clicks
+    map.on('click', function(e) { addMarker(e.latlng, map, id, maxCount)}); // Event listener for map clicks
   }else {console.error('Leaflet library is not loaded.')}
 }
 
-function addMarker(latlng, map, id) {
-  if (markers[id].length >= 2) { map.removeLayer(markers[id].shift()) } // Remove the oldest marker from the array
-  markers[id].push(L.marker(latlng).addTo(map));                    // Add the new marker to the array
+function addMarker(latlng, map, id, maxCount) {
+  if (markers[id].length >= maxCount) { map.removeLayer(markers[id].shift()) } // Remove the oldest marker from the array
+  markers[id].push(L.marker(latlng).addTo(map));                        // Add the new marker to the array
   if (id === "map-one") { updateDisplay(id) }
   else { updateDisplay(id, map) }
 }
