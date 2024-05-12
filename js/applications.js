@@ -105,7 +105,17 @@ function createMapData(id) {
       {tag: 'label', attrs: {for: 'vehicleType', className: 'font-large', textContent: 'Vehicle:'}},
       {tag: 'select', attrs: {name: 'vehicle', id: 'vehicleType', className: 'no-spinners pointer-cursor'}, children: [
           {tag: 'option', attrs: {value: 'car', textContent: 'Car'}},
-          {tag: 'option', attrs: {value: 'truck', textContent: 'Truck'}}
+          {tag: 'option', attrs: {value: 'truck', textContent: 'Truck'}},
+          {tag: 'option', attrs: {value: 'bicycle', textContent: 'Bicycle'}},
+          {tag: 'option', attrs: {value: 'walk', textContent: 'Walk'}}
+      ]}
+    ]},
+    {tag: 'div', attrs: {className: 'input-group'}, children: [
+      {tag: 'label', attrs: {for: 'optimizationType', className: 'font-large', textContent: 'Optimization:'}},
+      {tag: 'select', attrs: {name: 'optimization', id: 'optimizationType', className: 'no-spinners pointer-cursor'}, children: [
+          {tag: 'option', attrs: {value: 'cost', textContent: 'Cost'}},
+          {tag: 'option', attrs: {value: 'shortest', textContent: 'Shortest'}},
+          {tag: 'option', attrs: {value: 'emissions', textContent: 'Emissions'}}
       ]}
     ]},
     {tag: 'div', attrs: {className: 'input-group'}, children: [
