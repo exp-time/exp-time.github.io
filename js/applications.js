@@ -278,7 +278,7 @@ function updateIconsOnMap(id, map) {
     iconMarkers.forEach(marker => map.removeLayer(marker));
     iconMarkers = [];
   }
-
+  console.log(iconsList)
   for (let i = 1; i <= numberOfIcons; i++) {
     const position = i * (lineLength / numberOfIcons);
     const point = L.GeometryUtil.interpolateOnLine(map, polylines[id].getLatLngs(), position / lineLength);
