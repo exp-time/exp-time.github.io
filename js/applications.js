@@ -300,7 +300,8 @@ function updateIconsOnMap(id, map) {
 }
 
 function fetchWeatherData(latlng, apiKey) {
-  const url = `https://api.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${latlng.lat},${latlng.lng}?unitGroup=metric&key=${apiKey}&include=current`;
+  //const url = `https://api.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${latlng.lat},${latlng.lng}?unitGroup=metric&key=${apiKey}&include=current`;
+  const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${latlng.lat},${latlng.lng}?key=${apiKey}`
   const response = fetch(url);
   const data = response.json();
   console.log(data)
