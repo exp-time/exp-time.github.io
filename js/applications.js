@@ -280,14 +280,14 @@ function updateIconsOnMap(id, map) {
     iconMarkers.forEach(marker => map.removeLayer(marker));
     iconMarkers = [];
   }
-  console.log(iconsList)
+  //console.log(iconsList)
   for (let i = 0; i < numberOfIcons; i++) {
     const position = (i + 1) * distancePerIcon / lineLength;
     const point = L.GeometryUtil.interpolateOnLine(map, polyline.getLatLngs(), position);
     if (!point) continue; // Skip if no point is returned
 
     // Fetch weather data for each interpolated point
-    await fetchWeatherData(point.latLng, api_key_w).then(weather => {
+    fetchWeatherData(point.latLng, api_key_w).then(weather => {
       const iconUrl = `img/weatherIcons/${selectIconBasedOnWeather(weather)}`;
       const icon = L.icon({
         iconUrl: iconUrl,
