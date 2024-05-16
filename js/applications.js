@@ -253,7 +253,7 @@ function updateIconsOnMap(id, map) {
   console.log(lineLength)
   const distancePerIcon = speed * 1000 / 3600; // Convert speed from km/h to m/s
   const numberOfIcons = Math.floor(lineLength / distancePerIcon); // Calculate number of icons based on speed
-
+  console.log(numberOfIcons)
   // Clear previous icons
   iconMarkers.forEach(marker => map.removeLayer(marker));
   iconMarkers = [];
