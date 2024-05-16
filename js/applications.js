@@ -167,8 +167,7 @@ function initializeMap(id, maxCount) {
 function addMarker(latlng, map, id, maxCount) {
   if (markers[id].length >= maxCount) { map.removeLayer(markers[id].shift()) } // Remove the oldest marker from the array
   markers[id].push(L.marker(latlng).addTo(map));                        // Add the new marker to the array
-  if (id === "map-one") { updateDisplay(id) }
-  else { updateDisplay(id, map) }
+  updateDisplay(id, map) 
 }
 
 const apiKey = '5b3ce3597851110001cf6248c8bd0ca0e5e947639f269aa502fc6e8a';
@@ -181,10 +180,6 @@ function updateDisplay(id, map) {
     const coordText = `Marker ${index + 1}: Lat: ${coords.lat.toFixed(2)}, Lon: ${coords.lng.toFixed(2)}`;
     new Elem({tag: 'p', parent: mapDataContainer, attrs:{textContent: coordText}}).elem;
   });
-  if (polylines[id]) {
-    map.removeLayer(polylines[id]);
-    polylines[id] = null;
-  }
 
   if (id === "map-two" && markers[id].length >= 2) { 
     const startCoords = [markers[id][0].getLatLng().lat, markers[id][0].getLatLng().lng];
