@@ -252,6 +252,8 @@ function fetchIcons() { // Array of icon filenames
         .catch(error => console.error('Error loading icons:', error));
 }
 
+const api_key_w = FMADJVAQCCA4576T9MQUYE7NG
+
 function updateIconsOnMap(id, map) {
   const speedInput = document.getElementById('vehicleSpeed');
   const speed = parseInt(speedInput.value, 10); // Speed in km/h
@@ -279,17 +281,39 @@ function updateIconsOnMap(id, map) {
     iconMarkers = [];
   }
   console.log(iconsList)
-  for (let i = 1; i <= numberOfIcons; i++) {
-    const position = i * (lineLength / numberOfIcons);
-    const point = L.GeometryUtil.interpolateOnLine(map, polylines[id].getLatLngs(), position / lineLength);
-    const iconIndex = Math.floor(Math.random() * iconsList.length);
-    const iconUrl = `img/weatherIcons/${iconsList[iconIndex]}`;
-    const icon = L.icon({
-      iconUrl: iconUrl,
-      iconSize: [30, 30]
+  for (let i = 0; i < numberOfIcons; i++) {
+    const position = (i + 1) * distancePerIcon / lineLength;
+    const point = L.GeometryUtil.interpolateOnLine(map, polyline.getLatLngs(), position);
+    if (!point) continue; // Skip if no point is returned
+
+    // Fetch weather data for each interpolated point
+    await fetchWeatherData(point.latLng, api_key_w).then(weather => {
+      const iconUrl = `img/weatherIcons/${selectIconBasedOnWeather(weather)}`;
+      const icon = L.icon({
+        iconUrl: iconUrl,
+        iconSize: [30, 30]
+      });
+      const marker = L.marker(point.latLng, {icon: icon}).addTo(map);
+      iconMarkers.push(marker);
     });
-    const marker = L.marker(point.latLng, {icon: icon}).addTo(map);
-    iconMarkers.push(marker);
   }
 }
+
+async function fetchWeatherData(latlng, apiKey) {
+  const url = `https://api.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${latlng.lat},${latlng.lng}?unitGroup=metric&key=${apiKey}&include=current`;
+  const response = await fetch(url);
+  const data = await response.json();
+  console.log(data)
+  return data.currentConditions;
+}
+
+function selectIconBasedOnWeather(weather) {
+  // Determine which icon to use based on weather conditions (simplified)
+  if (weather.temp > 20) {
+    return 'sunny.png';
+  } else {
+    return 'cloudy.png';
+  }
+}
+
 document.addEventListener('DOMContentLoaded', fetchIcons()); // Load icons on page load
