@@ -180,13 +180,13 @@ function updateDisplay(id, map) {
     const coordText = `Marker ${index + 1}: Lat: ${coords.lat.toFixed(2)}, Lon: ${coords.lng.toFixed(2)}`;
     new Elem({tag: 'p', parent: mapDataContainer, attrs:{textContent: coordText}}).elem;
   });
-  
+
   if (id === "map-one" && markers[id].length >= 6) { 
     for (let i = 0; i < markers[id].length; i++) {
       for (let j = i + 1; j < markers[id].length; j++) {
-        const startMarker = markers[id][i];
-        const endMarker = markers[id][j];
-        fetchRouteForPair(startMarker.getLatLng(), endMarker.getLatLng(), map);
+        const startCoords = [markers[id][i].getLatLng().lat, markers[id][i].getLatLng().lng];
+        const endCoords = [markers[id][j].getLatLng().lat, markers[id][j].getLatLng().lng];
+        fetchAndDrawRoute(startCoords, endCoords, apiKey, map)
       }
     }
   }
