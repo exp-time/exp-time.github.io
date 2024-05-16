@@ -195,7 +195,7 @@ function updateDisplay(id, map) {
   }
 }
 
-function fetchAndDrawRoute(startCoords, endCoords, apiKey, map) {
+function fetchAndDrawRoute(startCoords, endCoords, apiKey, map, callback) {
   // Construct the URL for the OpenRouteService API
   const url = new URL('https://api.openrouteservice.org/v2/directions/driving-hgv');
   url.search = new URLSearchParams({
