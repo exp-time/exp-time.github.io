@@ -249,7 +249,11 @@ function updateIconsOnMap(id, map) {
     return;
   }
 
-  const lineLength = L.GeometryUtil.length(window.geojsonLayer); // Length in meters
+  const coordinates = window.geojsonLayer.toGeoJSON().features[0].geometry.coordinates;
+  // Convert the array of coordinates to a polyline to use L.GeometryUtil
+  const latLngs = coordinates.map(coord => L.latLng(coord[1], coord[0])); // convert [lon, lat] to [lat, lon]
+  const polyline = L.polyline(latLngs);
+  const lineLength = L.GeometryUtil.length(polyline); // Get the length in meters
   console.log(lineLength)
   const distancePerIcon = speed * 1000 / 3600; // Convert speed from km/h to m/s
   const numberOfIcons = Math.floor(lineLength / distancePerIcon); // Calculate number of icons based on speed
