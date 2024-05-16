@@ -180,6 +180,16 @@ function updateDisplay(id, map) {
     const coordText = `Marker ${index + 1}: Lat: ${coords.lat.toFixed(2)}, Lon: ${coords.lng.toFixed(2)}`;
     new Elem({tag: 'p', parent: mapDataContainer, attrs:{textContent: coordText}}).elem;
   });
+  
+  if (id === "map-one" && markers[id].length >= 6) { 
+    for (let i = 0; i < markers[id].length; i++) {
+      for (let j = i + 1; j < markers[id].length; j++) {
+        const startMarker = markers[id][i];
+        const endMarker = markers[id][j];
+        fetchRouteForPair(startMarker.getLatLng(), endMarker.getLatLng(), map);
+      }
+    }
+  }
 
   if (id === "map-two" && markers[id].length >= 2) { 
     const startCoords = [markers[id][0].getLatLng().lat, markers[id][0].getLatLng().lng];
@@ -188,6 +198,8 @@ function updateDisplay(id, map) {
       updateIconsOnMap(id, map);
     });
   }
+
+
 }
 
 function fetchAndDrawRoute(startCoords, endCoords, apiKey, map, callback) {
