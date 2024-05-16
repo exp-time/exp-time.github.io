@@ -282,7 +282,7 @@ function updateIconsOnMap(id, map) {
   }
   //console.log(iconsList)
   for (let i = 0; i < numberOfIcons; i++) {
-    const position = (i + 1) * distancePerIcon / lineLength;
+    const position = i  * (lineLength / numberOfIcons);
     const point = L.GeometryUtil.interpolateOnLine(map, polyline.getLatLngs(), position);
     if (!point) continue; // Skip if no point is returned
 
