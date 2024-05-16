@@ -40,7 +40,7 @@ const cardData = [
     info_footerContent: "",
   },
   {
-    title: "Map Data (not functional)",
+    title: "Map Data (OpenRoute Functional)",
     iconClass: "",
     content: 3,
     info_Title: "Routing", 
@@ -138,7 +138,7 @@ const cardData = [
     info_footerContent: "",
   },
   {
-    title: "Weather: Enter Speed! (Demo, no API)",
+    title: "Weather: Enter Speed! (Demo)",
     iconClass: "",
     content: 5,
     info_Title: "Weather on a line", 

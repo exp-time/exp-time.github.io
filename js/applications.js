@@ -284,6 +284,7 @@ function updateIconsOnMap(id, map) {
   for (let i = 0; i < numberOfIcons; i++) {
     const position = i  * (lineLength / numberOfIcons);
     const point = L.GeometryUtil.interpolateOnLine(map, polylines[id].getLatLngs(), position / lineLength);
+    console.log(point)
     if (!point) continue; // Skip if no point is returned
     // Fetch weather data for each interpolated point
     const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${point.latlng.lat},${point.latlng.lng}?key=${apiKey}`
