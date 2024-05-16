@@ -250,6 +250,7 @@ function updateIconsOnMap(id, map) {
   }
 
   const lineLength = L.GeometryUtil.length(window.geojsonLayer); // Length in meters
+  console.log(lineLength)
   const distancePerIcon = speed * 1000 / 3600; // Convert speed from km/h to m/s
   const numberOfIcons = Math.floor(lineLength / distancePerIcon); // Calculate number of icons based on speed
 
