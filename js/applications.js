@@ -302,9 +302,10 @@ function updateIconsOnMap(id, map) {
 function fetchWeatherData(latlng, apiKey) {
   //const url = `https://api.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${latlng.lat},${latlng.lng}?unitGroup=metric&key=${apiKey}&include=current`;
   const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${latlng.lat},${latlng.lng}?key=${apiKey}`
-  const response = fetch(url);
-  console.log(response)
-  return response//data.currentConditions;
+  fetch(url).then(response => response.json()).then(data => {
+    console.log(data)
+    return data//data.currentConditions;
+    }).catch(error => console.error('Error fetching weather', error));
 }
 
 function selectIconBasedOnWeather(weather) {
