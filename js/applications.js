@@ -171,6 +171,8 @@ function addMarker(latlng, map, id, maxCount) {
   else { updateDisplay(id, map) }
 }
 
+const apiKey = '5b3ce3597851110001cf6248c8bd0ca0e5e947639f269aa502fc6e8a';
+
 function updateDisplay(id, map) {
   const mapDataContainer = document.getElementById("DataContainer" + id);
   mapDataContainer.innerHTML = ''; // Clear existing data
@@ -185,17 +187,32 @@ function updateDisplay(id, map) {
   }
 
   if (id === "map-two" && markers[id].length >= 2) { 
-    var latLngs = markers[id].map(marker => marker.getLatLng());
-    var polyline = new L.Polyline(latLngs, {
-      color: 'red',      // Line color
-      weight: 4,         // Line weight in pixels
-      opacity: 0.5,      // Line opacity
-      smoothFactor: 1    // How smoothly the line curves
-    }); 
-    polyline.addTo(map);
-    polylines[id] = polyline;
-    updateIconsOnMap(id, map)
+    const startCoords = [markers[id][0].getLatLng().lat, markers[id][0].getLatLng().lng];
+    const endCoords = [markers[id][1].getLatLng().lat, markers[id][1].getLatLng().lng];
+    fetchAndDrawRoute(startCoords, endCoords, apiKey, map);
+    //updateIconsOnMap(id, map)
   }
+}
+
+function fetchAndDrawRoute(startCoords, endCoords, apiKey, map) {
+  // Construct the URL for the OpenRouteService API
+  const url = new URL('https://api.openrouteservice.org/v2/directions/driving-hgv');
+  url.search = new URLSearchParams({
+    api_key: apiKey,
+    start: `${startCoords[1]},${startCoords[0]}`, // Ensure coordinates are in "longitude,latitude" format
+    end: `${endCoords[1]},${endCoords[0]}`
+  });
+  fetch(url)
+    .then(response => response.json()).then(data => {
+      const routeFeature = data.features[0];
+      if (window.geojsonLayer) { window.geojsonLayer.clearLayers() }
+      window.geojsonLayer = L.geoJSON(routeFeature, { // Add the route to the map 
+        style: {
+          color: '#FF0000', // Red line for the route
+          weight: 5,
+          opacity: 0.7
+        }}).addTo(map);
+      }).catch(error => console.error('Error fetching or drawing the route:', error));
 }
 
 let iconsList = [];
