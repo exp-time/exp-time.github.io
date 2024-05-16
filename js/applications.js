@@ -189,8 +189,9 @@ function updateDisplay(id, map) {
   if (id === "map-two" && markers[id].length >= 2) { 
     const startCoords = [markers[id][0].getLatLng().lat, markers[id][0].getLatLng().lng];
     const endCoords = [markers[id][1].getLatLng().lat, markers[id][1].getLatLng().lng];
-    fetchAndDrawRoute(startCoords, endCoords, apiKey, map);
-    updateIconsOnMap(id, map)
+    fetchAndDrawRoute(startCoords, endCoords, apiKey, map, function() {
+      updateIconsOnMap(id, map);
+    });
   }
 }
 
@@ -212,6 +213,11 @@ function fetchAndDrawRoute(startCoords, endCoords, apiKey, map) {
           weight: 5,
           opacity: 0.7
         }}).addTo(map);
+
+        if (callback) {
+          callback(map); // Trigger the callback after the route is drawn
+        }
+
       }).catch(error => console.error('Error fetching or drawing the route:', error));
 }
 
