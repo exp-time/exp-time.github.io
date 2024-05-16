@@ -252,7 +252,7 @@ function fetchIcons() { // Array of icon filenames
         .catch(error => console.error('Error loading icons:', error));
 }
 
-const api_key_w = FMADJVAQCCA4576T9MQUYE7NG
+const api_key_w = "FMADJVAQCCA4576T9MQUYE7NG"
 
 function updateIconsOnMap(id, map) {
   const speedInput = document.getElementById('vehicleSpeed');
