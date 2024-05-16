@@ -285,27 +285,18 @@ function updateIconsOnMap(id, map) {
     const position = i  * (lineLength / numberOfIcons);
     const point = L.GeometryUtil.interpolateOnLine(map, polylines[id].getLatLngs(), position / lineLength);
     if (!point) continue; // Skip if no point is returned
-    console.log(point)
     // Fetch weather data for each interpolated point
-    fetchWeatherData(point.latLng, api_key_w).then(weather => {
-      const iconUrl = `img/weatherIcons/${selectIconBasedOnWeather(weather)}`;
+    const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${latlng.lat},${latlng.lng}?key=${apiKey}`
+    fetch(url).then(response => response.json()).then(data => {
+      const iconUrl = `img/weatherIcons/${data.currentConditions.icon}.png`;
       const icon = L.icon({
         iconUrl: iconUrl,
         iconSize: [30, 30]
       });
       const marker = L.marker(point.latLng, {icon: icon}).addTo(map);
       iconMarkers.push(marker);
-    });
-  }
-}
-
-function fetchWeatherData(latlng, apiKey) {
-  //const url = `https://api.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${latlng.lat},${latlng.lng}?unitGroup=metric&key=${apiKey}&include=current`;
-  const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${latlng.lat},${latlng.lng}?key=${apiKey}`
-  fetch(url).then(response => response.json()).then(data => {
-    console.log(data)
-    return data//data.currentConditions;
     }).catch(error => console.error('Error fetching weather', error));
+  }
 }
 
 function selectIconBasedOnWeather(weather) {
