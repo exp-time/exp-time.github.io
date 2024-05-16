@@ -283,7 +283,7 @@ function updateIconsOnMap(id, map) {
   //console.log(iconsList)
   for (let i = 0; i < numberOfIcons; i++) {
     const position = i  * (lineLength / numberOfIcons);
-    const point = L.GeometryUtil.interpolateOnLine(map, polylinepolylines[id].getLatLngs(), position / lineLength);
+    const point = L.GeometryUtil.interpolateOnLine(map, polylines[id].getLatLngs(), position / lineLength);
     if (!point) continue; // Skip if no point is returned
 
     // Fetch weather data for each interpolated point
