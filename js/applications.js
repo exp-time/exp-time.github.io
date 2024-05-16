@@ -190,7 +190,7 @@ function updateDisplay(id, map) {
     const startCoords = [markers[id][0].getLatLng().lat, markers[id][0].getLatLng().lng];
     const endCoords = [markers[id][1].getLatLng().lat, markers[id][1].getLatLng().lng];
     fetchAndDrawRoute(startCoords, endCoords, apiKey, map);
-    //updateIconsOnMap(id, map)
+    updateIconsOnMap(id, map)
   }
 }
 
@@ -238,23 +238,24 @@ function updateIconsOnMap(id, map) {
     return;
   }
 
-  if (!polylines[id]) {
-    console.error('No polyline found for this map.');
+  if (!window.geojsonLayer) {
+    console.error('No GeoJSON route found for this map.');
     return;
   }
 
-  const lineLength = L.GeometryUtil.length(polylines[id]); // Length in meters
-  const numberOfIcons = Math.floor((lineLength / 1000) / speed);
+  const lineLength = L.GeometryUtil.length(window.geojsonLayer); // Length in meters
+  const distancePerIcon = speed * 1000 / 3600; // Convert speed from km/h to m/s
+  const numberOfIcons = Math.floor(lineLength / distancePerIcon); // Calculate number of icons based on speed
 
   // Clear previous icons
-  if (iconMarkers) {
-    iconMarkers.forEach(marker => map.removeLayer(marker));
-    iconMarkers = [];
-  }
+  iconMarkers.forEach(marker => map.removeLayer(marker));
+  iconMarkers = [];
 
-  for (let i = 1; i <= numberOfIcons; i++) {
-    const position = i * (lineLength / numberOfIcons);
-    const point = L.GeometryUtil.interpolateOnLine(map, polylines[id].getLatLngs(), position / lineLength);
+  for (let i = 0; i < numberOfIcons; i++) {
+    const position = (i + 1) * distancePerIcon / lineLength;
+    const point = L.GeometryUtil.interpolateOnLine(map, window.geojsonLayer.toGeoJSON().geometry.coordinates, position);
+    if (!point) continue; // Skip if no point is returned
+
     const iconIndex = Math.floor(Math.random() * iconsList.length);
     const iconUrl = `img/weatherIcons/${iconsList[iconIndex]}`;
     const icon = L.icon({
