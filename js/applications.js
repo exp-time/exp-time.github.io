@@ -289,7 +289,7 @@ function updateIconsOnMap(id, map) {
     // Fetch weather data for each interpolated point
     const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${point.latLng.lat},${point.latLng.lng}?key=${api_key_w}`
     fetch(url).then(response => response.json()).then(data => {
-      const iconUrl = `img/weatherIcons/${data.currentConditions.icon}.png`;
+      const iconUrl = `img/weatherIcons/${data.currentConditions.icon}.svg`;
       const icon = L.icon({
         iconUrl: iconUrl,
         iconSize: [30, 30]
