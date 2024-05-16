@@ -285,7 +285,7 @@ function updateIconsOnMap(id, map) {
     const position = i  * (lineLength / numberOfIcons);
     const point = L.GeometryUtil.interpolateOnLine(map, polylines[id].getLatLngs(), position / lineLength);
     if (!point) continue; // Skip if no point is returned
-
+    console.log(point)
     // Fetch weather data for each interpolated point
     fetchWeatherData(point.latLng, api_key_w).then(weather => {
       const iconUrl = `img/weatherIcons/${selectIconBasedOnWeather(weather)}`;
