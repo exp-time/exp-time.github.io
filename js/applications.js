@@ -165,7 +165,7 @@ function initializeMap(id, maxCount) {
 // marker color https://stackoverflow.com/questions/23567203/leaflet-changing-marker-color
 
 function addMarker(latlng, map, id, maxCount) {
-  if (markers[id].length >= maxCount) { map.removeLayer(markers[id].shift()) } // Remove the oldest marker from the array
+  if (markers[id].length >= maxCount) { return }//map.removeLayer(markers[id].shift()) } // Remove the oldest marker from the array
   markers[id].push(L.marker(latlng).addTo(map));                        // Add the new marker to the array
   updateDisplay(id, map) 
 }
@@ -213,7 +213,7 @@ function fetchAndDrawRoute(startCoords, endCoords, apiKey, map, callback) {
   fetch(url)
     .then(response => response.json()).then(data => {
       const routeFeature = data.features[0];
-      if (window.geojsonLayer) { window.geojsonLayer.clearLayers() }
+      //if (window.geojsonLayer) { window.geojsonLayer.clearLayers() }
       window.geojsonLayer = L.geoJSON(routeFeature, { // Add the route to the map 
         style: {
           color: '#FF0000', // Red line for the route
