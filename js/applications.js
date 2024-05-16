@@ -299,13 +299,4 @@ function updateIconsOnMap(id, map) {
   }
 }
 
-function selectIconBasedOnWeather(weather) {
-  // Determine which icon to use based on weather conditions (simplified)
-  if (weather.temp > 20) {
-    return 'sunny.png';
-  } else {
-    return 'cloudy.png';
-  }
-}
-
 document.addEventListener('DOMContentLoaded', fetchIcons()); // Load icons on page load
