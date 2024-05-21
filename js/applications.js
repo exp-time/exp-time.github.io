@@ -126,6 +126,8 @@ function createMapDataNew(id) {
   vehicleSelector.elem.addEventListener('change', function() {
     toggleVehicleSpecificFields(this.value);
   });
+  
+  const dynamicFieldsContainer = new Elem({tag: 'div', attrs: {id: 'dynamicFieldsContainer'}}).appendTo(container.elem);
 
   // Placeholder for dynamically added fields
   const routingTypeSelector = new Elem({
@@ -138,6 +140,7 @@ function createMapDataNew(id) {
       ]}
     ],
   }).appendTo(container.elem);
+
 
   function updateAdditionalFields(routingService) {
     // Clear previous additional fields
