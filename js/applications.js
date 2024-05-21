@@ -105,7 +105,8 @@ function createMapDataNew(id) {
     ],
   }).appendTo(container.elem);
 
-  document.getElementById('routingServiceType').addEventListener('change', function() {
+  const routingServiceTypeElement = document.getElementById('routingServiceType');
+  routingServiceTypeElement.addEventListener('change', function() {
     updateAdditionalFields(this.value);
   });
 
@@ -121,7 +122,8 @@ function createMapDataNew(id) {
     ],
   }).appendTo(container.elem);
 
-  document.getElementById('vehicleType').elem.addEventListener('change', function() {
+  const vehicleTypeElement = document.getElementById('vehicleType');
+  vehicleTypeElement.elem.addEventListener('change', function() {
     toggleVehicleSpecificFields(this.value);
   });
 
