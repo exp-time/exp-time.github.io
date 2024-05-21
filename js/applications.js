@@ -123,7 +123,7 @@ function createMapDataNew(id) {
   }).appendTo(container.elem);
 
   const vehicleTypeElement = document.getElementById('vehicleType');
-  vehicleTypeElement.elem.addEventListener('change', function() {
+  vehicleTypeElement.addEventListener('change', function() {
     toggleVehicleSpecificFields(this.value);
   });
 
