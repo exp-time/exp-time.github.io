@@ -89,11 +89,74 @@ function createMap(id) {
   return new Elem({tag: 'div', attrs:{id: id,className: 'map'}}).elem;
 }
 
+function createMapDataNew(id) {
+  const container = new Elem({tag: 'div', attrs: {className: 'map-data-listing'}});
+  
+  // Routing service selector
+  const routingSelector = new Elem({
+    tag: 'select',
+    attrs: {name: 'routing', id: 'routingType', className: 'no-spinners pointer-cursor'},
+    children: [
+      {tag: 'option', attrs: {value: 'OpenRouteService', textContent: 'OpenRouteService'}},
+      {tag: 'option', attrs: {value: 'Azure', textContent: 'Azure Maps'}},
+      {tag: 'option', attrs: {value: 'Google', textContent: 'Google Maps'}},
+      {tag: 'option', attrs: {value: 'GraphHopper', textContent: 'GraphHopper'}},
+      {tag: 'option', attrs: {value: 'Mapbox', textContent: 'Mapbox'}}
+    ]
+  }).appendTo(container.elem);
+
+  routingSelector.elem.addEventListener('change', function() {
+    updateAdditionalFields(this.value);
+  });
+
+  // Vehicle type selector
+  const vehicleSelector = new Elem({
+    tag: 'select',
+    attrs: {name: 'vehicle', id: 'vehicleType', className: 'no-spinners pointer-cursor'},
+    children: [
+      {tag: 'option', attrs: {value: 'car', textContent: 'Car'}},
+      {tag: 'option', attrs: {value: 'truck', textContent: 'Truck'}},
+      {tag: 'option', attrs: {value: 'bicycle', textContent: 'Bicycle'}},
+      {tag: 'option', attrs: {value: 'walk', textContent: 'Walk'}}
+    ]
+  }).appendTo(container.elem);
+
+  vehicleSelector.elem.addEventListener('change', function() {
+    toggleVehicleSpecificFields(this.value);
+  });
+
+  // Placeholder for dynamically added fields
+  const dynamicFieldsContainer = new Elem({tag: 'div', attrs: {id: 'dynamicFieldsContainer'}}).appendTo(container.elem);
+
+  function updateAdditionalFields(routingService) {
+    // Clear previous additional fields
+    dynamicFieldsContainer.elem.innerHTML = '';
+
+    // Example: Add specific fields for Azure Maps
+    if (routingService === 'Azure') {
+      new Elem({tag: 'input', attrs: {type: 'text', placeholder: 'Azure specific setting', className: 'input-field'}}).appendTo(dynamicFieldsContainer.elem);
+    }
+  }
+
+  function toggleVehicleSpecificFields(vehicleType) {
+    // Adjust fields based on vehicle type, for example
+    if (vehicleType === 'truck') {
+      // Show fields specific to trucks
+      new Elem({tag: 'input', attrs: {type: 'number', placeholder: 'Truck capacity', className: 'input-field'}}).appendTo(dynamicFieldsContainer.elem);
+    } else {
+      // Clear or adjust for other vehicles
+      dynamicFieldsContainer.elem.innerHTML = '';
+    }
+  }
+
+  return container.elem;
+}
+
 function createMapData(id) {
   return new Elem({tag: 'div',attrs: {className: 'map-data-listing'},children: [
     {tag: 'div', attrs: {className: 'input-group'}, children: [
-      {tag: 'label', attrs: {for: 'routingType', className: 'font-large', textContent: 'Routing service:'}},
-      {tag: 'select', attrs: {name: 'routing', id: 'routingType', className: 'no-spinners pointer-cursor'}, children: [
+      {tag: 'label', attrs: {for: 'routingServiceType', className: 'font-large', textContent: 'Routing service:'}},
+      {tag: 'select', attrs: {name: 'routingService', id: 'routingServiceType', className: 'no-spinners pointer-cursor'}, children: [
           {tag: 'option', attrs: {value: 'OpenRouteService', textContent: 'OpenRouteService'}},
           {tag: 'option', attrs: {value: 'Azure', textContent: 'Azure Maps'}},
           {tag: 'option', attrs: {value: 'Google', textContent: 'Google Maps'}},
