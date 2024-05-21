@@ -121,7 +121,7 @@ function createMapDataNew(id) {
     ],
   }).appendTo(container.elem);
 
-  vehicleSelector.elem.addEventListener('change', function() {
+  document.getElementById('vehicleType').elem.addEventListener('change', function() {
     toggleVehicleSpecificFields(this.value);
   });
 
