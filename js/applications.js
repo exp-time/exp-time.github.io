@@ -106,7 +106,7 @@ function createMapDataNew(id) {
     ],
   }).appendTo(container.elem);
 
-  routingServiceSelector.elem.addEventListener('change', function() {
+  routingServiceType.elem.addEventListener('change', function() {
     updateAdditionalFields(this.value);
   });
 
@@ -142,9 +142,20 @@ function createMapDataNew(id) {
 
   function updateAdditionalFields(routingService) {
     dynamicFieldsContainer.elem.innerHTML = '';
-
-    if (routingServiceType === 'Azure') {
+    if (routingServiceType === 'OpenRouteService') {
       new Elem({tag: 'input', attrs: {type: 'text', placeholder: 'Azure specific setting', className: 'input-field'}}).appendTo(dynamicFieldsContainer.elem);
+    }
+    else if (routingServiceType === 'Azure'){
+
+    }
+    else if (routingServiceType === 'Google'){
+
+    }
+    else if (routingServiceType === 'GraphHopper'){
+
+    }
+    else if (routingServiceType === 'Mapbox'){
+
     }
   }
 
