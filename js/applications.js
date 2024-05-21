@@ -140,14 +140,10 @@ function createMapDataNew(id) {
 
   const dynamicFieldsContainer = new Elem({tag: 'div', attrs: {id: 'dynamicFieldsContainer'}}).appendTo(container.elem);
 
-  // Placeholder for dynamically added fields
-
   function updateAdditionalFields(routingService) {
-    // Clear previous additional fields
     dynamicFieldsContainer.elem.innerHTML = '';
 
-    // Example: Add specific fields for Azure Maps
-    if (routingServiceSelector === 'Azure') {
+    if (routingServiceType === 'Azure') {
       new Elem({tag: 'input', attrs: {type: 'text', placeholder: 'Azure specific setting', className: 'input-field'}}).appendTo(dynamicFieldsContainer.elem);
     }
   }
