@@ -111,8 +111,8 @@ function createMapData(id) {
       ]}
     ]},
     {tag: 'div', attrs: {className: 'input-group'}, children: [
-      {tag: 'label', attrs: {for: 'optimizationType', className: 'font-large', textContent: 'Optimization:'}},
-      {tag: 'select', attrs: {name: 'optimization', id: 'optimizationType', className: 'no-spinners pointer-cursor'}, children: [
+      {tag: 'label', attrs: {for: 'routingType', className: 'font-large', textContent: 'Routing type:'}},
+      {tag: 'select', attrs: {name: 'routing', id: 'routingType', className: 'no-spinners pointer-cursor'}, children: [
           {tag: 'option', attrs: {value: 'cost', textContent: 'Cost'}},
           {tag: 'option', attrs: {value: 'shortest', textContent: 'Shortest'}},
           {tag: 'option', attrs: {value: 'emissions', textContent: 'Emissions'}}
@@ -285,7 +285,7 @@ function updateIconsOnMap(id, map) {
     const position = i  * (lineLength / numberOfIcons);
     const point = L.GeometryUtil.interpolateOnLine(map, polylines[id].getLatLngs(), position / lineLength);
     //console.log(point)
-    if (!point) continue; // Skip if no point is returned
+    if (!point) continue; // Skip if no point is returned 
     // Fetch weather data for each interpolated point
     const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${point.latLng.lat},${point.latLng.lng}?key=${api_key_w}`
     fetch(url).then(response => response.json()).then(data => {
