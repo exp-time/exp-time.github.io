@@ -105,7 +105,7 @@ function createMapDataNew(id) {
     ]
   }).appendTo(container.elem);
 
-  routingSelector.elem.addEventListener('change', function() {
+  routingServiceSelector.elem.addEventListener('change', function() {
     updateAdditionalFields(this.value);
   });
 
