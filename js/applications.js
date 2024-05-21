@@ -112,14 +112,15 @@ function createMapDataNew(id) {
 
   // Vehicle type selector
   const vehicleSelector = new Elem({
-    tag: 'select',
-    attrs: {name: 'vehicle', id: 'vehicleType', className: 'no-spinners pointer-cursor'},
-    children: [
-      {tag: 'option', attrs: {value: 'car', textContent: 'Car'}},
-      {tag: 'option', attrs: {value: 'truck', textContent: 'Truck'}},
-      {tag: 'option', attrs: {value: 'bicycle', textContent: 'Bicycle'}},
-      {tag: 'option', attrs: {value: 'walk', textContent: 'Walk'}}
-    ]
+    tag: 'div', attrs: {className: 'input-group'}, children: [
+      {tag: 'label', attrs: {for: 'vehicleType', className: 'font-large', textContent: 'Vehicle:'}},
+      {tag: 'select', attrs: {name: 'vehicle', id: 'vehicleType', className: 'no-spinners pointer-cursor'}, children: [
+        {tag: 'option', attrs: {value: 'car', textContent: 'Car'}},
+        {tag: 'option', attrs: {value: 'truck', textContent: 'Truck'}},
+        {tag: 'option', attrs: {value: 'bicycle', textContent: 'Bicycle'}},
+        {tag: 'option', attrs: {value: 'walk', textContent: 'Walk'}}
+      ]}
+    ],
   }).appendTo(container.elem);
 
   vehicleSelector.elem.addEventListener('change', function() {
@@ -128,16 +129,14 @@ function createMapDataNew(id) {
 
   // Placeholder for dynamically added fields
   const routingTypeSelector = new Elem({
-    tag: 'select', 
-    attrs: {name: 'routing', id: 'routingType', className: 'no-spinners pointer-cursor'},
-    children: [
+    tag: 'div', attrs: {className: 'input-group'}, children: [
       {tag: 'label', attrs: {for: 'routingType', className: 'font-large', textContent: 'Routing type:'}},
       {tag: 'select', attrs: {name: 'routing', id: 'routingType', className: 'no-spinners pointer-cursor'}, children: [
-          {tag: 'option', attrs: {value: 'cost', textContent: 'Cost'}},
-          {tag: 'option', attrs: {value: 'shortest', textContent: 'Shortest'}},
-          {tag: 'option', attrs: {value: 'emissions', textContent: 'Emissions'}}
+        {tag: 'option', attrs: {value: 'cost', textContent: 'Cost'}},
+        {tag: 'option', attrs: {value: 'shortest', textContent: 'Shortest'}},
+        {tag: 'option', attrs: {value: 'emissions', textContent: 'Emissions'}}
       ]}
-    ]
+    ],
   }).appendTo(container.elem);
 
   function updateAdditionalFields(routingService) {
