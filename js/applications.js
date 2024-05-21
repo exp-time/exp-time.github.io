@@ -94,15 +94,16 @@ function createMapDataNew(id) {
   
   // Routing service selector
   const routingServiceSelector = new Elem({
-    tag: 'select',
-    attrs: {name: 'routingService', id: 'routingServiceType', className: 'no-spinners pointer-cursor'},
-    children: [
-      {tag: 'option', attrs: {value: 'OpenRouteService', textContent: 'OpenRouteService'}},
-      {tag: 'option', attrs: {value: 'Azure', textContent: 'Azure Maps'}},
-      {tag: 'option', attrs: {value: 'Google', textContent: 'Google Maps'}},
-      {tag: 'option', attrs: {value: 'GraphHopper', textContent: 'GraphHopper'}},
-      {tag: 'option', attrs: {value: 'Mapbox', textContent: 'Mapbox'}}
-    ]
+    tag: 'div', attrs: {className: 'input-group'}, children: [
+      {tag: 'label', attrs: {for: 'routingServiceType', className: 'font-large', textContent: 'Routing service:'}},
+      {tag: 'select', attrs: {name: 'routingService', id: 'routingServiceType', className: 'no-spinners pointer-cursor'}, children: [
+        {tag: 'option', attrs: {value: 'OpenRouteService', textContent: 'OpenRouteService'}},
+        {tag: 'option', attrs: {value: 'Azure', textContent: 'Azure Maps'}},
+        {tag: 'option', attrs: {value: 'Google', textContent: 'Google Maps'}},
+        {tag: 'option', attrs: {value: 'GraphHopper', textContent: 'GraphHopper'}},
+        {tag: 'option', attrs: {value: 'Mapbox', textContent: 'Mapbox'}}
+      ]}
+    ],
   }).appendTo(container.elem);
 
   routingServiceSelector.elem.addEventListener('change', function() {
