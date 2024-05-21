@@ -126,10 +126,7 @@ function createMapDataNew(id) {
   vehicleSelector.elem.addEventListener('change', function() {
     toggleVehicleSpecificFields(this.value);
   });
-  
-  const dynamicFieldsContainer = new Elem({tag: 'div', attrs: {id: 'dynamicFieldsContainer'}}).appendTo(container.elem);
 
-  // Placeholder for dynamically added fields
   const routingTypeSelector = new Elem({
     tag: 'div', attrs: {className: 'input-group'}, children: [
       {tag: 'label', attrs: {for: 'routingType', className: 'font-large', textContent: 'Routing type:'}},
@@ -141,13 +138,16 @@ function createMapDataNew(id) {
     ],
   }).appendTo(container.elem);
 
+  const dynamicFieldsContainer = new Elem({tag: 'div', attrs: {id: 'dynamicFieldsContainer'}}).appendTo(container.elem);
+
+  // Placeholder for dynamically added fields
 
   function updateAdditionalFields(routingService) {
     // Clear previous additional fields
     dynamicFieldsContainer.elem.innerHTML = '';
 
     // Example: Add specific fields for Azure Maps
-    if (routingService === 'Azure') {
+    if (routingServiceSelector === 'Azure') {
       new Elem({tag: 'input', attrs: {type: 'text', placeholder: 'Azure specific setting', className: 'input-field'}}).appendTo(dynamicFieldsContainer.elem);
     }
   }
