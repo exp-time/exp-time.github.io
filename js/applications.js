@@ -117,8 +117,6 @@ function createMapDataNew(id) {
     ],
   }).appendTo(container.elem);
 
-
-
   const routingTypeSelector = new Elem({
     tag: 'div', attrs: {className: 'input-group'}, children: [
       {tag: 'label', attrs: {for: 'routingType', className: 'font-large', textContent: 'Routing type:'}},
@@ -243,7 +241,7 @@ function initializeMap(id, maxCount) {
 function addMarker(latlng, map, id, maxCount) {
   if (markers[id].length >= maxCount) { return }//map.removeLayer(markers[id].shift()) } // Remove the oldest marker from the array
   markers[id].push(L.marker(latlng).addTo(map));                        // Add the new marker to the array
-  updateDisplay(id, map) 
+  updateDisplay(id, map)
 }
 
 const apiKey = '5b3ce3597851110001cf6248c8bd0ca0e5e947639f269aa502fc6e8a';
