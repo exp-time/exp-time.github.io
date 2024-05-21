@@ -93,9 +93,9 @@ function createMapDataNew(id) {
   const container = new Elem({tag: 'div', attrs: {className: 'map-data-listing'}});
   
   // Routing service selector
-  const routingSelector = new Elem({
+  const routingServiceSelector = new Elem({
     tag: 'select',
-    attrs: {name: 'routing', id: 'routingType', className: 'no-spinners pointer-cursor'},
+    attrs: {name: 'routingService', id: 'routingServiceType', className: 'no-spinners pointer-cursor'},
     children: [
       {tag: 'option', attrs: {value: 'OpenRouteService', textContent: 'OpenRouteService'}},
       {tag: 'option', attrs: {value: 'Azure', textContent: 'Azure Maps'}},
@@ -126,7 +126,18 @@ function createMapDataNew(id) {
   });
 
   // Placeholder for dynamically added fields
-  const dynamicFieldsContainer = new Elem({tag: 'div', attrs: {id: 'dynamicFieldsContainer'}}).appendTo(container.elem);
+  const routingTypeSelector = new Elem({
+    tag: 'select', 
+    attrs: {name: 'routing', id: 'routingType', className: 'no-spinners pointer-cursor'},
+    children: [
+      {tag: 'label', attrs: {for: 'routingType', className: 'font-large', textContent: 'Routing type:'}},
+      {tag: 'select', attrs: {name: 'routing', id: 'routingType', className: 'no-spinners pointer-cursor'}, children: [
+          {tag: 'option', attrs: {value: 'cost', textContent: 'Cost'}},
+          {tag: 'option', attrs: {value: 'shortest', textContent: 'Shortest'}},
+          {tag: 'option', attrs: {value: 'emissions', textContent: 'Emissions'}}
+      ]}
+    ]
+  }).appendTo(container.elem);
 
   function updateAdditionalFields(routingService) {
     // Clear previous additional fields

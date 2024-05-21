@@ -82,7 +82,7 @@ function createCard(id, info_id, title, iconClass, content, info_Title, info_Con
   else if (content === 0){ card.appendChild(createWebTerminal()) }
   else if (content === 1){ card.appendChild(createEditableTable()) }
   else if (content === 2){ card.appendChild(createMap('map-one')) }
-  else if (content === 3){ card.appendChild(createMapData('map-one')) }
+  else if (content === 3){ card.appendChild(createMapDataNew('map-one')) }
   else if (content === 4){ card.appendChild(createMap('map-two'))}
   else if (content === 5){ card.appendChild(createWeatherMapData('map-two')) }
   else { new Elem({tag: 'p', attrs: {className: 'font-large'}, parent: card}) } 
