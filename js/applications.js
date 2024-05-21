@@ -92,7 +92,6 @@ function createMap(id) {
 function createMapDataNew(id) {
   const container = new Elem({tag: 'div', attrs: {className: 'map-data-listing'}});
   
-  // Routing service selector
   const routingServiceSelector = new Elem({
     tag: 'div', attrs: {className: 'input-group'}, children: [
       {tag: 'label', attrs: {for: 'routingServiceType', className: 'font-large', textContent: 'Routing service:'}},
@@ -106,11 +105,10 @@ function createMapDataNew(id) {
     ],
   }).appendTo(container.elem);
 
-  routingServiceType.elem.addEventListener('change', function() {
+  document.getElementById('routingServiceType').addEventListener('change', function() {
     updateAdditionalFields(this.value);
   });
 
-  // Vehicle type selector
   const vehicleSelector = new Elem({
     tag: 'div', attrs: {className: 'input-group'}, children: [
       {tag: 'label', attrs: {for: 'vehicleType', className: 'font-large', textContent: 'Vehicle:'}},
