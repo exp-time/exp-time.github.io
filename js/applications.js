@@ -96,6 +96,7 @@ function createMapDataNew(id) {
     tag: 'div', attrs: {className: 'input-group', onchange: function() {updateAdditionalFields(this.value)}}, children: [
       {tag: 'label', attrs: {for: 'routingServiceType', className: 'font-large', textContent: 'Routing service:'}},
       {tag: 'select', attrs: {name: 'routingService', id: 'routingServiceType', className: 'no-spinners pointer-cursor'}, children: [
+        {tag: 'option', attrs: {value: '', textContent: 'Select Service'}},
         {tag: 'option', attrs: {value: 'OpenRouteService', textContent: 'OpenRouteService'}},
         {tag: 'option', attrs: {value: 'Azure', textContent: 'Azure Maps'}},
         {tag: 'option', attrs: {value: 'Google', textContent: 'Google Maps'}},
