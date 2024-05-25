@@ -121,14 +121,23 @@ document.addEventListener('DOMContentLoaded', function() { // pagination + other
       currentPage = Math.max(0, totalPages - 1);    // Reset to the last page if out of range
     }
     for (let i = 0; i < totalPages; i++) {
-      const pageButton = document.createElement('button');
-      pageButton.textContent = i + 1;
+      new Elem({tag: 'button', attrs: {
+        textContent: i + 1, 
+        onclick: function() {
+          currentPage = i;
+          showPage(currentPage, itemsPerPage);
+          updateActiveButtonStates(paginationContainer,currentPage);
+        }}, parent:paginationContainer});
+
+      /* const pageButton = document.createElement('button');
+      //pageButton.textContent = i + 1;
       pageButton.addEventListener('click', function() {
         currentPage = i;
         showPage(currentPage, itemsPerPage);
         updateActiveButtonStates(paginationContainer,currentPage);
       });
         paginationContainer.appendChild(pageButton);
+      */
     }
     showPage(currentPage, itemsPerPage);            // Refresh view to reflect potentially new currentPage
     updateActiveButtonStates(paginationContainer,currentPage);       // Refresh button states
