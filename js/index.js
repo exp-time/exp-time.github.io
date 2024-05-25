@@ -136,18 +136,6 @@ document.addEventListener('DOMContentLoaded', function() { // pagination + other
   window.addEventListener('resize', function() { updatePageButtons() }); 
   updatePageButtons();
 
-  /* TEST */
-  const routingServiceTypeElement = document.getElementById('routingServiceType');
-  routingServiceTypeElement.addEventListener('change', function() {
-    updateAdditionalFields(this.value);
-  });
-
-  const vehicleTypeElement = document.getElementById('vehicleType');
-  vehicleTypeElement.addEventListener('change', function() {
-    toggleVehicleSpecificFields(this.value);
-  });
-  /* TEST */
-
   /* REMOVE */
   document.getElementById('unfinished_modal').style.display='block'
   /* REMOVE */
