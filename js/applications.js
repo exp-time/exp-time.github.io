@@ -106,7 +106,7 @@ function createMapDataNew(id) {
   }).appendTo(container.elem);
 
   const vehicleSelector = new Elem({
-    tag: 'div', attrs: {className: 'input-group'}, children: [
+    tag: 'div', attrs: {className: 'input-group', onchange: function() {toggleVehicleSpecificFields(this.value)}}, children: [
       {tag: 'label', attrs: {for: 'vehicleType', className: 'font-large', textContent: 'Vehicle:'}},
       {tag: 'select', attrs: {name: 'vehicle', id: 'vehicleType', className: 'no-spinners pointer-cursor'}, children: [
         {tag: 'option', attrs: {value: 'car', textContent: 'Car'}},
