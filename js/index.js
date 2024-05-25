@@ -128,20 +128,11 @@ document.addEventListener('DOMContentLoaded', function() { // pagination + other
           showPage(currentPage, itemsPerPage);
           updateActiveButtonStates(paginationContainer,currentPage);
         }}, parent:paginationContainer});
-
-      /* const pageButton = document.createElement('button');
-      //pageButton.textContent = i + 1;
-      pageButton.addEventListener('click', function() {
-        currentPage = i;
-        showPage(currentPage, itemsPerPage);
-        updateActiveButtonStates(paginationContainer,currentPage);
-      });
-        paginationContainer.appendChild(pageButton);
-      */
     }
     showPage(currentPage, itemsPerPage);            // Refresh view to reflect potentially new currentPage
     updateActiveButtonStates(paginationContainer,currentPage);       // Refresh button states
   }
+  
   window.addEventListener('resize', function() { updatePageButtons() }); 
   updatePageButtons();
 

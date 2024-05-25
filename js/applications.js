@@ -132,7 +132,7 @@ function createMapDataNew(id) {
 
   function updateAdditionalFields(routingService) {
     dynamicFieldsContainer.elem.innerHTML = '';
-    const routingServiceTypeElement = document.getElementById('routingServiceType');
+    const routingServiceTypeElement = document.getElementById('routingServiceType').value;
     if (routingServiceTypeElement === 'OpenRouteService') {
       new Elem({tag: 'input', attrs: {type: 'text', placeholder: 'Azure specific setting', className: 'input-field'}}).appendTo(dynamicFieldsContainer.elem);
     }
