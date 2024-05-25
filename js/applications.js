@@ -96,7 +96,7 @@ function createMapDataNew(id) {
     tag: 'div', attrs: {className: 'input-group', onchange: function() {updateAdditionalFields(this.value)}}, children: [
       {tag: 'label', attrs: {for: 'routingServiceType', className: 'font-large', textContent: 'Routing service:'}},
       {tag: 'select', attrs: {name: 'routingService', id: 'routingServiceType', className: 'no-spinners pointer-cursor'}, children: [
-        {tag: 'option', attrs: {value: '', textContent: 'Select Service'}},
+        {tag: 'option', attrs: {value: '', textContent: ''}},
         {tag: 'option', attrs: {value: 'OpenRouteService', textContent: 'OpenRouteService'}},
         {tag: 'option', attrs: {value: 'Azure', textContent: 'Azure Maps'}},
         {tag: 'option', attrs: {value: 'Google', textContent: 'Google Maps'}},
@@ -110,7 +110,7 @@ function createMapDataNew(id) {
     tag: 'div', attrs: {className: 'input-group', onchange: function() {toggleVehicleSpecificFields(this.value)}}, children: [
       {tag: 'label', attrs: {for: 'vehicleType', className: 'font-large', textContent: 'Vehicle:'}},
       {tag: 'select', attrs: {name: 'vehicle', id: 'vehicleType', className: 'no-spinners pointer-cursor'}, children: [
-        {tag: 'option', attrs: {value: '', textContent: 'Select Vehicle'}},
+        {tag: 'option', attrs: {value: '', textContent: ''}},
         {tag: 'option', attrs: {value: 'car', textContent: 'Car'}},
         {tag: 'option', attrs: {value: 'truck', textContent: 'Truck'}},
         {tag: 'option', attrs: {value: 'bicycle', textContent: 'Bicycle'}},
@@ -123,7 +123,7 @@ function createMapDataNew(id) {
     tag: 'div', attrs: {className: 'input-group'}, children: [
       {tag: 'label', attrs: {for: 'routingType', className: 'font-large', textContent: 'Routing type:'}},
       {tag: 'select', attrs: {name: 'routing', id: 'routingType', className: 'no-spinners pointer-cursor'}, children: [
-        {tag: 'option', attrs: {value: '', textContent: 'Select Routing Type'}},
+        {tag: 'option', attrs: {value: '', textContent: ''}},
         {tag: 'option', attrs: {value: 'cost', textContent: 'Cost'}},
         {tag: 'option', attrs: {value: 'shortest', textContent: 'Shortest'}},
         {tag: 'option', attrs: {value: 'emissions', textContent: 'Emissions'}}
