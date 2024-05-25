@@ -93,7 +93,7 @@ function createMapDataNew(id) {
   const container = new Elem({tag: 'div', attrs: {className: 'map-data-listing'}});
   
   const routingServiceSelector = new Elem({
-    tag: 'div', attrs: {className: 'input-group'}, children: [
+    tag: 'div', attrs: {className: 'input-group', onchange: function() {updateAdditionalFields(this.value)}}, children: [
       {tag: 'label', attrs: {for: 'routingServiceType', className: 'font-large', textContent: 'Routing service:'}},
       {tag: 'select', attrs: {name: 'routingService', id: 'routingServiceType', className: 'no-spinners pointer-cursor'}, children: [
         {tag: 'option', attrs: {value: 'OpenRouteService', textContent: 'OpenRouteService'}},
