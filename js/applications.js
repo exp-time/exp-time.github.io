@@ -151,7 +151,7 @@ function createMapDataNew(id) {
   const dataContainer = new Elem({tag: 'div', attrs: {id: "DataContainer" + id, className: 'w3-padding'}});
 
 
-  //const dynamicFieldsContainer = new Elem({tag: 'div', attrs: {id: 'dynamicFieldsContainer'}}).appendTo(container.elem);
+  const dynamicFieldsContainer = new Elem({tag: 'div', attrs: {id: 'dynamicFieldsContainer'}}).appendTo(container.elem);
   //new Elem({tag: 'input', attrs: {type: 'text', placeholder: 'Azure specific setting', className: 'input-field'}}).appendTo(dynamicFieldsContainer.elem);
 
   function updateAdditionalFields(routingService) {
