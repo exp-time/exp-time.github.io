@@ -154,7 +154,6 @@ function createMapDataNew(id) {
 
   function updateAdditionalFields() {
     const inputs = document.querySelectorAll('.input-group select, .input-group input');
-    console.log(inputs)
     inputs.forEach(input => {
       if (input.id != 'routingServiceType') {
         if (input.tagName.toLowerCase() === 'select') {
