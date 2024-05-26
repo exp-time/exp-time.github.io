@@ -149,9 +149,7 @@ function createMapDataNew(id) {
   ]});
 
   const dataContainer = new Elem({tag: 'div', attrs: {id: "DataContainer" + id, className: 'w3-padding'}});
-
   const dynamicFieldsContainer = new Elem({tag: 'div', attrs: {id: 'dynamicFieldsContainer'}}).appendTo(container.elem).elem;
-
   const dynamicFieldsContainerTwo = new Elem({tag: 'div', attrs: {id: 'dynamicFieldsContainerTwo'}}).appendTo(container.elem).elem;
 
   function updateAdditionalFields() {
@@ -176,8 +174,8 @@ function createMapDataNew(id) {
     dataContainer.appendTo(dynamicFieldsContainerTwo);
   }
 
-  function toggleVehicleSpecificFields(vehicleType) {
-    dynamicFieldsContainerTwo.elem.innerHTML = '';
+  function toggleVehicleSpecificFields() {
+    dynamicFieldsContainerTwo.innerHTML = '';
     const vehicleTypeValue = document.getElementById('vehicleType').value;
     if (vehicleTypeValue === 'truck') {
       vehicleWeight.appendTo(dynamicFieldsContainerTwo);
