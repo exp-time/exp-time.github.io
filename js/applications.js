@@ -174,7 +174,7 @@ function createMapDataNew(id) {
     }
     dataContainer.appendTo(dynamicFieldsContainerTwo);
   }
-
+  // TODO: does not update on other selections!
   function toggleVehicleSpecificFields() {
     dynamicFieldsContainerTwo.innerHTML = '';
     const vehicleTypeValue = document.getElementById('vehicleType').value;
