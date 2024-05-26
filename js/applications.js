@@ -93,7 +93,7 @@ function createMapDataNew(id) {
   const container = new Elem({tag: 'div', attrs: {className: 'map-data-listing'}});
   
   const routingServiceSelector = new Elem({
-    tag: 'div', attrs: {className: 'input-group', onchange: function() {updateAdditionalFields(this.value)}}, children: [
+    tag: 'div', attrs: {className: 'input-group', onchange: function() {updateAdditionalFields()}}, children: [
       {tag: 'label', attrs: {for: 'routingServiceType', className: 'font-large', textContent: 'Routing service:'}},
       {tag: 'select', attrs: {name: 'routingService', id: 'routingServiceType', className: 'no-spinners pointer-cursor'}, children: [
         {tag: 'option', attrs: {value: '', textContent: ''}},
@@ -107,7 +107,7 @@ function createMapDataNew(id) {
   }).appendTo(container.elem);
 
   const vehicleSelector = new Elem({
-    tag: 'div', attrs: {className: 'input-group', onchange: function() {toggleVehicleSpecificFields(this.value)}}, children: [
+    tag: 'div', attrs: {className: 'input-group', onchange: function() {toggleVehicleSpecificFields()}}, children: [
       {tag: 'label', attrs: {for: 'vehicleType', className: 'font-large', textContent: 'Vehicle:'}},
       {tag: 'select', attrs: {name: 'vehicle', id: 'vehicleType', className: 'no-spinners pointer-cursor'}, children: [
         {tag: 'option', attrs: {value: '', textContent: ''}},
@@ -152,40 +152,40 @@ function createMapDataNew(id) {
 
   const dynamicFieldsContainer = new Elem({tag: 'div', attrs: {id: 'dynamicFieldsContainer'}}).appendTo(container.elem).elem;
 
-  function updateAdditionalFields(routingService) {
+  const dynamicFieldsContainerTwo = new Elem({tag: 'div', attrs: {id: 'dynamicFieldsContainerTwo'}}).appendTo(container.elem).elem;
+
+  function updateAdditionalFields() {
     dynamicFieldsContainer.innerHTML = '';
     const routingServiceTypeValue = document.getElementById('routingServiceType').value;
-    if (routingService === 'OpenRouteService') {
+    if (routingServiceTypeValue === 'OpenRouteService') {
       vehicleSelector.appendTo(dynamicFieldsContainer);
     }
-    else if (routingService === 'Azure'){
-      vehicleSelector.appendTo(dynamicFieldsContainer);
+    else if (routingServiceTypeValue === 'Azure'){
       routingTypeSelector.appendTo(dynamicFieldsContainer);
-      vehicleWeight.appendTo(dynamicFieldsContainer);
-      vehicleLength.appendTo(dynamicFieldsContainer);
-      vehicleWidth.appendTo(dynamicFieldsContainer);
-      vehicleHeight.appendTo(dynamicFieldsContainer);
-    }
-    else if (routingService === 'Google'){
       vehicleSelector.appendTo(dynamicFieldsContainer);
     }
-    else if (routingService === 'GraphHopper'){
+    else if (routingServiceTypeValue === 'Google'){
+      vehicleSelector.appendTo(dynamicFieldsContainer);
+    }
+    else if (routingServiceTypeValue === 'GraphHopper'){
 
     }
-    else if (routingService === 'Mapbox'){
+    else if (routingServiceTypeValue === 'Mapbox'){
 
     }
-    dataContainer.appendTo(dynamicFieldsContainer);
+    dataContainer.appendTo(dynamicFieldsContainerTwo);
   }
 
   function toggleVehicleSpecificFields(vehicleType) {
-    // Adjust fields based on vehicle type, for example
-    if (vehicleType === 'truck') {
-      // Show fields specific to trucks
-      new Elem({tag: 'input', attrs: {type: 'number', placeholder: 'Truck capacity', className: 'input-field'}}).appendTo(dynamicFieldsContainer.elem);
+    const vehicleTypeValue = document.getElementById('vehicleType').value;
+    if (vehicleTypeValue === 'truck') {
+      vehicleWeight.appendTo(dynamicFieldsContainerTwo);
+      vehicleLength.appendTo(dynamicFieldsContainerTwo);
+      vehicleWidth.appendTo(dynamicFieldsContainerTwo);
+      vehicleHeight.appendTo(dynamicFieldsContainerTwo);
     } else {
       // Clear or adjust for other vehicles
-      dynamicFieldsContainer.elem.innerHTML = '';
+      dynamicFieldsContainerTwo.elem.innerHTML = '';
     }
   }
 
