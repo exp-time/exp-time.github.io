@@ -177,18 +177,15 @@ function createMapDataNew(id) {
   }
 
   function toggleVehicleSpecificFields(vehicleType) {
+    dynamicFieldsContainerTwo.elem.innerHTML = '';
     const vehicleTypeValue = document.getElementById('vehicleType').value;
     if (vehicleTypeValue === 'truck') {
       vehicleWeight.appendTo(dynamicFieldsContainerTwo);
       vehicleLength.appendTo(dynamicFieldsContainerTwo);
       vehicleWidth.appendTo(dynamicFieldsContainerTwo);
       vehicleHeight.appendTo(dynamicFieldsContainerTwo);
-    } else {
-      // Clear or adjust for other vehicles
-      dynamicFieldsContainerTwo.elem.innerHTML = '';
     }
   }
-
   return container.elem;
 }
 
