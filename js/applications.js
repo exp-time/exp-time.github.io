@@ -174,6 +174,7 @@ function createMapDataNew(id) {
       vehicleSelector.appendTo(dynamicFieldsContainer);
     }
     else if (routingServiceTypeValue === 'Google'){
+      routingTypeSelector.appendTo(dynamicFieldsContainer);
       vehicleSelector.appendTo(dynamicFieldsContainer);
     }
     else if (routingServiceTypeValue === 'GraphHopper'){
