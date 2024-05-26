@@ -148,7 +148,6 @@ function createMapDataNew(id) {
     {tag: 'input', attrs: {type: 'number', id: 'vehicleHeight', name: 'height', className: 'no-spinners', placeholder: 'Enter height'}}
   ]});
 
-  
   const dynamicFieldsContainer = new Elem({tag: 'div', attrs: {id: 'dynamicFieldsContainer'}}).appendTo(container.elem).elem;
   const dynamicFieldsContainerTwo = new Elem({tag: 'div', attrs: {id: 'dynamicFieldsContainerTwo'}}).appendTo(container.elem).elem;
   new Elem({tag: 'div', attrs: {id: "DataContainer" + id, className: 'w3-padding'}}).appendTo(container.elem);
@@ -336,18 +335,14 @@ function updateIconsOnMap(id, map) {
   const lineLength = L.GeometryUtil.length(polylines[id]); // Length in meters
   const numberOfIcons = Math.floor((lineLength / 1000) / speed);
 
-  // Clear previous icons
   if (iconMarkers) {
     iconMarkers.forEach(marker => map.removeLayer(marker));
     iconMarkers = [];
   }
-  //console.log(iconsList)
   for (let i = 0; i < numberOfIcons; i++) {
     const position = i  * (lineLength / numberOfIcons);
     const point = L.GeometryUtil.interpolateOnLine(map, polylines[id].getLatLngs(), position / lineLength);
-    //console.log(point)
     if (!point) continue; // Skip if no point is returned 
-    // Fetch weather data for each interpolated point
     const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${point.latLng.lat},${point.latLng.lng}?key=${api_key_w}`
     fetch(url).then(response => response.json()).then(data => {
       const iconUrl = `img/weatherIcons/${data.currentConditions.icon}.svg`;
