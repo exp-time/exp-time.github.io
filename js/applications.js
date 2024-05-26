@@ -150,26 +150,24 @@ function createMapDataNew(id) {
 
   const dataContainer = new Elem({tag: 'div', attrs: {id: "DataContainer" + id, className: 'w3-padding'}});
 
-
-  const dynamicFieldsContainer = new Elem({tag: 'div', attrs: {id: 'dynamicFieldsContainer'}}).appendTo(container.elem);
-  //new Elem({tag: 'input', attrs: {type: 'text', placeholder: 'Azure specific setting', className: 'input-field'}}).appendTo(dynamicFieldsContainer.elem);
+  const dynamicFieldsContainer = new Elem({tag: 'div', attrs: {id: 'dynamicFieldsContainer'}}).appendTo(container.elem).elem;
 
   function updateAdditionalFields(routingService) {
-    dynamicFieldsContainer.elem.innerHTML = '';
+    dynamicFieldsContainer.innerHTML = '';
     const routingServiceTypeValue = document.getElementById('routingServiceType').value;
     if (routingServiceTypeValue === 'OpenRouteService') {
-      vehicleSelector.appendTo(container.elem);
+      vehicleSelector.appendTo(dynamicFieldsContainer);
     }
     else if (routingServiceTypeValue === 'Azure'){
-      vehicleSelector.appendTo(container.elem);
-      routingTypeSelector.appendTo(container.elem);
-      vehicleWeight.appendTo(container.elem);
-      vehicleLength.appendTo(container.elem);
-      vehicleWidth.appendTo(container.elem);
-      vehicleHeight.appendTo(container.elem);
+      vehicleSelector.appendTo(dynamicFieldsContainer);
+      routingTypeSelector.appendTo(dynamicFieldsContainer);
+      vehicleWeight.appendTo(dynamicFieldsContainer);
+      vehicleLength.appendTo(dynamicFieldsContainer);
+      vehicleWidth.appendTo(dynamicFieldsContainer);
+      vehicleHeight.appendTo(dynamicFieldsContainer);
     }
     else if (routingServiceTypeValue === 'Google'){
-      vehicleSelector.appendTo(container.elem);
+      vehicleSelector.appendTo(dynamicFieldsContainer);
     }
     else if (routingServiceTypeValue === 'GraphHopper'){
 
@@ -177,7 +175,7 @@ function createMapDataNew(id) {
     else if (routingServiceTypeValue === 'Mapbox'){
 
     }
-    dataContainer.appendTo(container.elem);
+    dataContainer.appendTo(dynamicFieldsContainer);
   }
 
   function toggleVehicleSpecificFields(vehicleType) {
