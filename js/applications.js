@@ -153,6 +153,14 @@ function createMapDataNew(id) {
   const dynamicFieldsContainerTwo = new Elem({tag: 'div', attrs: {id: 'dynamicFieldsContainerTwo'}}).appendTo(container.elem).elem;
 
   function updateAdditionalFields() {
+    const inputs = document.querySelectorAll('.input-group select, .input-group input');
+    inputs.forEach(input => {
+      if (input.tagName.toLowerCase() === 'select') {
+        input.selectedIndex = 0; // Select the first option
+      } else {
+        input.value = ''; // Clear the input field
+      }
+    });
     dynamicFieldsContainer.innerHTML = '';
     dynamicFieldsContainerTwo.innerHTML = '';
     const routingServiceTypeValue = document.getElementById('routingServiceType').value;
