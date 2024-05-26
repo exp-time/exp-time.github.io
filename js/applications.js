@@ -129,18 +129,40 @@ function createMapDataNew(id) {
         {tag: 'option', attrs: {value: 'emissions', textContent: 'Emissions'}}
       ]}
     ],
-  }).appendTo(container.elem);
+  });
 
-  const dynamicFieldsContainer = new Elem({tag: 'div', attrs: {id: 'dynamicFieldsContainer'}}).appendTo(container.elem);
+  const vehicleWeight = new Elem({tag: 'div', attrs: {className: 'input-group'}, children: [
+    {tag: 'label', attrs: {for: 'vehicleWeight', className: 'font-large', textContent: 'Weight (kg):'}},
+    {tag: 'input', attrs: {type: 'number', id: 'vehicleWeight', name: 'weight', className: 'no-spinners', placeholder: 'Enter weight'}}
+  ]});
+  const vehicleLength = new Elem({tag: 'div', attrs: {className: 'input-group'}, children: [
+    {tag: 'label', attrs: {for: 'vehicleLength', className: 'font-large', textContent: 'Length (m):'}},
+    {tag: 'input', attrs: {type: 'number', id: 'vehicleLength', name: 'length', className: 'no-spinners', placeholder: 'Enter length'}}
+  ]});
+  const vehicleWidth = new Elem({tag: 'div', attrs: {className: 'input-group'}, children: [
+    {tag: 'label', attrs: {for: 'vehicleWidth', className: 'font-large', textContent: 'Width (m):'}},
+    {tag: 'input', attrs: {type: 'number', id: 'vehicleWidth', name: 'width', className: 'no-spinners', placeholder: 'Enter width'}}
+  ]});
+  const vehicleHeight = new Elem({tag: 'div', attrs: {className: 'input-group'}, children: [
+    {tag: 'label', attrs: {for: 'vehicleHeight', className: 'font-large', textContent: 'Height (m):'}},
+    {tag: 'input', attrs: {type: 'number', id: 'vehicleHeight', name: 'height', className: 'no-spinners', placeholder: 'Enter height'}}
+  ]});
+
+  const dataContainer = new Elem({tag: 'div', attrs: {id: "DataContainer" + id, className: 'w3-padding'}});
+
+
+  //const dynamicFieldsContainer = new Elem({tag: 'div', attrs: {id: 'dynamicFieldsContainer'}}).appendTo(container.elem);
+  //new Elem({tag: 'input', attrs: {type: 'text', placeholder: 'Azure specific setting', className: 'input-field'}}).appendTo(dynamicFieldsContainer.elem);
 
   function updateAdditionalFields(routingService) {
     dynamicFieldsContainer.elem.innerHTML = '';
     const routingServiceTypeValue = document.getElementById('routingServiceType').value;
     if (routingServiceTypeValue === 'OpenRouteService') {
-      new Elem({tag: 'input', attrs: {type: 'text', placeholder: 'Azure specific setting', className: 'input-field'}}).appendTo(dynamicFieldsContainer.elem);
+      vehicleSelector.appendTo(container.elem);
     }
     else if (routingServiceTypeValue === 'Azure'){
-      vehicleSelector.appendTo(container.elem)
+      vehicleSelector.appendTo(container.elem);
+      routingTypeSelector.appendTo(container.elem)
     }
     else if (routingServiceTypeValue === 'Google'){
 
@@ -151,6 +173,7 @@ function createMapDataNew(id) {
     else if (routingServiceTypeValue === 'Mapbox'){
 
     }
+    dataContainer.appendTo(container.elem);
   }
 
   function toggleVehicleSpecificFields(vehicleType) {
@@ -165,55 +188,6 @@ function createMapDataNew(id) {
   }
 
   return container.elem;
-}
-
-function createMapData(id) {
-  return new Elem({tag: 'div',attrs: {className: 'map-data-listing'},children: [
-    {tag: 'div', attrs: {className: 'input-group'}, children: [
-      {tag: 'label', attrs: {for: 'routingServiceType', className: 'font-large', textContent: 'Routing service:'}},
-      {tag: 'select', attrs: {name: 'routingService', id: 'routingServiceType', className: 'no-spinners pointer-cursor'}, children: [
-          {tag: 'option', attrs: {value: 'OpenRouteService', textContent: 'OpenRouteService'}},
-          {tag: 'option', attrs: {value: 'Azure', textContent: 'Azure Maps'}},
-          {tag: 'option', attrs: {value: 'Google', textContent: 'Google Maps'}},
-          {tag: 'option', attrs: {value: 'GraphHopper', textContent: 'GraphHopper'}},
-          {tag: 'option', attrs: {value: 'Mapbox', textContent: 'Mapbox'}}
-      ]}
-    ]},
-    {tag: 'div', attrs: {className: 'input-group'}, children: [
-      {tag: 'label', attrs: {for: 'vehicleType', className: 'font-large', textContent: 'Vehicle:'}},
-      {tag: 'select', attrs: {name: 'vehicle', id: 'vehicleType', className: 'no-spinners pointer-cursor'}, children: [
-          {tag: 'option', attrs: {value: 'car', textContent: 'Car'}},
-          {tag: 'option', attrs: {value: 'truck', textContent: 'Truck'}},
-          {tag: 'option', attrs: {value: 'bicycle', textContent: 'Bicycle'}},
-          {tag: 'option', attrs: {value: 'walk', textContent: 'Walk'}}
-      ]}
-    ]},
-    {tag: 'div', attrs: {className: 'input-group'}, children: [
-      {tag: 'label', attrs: {for: 'routingType', className: 'font-large', textContent: 'Routing type:'}},
-      {tag: 'select', attrs: {name: 'routing', id: 'routingType', className: 'no-spinners pointer-cursor'}, children: [
-          {tag: 'option', attrs: {value: 'cost', textContent: 'Cost'}},
-          {tag: 'option', attrs: {value: 'shortest', textContent: 'Shortest'}},
-          {tag: 'option', attrs: {value: 'emissions', textContent: 'Emissions'}}
-      ]}
-    ]},
-    {tag: 'div', attrs: {className: 'input-group'}, children: [
-      {tag: 'label', attrs: {for: 'vehicleWeight', className: 'font-large', textContent: 'Weight (kg):'}},
-      {tag: 'input', attrs: {type: 'number', id: 'vehicleWeight', name: 'weight', className: 'no-spinners', placeholder: 'Enter weight'}}
-    ]},
-    {tag: 'div', attrs: {className: 'input-group'}, children: [
-      {tag: 'label', attrs: {for: 'vehicleLength', className: 'font-large', textContent: 'Length (m):'}},
-      {tag: 'input', attrs: {type: 'number', id: 'vehicleLength', name: 'length', className: 'no-spinners', placeholder: 'Enter length'}}
-    ]},
-    {tag: 'div', attrs: {className: 'input-group'}, children: [
-      {tag: 'label', attrs: {for: 'vehicleWidth', className: 'font-large', textContent: 'Width (m):'}},
-      {tag: 'input', attrs: {type: 'number', id: 'vehicleWidth', name: 'width', className: 'no-spinners', placeholder: 'Enter width'}}
-    ]},
-    {tag: 'div', attrs: {className: 'input-group'}, children: [
-      {tag: 'label', attrs: {for: 'vehicleHeight', className: 'font-large', textContent: 'Height (m):'}},
-      {tag: 'input', attrs: {type: 'number', id: 'vehicleHeight', name: 'height', className: 'no-spinners', placeholder: 'Enter height'}}
-    ]},
-    {tag: 'div', attrs: {id: "DataContainer" + id, className: 'w3-padding'}}
-  ]}).elem;
 }
 
 function createWeatherMapData(id) {
