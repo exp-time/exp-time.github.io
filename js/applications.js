@@ -158,7 +158,7 @@ function createMapDataNew(id) {
     if (routingService === 'OpenRouteService') {
       vehicleSelector.appendTo(dynamicFieldsContainer);
     }
-    else if (routingServicee === 'Azure'){
+    else if (routingService === 'Azure'){
       vehicleSelector.appendTo(dynamicFieldsContainer);
       routingTypeSelector.appendTo(dynamicFieldsContainer);
       vehicleWeight.appendTo(dynamicFieldsContainer);
