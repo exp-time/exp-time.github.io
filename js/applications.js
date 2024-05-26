@@ -154,6 +154,7 @@ function createMapDataNew(id) {
 
   function updateAdditionalFields() {
     dynamicFieldsContainer.innerHTML = '';
+    dynamicFieldsContainerTwo.innerHTML = '';
     const routingServiceTypeValue = document.getElementById('routingServiceType').value;
     if (routingServiceTypeValue === 'OpenRouteService') {
       vehicleSelector.appendTo(dynamicFieldsContainer);
