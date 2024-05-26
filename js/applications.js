@@ -148,9 +148,10 @@ function createMapDataNew(id) {
     {tag: 'input', attrs: {type: 'number', id: 'vehicleHeight', name: 'height', className: 'no-spinners', placeholder: 'Enter height'}}
   ]});
 
-  const dataContainer = new Elem({tag: 'div', attrs: {id: "DataContainer" + id, className: 'w3-padding'}});
+  
   const dynamicFieldsContainer = new Elem({tag: 'div', attrs: {id: 'dynamicFieldsContainer'}}).appendTo(container.elem).elem;
   const dynamicFieldsContainerTwo = new Elem({tag: 'div', attrs: {id: 'dynamicFieldsContainerTwo'}}).appendTo(container.elem).elem;
+  new Elem({tag: 'div', attrs: {id: "DataContainer" + id, className: 'w3-padding'}}).appendTo(container.elem);
 
   function updateAdditionalFields() {
     const inputs = document.querySelectorAll('.input-group select, .input-group input');
@@ -182,7 +183,6 @@ function createMapDataNew(id) {
     else if (routingServiceTypeValue === 'Mapbox'){
 
     }
-    dataContainer.appendTo(dynamicFieldsContainer);
   }
   // TODO: does not update on other selections!
   function toggleVehicleSpecificFields() {
