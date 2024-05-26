@@ -155,10 +155,10 @@ function createMapDataNew(id) {
   function updateAdditionalFields(routingService) {
     dynamicFieldsContainer.innerHTML = '';
     const routingServiceTypeValue = document.getElementById('routingServiceType').value;
-    if (routingServiceTypeValue === 'OpenRouteService') {
+    if (routingService === 'OpenRouteService') {
       vehicleSelector.appendTo(dynamicFieldsContainer);
     }
-    else if (routingServiceTypeValue === 'Azure'){
+    else if (routingServicee === 'Azure'){
       vehicleSelector.appendTo(dynamicFieldsContainer);
       routingTypeSelector.appendTo(dynamicFieldsContainer);
       vehicleWeight.appendTo(dynamicFieldsContainer);
@@ -166,13 +166,13 @@ function createMapDataNew(id) {
       vehicleWidth.appendTo(dynamicFieldsContainer);
       vehicleHeight.appendTo(dynamicFieldsContainer);
     }
-    else if (routingServiceTypeValue === 'Google'){
+    else if (routingService === 'Google'){
       vehicleSelector.appendTo(dynamicFieldsContainer);
     }
-    else if (routingServiceTypeValue === 'GraphHopper'){
+    else if (routingService === 'GraphHopper'){
 
     }
-    else if (routingServiceTypeValue === 'Mapbox'){
+    else if (routingService === 'Mapbox'){
 
     }
     dataContainer.appendTo(dynamicFieldsContainer);
