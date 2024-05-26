@@ -182,7 +182,7 @@ function createMapDataNew(id) {
     else if (routingServiceTypeValue === 'Mapbox'){
 
     }
-    dataContainer.appendTo(dynamicFieldsContainerTwo);
+    dataContainer.appendTo(dynamicFieldsContainer);
   }
   // TODO: does not update on other selections!
   function toggleVehicleSpecificFields() {
