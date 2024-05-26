@@ -178,7 +178,8 @@ function createMapDataNew(id) {
   function toggleVehicleSpecificFields() {
     dynamicFieldsContainerTwo.innerHTML = '';
     const vehicleTypeValue = document.getElementById('vehicleType').value;
-    if (vehicleTypeValue === 'truck') {
+    const routingServiceTypeValue = document.getElementById('routingServiceType').value;
+    if (vehicleTypeValue === 'truck' && routingServiceTypeValue === 'Azure') {
       vehicleWeight.appendTo(dynamicFieldsContainerTwo);
       vehicleLength.appendTo(dynamicFieldsContainerTwo);
       vehicleWidth.appendTo(dynamicFieldsContainerTwo);
