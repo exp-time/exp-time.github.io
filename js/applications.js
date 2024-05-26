@@ -162,10 +162,14 @@ function createMapDataNew(id) {
     }
     else if (routingServiceTypeValue === 'Azure'){
       vehicleSelector.appendTo(container.elem);
-      routingTypeSelector.appendTo(container.elem)
+      routingTypeSelector.appendTo(container.elem);
+      vehicleWeight.appendTo(container.elem);
+      vehicleLength.appendTo(container.elem);
+      vehicleWidth.appendTo(container.elem);
+      vehicleHeight.appendTo(container.elem);
     }
     else if (routingServiceTypeValue === 'Google'){
-
+      vehicleSelector.appendTo(container.elem);
     }
     else if (routingServiceTypeValue === 'GraphHopper'){
 
