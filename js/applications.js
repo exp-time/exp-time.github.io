@@ -117,7 +117,7 @@ function createMapDataNew(id) {
         {tag: 'option', attrs: {value: 'walk', textContent: 'Walk'}}
       ]}
     ],
-  }).appendTo(container.elem);
+  });
 
   const routingTypeSelector = new Elem({
     tag: 'div', attrs: {className: 'input-group'}, children: [
@@ -140,7 +140,7 @@ function createMapDataNew(id) {
       new Elem({tag: 'input', attrs: {type: 'text', placeholder: 'Azure specific setting', className: 'input-field'}}).appendTo(dynamicFieldsContainer.elem);
     }
     else if (routingServiceTypeValue === 'Azure'){
-
+      vehicleSelector.appendTo(container.elem)
     }
     else if (routingServiceTypeValue === 'Google'){
 
