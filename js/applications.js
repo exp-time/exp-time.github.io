@@ -357,3 +357,6 @@ function updateIconsOnMap(id, map) {
 }
 
 document.addEventListener('DOMContentLoaded', fetchIcons()); // Load icons on page load
+
+
+// https://icons8.com/icons/set/logistic--black
