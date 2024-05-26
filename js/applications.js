@@ -156,10 +156,12 @@ function createMapDataNew(id) {
     const inputs = document.querySelectorAll('.input-group select, .input-group input');
     console.log(inputs)
     inputs.forEach(input => {
-      if (input.tagName.toLowerCase() === 'select') {
-        input.selectedIndex = 0; // Select the first option
-      } else {
-        input.value = ''; // Clear the input field
+      if (input.id != 'routingServiceType') {
+        if (input.tagName.toLowerCase() === 'select') {
+          input.selectedIndex = 0; // Select the first option
+        } else {
+          input.value = ''; // Clear the input field
+        }
       }
     });
     dynamicFieldsContainer.innerHTML = '';
