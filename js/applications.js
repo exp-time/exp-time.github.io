@@ -280,6 +280,7 @@ function updateDisplay(id, map) {
   }
 
   if (id === "map-two" && markers[id].length >= 2) { 
+    if (polylines[id]) {map.removeLayer(polylines[id])}
     var latLngs = markers[id].map(marker => marker.getLatLng());
     var polyline = new L.Polyline(latLngs, {
       color: 'red',      // Line color
