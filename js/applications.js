@@ -227,7 +227,7 @@ function initializeMap(id, maxCount) {
 
 function addMarker(latlng, map, id, maxCount) {
   if (markers[id].length >= maxCount) { return }//map.removeLayer(markers[id].shift()) } // Remove the oldest marker from the array
-  markers[id].push(L.marker(latlng).addTo(map));                        // Add the new marker to the array
+  markers[id].push(L.marker(latlng, {icon: locationIcon}).addTo(map));                        // Add the new marker to the array
   updateDisplay(id, map)
 }
 
@@ -361,3 +361,13 @@ document.addEventListener('DOMContentLoaded', fetchIcons()); // Load icons on pa
 
 
 // https://icons8.com/icons/set/logistic--black
+
+var locationIcon = L.icon({
+  iconUrl: 'img/mapIcons/location.png',
+  iconSize: [50, 50],
+  iconAnchor: [25, 48],
+  //popupAnchor: [-3, -76],
+  //shadowUrl: 'my-icon-shadow.png',
+  //shadowSize: [68, 95],
+  //shadowAnchor: [22, 94]
+});
