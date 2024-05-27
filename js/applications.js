@@ -227,7 +227,7 @@ function initializeMap(id, maxCount) {
 
 function addMarker(latlng, map, id, maxCount) {
   var locationIcon = L.icon({
-    iconUrl: 'img/mapIcons/location.png',
+    iconUrl: 'img/mapIcons/locBlue.png',
     iconSize: [50, 50],
     iconAnchor: [25, 48],
     //popupAnchor: [-3, -76],
