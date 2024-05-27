@@ -236,11 +236,25 @@ function addMarker(latlng, map, id, maxCount) {
     //shadowAnchor: [22, 94]
   });
 
+  var shippingIcon = L.icon({
+    iconUrl: 'img/mapIcons/sendTemp.png',
+    iconSize: [50, 50],
+    iconAnchor: [45, 21],
+    //popupAnchor: [-3, -76],
+    //shadowUrl: 'my-icon-shadow.png',
+    //shadowSize: [68, 95],
+    //shadowAnchor: [22, 94]
+  });
+
   if (markers[id].length >= maxCount && id === 'map-one') { return }
   else if ( markers[id].length >= maxCount && id === 'map-two') {
     map.removeLayer(markers[id].shift()) // Remove the oldest marker from the array
-  } 
-  markers[id].push(L.marker(latlng, {icon: locationIcon}).addTo(map));                        // Add the new marker to the array
+  }
+  if (markers[id].length % 2 === 0) {
+    markers[id].push(L.marker(latlng, {icon: shippingIcon}).addTo(map)); 
+  } else {
+    markers[id].push(L.marker(latlng, {icon: locationIcon}).addTo(map));
+  }
   updateDisplay(id, map)
 }
 
