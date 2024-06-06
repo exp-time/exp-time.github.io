@@ -151,3 +151,7 @@ function updateActiveButtonStates(buttonContainer, currentPage) {
   const buttons = buttonContainer.querySelectorAll('button');
   buttons.forEach((button, index) => {button.className = (index === currentPage) ? 'active' : ''});
 }
+
+function createLangButtons() {
+  
+}
