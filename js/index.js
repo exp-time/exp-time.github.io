@@ -152,27 +152,23 @@ function updateActiveButtonStates(buttonContainer, currentPage) {
   buttons.forEach((button, index) => {button.className = (index === currentPage) ? 'active' : ''});
 }
 
- function createLangButtons() {
-      const buttonContainer = document.getElementById('button-container');
-
-      // Image URLs (replace with your actual image paths)
-      const images = [
-        'path/to/your/image1.png',
-        'path/to/your/image2.png'
-      ];
-
-      images.forEach((imgSrc, index) => {
-        const button = document.createElement('button');
-        button.className = 'lang-btns';
-        button.style.right = `${index * 50}px`; // Adjust the position of each button
-
-        const img = document.createElement('img');
-        img.src = imgSrc;
-        img.alt = `Language ${index + 1}`;
-        img.style.width = '24px'; // Adjust the image size
-        img.style.height = '24px'; // Adjust the image size
-
-        button.appendChild(img);
-        buttonContainer.appendChild(button);
-      });
-    }
+function createLangButtons() {
+  const buttonContainer = document.getElementById('button-container');
+  // Image URLs (replace with your actual image paths)
+  const images = [
+    'path/to/your/image1.png',
+    'path/to/your/image2.png'
+  ];
+  images.forEach((imgSrc, index) => {
+    const button = document.createElement('button');
+    button.className = 'lang-btns';
+    button.style.right = `${index * 50}px`; // Adjust the position of each button
+    const img = document.createElement('img');
+    img.src = imgSrc;
+    img.alt = `Language ${index + 1}`;
+    img.style.width = '24px'; // Adjust the image size
+    img.style.height = '24px'; // Adjust the image size
+    button.appendChild(img);
+    buttonContainer.appendChild(button);
+  });
+}

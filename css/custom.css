@@ -69,15 +69,17 @@ input[type=number] {
   -moz-appearance: textfield; /* Older versions of Firefox */
   appearance: textfield; /* Standard property for modern browsers */
 }
-.main-title, .sub-title {
+.main-title{
   position: relative; 
   font-weight:400;}
+
+.sub-title{margin:2em 0;}
 
 .sidebar-btns{z-index: 101;padding:0.25% 0.5%;top:0.5%;left:0;margin-top:0;} /* top and bottom | left and right */
 
 .lang-btns{z-index: 101;padding:0.25% 0.5%;top:0.5%;right:0;margin-top:0;} 
 
-.sub-title {margin:2em 0;}
+
 
 .modal-header,.sidebar-header{
   vertical-align: middle;
