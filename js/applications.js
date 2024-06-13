@@ -376,7 +376,7 @@ function updateIconsOnMap(id, map) {
       const iconUrl = `img/weatherIcons/${data.currentConditions.icon}.svg`;
       const icon = L.icon({
         iconUrl: iconUrl,
-        iconSize: [30, 30]
+        iconSize: [20, 20]
       });
       const marker = L.marker(point.latLng, {icon: icon}).addTo(map);
       iconMarkers.push(marker);
@@ -421,7 +421,7 @@ function fetchWeatherAndPlaceIcon(latLng, map) {
       const iconUrl = `img/weatherIcons/${data.currentConditions.icon}.svg`;
       const icon = L.icon({
         iconUrl: iconUrl,
-        iconSize: [30, 30]
+        iconSize: [25, 25]
       });
       const marker = L.marker(latLng, { icon: icon }).addTo(map);
       iconMarkers.push(marker);
