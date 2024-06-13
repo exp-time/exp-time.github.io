@@ -269,12 +269,14 @@ function updateDisplay(id, map) {
     new Elem({tag: 'p', parent: mapDataContainer, attrs:{textContent: coordText}}).elem;
   });
 
-  if (id === "map-one" && markers[id].length >= 6) { 
+  if (id === "map-one" && markers[id].length >= 6) {
     for (let i = 0; i < markers[id].length; i++) {
       for (let j = i + 1; j < markers[id].length; j++) {
         const startCoords = [markers[id][i].getLatLng().lat, markers[id][i].getLatLng().lng];
         const endCoords = [markers[id][j].getLatLng().lat, markers[id][j].getLatLng().lng];
-        fetchAndDrawRoute(startCoords, endCoords, apiKey, map)
+        fetchAndDrawRoute(startCoords, endCoords, apiKey, map, function () {
+          updateWeatherIconsOnRoute(map);
+        });
       }
     }
   }
@@ -316,18 +318,15 @@ function fetchAndDrawRoute(startCoords, endCoords, apiKey, map, callback) {
   fetch(url)
     .then(response => response.json()).then(data => {
       const routeFeature = data.features[0];
-      //if (window.geojsonLayer) { window.geojsonLayer.clearLayers() }
       window.geojsonLayer = L.geoJSON(routeFeature, { // Add the route to the map 
         style: {
           color: '#FF0000', // Red line for the route
           weight: 5,
           opacity: 0.7
         }}).addTo(map);
-
         if (callback) {
           callback(map); // Trigger the callback after the route is drawn
         }
-
       }).catch(error => console.error('Error fetching or drawing the route:', error));
 }
 
@@ -385,6 +384,50 @@ function updateIconsOnMap(id, map) {
   }
 }
 
+function updateWeatherIconsOnRoute(map) {
+  if (!geojsonLayer) {
+    console.error('No route found.');
+    return;
+  }
+
+  const routeCoordinates = geojsonLayer.getLayers()[0].feature.geometry.coordinates.map(coord => L.latLng(coord[1], coord[0]));
+  const totalDistance = routeCoordinates.reduce((acc, cur, idx, arr) => {
+    if (idx === 0) return 0;
+    return acc + arr[idx - 1].distanceTo(cur);
+  }, 0);
+  const numberOfPoints = Math.floor(totalDistance / 100000); // Points every 100 km
+
+  if (iconMarkers) {
+    iconMarkers.forEach(marker => map.removeLayer(marker));
+    iconMarkers = [];
+  }
+
+  let distanceCovered = 0;
+  for (let i = 1; i < routeCoordinates.length; i++) {
+    const segmentDistance = routeCoordinates[i - 1].distanceTo(routeCoordinates[i]);
+    distanceCovered += segmentDistance;
+    if (distanceCovered >= 100000) {
+      fetchWeatherAndPlaceIcon(routeCoordinates[i], map);
+      distanceCovered = 0; // Reset distance covered for next 100 km segment
+    }
+  }
+}
+
+function fetchWeatherAndPlaceIcon(latLng, map) {
+  const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${latLng.lat},${latLng.lng}?key=${api_key_w}`;
+  fetch(url)
+    .then(response => response.json())
+    .then(data => {
+      const iconUrl = `img/weatherIcons/${data.currentConditions.icon}.svg`;
+      const icon = L.icon({
+        iconUrl: iconUrl,
+        iconSize: [30, 30]
+      });
+      const marker = L.marker(latLng, { icon: icon }).addTo(map);
+      iconMarkers.push(marker);
+    })
+    .catch(error => console.error('Error fetching weather', error));
+}
 document.addEventListener('DOMContentLoaded', fetchIcons()); // Load icons on page load
 
 
