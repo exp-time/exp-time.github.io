@@ -228,8 +228,8 @@ function initializeMap(id, maxCount) {
 function addMarker(latlng, map, id, maxCount) {
   var locationIcon = L.icon({
     iconUrl: 'img/mapIcons/locBlue.png',
-    iconSize: [50, 50],
-    iconAnchor: [25, 48],
+    iconSize: [30, 30],
+    iconAnchor: [25, 29],
     //popupAnchor: [-3, -76],
     //shadowUrl: 'my-icon-shadow.png',
     //shadowSize: [68, 95],
@@ -238,8 +238,8 @@ function addMarker(latlng, map, id, maxCount) {
 
   var shippingIcon = L.icon({
     iconUrl: 'img/mapIcons/sendTemp.png',
-    iconSize: [50, 50],
-    iconAnchor: [45, 21],
+    iconSize: [30, 30],
+    iconAnchor: [27, 13],
     //popupAnchor: [-3, -76],
     //shadowUrl: 'my-icon-shadow.png',
     //shadowSize: [68, 95],
@@ -376,7 +376,7 @@ function updateIconsOnMap(id, map) {
       const iconUrl = `img/weatherIcons/${data.currentConditions.icon}.svg`;
       const icon = L.icon({
         iconUrl: iconUrl,
-        iconSize: [20, 20]
+        iconSize: [30, 30]
       });
       const marker = L.marker(point.latLng, {icon: icon}).addTo(map);
       iconMarkers.push(marker);
