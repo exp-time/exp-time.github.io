@@ -262,9 +262,9 @@ const apiKey = '5b3ce3597851110001cf6248c8bd0ca0e5e947639f269aa502fc6e8a';
 
 function updateDisplay(id, map) {
   const mapDataContainer = document.getElementById("DataContainer" + id);
-  mapDataContainer.innerHTML = ''; // Clear existing data
-  markers[id].forEach((marker, index) => {// Iterate through all markers and create a paragraph for each
-    const coords = marker.getLatLng(); // Get the latitude and longitude of the marker
+  mapDataContainer.innerHTML = '';          // Clear existing data
+  markers[id].forEach((marker, index) => {  // Iterate through all markers and create a paragraph for each
+    const coords = marker.getLatLng();      // Get the latitude and longitude of the marker
     const coordText = `Marker ${index + 1}: Lat: ${coords.lat.toFixed(2)}, Lon: ${coords.lng.toFixed(2)}`;
     new Elem({tag: 'p', parent: mapDataContainer, attrs:{textContent: coordText}}).elem;
   });
